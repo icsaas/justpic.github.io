@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Post on A Tree by the river</title>
+        <link>https://justpic.org/en/post/</link>
+        <description>Recent content in Post on A Tree by the river</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Mon, 09 Mar 2020 22:09:40 +0800</lastBuildDate>
+        
+        <atom:link href="https://justpic.org/en/post/index.xml" rel="self" type="application/rss+xml" />
+        
+        
+        <item>
+            <title>Azure Bug</title>
+            <link>https://justpic.org/en/post/azure-bug/</link>
+            <pubDate>Mon, 09 Mar 2020 22:09:40 +0800</pubDate>
+            
+            <guid>https://justpic.org/en/post/azure-bug/</guid>
+            <description>&lt;p&gt;maybe a bug in azure when registering app&lt;/p&gt;
+&lt;p&gt;when registering app in azure,in the period of verifying the publisher domain ,it always said the error,&amp;ldquo;The server returned an unexpected content type header value. &amp;ldquo;,after google the problem,i found the solution in the github repo of offical document.it  says,the github page does not support content  type &amp;ldquo;application/json&amp;rdquo;,but return the mime type&amp;quot;application/json;charset=utf-8&amp;rdquo;.the azure doesn&amp;rsquo;t think it is correct,so the backend server must be own yours that support the custom content type.as also the example code(nodejs) just  as follows,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;var http = require(&amp;#34;http&amp;#34;);
+//https://github.com/MicrosoftDocs/azure-docs/issues/39665
+var server = http.createServer(function(request, res) {
+    res.writeHead(200, {
+        &amp;#39;Content-Type&amp;#39;: &amp;#39;application/json&amp;#39;
+    });
+
+    res.write(
+        JSON.stringify({
+            associatedApplications: [
+                {
+                    applicationId: &amp;#39;{replace of your own id}&amp;#39;
+                }
+            ]
+        })
+    );
+    res.end();
+});
+
+server.listen(80);
+console.log(&amp;#34;Server is listening&amp;#34;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!--adsense--&gt;  
+&lt;p&gt;&lt;strong&gt;after do that ,it is well done,beer!&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;References&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/MicrosoftDocs/azure-docs/issues/39665&#34;&gt;https://github.com/MicrosoftDocs/azure-docs/issues/39665&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+        
+        <item>
+            <title>online video stream site</title>
+            <link>https://justpic.org/en/post/2020-02-13-video-site/</link>
+            <pubDate>Wed, 12 Feb 2020 22:33:00 +0800</pubDate>
+            
+            <guid>https://justpic.org/en/post/2020-02-13-video-site/</guid>
+            <description>&lt;p&gt;online video stream site&lt;/p&gt;
+&lt;p&gt;website address &lt;br&gt;
+&lt;a href=&#34;https://www.kankanwu.com/&#34;&gt;https://www.kankanwu.com/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://www.vip1280.cn/&#34;&gt;http://www.vip1280.cn/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.tv432.com/&#34;&gt;https://www.tv432.com/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://www.qmaile.com/&#34;&gt;http://www.qmaile.com/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.novipnoad.com/&#34;&gt;https://www.novipnoad.com/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.qpgys.net/&#34;&gt;https://www.qpgys.net/&lt;/a&gt;&lt;/p&gt;
+&lt;!--adsense-text--&gt;     
+&lt;p&gt;&lt;a href=&#34;http://11k.tw/&#34;&gt;http://11k.tw/&lt;/a&gt; &lt;br&gt;
+&lt;a href=&#34;https://tv.huaqindz.com/&#34;&gt;https://tv.huaqindz.com/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://www.nanawu.vip&#34;&gt;http://www.nanawu.vip&lt;/a&gt;&lt;/p&gt;
+&lt;!--adsense-self--&gt;
+&lt;!--adsense--&gt;
+&lt;h2 id=&#34;如果你由更好的想法和建议欢迎留言&#34;&gt;本网站基于MkDocs&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;系统，采用了Material for MkDocs&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;主题样式，感谢开源社区的贡献！&lt;br&gt;
+如果你由更好的想法和建议，欢迎留言。&lt;/h2&gt;
+&lt;p&gt;Reference：&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mkdocs.org/&#34;&gt;https://www.mkdocs.org/&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://squidfunk.github.io/mkdocs-material/&#34;&gt;https://squidfunk.github.io/mkdocs-material/&lt;/a&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html amp="" class="no-js" lang="zh-cn">
+<head>
+<title>Java开发知识梳理</title>
+<meta charset="utf-8"/>
+<script async="" custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script><script async="" custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script><script async="" custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+<script async="" src="https://cdn.ampproject.org/v0.js"></script>
+<link href="https://justpic.org/post/java-summary-2014/" rel="canonical"/>
+<link href="https://justpic.org/favicon.png" rel="icon" sizes="144x144" type="image/png"/>
+<meta content="width=device-width, initial-scale=1, minimum-scale=1" name="viewport"/>
+<meta content="#000000" name="theme-color"/>
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "桑河一榆",
+    
+    "url": "https:\/\/justpic.org\/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/justpic.org\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/amp\/",
+          "name": "amp"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/amp\/post\/",
+          "name": "post"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/amp\/post\/java-summary-2014\/",
+          "name": "java-summary-2014"
+        }
+    }]
+}
+</script>
+<style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-custom="">
+        /**
+* stylesheet.html
+* ---------------
+* This is the stylesheet that gets injected as a fallback if no layouts/partials/stylesheet.html file is available
+* in your project file.
+*
+* For further details, please have a look at:
+* https://gohugo-amp.gohugohq.com/install/
+*
+**/
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px
+dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em
+0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em
+40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html
+input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html
+input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px
+solid silver;margin:0 2px;padding:.35em .625em
+.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}td,th{padding:0}*{box-sizing:border-box}button,input,select,textarea{font:13px/1.4
+Helvetica,arial,freesans,clean,sans-serif}a{color:#4183c4;text-decoration:none}a:active,a:focus,a:hover{text-decoration:underline}.rule,hr{height:0;margin:15px
+0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid
+#ddd}.rule:after,.rule:before,hr:after,hr:before{display:table;content:""}.rule:after,hr:after{clear:both}fieldset{padding:0;margin:0;border:0}label{font-size:13px;font-weight:700}#adv_code_search
+.search-page-label,input[type=email],input[type=number],input[type=password],input[type=tel],input[type=text],input[type=url],textarea{min-height:34px;padding:7px
+8px;font-size:13px;color:#333;vertical-align:middle;background-color:#fff;background-repeat:no-repeat;background-position:100%;border:1px
+solid #ccc;border-radius:3px;outline:none;box-shadow:inset 0 1px 2px rgba(0,0,0,.075)}#adv_code_search
+.focus.search-page-label,#adv_code_search .search-page-label:focus,.focused
+.drag-and-drop,input[type=email].focus,input[type=email]:focus,input[type=number].focus,input[type=number]:focus,input[type=password].focus,input[type=password]:focus,input[type=tel].focus,input[type=tel]:focus,input[type=text].focus,input[type=text]:focus,input[type=url].focus,input[type=url]:focus,textarea.focus,textarea:focus{border-color:#51a7e8;box-shadow:inset
+0 1px 2px rgba(0,0,0,.075),0 0 5px
+rgba(81,167,232,.5)}.input-contrast,input.input-contrast{background-color:#fafafa}.input-contrast:focus,input.input-contrast:focus{background-color:#fff}:-moz-placeholder,::-webkit-input-placeholder{color:#aaa}::-webkit-validation-bubble-message{font-size:12px;color:#fff;background:#9c2400;border:0;border-radius:3px;-webkit-box-shadow:1px
+1px 1px
+rgba(0,0,0,.1)}input::-webkit-validation-bubble-icon{display:none}::-webkit-validation-bubble-arrow{background-color:#9c2400;border:1px
+solid #9c2400;-webkit-box-shadow:1px 1px 1px
+rgba(0,0,0,.1)}.absent{color:#c00}.anchor{position:absolute;top:0;bottom:0;left:0;display:block;padding-right:6px;padding-left:30px;margin-left:-30px}.anchor:focus{outline:none}h1,h2,h3,h4,h5,h6{position:relative;margin-top:1em;margin-bottom:16px;font-weight:700;line-height:1.4}h1
+.octicon-link,h2 .octicon-link,h3 .octicon-link,h4 .octicon-link,h5 .octicon-link,h6
+.octicon-link{display:none;color:#000;vertical-align:middle}h1:hover .anchor,h2:hover .anchor,h3:hover .anchor,h4:hover
+.anchor,h5:hover .anchor,h6:hover
+.anchor{height:1em;padding-left:8px;margin-left:-30px;line-height:1;text-decoration:none}h1:hover .anchor
+.octicon-link,h2:hover .anchor .octicon-link,h3:hover .anchor .octicon-link,h4:hover .anchor .octicon-link,h5:hover
+.anchor .octicon-link,h6:hover .anchor .octicon-link{display:inline-block}h1 code,h1 tt,h2 code,h2 tt,h3 code,h3 tt,h4
+code,h4 tt,h5 code,h5 tt,h6 code,h6
+tt{font-size:inherit}h1{font-size:2.25em;line-height:1.2}h1,h2{padding-bottom:.3em;border-bottom:1px solid
+#eee}h2{font-size:1.75em;line-height:1.225}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5,h6{font-size:1em}h6{color:#777}blockquote,dl,ol,p,pre,table,ul{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px
+0;background-color:#e7e7e7;border:0 none}ol,ul{padding-left:2em}ol.no-list,ul.no-list{padding:0;list-style-type:none}ol
+ol,ol ul,ul ol,ul ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl,dl dt{padding:0}dl
+dt{margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0
+16px;margin-bottom:16px}blockquote{padding:0 15px;color:#777;border-left:4px solid
+#ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}table
+th{font-weight:700}table td,table th{padding:6px 13px;border:1px solid #ddd}table
+tr{background-color:#fff;border-top:1px solid #ccc}table
+tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;box-sizing:border-box}span.frame,span.frame>span{display:block;overflow:hidden}span.frame>span{float:left;width:auto;padding:7px;margin:13px
+0 0;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0
+0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px
+auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0
+auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px
+0 0;overflow:hidden;text-align:right}span.align-right span
+img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left
+span{margin:13px 0
+0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px
+auto
+0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:"\00a0"}code
+br,tt br{display:none}del
+code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight
+pre,pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.highlight
+pre{margin-bottom:0;word-break:normal}pre,pre code,pre tt{word-wrap:normal}pre code,pre
+tt{display:inline;max-width:none;padding:0;margin:0;overflow:initial;line-height:inherit;background-color:transparent;border:0}pre
+code:after,pre code:before,pre tt:after,pre
+tt:before{content:normal}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav
+ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{text-decoration:none}ins,mark{background-color:#ff9;color:#000}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px
+dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px
+solid #ccc;margin:1em
+0;padding:0}input,select{vertical-align:middle}body{background-color:#fff;color:#123;font-size:14px;font-family:Helvetica
+Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif}main{max-width:1180px;padding:30px;margin:0 auto}@media
+(min-width:900px){main h1+p{font-size:2em}}h1{font-weight:300;font-size:2em;line-height:1.4em;margin:.5em
+0;font-family:Georgia,serif;-webkit-transition:color .4s;transition:color
+.4s}h2{font-size:2em}h2,h3{font-weight:300;margin:30px
+0}h3{font-size:1.8em}h4{font-size:1.6em}h4,h5{font-weight:300}h5{font-size:1.2em}h6{font-weight:300;font-size:1em}p{line-height:1.4em;font-size:1.2em;margin:15px
+0}blockquote{border-left:5px solid
+#ff1d55;background-color:#ffe9ee;padding:1em;margin-bottom:1em}.lightbox{background-color:rgba(3,121,196,.4);min-height:100vh;min-width:100vw;padding:30px}code{font:12px
+Consolas,Liberation Mono,Menlo,Courier,monospace}p>code{color:#ff1d55}pre
+code{display:block;background-color:#f7f7f7;padding:15px;overflow:auto;color:#123;line-height:1.4em}a{color:#ff1d55;text-decoration:none;-webkit-transition:color
+.4s,background .4s;transition:color .4s,background .4s}a:hover{color:#e9003a}ol,ul{margin:7.5px;padding:7.5px 15px}ol
+li,ul li{margin:7.5px 15px}.doc-parameters{list-style-type:none;padding:0}.doc-parameters
+li{display:block;margin:0;margin-bottom:15px}.doc-parameters .example,.doc-parameters blockquote{border-left:5px solid
+#0379c4;background-color:#96d5fd;color:#123;line-height:1em;font-size:1em;padding:1em;margin:0}.doc-parameters
+.example{background-color:#c8e9fe}.doc-parameters
+.parameter{display:block;padding:1em;background-color:#0379c4;color:#fff;margin:0}.doc-parameters .parameter
+strong{display:inline-block;padding:0
+.5em;border-radius:.25em;line-height:2em;background-color:#025a92}hr{height:.25em;padding:0;margin:24px
+0;background-color:#f7f7f7;border:0}.teaser{display:-webkit-box;display:-ms-flexbox;display:flex;text-align:left;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.teaser
+aside{-ms-flex-preferred-size:60%;flex-basis:60%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:30px}@media
+(max-width:700px){.teaser aside{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content{-ms-flex-preferred-size:40%;flex-basis:40%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;color:dimgray;font-size:12px}@media
+(max-width:700px){.teaser .content{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content.content-full{-ms-flex-preferred-size:100%;flex-basis:100%}.teaser .content
+h3{font-size:14px;text-transform:uppercase;font-weight:600;color:#123}.main-index{text-align:center}.main-index
+amp-img{margin:15px auto;width:50%}@media (min-width:900px){.main-index
+p{font-size:2em}}.breadcrumbs{padding:1em;background-color:#f7f7f7}.breadcrumbs
+ul{display:block;margin:0;padding:0}.breadcrumbs ul li{display:inline-block;margin:0 .5em}.breadcrumbs ul
+li:before{content:' / ';position:relative;margin-left:-.5em;color:dimgray}.breadcrumbs ul li
+a{color:dimgray}.breadcrumbs ul li:last-child
+a{color:#ff1d55}header{background-color:#000000;color:#fff;padding:30px;position:relative}header
+.brand{display:inline-block;position:absolute;left:30px;top:20px;line-height:15px;text-transform:uppercase;padding:7.5px;font-size:1.4em}header
+.brand:hover{background-color:#ff1d55;color:#fff}header
+a{color:#fff;text-decoration:none;border-radius:7.5px;padding:7.5px}header
+a:hover{text-decoration:none;background-color:#fff;color:#ff1d55}header nav
+ul{padding:0;margin:0;display:block;text-align:right}header nav ul li{padding:0;margin:0
+7.5px;display:inline-block}header nav ul li.hamburger{display:none}header nav ul li.hamburger
+button{position:absolute;right:30px;top:20px;border:0;background-color:#fff;color:#ff1d55;font-weight:700;border-radius:50%;width:30px;height:30px;overflow:hidden;text-align:center;padding:0;margin:0}@media
+(max-width:900px){header nav ul li{display:none}header nav ul
+li.hamburger{display:inline-block}}.sidebarNavigation{width:210px;max-width:95%}.sidebarNavigation
+ul{padding:0;margin:0}.sidebarNavigation ul li{display:block}.sidebarNavigation ul li
+a{display:block;line-height:1.4em;padding:7.5px}footer{margin:60px
+auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;max-width:1180px;padding:30px;font-size:12px}footer
+a:hover{text-decoration:none}footer strong{text-transform:uppercase;margin-bottom:15px;display:block}footer strong
+a{color:#1d1d1d}footer ul{display:block;padding:0;margin:0}footer ul li{display:block;line-height:1.4em;padding:7.5px
+0;margin:0}footer ul li a{color:dimgray}footer
+.quarter-section{margin-bottom:30px;-ms-flex-preferred-size:25%;flex-basis:25%}@media (max-width:900px){footer
+.quarter-section{-ms-flex-preferred-size:33%;flex-basis:33%}}@media (max-width:700px){footer
+.quarter-section{-ms-flex-preferred-size:50%;flex-basis:50%}}@media (max-width:500px){footer
+.quarter-section{-ms-flex-preferred-size:100%;flex-basis:100%}}.boxes{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:12px}.boxes
+.box{-ms-flex-preferred-size:30%;flex-basis:30%;background-color:#f7f7f7;padding:30px;margin:7.5px
+0;text-align:left;font-size:12px}.boxes .box h3{font-size:12px;line-height:1em;padding:0;margin:0}.boxes .box
+a{padding:0;color:#ff1d55}.boxes .box p{color:dimgray;font-size:12px;margin:7.5px 0}@media (max-width:900px){.boxes
+.box{-ms-flex-preferred-size:45%;flex-basis:45%}}@media (max-width:500px){.boxes
+.box{-ms-flex-preferred-size:100%;flex-basis:100%}}
+
+.fixed-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+}
+
+amp-img.contain img {
+  object-fit: contain;
+}
+
+.footnotes {
+  overflow-wrap: break-word;
+}
+
+    </style>
+</head>
+<body>
+<main>
+<section>
+<article>
+<header>
+<div>
+<h1>Java开发知识梳理</h1>
+</div>
+<div>
+<div style="margin: 10px auto;">
+<span>
+<time datetime="2014-10-14T00:00:00Z">
+                October 14, 2014
+              </time>
+</span>
+</div>
+<div class="tags">
+<i class="fas fa-tag"></i>
+<a href="https://justpic.org/tags/java/">java</a>
+<span class="separator">•</span>
+<a href="https://justpic.org/tags/j2ee/">J2EE</a>
+<span class="separator">•</span>
+<a href="https://justpic.org/tags/web%E5%BC%80%E5%8F%91/">Web开发</a></div>
+</div>
+</header>
+<div>
+<p>J2EE基础复习</p>
+<h2 id="基础知识">基础知识　　　</h2>
+<p><strong>ArrayList与LinkedList区别</strong> 　　</p>
+<ol>
+<li>ArrayList数据结构是数组</li>
+<li>LinkedList底层数据结构是链表(双向链表)</li>
+<li>TreeMap是红黑树实现的</li>
+</ol>
+<!--adsense-->
+<p><strong>HashMap和Hashtable的区别</strong></p>
+<blockquote>
+<p>两者都实现了Map接口，是将唯一键映射到特定的值上，主要区别在于：　　</p>
+</blockquote>
+<ol>
+<li>HashMap没有排序，允许一个NULL键和多个NULL值，而Hashtable不允许</li>
+<li>HashMap把Hashtable的contains方法去掉了，改成containsvalue和containskey，因为contains方法容易让人引起误解；</li>
+<li>Hashtable继承自Dictionary类，HashMap是Java 1.2引进的Map接口的实现；　</li>
+<li>Hashtable的方法是synchronized的，而HashMap不是，在多个县城访问Hashtable时，不需要自己为
+它的方法实现同步，而HashMap就必须为之提供同步．Hashtable和HashMap采用的hash/rehash算法一致，所以性能不会有很大的差异.</li>
+<li>自动扩容机制
+HashMap和Hashtable的底层实现都是数组＋链表结构实现的,当向容器添加元素的时候，HashMap会判断当前容器的元素个数，如果大于等于阈值－－即当前数组的长度乘以加载因子的值的时候，就要自动扩容.　　
+扩容的算法：扩容（resize）就是重新计算容量，想HashMap对象里不停的添加元素，而HashMap对象内部的数组无法装载更多的元素时，对象就需要扩大数组的长度，以便能装入更多的元素．当然Java里的数组是无法
+自动扩容的，方法是使用一个新的数组代替已有的容量小得数组．</li>
+</ol>
+<p><strong>ArrayList与Vector</strong><br/>
+ArrayList和Vector都是使用数组方式存储数据，此数组元素数大于实际存储的数据以便增加和插入元素，
+它们都允许直接按序号索引元素，但是插入元素要涉及数组元素移动等内存操作，所以索引数据快而插入数据慢，
+Vector中的方法由于添加了synchronized修饰，因此Vector是线程安全的容器，但性能上比ArrayList查，因此已经是Java中的
+遗留容器。
+<strong>LinkedList</strong>
+LinkedList使用双向链表实现存储，非线程安全.
+collections中的synchronizedList方法将其转换成线程安全的容器后再使用，装饰模式，增强实现。</p>
+<p><strong>JVM的两个内存</strong></p>
+<ol>
+<li>栈内存<br/>
+栈内存：在函数中定义的一些基本类型的变量和对象的引用变量都在函数的栈内存中分配．当在一段代码块定义一个
+变量时，Java就在栈中为这个变量分配内存空间，当超过变量的作用域后，Java会自动释放掉为该变量所分配的
+内存空间，该内存空间可以立即被另作他用．</li>
+<li>堆内存<br/>
+堆内存：堆内存用来存放由new创建的对象和数组．在堆中分配的内存，由Java虚拟机的自动垃圾回收器来管理．<br/>
+！除了程序计数器外，虚拟机内存的其他几个运行时区域都会发生OutofMemoryError（OOM）异常的可能。</li>
+</ol>
+<ul>
+<li>OOM:
+<ul>
+<li>Java堆溢出</li>
+<li>虚拟机栈和本地方法栈溢出</li>
+<li>运行时常量池溢出</li>
+<li>方法区溢出</li>
+<li>本机直接内存溢出</li>
+</ul>
+</li>
+<li>Java自动内存管理：
+<ul>
+<li>内存模型
+<ul>
+<li>共享内存：
+<ul>
+<li>堆内存区</li>
+<li>方法区</li>
+</ul>
+</li>
+<li>线程独占内存：
+<ul>
+<li>程序计数器</li>
+<li>虚拟机栈</li>
+<li>本地方法栈</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>垃圾收集：
+<ul>
+<li>对象引用强度：
+<ul>
+<li>强引用</li>
+<li>软引用</li>
+<li>弱引用</li>
+<li>虚引用</li>
+</ul>
+</li>
+<li>对象已死：
+<ul>
+<li>引用计数法
+<ul>
+<li>优点：简单，直接，不需要暂停整个应用</li>
+<li>缺点：
+<ul>
+<li>1.需要编译器的配合，编译器要生成特殊的指令来进行引用计数的操作，比如每次将对象赋值给新的引用，或者对象的引用超出了作用域等。</li>
+<li>2.不能处理循环引用的问题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>根搜索算法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>垃圾收集器：
+<ul>
+<li>Hostspot JVM收集器</li>
+<li>Serial(串行GC）收集器</li>
+<li>ParNew(并行GC）收集器</li>
+<li>Parallel Scavenge（并行回收GC）收集器</li>
+<li>Serial Old(串行GC）收集器</li>
+<li>Parallel Old（并行GC）收集器</li>
+<li>CMS(并发GC）收集器</li>
+<li>G1收集器</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>垃圾收集器</strong><br/>
+吞吐量收集器使用并行版本的新生代垃圾收集器，他用于中等规模和大规模数据的应用程序．而串行收集器对
+大多数的小应用（在现代处理器上需要大概１００Ｍ左右的内存）就足够了．</p>
+<p><strong>JAVA异常整体分类</strong></p>
+<ol>
+<li>Java异常结构中定义有Throwable类，Exception和Error为其子类</li>
+<li>其中Exception表示由于网络故障，文件损坏，设备错误，用户输入非法情况导致的异常．</li>
+<li>Error标识Java运行时环境出现的错误，例如：JAVA内存耗尽</li>
+</ol>
+<p><strong>Java的线程池</strong></p>
+<ol>
+<li>newCachedThreadPool</li>
+<li>newFixedThreadPool</li>
+<li>newScheduledThreadPool</li>
+<li>newSingleThreadExecutor</li>
+</ol>
+<p><strong>volatile和synchronized的区别</strong></p>
+<blockquote>
+<p>Java中，为了保证多线程读写数据时保证数据的一致性，可以采用两种方式：</p>
+</blockquote>
+<ol>
+<li>使用synchronized关键字</li>
+<li>使用volatile关键字：用一句话概括volatile，他能够使变量在值发生改变时能
+尽快地让其他线程知道</li>
+<li>volatile本质实在告诉jvm当前变量在寄存器中的值是不确定的，需要从主存中读取，synchronized则是锁定当前变量，只有当前线程可以访问该变量，其他线程被阻塞住．</li>
+<li>volatile仅能使用在变量级别，synchronized则可以使用在变量，方法</li>
+<li>volatile仅能实现变量的修改可见性，而synchronized则可以保证变量的修改可见性和原子性</li>
+<li>volatile不会造成线程的阻塞，而synchronized可能会造成线程的阻塞．</li>
+</ol>
+<p><strong>线程局部变量</strong>
+线程局部变量是局限于线程内部的变量，属于线程自身所有，不在多个线程间共享．Java
+提供ThreadLocal类来支持线程局部变量，是一种实现县城安全的方式．但是在管理环境下（如Web服务器）使用
+线程局部变量的时候要小心，在这种情况下，工作线程的生命周期比任何应用变量的生命周期药厂．任何线程局部变量一旦在工作完成后没有释放，java应用就存在内存泄漏的风险．</p>
+<p><strong>Java中Sleep方法和wait方法的区别</strong> <br/>
+虽然两者都是用来暂停当前运行的线程，但是sleep实际上只是短暂停顿，因为它不会释放锁，而wait意味着
+条件等待，这就是为什么该方法要释放锁，因为只有这样，其他等待的线程才能在满足条件时获取到该锁．</p>
+<h2 id="equals方法">equals方法</h2>
+<p>首先equals方法必须满足自反性（x.equals(x)必须返回true）、对称性（x.equals(y)返回true时,
+y.equals(x)也必须返回true）、传递性（x.equals(y)和y.equals(z)都返回true时,
+x.equals(z)也必须返回true）和一致性（当x和y引用的对象信息没有被修改时，
+多次调用x.equals(y)应该得到同样的返回值），
+而且对于任何非null值的引用x，x.equals(null)必须返回false。<br/>
+<strong>实现高质量的equals方法的诀窍包括</strong></p>
+<ol>
+<li>使用==操作符检查"参数是否为这个对象的引用”；</li>
+<li>使用instanceof操作符检查"参数是否为正确的类型”；</li>
+<li>对于类中的关键属性，检查参数传入对象的属性是否与之相匹配；</li>
+<li>编写完equals方法后，问自己它是否满足对称性、传递性、一致性；</li>
+<li>重写equals时总是要重写hashCode；</li>
+<li>不要将equals方法参数中的Object对象替换为其他的类型，在重写时不要忘掉@Override注解。</li>
+</ol>
+<h2 id="容器">容器</h2>
+<ul>
+<li>同步容器类：使用了synchronized:
+<ol>
+<li>vector</li>
+<li>Hashtable</li>
+</ol>
+</li>
+<li>并发容器：
+<ol>
+<li>ConcurrentHashMap</li>
+<li>CopyOnWriteArrayList:写时复制</li>
+<li>CopyOnWriteArraySet:写时复制</li>
+</ol>
+</li>
+<li>队列(Queue):
+<ol>
+<li>ConcurrentLinkedQueue:使用非阻塞的方式实现的基于连接节点的无界的线程安全队列，性能非常好。</li>
+<li>ArrayBlockingQueue:基于数组的有界阻塞队列</li>
+<li>LinkedBlockingQueue:基于链表的有界阻塞队列</li>
+<li>PriorityBlockingQueue:支持优先级的无界阻塞队列，即该阻塞队列中的元素
+可自动排序。默认情况下，元素采取自然升序排列</li>
+<li>DelayQueue：一种延时获取元素的无界阻塞队列</li>
+<li>SynchronousQueue：不存储元素的阻塞队列，</li>
+</ol>
+</li>
+<li>Deque：
+<ol>
+<li>ArrayDeque:基于数组的双向非阻塞队列</li>
+<li>LinkedBlockingDeque:基于链表的双向阻塞队列</li>
+</ol>
+</li>
+<li>Sorted容器：
+<ol>
+<li>ConcurrentSkipListMap：是TreeMap的线程安全版本</li>
+<li>ConcurrentSkipListSet:是TreeSet的线程安全版本</li>
+</ol>
+</li>
+</ul>
+<h2 id="string学习要点--">String学习要点  　　</h2>
+<ul>
+<li>String类是final类，不可以被继承。　　</li>
+<li>string和StringBuilder、StringBuffer的区别　 　
+stringbuilder是java5中引入的，没有被synchronized修饰，单线程环境使用,Java中的Char类型可以存储一个中文汉字，Java使用的编码是Unicode，</li>
+</ul>
+<h2 id="多线程">多线程</h2>
+<p>实现多线程程序主要有两种方式：Thread类，Runnable接口、Java5后新增Callable接口
+!Thread类的方法：start() run() getPriority()</p>
+<h2 id="接口抽象类类引用区别">接口，抽象类，类，引用区别</h2>
+<p><strong>语法层面上抽象类和接口的区别</strong></p>
+<blockquote>
+<p>抽象类和接口都不能够实例化，但可以定义抽象类和接口类型的引用。
+一个类如果继承了某个抽象类或者实现了某个接口都需要对其中的抽象方法全部进行实现，
+否则该类仍然需要被声明为抽象类。接口比抽象类更加抽象，因为抽象类中可以定义构造器，
+可以有抽象方法和具体方法，而接口中不能定义构造器而且其中的方法全部都是抽象方法。
+抽象类中的成员可以是private、默认、protected、public的，而接口中的成员全都是public的。
+抽象类中可以定义成员变量，而接口中定义的成员变量实际上都是常量。
+有抽象方法的类必须被声明为抽象类，而抽象类未必要有抽象方法。</p>
+</blockquote>
+<ol>
+<li>抽象类可以提供成员方法的实现细节，而接口中只能存在public abstract方法；</li>
+<li>抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是public static final类型的；</li>
+<li>接口中不能含有静态代码块以及静态方法，而抽象类可以有静态代码块和静态方法；</li>
+<li>一个类只能继承一个抽象类，而一个类却可以实现多个接口</li>
+<li>实现接口的一定要实现接口里定义的所有方法，而实现抽象类可以有选择地重写需要用到的方法，一般的应用里，最顶级的是接口，然后是抽象类实现接口，最后才到具体类实现。抽象类中可以有非抽象方法。接口中则不能有实现方法。</li>
+<li>接口中定义的变量默认是public static final 型，且必须给其初值，所以实现类中不能重新定义，也不能改变其值。抽象类中的变量默认是 friendly 型，其值可以在子类中重新定义，也可以在子类中重新赋值。</li>
+<li>接口是公开的，里面不能有私有的方法或变量，是用于让别人使用的，而抽象类是可以有私有方法或私有变量的。</li>
+<li>abstract关键字只能修饰类和方法，不能修饰字段</li>
+<li>抽象类不能被实例化（无法使用new关键字创建对象实例），只能被继承</li>
+<li>抽象类可以包含属性，方法，构造方法，初始化块，内部类，枚举类，和普通类一样</li>
+<li>含有抽象方法的类必须定义成抽象类．</li>
+</ol>
+<p><strong>final与abstract是反义词</strong></p>
+<h2 id="编程模式">编程模式</h2>
+<ul>
+<li>设计模式：</li>
+<li>结构性模式：
+<ul>
+<li>适配器模式</li>
+<li>桥接模式</li>
+<li>组合模式</li>
+<li>装饰模式</li>
+</ul>
+</li>
+</ul>
+<h2 id="面向对象">面向对象</h2>
+<p><strong>面向对象的特征</strong></p>
+<ul>
+<li>抽象</li>
+<li>继承</li>
+<li>封装</li>
+<li>多态性<br/>
+方法重载（overload）实现的是编译时的多态性（前绑定），方法重写（override）实现的是运行时的多态性
+运行时的多态是面向对象最精髓的东西，要实现多态需要做两件事：
+<ol>
+<li>方法重写（子类继承父类并重写父类中已有的或抽象的方法）</li>
+<li>对象造型（用父类型引用引用子类型对象，这样同样的应用调用同样的方法就会根据子类对象的不同而表现
+出不同的行为）</li>
+</ol>
+</li>
+</ul>
+<h2 id="集合与io">集合与IO</h2>
+<p><strong>Set集合从原理上如何保证不重复</strong></p>
+<ol>
+<li>在往set中添加元素时，如果指定元素不存在，则添加成功．</li>
+<li>当向HashSet中添加元素的时候，首先计算元素的hashcode值，然后用这个（元素的hashcode）％（HashMap集合的大小）＋１计算出这个元素的存储位置，如果这个位置为空，就将元素添加进去．如果不为空，则用equals方法比较元素是否相等</li>
+</ol>
+<!--adsense-text-->
+<h2 id="j2ee">J2EE</h2>
+<p><a href="https://wenku.baidu.com/view/e7859d2e7375a417866f8fb3.html">J2EE的N层体系结构</a><br/>
+java web基础：
+Servlet的生命周期可以分为初始阶段，运行阶段，销毁阶段</p>
+<ul>
+<li>初始阶段：
+<ol>
+<li>加载Servlet类以及.class对应的数据</li>
+<li>创建ServletConfig对象</li>
+<li>创建Servlet对象</li>
+</ol>
+</li>
+</ul>
+<p><strong>servlet执行流程</strong><br/>
+客户端发出http请求，web服务器将请求转发到servlet容器，servlet容器解析url并根据web.xml找到相应的servlet，并将request，response对象传递给找到的servlet，servlet根据request就可以知道是谁发出的请求，请求信息及其他信息，当servlet处理玩业务逻辑后会将信息放入到response并响应到客户端.
+<strong>SpringMVC的执行流程</strong><br/>
+SpringMVC是由dispatchservlet为核心的分层控制框架．首先客户端发出一个请求web服务器解析
+请求url并去匹配dispatchservlet的映射url，如果匹配上就将这个请求放入到dispatchservlet，dispatchservlet根据mapping映射配置去寻找相应的handle，然后把处理权交给找到的handle，handle封装了处理业务逻辑的代码，当handle处理完成后会返回一个逻辑试图modelandview给dispatchservlet，此时的modelandview是一个逻辑试图不是一个正式试图，所以dispatchservlet会通过viewresource试图资源去解析modelandview，然后将解析后的参数放到view中返回客户端并展现．</p>
+<p><strong>选择Spring的原因</strong></p>
+<ul>
+<li>非侵入式：支持基于POJO的编程模式，不强制性的要求实现Spring框架中的接口或继承Spring框架中的类。</li>
+<li>IoC容器：IoC容器帮助应用程序管理对象以及对象之间的依赖关系，对象之间的依赖关系如果发生了改变只需要修改配置文件而不是修改代码，因为代码的修改可能意味着项目的重新构建和完整的回归测试。有了IoC容器，程序员再也不需要自己编写工厂、单例，这一点特别符合Spring的精神"不要重复的发明轮子”。</li>
+<li>AOP（面向切面编程）：将所有的横切关注功能封装到切面（aspect）中，通过配置的方式将横切关注功能动态添加到目标代码上，进一步实现了业务逻辑和系统服务之间的分离。另一方面，有了AOP程序员可以省去很多自己写代理类的工作。</li>
+<li>MVC：Spring的MVC框架是非常优秀的，从各个方面都可以甩Struts 2几条街，为Web表示层提供了更好的解决方案。</li>
+<li>事务管理：Spring以宽广的胸怀接纳多种持久层技术，并且为其提供了声明式的事务管理，在不需要任何一行代码的情况下就能够完成事务管理。</li>
+<li>其他：选择Spring框架的原因还远不止于此，Spring为Java企业级开发提供了一站式选择，你可以在需要的时候使用它的部分和全部，更重要的是，你甚至可以在感觉不到Spring存在的情况下，在你的项目中使用Spring提供的各种优秀的功能。</li>
+</ul>
+<p><strong>Spring三大核心组件</strong></p>
+<ol>
+<li>Bean</li>
+<li>context</li>
+<li>core</li>
+</ol>
+<p><strong>spring的注入方式</strong></p>
+<ol>
+<li>属性注入（setter方法注入）</li>
+<li>构造器注入</li>
+<li>工厂方法注入</li>
+</ol>
+<p>!接口注入方式是不支持的 <br/>
+Spring中Bean的作用域有singleton和prototype，singleton表示Bean以单例的方式存在；prototype表示每次
+从容器中调用Bean时，都会返回一个新的实例。
+Spring中自动装配的方式有：</p>
+<ul>
+<li>no：不进行自动装配，手动设置bean的依赖关系</li>
+<li>byName：根据Bean的名字进行自动装配</li>
+<li>byType：根据Bean的类型进行自动装配</li>
+<li>constuctor：类似于byType，不过是应用于构造器的参数，如果正好有一个Bean与构造器的参数类型相同则可以自动装配，否则会导致错误。</li>
+<li>autodetect：如果有默认的构造器，则通过constructor的方式进行自动装配，否在使用byType的方式进行自动装配。</li>
+</ul>
+<p><strong>spring框架使用步骤</strong></p>
+<ol>
+<li>Spring配置文件中新增如下配置：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;context:component-scan</span> <span style="color:#50fa7b">base-package=</span><span style="color:#f1fa8c">"org.example"</span><span style="color:#ff79c6">/&gt;</span>就可以使用注解来配置Bean
+</code></pre></div></li>
+<li>Web项目中配置IOC容器：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;context-param&gt;</span>
+<span style="color:#ff79c6">&lt;param-name&gt;</span>contextConfigLocation<span style="color:#ff79c6">&lt;/param-name&gt;</span>
+<span style="color:#ff79c6">&lt;param-value&gt;</span>classpath:applicationContext.xml<span style="color:#ff79c6">&lt;/param-value&gt;</span>
+<span style="color:#ff79c6">&lt;/context-param&gt;</span>
+<span style="color:#ff79c6">&lt;listener&gt;</span>
+<span style="color:#ff79c6">&lt;listener-class&gt;</span>
+    org.springframework.web.context.ContextLoaderListener
+<span style="color:#ff79c6">&lt;/listener-class&gt;</span>
+<span style="color:#ff79c6">&lt;/listener&gt;</span>
+</code></pre></div></li>
+<li>Web项目中配置SpringMVC：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"> <span style="color:#ff79c6">&lt;web-app&gt;</span>
+ <span style="color:#ff79c6">&lt;servlet&gt;</span>
+     <span style="color:#ff79c6">&lt;servlet-name&gt;</span>example<span style="color:#ff79c6">&lt;/servlet-name&gt;</span>
+     <span style="color:#ff79c6">&lt;servlet-class&gt;</span>
+         org.springframework.web.servlet.DispatcherServlet
+     <span style="color:#ff79c6">&lt;/servlet-class&gt;</span>
+     <span style="color:#ff79c6">&lt;load-on-startup&gt;</span>1<span style="color:#ff79c6">&lt;/load-on-startup&gt;</span>
+ <span style="color:#ff79c6">&lt;/servlet&gt;</span>
+
+ <span style="color:#ff79c6">&lt;servlet-mapping&gt;</span>
+     <span style="color:#ff79c6">&lt;servlet-name&gt;</span>example<span style="color:#ff79c6">&lt;/servlet-name&gt;</span>
+     <span style="color:#ff79c6">&lt;url-pattern&gt;</span>*.html<span style="color:#ff79c6">&lt;/url-pattern&gt;</span>
+ <span style="color:#ff79c6">&lt;/servlet-mapping&gt;</span>
+
+ <span style="color:#ff79c6">&lt;/web-app&gt;</span>
+</code></pre></div></li>
+</ol>
+<p><strong>数据持久化</strong><br/>
+Mybatis中＃和$区别:</p>
+<ol>
+<li>${}是properties文件中的变量占位符，它可以用于标签属性值和sql内部，属于静态文件替换，比如${driver}会被静态替换为com.mysql.jdbc.driver</li>
+<li><code>#{}</code>是sql的参数占位符，mybatis会将sql中的＃{}替换为?号，在ｓｑｌ执行前会使用PreparedStatements的参数设置方法，按序给sql的?号占位符设置参数值，比如ps.setInt(0,parameterValue),#{item.name}的取值方式为
+使用反射从参数对象中获取item对象的name属性之，相当与param.getItem().getName();</li>
+<li><code>#</code>将传入的数据都当成一个字符串，会对传入的数据自动加上引号，$将传入的数据直接显示生成在SQL中。
+注意：使用$占位符可能会导致SQL注射攻击，能用#的地方就不要使用$,写order by子句的时候应该用$而不是#</li>
+</ol>
+<p>Hibernate中DetachedCriteria类和Criteria的用法基本一致，但Criteria是由Session的CreateCriteria（）方法创建的，，
+也就意味着离开创建它的Session，Criteria就无法使用了。DetachedCriteria不需要Session就可以创建（使用DEtachedCriteria.forClass()
+方法创建 ），所以通常也称其为离线的Criteria，在需要进行查询操作的时候再和Session绑定（调用其
+getExecutableCriteria（Session）方法），这也就意味着DetachedCriteria可以在需要的时候和不同的Session绑定。</p>
+<p>如果你有更好的想法和建议，欢迎留言。</p>
+<hr/>
+<p>参考　　</p>
+<ul>
+<li><a href="http://wesmckinney.com/blog/announcing-ursalabs/">http://wesmckinney.com/blog/announcing-ursalabs/</a>　　</li>
+<li><a href="https://blog.csdn.net/jackfrued/article/details/44921941">https://blog.csdn.net/jackfrued/article/details/44921941</a>    　　</li>
+<li><a href="https://zhuanlan.zhihu.com/p/21551758">https://zhuanlan.zhihu.com/p/21551758</a>　　</li>
+<li><a href="https://zhuanlan.zhihu.com/p/29222077">https://zhuanlan.zhihu.com/p/29222077</a>　　</li>
+<li><a href="https://www.cnblogs.com/pureEve/p/6546280.html">https://www.cnblogs.com/pureEve/p/6546280.html</a>　　</li>
+<li><a href="https://github.com/gongdongdong/j2ee_project">J2EE</a>  　</li>
+<li><a href="">Image-r3</a></li>
+<li><a href="https://github.com/ysc/APDPlat">APDPlat</a></li>
+<li><a href="https://github.com/pzxwhc/MineKnowContainer">java 个人知识小仓库</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/35914680">JAVA　学习路线图</a></li>
+</ul>
+</div>
+</article>
+</section>
+</main>
+<amp-analytics type="googleanalytics">
+<script type="application/json">
+        {
+            "vars": {
+                "account": "UA-102189849-1"
+            },
+            "triggers": {"trackEvent":{"on":"click","request":"event","selector":"body","vars":{"eventAction":"click","eventCategory":"body-click"}},"trackPageview":{"on":"visible","request":"pageview"}}
+        }
+    </script>
+</amp-analytics>
+</body>
+</html>

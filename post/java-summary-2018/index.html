@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',4000,
+          {'GTM-WBT3QXS':true});</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102189849-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-102189849-1', { 'optimize_id': 'GTM-WBT3QXS'});
+  </script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WTRRBMC');</script>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Java基础知识总结 " name="twitter:title"/>
+<meta content="Java基础知识总结" name="twitter:description"/>
+<meta content="Java基础知识总结 " property="og:title"/>
+<meta content="Java基础知识总结" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://justpic.org/post/java-summary-2018/" property="og:url"/>
+<meta content="2018-04-09T00:00:00+00:00" property="article:published_time"/>
+<meta content="2018-04-09T00:00:00+00:00" property="article:modified_time"/><meta content="桑河一榆" property="og:site_name"/>
+<title>Java基础知识总结 -|Programing|Cloud Native|Artificial Intelligence</title>
+<meta content="Java基础知识总结 " property="og:title"/>
+<meta content="Java基础知识总结 " name="twitter:title"/>
+<meta content="Java基础知识总结" name="description"/>
+<meta content="Java基础知识总结" property="og:description"/>
+<meta content="Java基础知识总结" name="twitter:description"/>
+<meta content="" name="author"/>
+<meta content="https://justpic.org/images/avatar.png" property="og:image"/>
+<meta content="https://justpic.org/images/avatar.png" name="twitter:image"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="https://justpic.org/post/java-summary-2018/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="桑河一榆" property="og:site_name"/>
+<meta content="Hugo 0.65.3" name="generator"/>
+<link href="https://justpic.org/amp/post/java-summary-2018/" rel="amphtml" title="桑河一榆" type="text/html"/>
+<base href="https://justpic.org/post/java-summary-2018/"/>
+<link href="https://justpic.org/post/java-summary-2018/" rel="canonical"/>
+<link href="https://justpic.org/index.xml" rel="alternate" title="桑河一榆" type="application/rss+xml"/>
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700%7COpen+Sans:400,700" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css" rel="stylesheet"/>
+<link href="https://justpic.org/css/bundle.min.e38708182addf643182d68b57545fc397203375de5649238b6900b5a42df12f3.css" integrity="sha256-44cIGCrd9kMYLWi1dUX8OXIDN13lZJI4tpALWkLfEvM=" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <![endif]-->
+<meta content="qqgyYsb6kCSJvwxuvJ41bw-9tDmmmlwSgJbKhQzFqYI" name="google-site-verification"/>
+<meta content="BpiobbSKTO" name="baidu-site-verification"/>
+<meta content="" name="keywords"/>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?148bce57cac06e37bb6a01cf0a77027f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-102189849-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<style>
+  @media (max-width: 780px) {
+    .minor-banner {
+      display:none;
+    }
+  }
+  i{
+    color:black;
+  }
+  ul.list-inline.social-link {
+    font-size: 36px;
+  }
+  .main-banner:after{
+    content:" ";
+    display:table;
+    clear:both;
+    min-height: 80px;
+  }
+   
+   
+   
+   
+</style>
+</head>
+<body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WTRRBMC" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class="container">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#main-navbar" data-toggle="collapse" type="button">
+<span class="sr-only">切换导航</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="https://justpic.org/" title="桑河一榆">
+<img alt="桑河一榆" src="https://justpic.org/images/justpic-logo.png" style="margin-top: -5px;height: 32px;"/>
+</a>
+</div>
+<div class="collapse navbar-collapse" id="main-navbar">
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a href="https://justpic.org/" title="首  页">首  页</a>
+</li>
+<li class="navlinks-container">
+<a class="navlinks-parent" href="javascript:void(0)">文章类别</a>
+<div class="navlinks-children">
+<a href="https://justpic.org/archives">归  档</a>
+<a href="https://justpic.org/tags">标签集 </a>
+<a href="https://justpic.org/tags/">kubernetes</a>
+<a href="https://justpic.org/tags/">python</a>
+<a href="https://justpic.org/tags/">devops模式</a>
+</div>
+</li>
+<li class="navlinks-container">
+<a class="navlinks-parent" href="javascript:void(0)">图  书</a>
+<div class="navlinks-children">
+<a href="http://justpic.org/md/">Markdown微信</a>
+<a href="https://labuladong.gitbook.io/algo/">算法分析</a>
+</div>
+</li>
+<li>
+<a href="https://justpic.org/page/tool" title="百宝箱">百宝箱</a>
+</li>
+<li>
+<a href="https://justpic.org/page/project" title="项  目">项  目</a>
+</li>
+<li>
+<a href="https://justpic.org/page/about/" title="关  于">关  于</a>
+</li>
+<li>
+<a href="https://justpic.org/en" lang="en">英文</a>
+</li>
+<li>
+<a data-target="#modalSearch" data-toggle="modal" href="#modalSearch" style="outline: none;">
+<span class="glyphicon glyphicon-search" id="searchGlyph"></span>
+</a>
+</li>
+</ul>
+</div>
+<progress id="content_progress" value="0"></progress>
+<style>
+      #content_progress {
+         
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 2px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        background-color: transparent;
+        color: #35a935;
+      }
+
+      #content_progress::-webkit-progress-bar {
+        background-color: transparent;
+      }
+
+      #content_progress::-webkit-progress-value {
+        background-color: #35a935;
+      }
+
+      #content_progress::-moz-progress-bar {
+        background-color: #35a935;
+      }
+
+      #particles-js {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        z-index: -50;
+        transform: scale(1.1, 1.1);
+        -ms-transition: all 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+        -webkit-transition: all 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+        transition: all 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+      }
+
+      #particles-js canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+    </style>
+<script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var winHeight = window.innerHeight,
+                docHeight = document.documentElement.scrollHeight,
+                progressBar = document.querySelector('#content_progress');
+        progressBar.max = docHeight - winHeight;
+        progressBar.value = window.scrollY;
+
+        document.addEventListener('scroll', function () {
+          progressBar.max = document.documentElement.scrollHeight - window.innerHeight;
+          progressBar.value = window.scrollY;
+        });
+      });
+    </script>
+</div>
+</nav>
+<div class="modal fade" id="modalSearch" role="dialog">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">×</button>
+<h4 class="modal-title">搜索</h4>
+</div>
+<div class="modal-body">
+<div class="aa-input-container" id="aa-input-container">
+<input autocomplete="off" class="aa-input-search" id="aa-search-input" name="search" placeholder="Search for titles or URIs..." type="search"/>
+<svg class="aa-input-icon" viewbox="654 -372 1664 1664">
+<path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z"></path>
+</svg>
+</div>
+<script src="https://justpic.org/js/algoliasearch.min.js"></script>
+<script src="https://justpic.org/js/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("W813GCTU6R", "a54627fcf15e2206773be495f10f4851");
+var index = client.initIndex('prod_:blog');
+
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 5}),
+    
+    displayKey: 'name',
+    
+    templates: {
+        
+        suggestion: function(suggestion) {
+            return '<span>' + '<a href="https://justpic.org/post/' + suggestion.slug + '">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+</div>
+<div class="modal-footer">
+<button class="btn btn-default" data-dismiss="modal" type="button">close</button>
+</div>
+</div>
+</div>
+</div>
+<header class="header-section">
+<div class="intro-header no-img">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-heading">
+<h1>Java基础知识总结 </h1>
+<span class="post-meta">
+  
+    发表于 April 9, 2018
+  
+  
+  <span class="post-date">共486个字</span>，<span class="more-meta">阅读约3分钟</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<script src="https://justpic.org/js/jquery.js" type="text/javascript"></script>
+<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.js"></script>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<div id="particles-js"></div>
+<div class="container" role="main">
+<div class="row">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div>
+<h5 id="tags" style="margin-top: 30px;">标签:
+          
+          <a href="https://justpic.org/tags/java/">Java</a>  
+          
+        </h5>
+</div>
+<article class="blog-post" id="content" itemprop="articleBody" role="main">
+<aside class="toc">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#threadlocal">ThreadLocal</a>
+<ul>
+<li><a href="#演化过程">演化过程</a></li>
+<li><a href="#实现原理">实现原理</a></li>
+<li><a href="#android-looper">android looper</a></li>
+<li><a href="#总结">总结：</a></li>
+</ul>
+</li>
+<li><a href="#其他">其他</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+<p>Java基础知识总结</p>
+<h2 id="threadlocal">ThreadLocal</h2>
+<p>为解决多线程程序的并发问题提供了一种新的思路。使用这个工具类可以很简洁的编写出优美的多线程徐程序，ThreadLocal并不是一个Thread，而是Thread的局部变量，把它命名为ThreadLocalVariable更容易让人理解一些。
+ThreadLocal并不是用来并发控制访问一个共同对象，而是为了给每个线程分配一个只属于该线程的变量。他的
+功用非常简单，就是为每一个使用该变量的线程都提供一个变量值的副本，是每一个线程都可以独立地改变自己的副本，而不会和其他线程的副本冲突，实现线程间的数据隔离。从线程的角度看，就好像每一个线程都完全拥有该变量
+ThreadLocal类用来提供线程内部的局部变量。这种变量在多线程环境下访问（通过get或set方法访问）时
+能保证每个线程里的变量相对独立于其他线程的变量。ThreadLocal实例通常来说都是private static类型的，用于关联线程和线程的上下文，引入ThreadLocal的初衷是为了提供线程内的局部变量，而不是为了解决共享对象的多县城访问问题，实际上，ThreadLocal根本就不能解决共享。这些解释都没错，但并不是很好理解，而且大多数读者也没有真正使用过ThreadLocal，字面意思看上去理解了，真正用的时候又不知从何下手。从演化、实现和使用场景三个方面来进行ThreadLocal的解释：</p>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2665873967488848" data-ad-format="fluid" data-ad-layout-key="-73+ed+2i-1n-4w" data-ad-slot="2692397084" style="display:block"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<h3 id="演化过程">演化过程</h3>
+<p>以实际生活中的银行业务办理模型，解释ThreadLocal的诞生过程，读者们可以看到：随着业务模型的
+不断扩展，代码逻辑变得更加复杂，通过不断优化代码结构的过程，演化出了ThreadLocal这个
+编程工具。</p>
+<ol>
+<li>
+<p>初始形态
+大家去银行办理业务时，如果需要排队等候，则会领取一个排队号，直到叫号才能办理业务。
+我们把每一笔业务抽象为一个线程，每一笔业务都有一个唯一的标识：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    class Transaction extends Thread{
+       private int id;
+          
+       public void run(){
+          if (wait){
+          }
+          else {
+             
+          }
+       }
+    }
+</code></pre></div><p>这个模型中，每新来一笔业务，都需要运行一个线程，然后分配一个全局唯一的业务标识（id）给
+这个新的线程，简化以后的代码逻辑如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    int id = nextTransactionId();
+    new Transaction(id).start();
+</code></pre></div></li>
+<li>
+<p>扩展形态
+现在，需要把业务模型扩展一下，每一笔业务还需要知道等待时间（waitTime），等待人数
+（waitPeople）等。
+于是乎，在原有的线程里面，又增加了一些局部变量和控制逻辑，线程运行以后便会对这些局部变量进行
+读写操作。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">class Transaction extends Thread{
+    private int id;
+    private long waitTime;
+    private long waitPeople;
+    private int serviceWindow;
+       
+    public void run(){
+       if (wait){
+          waitTime increasing
+          }
+       else{
+       serviceWindow assigned
+       waitPeople decreasing
+       }
+       }
+       }
+</code></pre></div><p>添加完扩展代码逻辑之后，我们发现这种编程办法并不好：譬如，要扩展一个业务办理时长，
+又得新增一个局部变量。可以想象，类似的扩展还有很多。于是乎，我们想到吧这些零散的字段封装成一个类，
+这里我们命名为Session，表示一个事务所需要操作的数据集合：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> class  Transaction extends Thread{
+    private Session session;
+       
+    public void run(){
+       if (wait){
+       }
+       }
+       else {
+         //read write session
+       }
+ }
+   
+ class Session {
+   private int id;
+   private long waitTIme;
+   private long waitPeople;
+   private int serviceWindow;
+      
+ }
+</code></pre></div><p>这样一来，每个线程都拥有一个局部变量Session，后续可以在Session的基础上进行扩展，
+降低Transaction的复杂度，当线程运行时，需要对Session对象进行读写。
+注意，银行的业务室多窗口同时办理的，意味着这些线程可以并发执行。一闪代码并没有锁控制，
+因为每个线程都是修改自己的局部变量，并不影响其他线程。</p>
+<p>随着银行的业务变得愈加复杂，譬如：客户可以买卖理财产品，缴纳日常生活费用。
+Transaction 的代码量变得越来越大，于是乎，又把与理财业务相关的代码封装到FinacialService。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">class Transaction extends Thread{
+   private Session session;
+      
+   public void run(){
+   if (wait){
+      //read write session
+      }
+      else {
+        /read write session;
+      }
+      }
+}
+   
+class Session{
+   private  int id;
+   private long waitTime;
+   private long waitPeople;
+   private int serviceWindow;
+   private long serviceTime;
+      
+}
+   
+class FinancialService{
+   Session session;
+      
+   public void setSession(Session session){
+      this.session =session;
+   }
+   public void doService(){
+   //read write session
+   }
+}
+}
+</code></pre></div><p>扩展出来的FinancialService需要读写Session中的数据，譬如：获取分配的服务窗口（serviceWindow）、更新服务
+时间（serviceTime），所以，在FinancialService类中也会有一个局部变量Session，它是外部传入进来的。</p>
+<p>可以这么来理解：FinancialService属于一个具体的事务，FinancialService对象依然属于Transaction这个
+线程的生命周期，在Transaction线程的生命周期内，需要将Session对象传入FinancialService对象。</p>
+</li>
+<li>
+<p>改良形态 
+Transaction线程的代码逻辑已经很复杂了，涉及到很多类的封装和数据传递，在线程运行时，有一些变量在
+整个线程的生命都存在的，如果线程中某些对象需要使用这些变量，就需要封装一些借口进行数据传递。有没有一种便捷的方式来访问这些变量呢
+在Transaction中创建一个Map类型的局部变量，通过一个全局可以访问的key，便可对Session进行存取操作。在
+线程生命周期的任何地方，只需要通过key，就可以获取到Session</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    static SessionKey globalKey  =  new SessionKey();
+       
+    class Transaction extends Thread{
+       Map&lt;SessionKey,Session&gt; map;
+          
+       public void run(){
+           map.put(globalKey,session):
+           if (wait){
+           }
+           else {
+           }
+       }
+    }
+       
+    class FinancialService{
+       public void doService(){
+         Thread t = Thread.currentThread():
+         Session session = t.map.get(globalSessionKey);
+         }
+         }
+</code></pre></div><p>注意，此处两个关键点：
+全局变量Key，所有线程都可以访问
+局部变量Map，属于每个线程，这个Map中每一项的Key是全局的，而Value是局部的</p>
+<p>线程类Transaction中定义了一个类型为Map的变量，其中每一项的key为SessionKey，Value为Session。读者一定心生疑问了，直接
+将Session作为全局变量不就可以了吗？为什么还要搞一个线程的局部变量Map
+这就涉及到多线程数据访问了：对于Session而言，每个线程都各自维护自己的，修改了也不需要告诉其他线程。如果将Session直接作为
+全局变量，那每个线程都改的是同一份数据，还需要进行多线程的锁的控制。
+演化到这一步，ThreadLocal就呼之欲出了。</p>
+</li>
+</ol>
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2665873967488848" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="3296880515" style="display:block; text-align:center;"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<h3 id="实现原理">实现原理</h3>
+<p>先直接把Thread与ThreadLocal之间的关系图表示出来：<br/>
+这个结构图跟上面改良形态的Transaction结构图简直如出一辙，只不过ThreadLocal做了更多的封装：
+线程类Thread中有一个类型为ThreadLocalMap的变量为threadLocals
+ThreadLocalMap是一个映射表，内部是海鲜是一个数组，每一个元素的类型为Entry
+Entry就是一个键值对（key-Value pair），其key就是ThreadLocal，其value可以是任何对象
+接下来，我们深入源码，窥探一下ThreadLocal的奥妙。</p>
+<ol>
+<li>
+<p>ThreadLocal的主要接口：<br/>
+JDK1.8以前，仅set(),get()和remove()三个接口；JDK1.8以来，多提供了一个withInitial()接口，这些接口其实就是针对线程中
+ThreadLocalMap的增删改查操作。
+set(),表示设置本地变量
+get(),表示从当前线程中取出”本地变量“，最终的结果是在当前线程的映射表中，以调用
+get()方法的ThreadLocal对象为key，查询出对应的Value</p>
+</li>
+<li>
+<p>ThreadLocalMap映射表<br/>
+ThreadLocal并不是一个存储容器，往ThreadLocal中读写数据，其实都是将数据保存到了每个线程自己的存储及空间。线程中的存储空间是一个映射表，ThreadLocal其实就是这个映射表每一项的Key，通过ThreadLocal读写数据，其实就是通过Key在一个映射表中读写数据.</p>
+</li>
+<li>
+<p>应用场景：<br/>
+线程通过THreadLocal提供的接口来操作自己内部的映射表，可以这么理解：线程把ThreadLocal当做自己的局部变量，不过对这个变量的赋值操作是set(),读取操作是get(),清空操作是remove()</p>
+</li>
+</ol>
+<h3 id="android-looper">android looper</h3>
+<p>handler将线程抛送到线程的消息对垒。控制消息队列的类是Looper，每个用友消息队列的线程，都有一个独立的Looper类，用于处理本县城的消息。一种实现方式是，
+在线程类中，声明一个Looper类型的局部变量，当线程运行起来时，创建Looper对象，并开始进行无限循环，代码示意如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">   public class LooperThread extends Thread{
+   }
+</code></pre></div><h3 id="总结">总结：</h3>
+<p>通过上述使用场景发现，ThreadLocal确实提供了一种编程手段，本来需要在线程中显示声明的局部变量，像是被ThradLocal隐藏了起来，当多个线程运行起来时，每个线程都往相同的ThreadLocal中存取所需要的变量就可以了，使用ThreadLocal存取的变量，就像是每个线程自己的局部变量，不收其他线程运行状态的影响。通过ThreadLocal可以解决多线程读贡献该数据的问题，因为共享数据会被复制到每个线程，不需要加锁便可同步访问，但THreadLocal解决不了多线程写共享数据的问题，因为每个线程写的都是自己本线程 的局部比阿娘，并没将写数据的结果同步到其他线程，理解了这一点，才能理解所谓的：</p>
+<ol>
+<li>ThreadLocal以空间换时间，提升多线程并发的效率：<br/>
+每个线程偶有一个ThreadLocalMap映射表，正是利用了这个映射表所占用的空间，使得多个线程都可以访问自己的这片空间，不用担心考虑线程同步问题，效率自然会高，ThreadLocal并不是为了解决共享数据的互斥写问题，而是通过一种编程手段，正好提高了并行读的功能。什么意思呢？ThreadLocal并不是万能的，他的设计初衷只是提供一个便利性，使得线程可以更为方便的使用局部变量。</li>
+<li>ThreadLocla提供了一种线程全域访问功能<br/>
+一旦将一个对象添加到ThreadLocal中，只要不移除它，那么，在线程的生命周期内的任何地方，都可以通过ThreadLocal.get()方法拿到这个对象，有时候，代码逻辑比较复杂，一个线程的代码可能分散在很多地方，利用ThreadLocal这种便利性，就能简化编程逻辑。</li>
+</ol>
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2665873967488848" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="3296880515" style="display:block; text-align:center;"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<h2 id="其他">其他</h2>
+<ol>
+<li>
+<p>GMS回收器：</p>
+</li>
+<li>
+<p>spring AOP中的两种代理。</p>
+</li>
+<li>
+<p>HashMap中出现冲突时如何解决。</p>
+</li>
+<li>
+<p>Java程序占用高内存，如何找出问题及调优</p>
+</li>
+<li>
+<p>Java中的代理，Spring AOP原理为什么用2中实现方式？JDKProxy和cglib。</p>
+<details>
+<summary>答案</summary>
+<div>
+     JDK的动态代理依靠接口实现，如果这些类并没有实现接口，则不能使用JDK代理。这个时候就需要使用Cglib在字节码上做代理。其实还是JDK本身的局限性导致的。    
+ </div>
+</details>    
+ JDK的动态代理依靠接口实现，如果这些类并没有实现接口，则不能使用JDK代理。这个时候就需要使用Cglib在字节码上做代理。其实还是JDK本身的局限性导致的。    
+ 反射是java的最重要的底层知识。而动态代理其实质就是依靠反射来实现的。
+ cglib到哪个台代理代理的是类，不需要业务类继承接口，通过派生的子类来实现代理，通过在运行时，动态修改字节码达到修改类的目的。cglib采用的是继承，不能对final修饰的类进行代理。
+</li>
+<li>
+<p>java中为什么接口中的变量一定的是static和final类型？</p>
+<details>
+<summary>答案</summary>
+<div>
+ static final修饰的不可变的变量，是常量;final表示终态，不可变，不可修改;static表示在类加载到内存的时候就创建。static final修饰的常量，一般用于接口或者数据库连接中，为了就是全局可用，不管哪个包，哪个类都可直接访问，二是一般服务器启动，类加载到内存便无法修改，就拿数据库连接来讲，就确定参数不可动，保证其他程序的修改不会影响数据库连接。   
+ </div>
+</details>
+</li>
+<li>
+<p>线程池的管理
+newSingleThreadExecutor：创建一个单线程的线程池，这个线程池只有一个线程在工作，也就是相当于单线程串行执行所有任务。如果这个唯一的线程因为异常结束，那么会有一个新的线程来替代它。此线程池保证所有任务的执行顺序按照任务的提交顺序执行newFixedThreadPool:创建固定大小的线程池。每次提交一个任务就创建一个线程，知道线程大道线程池的最大大小。线程池的大小一旦大道最大值就会保持不变，如果某个线程因为执行异常而结束，那么线程池会补充一个新县城。newCachedThreadPool:创建一个可缓存的线程池。如果线程池的大小超过了处理任务所需要的线程，那么就会回收部分空闲（60秒不执行任务）的线程，当任务数增加时，此线程池又可以智能的添加新线程来处理任务。此线程池不会对线程池大小做限制，线程池大小完全依赖于操作系统（或者说JVM）能创建的最大线程大小。</p>
+<ul>
+<li>newScheduledThreadPool：创建一个大小无限的线程池。此线程池支持定时以及周期性执行任务的需求。</li>
+<li>不可重入锁也叫自旋锁。</li>
+<li>java中常用的可重入锁：</li>
+<li>synchronized</li>
+<li>java.util.concurrent.locks.ReentrantLock</li>
+</ul>
+</li>
+</ol>
+<p>8.JVM<br/>
+JVM（Java Virtual Machine），总体上由类装载子系统（ClassLoader）、运行时数据区、执行引擎、垃圾收集这四个部分组成。其中我们最为关注的运行时数据区，也就是JVM的内存部分则是由方法区（Method Area)、JAVA堆（Java Heap)、虚拟机栈（JVM Stack）、程序计数器、本地方法栈（Native Method Stack）这及部分组成：</p>
+<ul>
+<li>
+<p>类装载子系统：
+class loader类加载器负责加载class文件，class文件在文件开头有特定的文件标示，并且ClassLoader负责class文件的加载等，至于它是否可以运行，则由Execution Engine决定。</p>
+</li>
+<li>
+<p>运行时数据区
+栈管运行，堆管存储。JVM调优主要是优化Java堆和方法区。</p>
+<ol>
+<li>方法区(Method Area)<br/>
+方法区是各线程共享的内存区域，它用于存储已被JVM加载的类信息、常量、静态变量、运行时常量池等数据。</li>
+<li>Java堆(Java Heap)</li>
+</ol>
+<blockquote>
+<p>说明：</p>
+<blockquote>
+<p>Jdk1.6及之前：常量池分配在永久代 。       <br/>
+Jdk1.7：有，但已经逐步“去永久代” 。       <br/>
+Jdk1.8及之后：无永久代，改用元空间代替(java.lang.OutOfMemoryError: PermGen space,这种错误将不会出现在JDK1.8中)。</p>
+</blockquote>
+</blockquote>
+<p>Java堆是各线程共享的内存区域，在JVM启动时创建，这块区域是JVM中最大的， 用于存储应用的对象和数组，也是GC主要的回收区，一个 JVM 实例只存在一个堆内存，堆内存的大小是可以调节的。类加载器读取了类文件后，需要把类、方法、常变量放到堆内存中，以方便执行器执行，堆内存分为三部分：新生代、老年代、永久代。</p>
+<ol start="3">
+<li>Java栈（JVM Stack)
+<ol>
+<li>栈是什么<br/>
+Java栈是线程私有的，是在线程创建时创建，它的生命期是跟随线程的生命期，线程结束栈内存也就释放，对于栈来说不存在垃圾回收问题，只要线程一结束该栈就Over，生命周期和线程一致。基本类型的变量和对象的引用变量都是在函数的栈内存中分配。</li>
+<li>栈存储什么
+每个方法执行的时候都会创建一个栈帧，栈帧中主要存储3类数据：
+局部变量表：输入参数和输出参数以及方法内的变量；<br/>
+栈操作：记录出栈和入栈的操作；<br/>
+栈帧数据：包括类文件、方法等等。</li>
+<li>栈运行原理<br/>
+栈中的数据都是以栈帧的格式存在，栈帧是一个内存区块，是一个数据集，是一个有关方法和运行期数据的数据集。每一个方法被调用直至执行完成的过程，就对应着一个栈帧在栈中从入栈到出栈的过程。</li>
+<li>本地方法栈(Native Method Stack)
+本地方法栈和JVM栈发挥的作用非常相似，也是线程私有的，区别是JVM栈为JVM执行Java方法（也就是字节码）服务，而本地方法栈为JVM使用到的Native方法服务。它的具体做法是在本地方法栈中登记native方法，在执行引擎执行时加载Native Liberies.有的虚拟机（比如Sun Hotpot）直接把两者合二为一。</li>
+<li>程序计数器(Program Counter Register)<br/>
+程序计数器是一块非常小的内存空间，几乎可以忽略不计，每个线程都有一个程序计算器，是线程私有的，可以看作是当前线程所执行的字节码的行号指示器，指向方法区中的方法字节码（下一个将要执行的指令代码），由执行引擎读取下一条指令。</li>
+<li>运行时常量池
+运行时常量池是方法区的一部分，用于存放编译器生成的各种字面量和符号引用，这部分内容将在类加载后存放到方法区的运行时常量池中。相较于Class文件常量池，运行时常量池更具动态性，在运行期间也可以将新的变量放入常量池中，而不是一定要在编译时确定的常量才能放入。最主要的运用便是String类的intern()方法。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>执行引擎(Execution Engine)<br/>
+执行引擎执行包在装载类的方法中的指令，也就是方法。执行引擎以指令为单位读取Java字节码。它就像一个CPU一样，一条一条地执行机器指令。每个字节码指令都由一个1字节的操作码和附加的操作数组成。执行引擎取得一个操作码，然后根据操作数来执行任务，完成后就继续执行下一条操作码。不过Java字节码是用一种人类可以读懂的语言编写的，而不是用机器可以直接执行的语言。因此，执行引擎必须把字节码转换成可以直接被JVM执行的语言。字节码可以通过以下两种方式转换成合适的语言：<br/>
+解释器： 一条一条地读取，解释并执行字节码执行，所以它可以很快地解释字节码，但是执行起来会比较慢。这是解释执行语言的一个缺点。<br/>
+即时编译器：用来弥补解释器的缺点，执行引擎首先按照解释执行的方式来执行，然后在合适的时候，即时编译器把整段字节码编译成本地代码。然后，执行引擎就没有必要再去解释执行方法了，它可以直接通过本地代码去执行。执行本地代码比一条一条进行解释执行的速度快很多，编译后的代码可以执行的很快，因为本地代码是保存在缓存里的。</p>
+</li>
+<li>
+<p>垃圾收集(Garbage Collection, GC)</p>
+<ol>
+<li>
+<p>什么是垃圾收集
+垃圾收集即垃圾回收，简单的说垃圾回收就是回收内存中不再使用的对象。所谓使用中的对象（已引用对象），指的是程序中有指针指向的对象；而未使用中的对象（未引用对象），则没有被任何指针给指向，因此占用的内存也可以被回收掉。<br/>
+<strong>垃圾回收的基本步骤分两步</strong>：</p>
+<ol>
+<li>查找内存中不再使用的对象（GC判断策略）</li>
+<li>释放这些对象占用的内存（GC收集算法）</li>
+</ol>
+<p><strong>GC判断策略</strong></p>
+<ol>
+<li>引用计数算法 <br/>
+引用计数算法是给对象添加一个引用计数器，每当有一个引用它时，计数器值就加1；当引用失效时，计数器值就减1；任何时刻计数器都为0的对象就是不可能再被使用的对象。缺点：很难解决对象之间相互循环引用的问题。</li>
+<li>根搜索算法 <br/>
+根搜索算法的基本思路就是通过一系列名为“GC Roots”的对象作为起始点，从这些节点开始向下搜索，搜索所走过的路径称为引用链（Reference Chain），当一个对象到GC Roots没有任何引用链相连（也就是说从GC Roots到这个对象不可达）时，则证明此对象是不可用的。在Java语言里，可作为GC Roots的对象包括以下几种：</li>
+</ol>
+<ul>
+<li>虚拟机栈（栈帧中的本地变量表）中引用的对象；</li>
+<li>方法区中类静态属性引用的对象；</li>
+<li>方法区中常量应用的对象；</li>
+<li>本地方法栈中JNI（Native方法）引用的对象。<br/>
+!注：在根搜索算法中不可达的对象，也并非是“非死不可”的，因为要真正宣告一个对象死亡，至少要经历两次标记过程：第一次是标记没有与GC Roots相连接的引用链；第二次是GC对在F-Queue执行队列中的对象进行的小规模标记(对象需要覆盖finalize()方法且没被调用过)。</li>
+</ul>
+<ol start="3">
+<li>GC收集算法</li>
+</ol>
+<ul>
+<li>
+<p>标记-清除算法（Mark-Sweep）
+标记-清楚算法采用从根集合（GC Roots）进行扫描，首先标记出所有需要回收的对象（根搜索算法），标记完成后统一回收掉所有被标记的对象。
+该算法有两个问题：
+效率问题：标记和清除过程的效率都不高；
+空间问题：标记清除后会产生大量不连续的内存碎片, 空间碎片太多可能会导致在运行过程中需要分配较大对象时无法找到足够的连续内存而不得不提前触发另一次垃圾收集。</p>
+</li>
+<li>
+<p>复制算法（Copying）<br/>
+复制算法是将可用内存按容量划分为大小相等的两块, 每次只用其中一块, 当这一块的内存用完, 就将还存活的对象复制到另外一块上面, 然后把已使用过的内存空间一次清理掉。</p>
+</li>
+<li>
+<p>标记-整理算法（Mark-Compact）   <br/>
+标记整理算法的标记过程与标记清除算法相同, 但后续步骤不再对可回收对象直接清理, 而是让所有存活的对象都向一端移动,然后清理掉端边界以外的内存。</p>
+</li>
+<li>
+<p>分代收集算法（Generational Collection）   <br/>
+分代收集算法是目前大部分JVM的垃圾收集器采用的算法。它的核心思想是根据对象存活的生命周期将内存划分为若干个不同的区域。一般情况下将堆区划分为老年代（Tenured Generation）和新生代（Young Generation），在堆区之外还有一个代就是永久代（Permanet Generation）。老年代的特点是每次垃圾收集时只有少量对象需要被回收，而新生代的特点是每次垃圾回收时都有大量的对象需要被回收，那么就可以根据不同代的特点采取最适合的收集算法。  <br/>
+<strong>新生代（Young Generation）的回收算法（以复制算法为主）</strong><br/>
+所有新生成的对象首先都是放在年轻代的。年轻代的目标就是尽可能快速的收集掉那些生命周期短的对象。新生代内存按照8:1:1的比例分为一个eden区和两个survivor(survivor0,survivor1)区。一个Eden区，两个 Survivor区(一般而言)。大部分对象在Eden区中生成。回收时先将eden区存活对象复制到一个survivor0区，然后清空eden区，当这个survivor0区也存放满了时，则将eden区和survivor0区存活对象复制到另一个survivor1区，然后清空eden和这个survivor0区，此时survivor0区是空的，然后将survivor0区和survivor1区交换，即保持survivor1区为空， 如此往复。当survivor1区不足以存放 eden和survivor0的存活对象时，就将存活对象直接存放到老年代。若是老年代也满了就会触发一次Full GC(Major GC)，也就是新生代、老年代都进行回收。</p>
+</li>
+<li>
+<p>新生代发生的GC也叫做Minor GC，MinorGC发生频率比较高(不一定等Eden区满了才触发)。</p>
+</li>
+<li>
+<p>老年代（Tenured Generation）的回收算法（以标记-清除、标记-整理为主）</p>
+</li>
+<li>
+<p>在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到老年代中。因此，可以认为老年代中存放的都是一些生命周期较长的对象。</p>
+</li>
+<li>
+<p>内存比新生代也大很多(大概比例是1:2)，当老年代内存满时触发Major GC即Full GC，Full GC发生频率比较低，老年代对象存活时间比较长，存活率标记高。 <br/>
+<strong>永久代（Permanet Generation）的回收算法</strong> <br/>
+用于存放静态文件，如Java类、方法等。永久代对垃圾回收没有显著影响，但是有些应用可能动态生成或者调用一些class，例如Hibernate 等，在这种时候需要设置一个比较大的永久代空间来存放这些运行过程中新增的类。永久代也称方法区。方法区主要回收的内容有：废弃常量和无用的类。对于废弃常量也可通过根搜索算法来判断，但是对于无用的类则需要同时满足下面3个条件：</p>
+</li>
+<li>
+<p>该类所有的实例都已经被回收，也就是Java堆中不存在该类的任何实例；</p>
+</li>
+<li>
+<p>加载该类的ClassLoader已经被回收；</p>
+</li>
+<li>
+<p>该类对应的java.lang.Class对象没有在任何地方被引用，无法在任何地方通过反射访问该类的方法。</p>
+</li>
+</ul>
+<ol start="4">
+<li>垃圾收集器</li>
+</ol>
+<ul>
+<li>
+<p>Serial收集器（复制算法)<br/>
+新生代单线程收集器，标记和清理都是单线程，优点是简单高效。是client级别默认的GC方式，可以通过-XX:+UseSerialGC来强制指定。</p>
+</li>
+<li>
+<p>Serial Old收集器(标记-整理算法) <br/>
+老年代单线程收集器，Serial收集器的老年代版本。</p>
+</li>
+<li>
+<p>ParNew收集器(停止-复制算法)<br/>
+新生代多线程收集器，其实就是Serial收集器的多线程版本,在多核CPU环境下有着比Serial更好的表现。</p>
+</li>
+<li>
+<p>Parallel Scavenge收集器(停止-复制算法)<br/>
+新生代并行的多线程收集器，追求高吞吐量，高效利用CPU。吞吐量一般为99%， 吞吐量= 用户线程时间/(用户线程时间+GC线程时间)。适合后台应用等对交互相应要求不高的场景。是server级别默认采用的GC方式，可用-XX:+UseParallelGC来强制指定，用-XX:ParallelGCThreads=4来指定线程数。</p>
+</li>
+<li>
+<p>Parallel Old收集器(停止-复制算法) 
+老年代并行的多线程收集器，Parallel Scavenge收集器的老年代版本，并行收集器，吞吐量优先。</p>
+</li>
+<li>
+<p>CMS(Concurrent Mark Sweep)收集器（标记-清除算法）
+CMS收集器是一种以获取最短回收停顿时间为目标的收集器，CMS收集器是基于“标记–清除”(Mark-Sweep)算法实现的，整个过程分为四个步骤：</p>
+<ul>
+<li>初始标记： 标记GC Roots能直接关联到的对象，速度很快；</li>
+<li>并发标记： 进行GC Roots Tracing的过程；</li>
+<li>重新标记： 修正并发标记期间因用户程序继续运作而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间一般会比初始标记阶段稍长一些，但比并发标记时间短；</li>
+<li>并发清除： 整个过程中耗时最长的并发标记和并发清除过程收集器线程都可以与用户线程一起工作，所以，从总体上来说，CMS收集器的内存回收过程是与用户线程一起并发执行的。</li>
+<li>优点：并发收集、低停顿</li>
+<li>缺点：对CPU资源非常敏感、无法处理浮动垃圾、产生大量空间碎片。</li>
+</ul>
+</li>
+<li>
+<p>G1(Garbage First)收集器（标记-整理算法） <br/>
+G1是一款面向服务端应用的垃圾收集器，是基于“标记-整理”算法实现的，与其他GC收集器相比，G1具备如下特点：并行与并发、分代收集、空间整合、可预测性的停顿。 <br/>
+<strong>G1运作步骤</strong>：</p>
+<ul>
+<li>初始标记(stop the world事件，CPU停顿只处理垃圾)</li>
+<li>并发标记(与用户线程并发执行)</li>
+<li>最终标记(stop the world事件，CPU停顿处理垃圾)</li>
+<li>筛选回收(stop the world事件，根据用户期望的GC停顿时间回收)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr/>
+<p>参考</p>
+<ul>
+<li><a href="http://duanqz.github.io/2018-03-15-Java-ThreadLocal#3-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">http://duanqz.github.io/2018-03-15-Java-ThreadLocal#3-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF</a></li>
+</ul>
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2665873967488848" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="3296880515" style="display:block; text-align:center;"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="content-play">
+<p><a class="dashang" href="javascript:void(0)" onclick="dashangToggle()" title="打赏，支持一下">赞赏</a></p>
+<div class="hide_box-play"></div>
+<div class="shang_box-play">
+<a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img alt="取消" src="https://justpic.org/images/payimg/close.jpg"/></a>
+<div class="shang_tit-play">
+<p>感谢您的支持，我会继续写出更优秀的文章!</p>
+</div>
+<div class="shang_payimg">
+<img alt="扫码支持" src="https://justpic.org/images/wxpay.jpg" title="扫一扫"/>
+</div>
+<div class="shang_payimg">
+<img alt="扫码支持" src="https://justpic.org/images/alipay.jpg" title="扫一扫"/>
+</div>
+<div class="pay_explain">请我喝杯咖啡</div>
+<div class="shang_payselect">
+<div class="pay_item" data-id="weipay">
+<span class="pay_logo"><img alt="微信" src="https://justpic.org/images/payimg/wechat.jpg"/></span>
+</div>
+<div class="pay_item checked" data-id="alipay">
+<span class="pay_logo"><img alt="支付宝" src="https://justpic.org/images/payimg/alipay.jpg"/></span>
+</div>
+</div>
+<div class="shang_info-play">
+<p>打开<span id="shang_pay_txt">微信</span>扫一扫，即可进行扫码打赏哦</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    function dashangToggle(){
+        $(".hide_box-play").fadeToggle();
+        $(".shang_box-play").fadeToggle();
+    }
+</script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+<style type="text/css">
+    .content-play{}
+    .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+    .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;text-align:center;}
+    .shang_box-play img{border:none;border-width:0;}
+    .dashang{display:block;width:140px;margin:5px auto;height:40px;line-height:25px;padding:8px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+    .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+    .shang_close-play{float:right;display:inline-block;
+        margin-right: 10px;margin-top: 20px;
+    }
+    .shang_logo{display:block;text-align:center;margin:20px auto;}
+    .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+    .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+    .shang_payimg{width:140px;padding:10px; margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+    .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+    .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+    .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+    .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+    .shang_info-play{clear:both;}
+    .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+</style>
+<div class="social-share" data-initialized="true" style="margin-bottom: 20px;margin-top:20px;">
+<center>
+<a class="social-share-icon icon-weibo" href="#"></a>
+<a class="social-share-icon icon-wechat" href="#"></a>
+<a class="social-share-icon icon-twitter" href="#"></a>
+<a class="social-share-icon icon-linkedin" href="#"></a>
+<a class="social-share-icon icon-facebook" href="#"></a>
+<a class="social-share-icon icon-qq" href="#"></a>
+<a class="social-share-icon icon-qzone" href="#"></a>
+</center>
+</div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+</article>
+<h3>相关文章</h3>
+<ul style="margin-bottom: 25px;">
+<li><a href="https://justpic.org/post/tornado-async-web/">tornado异步网络编程实践</a></li>
+<li><a href="https://justpic.org/post/2015-03-14-use-python-in-windows/">windows系统使用python环境</a></li>
+<li><a href="https://justpic.org/post/java-summary-2014/">Java开发知识梳理</a></li>
+<li><a href="https://justpic.org/post/latex-math-symbol/">latex数学符号</a></li>
+<li><a href="https://justpic.org/post/scatter/">ScatNet散射卷积网络</a></li>
+<li><a href="https://justpic.org/post/2014-06-06-vps-initialization/">linux添加用户操作</a></li>
+<li><a href="https://justpic.org/post/reverse-proxy-setup/">配置反向代理</a></li>
+<li><a href="https://justpic.org/post/2014-06-02-java-call-matlab/">Java调用matlab</a></li>
+<li><a href="https://justpic.org/post/matlab-mixed-c/">Matlab C混合编程</a></li>
+<li><a href="https://justpic.org/post/2014-04-27-tornado-with-i18n/">tornado 国际化实践</a></li>
+</ul>
+<ul class="pager blog-pager">
+<li class="previous">
+<a data-placement="top" data-toggle="tooltip" href="https://justpic.org/post/tornado-async-web/" title="tornado异步网络编程实践">← 前一篇</a>
+</li>
+<li class="next">
+<a data-placement="top" data-toggle="tooltip" href="https://justpic.org/post/java-base-run-order/" title="Java 静态块、构造块、构造函数执行顺序">后一篇 →</a>
+</li>
+</ul>
+<script async="" crossorigin="anonymous" issue-term="title" repo="bpmbank/bpmbank.github.io" src="https://utteranc.es/client.js" theme="github-light">
+</script>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<img alt="justpic" src="https://justpic.org/images/weixin.jpg"/>
+<li>
+<a href="mailto:matrix.orz@gmail.com" title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://github.com/bpmbank" title="GitHub">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://weibo.com/" title="微博">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://instagram.com/" title="Instagram">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://justpic.org/index.xml" title="RSS">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+          
+
+           • 
+          2020
+
+          
+             • 
+            <a href="https://justpic.org/">桑河一榆</a>
+             • 
+            <a href="https://justpic.org/sitemap.xml">网站地图</a>
+             • 
+            <a href="https://justpic.org/page/archive/">归档</a>
+             • 
+            <a href="https://justpic.org/page/friend/">友链</a>
+             • 
+            
+            <a class="h" href="https://justpic.org/page/kubernetes.io">kubernetes.io</a>
+<a class="h" href="https://justpic.org/page/kubernetes.org.cn">Kubernetes中文社区</a>
+</p>
+<p class="text-center text-muted">
+<script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style="display:none">
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+          </span>
+           • 
+          <span id="busuanzi_container_site_uv" style="display:none">
+            访客数<span id="busuanzi_value_site_uv"></span>人次
+          </span>
+</p>
+<p class="credits theme-by text-muted">
+          由 <a href="http://gohugo.io">Hugo v0.65.3</a> 强力驱动  •  主题 <a href="https://github.com/cnych/qikqiak.com">qikqiak-blog</a> 移植自 <a href="https://github.com/rootsongjc/beautifulhugo">Beautiful Hugo</a>
+</p>
+</div>
+</div>
+</div>
+</footer>
+<script integrity="sha256-85LfKlRu4oan0DnmHGl48F068pBq+7z/z7vvXHfEoCU=" src="https://justpic.org/js/bundle.min.f392df2a546ee286a7d039e61c6978f05d3af2906afbbcffcfbbef5c77c4a025.js"></script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?148bce57cac06e37bb6a01cf0a77027f";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+$(document).ready(function() {
+  var int = setInterval(fixCount, 50);  
+  
+  var initPVCount = 584976;
+  var initUVCount = 153191;
+  function fixCount() {                   
+    if ($("#busuanzi_container_site_pv").css("display") != "none") {
+        $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + initPVCount); 
+        clearInterval(int); 
+    }
+    if ($("#busuanzi_container_site_uv").css("display") != "none") {
+      $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + initUVCount);
+      clearInterval(int); 
+    }  
+  }           
+});
+</script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$('.carousel').slick({
+    dots: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    centerMode: true,
+    prevArrow: '<button type="button" class="slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-next"></button>',
+});
+</script>
+</body>
+</html>

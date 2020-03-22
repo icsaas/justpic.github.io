@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',4000,
+          {'GTM-WBT3QXS':true});</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102189849-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-102189849-1', { 'optimize_id': 'GTM-WBT3QXS'});
+  </script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WTRRBMC');</script>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Jupyter最佳实践" name="twitter:title"/>
+<meta content="广受各大企业赞助的jupyter团队所开发的jupyter系列产品(主要包括jupyter notebook、jupyterlab和jupyterhub)，在数据科学领域变得越来越火热，依托python强大的语言生态，得益于其良好的扩展性和友好的用户交互，jupyter逐渐成为数据分析可视化的首选开源工具之一，下面将对数据分析实践过程中针对jupyter的调研分析进行小结.如果你正在使用python语言进行相关数据分析，本文所记录的jupyter相关实践可能对你会有所帮助。" name="twitter:description"/>
+<meta content="Jupyter最佳实践" property="og:title"/>
+<meta content="广受各大企业赞助的jupyter团队所开发的jupyter系列产品(主要包括jupyter notebook、jupyterlab和jupyterhub)，在数据科学领域变得越来越火热，依托python强大的语言生态，得益于其良好的扩展性和友好的用户交互，jupyter逐渐成为数据分析可视化的首选开源工具之一，下面将对数据分析实践过程中针对jupyter的调研分析进行小结.如果你正在使用python语言进行相关数据分析，本文所记录的jupyter相关实践可能对你会有所帮助。" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://justpic.org/post/jupyter-best-practice/" property="og:url"/>
+<meta content="2020-03-09T23:30:29+08:00" property="article:published_time"/>
+<meta content="2020-03-09T23:30:29+08:00" property="article:modified_time"/><meta content="桑河一榆" property="og:site_name"/><meta content="https://justpic.org/post/requsts-advance-usage/" property="og:see_also"/>
+<title>Jupyter最佳实践-|Programing|Cloud Native|Artificial Intelligence</title>
+<meta content="Jupyter最佳实践" property="og:title"/>
+<meta content="Jupyter最佳实践" name="twitter:title"/>
+<meta content="广受各大企业赞助的jupyter团队所开发的jupyter系列产品(主要包括jupyter notebook、jupyterlab和jupyterhub)，在数据科学领域变得越来越火热，依托python强大的语言生态，得益于其良好的扩展性和友好的用户交互，jupyter逐渐成为数据分析可视化的首选开源工具之一，下面将对数据分析实践过程中针对jupyter的调研分析进行小结.如果你正在使用python语言进行相关数据分析，本文所记录的jupyter相关实践可能对你会有所帮助。" name="description"/>
+<meta content="广受各大企业赞助的jupyter团队所开发的jupyter系列产品(主要包括jupyter notebook、jupyterlab和jupyterhub)，在数据科学领域变得越来越火热，依托python强大的语言生态，得益于其良好的扩展性和友好的用户交互，jupyter逐渐成为数据分析可视化的首选开源工具之一，下面将对数据分析实践过程中针对jupyter的调研分析进行小结.如果你正在使用python语言进行相关数据分析，本文所记录的jupyter相关实践可能对你会有所帮助。" property="og:description"/>
+<meta content="广受各大企业赞助的jupyter团队所开发的jupyter系列产品(主要包括jupyter notebook、jupyterlab和jupyterhub)，在数据科学领域变得越来越火热，依托python强大的语言生态，得益于其良好的扩展性和友好的用户交互，jupyter逐渐成为数据分析可视化的首选开源工具之一，下面将对数据分析实践过程中针对jupyter的调研分析进行小结.如果你正在使 …" name="twitter:description"/>
+<meta content="" name="author"/>
+<meta content="https://justpic.org/images/avatar.png" property="og:image"/>
+<meta content="https://justpic.org/images/avatar.png" name="twitter:image"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="https://justpic.org/post/jupyter-best-practice/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="桑河一榆" property="og:site_name"/>
+<meta content="Hugo 0.65.3" name="generator"/>
+<link href="https://justpic.org/amp/post/jupyter-best-practice/" rel="amphtml" title="桑河一榆" type="text/html"/>
+<base href="https://justpic.org/post/jupyter-best-practice/"/>
+<link href="https://justpic.org/post/jupyter-best-practice/" rel="canonical"/>
+<link href="https://justpic.org/index.xml" rel="alternate" title="桑河一榆" type="application/rss+xml"/>
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700%7COpen+Sans:400,700" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css" rel="stylesheet"/>
+<link href="https://justpic.org/css/bundle.min.e38708182addf643182d68b57545fc397203375de5649238b6900b5a42df12f3.css" integrity="sha256-44cIGCrd9kMYLWi1dUX8OXIDN13lZJI4tpALWkLfEvM=" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <![endif]-->
+<meta content="qqgyYsb6kCSJvwxuvJ41bw-9tDmmmlwSgJbKhQzFqYI" name="google-site-verification"/>
+<meta content="BpiobbSKTO" name="baidu-site-verification"/>
+<meta content="python" name="keywords"/>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?148bce57cac06e37bb6a01cf0a77027f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-102189849-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<style>
+  @media (max-width: 780px) {
+    .minor-banner {
+      display:none;
+    }
+  }
+  i{
+    color:black;
+  }
+  ul.list-inline.social-link {
+    font-size: 36px;
+  }
+  .main-banner:after{
+    content:" ";
+    display:table;
+    clear:both;
+    min-height: 80px;
+  }
+   
+   
+   
+   
+</style>
+</head>
+<body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WTRRBMC" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class="container">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#main-navbar" data-toggle="collapse" type="button">
+<span class="sr-only">切换导航</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="https://justpic.org/" title="桑河一榆">
+<img alt="桑河一榆" src="https://justpic.org/images/justpic-logo.png" style="margin-top: -5px;height: 32px;"/>
+</a>
+</div>
+<div class="collapse navbar-collapse" id="main-navbar">
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a href="https://justpic.org/" title="首  页">首  页</a>
+</li>
+<li class="navlinks-container">
+<a class="navlinks-parent" href="javascript:void(0)">文章类别</a>
+<div class="navlinks-children">
+<a href="https://justpic.org/archives">归  档</a>
+<a href="https://justpic.org/tags">标签集 </a>
+<a href="https://justpic.org/tags/">kubernetes</a>
+<a href="https://justpic.org/tags/">python</a>
+<a href="https://justpic.org/tags/">devops模式</a>
+</div>
+</li>
+<li class="navlinks-container">
+<a class="navlinks-parent" href="javascript:void(0)">图  书</a>
+<div class="navlinks-children">
+<a href="http://justpic.org/md/">Markdown微信</a>
+<a href="https://labuladong.gitbook.io/algo/">算法分析</a>
+</div>
+</li>
+<li>
+<a href="https://justpic.org/page/tool" title="百宝箱">百宝箱</a>
+</li>
+<li>
+<a href="https://justpic.org/page/project" title="项  目">项  目</a>
+</li>
+<li>
+<a href="https://justpic.org/page/about/" title="关  于">关  于</a>
+</li>
+<li>
+<a href="https://justpic.org/en" lang="en">英文</a>
+</li>
+<li>
+<a data-target="#modalSearch" data-toggle="modal" href="#modalSearch" style="outline: none;">
+<span class="glyphicon glyphicon-search" id="searchGlyph"></span>
+</a>
+</li>
+</ul>
+</div>
+<progress id="content_progress" value="0"></progress>
+<style>
+      #content_progress {
+         
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 2px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        background-color: transparent;
+        color: #35a935;
+      }
+
+      #content_progress::-webkit-progress-bar {
+        background-color: transparent;
+      }
+
+      #content_progress::-webkit-progress-value {
+        background-color: #35a935;
+      }
+
+      #content_progress::-moz-progress-bar {
+        background-color: #35a935;
+      }
+
+      #particles-js {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        z-index: -50;
+        transform: scale(1.1, 1.1);
+        -ms-transition: all 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+        -webkit-transition: all 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+        transition: all 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+      }
+
+      #particles-js canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+    </style>
+<script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var winHeight = window.innerHeight,
+                docHeight = document.documentElement.scrollHeight,
+                progressBar = document.querySelector('#content_progress');
+        progressBar.max = docHeight - winHeight;
+        progressBar.value = window.scrollY;
+
+        document.addEventListener('scroll', function () {
+          progressBar.max = document.documentElement.scrollHeight - window.innerHeight;
+          progressBar.value = window.scrollY;
+        });
+      });
+    </script>
+</div>
+</nav>
+<div class="modal fade" id="modalSearch" role="dialog">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">×</button>
+<h4 class="modal-title">搜索</h4>
+</div>
+<div class="modal-body">
+<div class="aa-input-container" id="aa-input-container">
+<input autocomplete="off" class="aa-input-search" id="aa-search-input" name="search" placeholder="Search for titles or URIs..." type="search"/>
+<svg class="aa-input-icon" viewbox="654 -372 1664 1664">
+<path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z"></path>
+</svg>
+</div>
+<script src="https://justpic.org/js/algoliasearch.min.js"></script>
+<script src="https://justpic.org/js/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("W813GCTU6R", "a54627fcf15e2206773be495f10f4851");
+var index = client.initIndex('prod_:blog');
+
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 5}),
+    
+    displayKey: 'name',
+    
+    templates: {
+        
+        suggestion: function(suggestion) {
+            return '<span>' + '<a href="https://justpic.org/post/' + suggestion.slug + '">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+</div>
+<div class="modal-footer">
+<button class="btn btn-default" data-dismiss="modal" type="button">close</button>
+</div>
+</div>
+</div>
+</div>
+<div data-img-desc-1="sunshine" data-img-src-1="https://justpic.org/images/posts/default.jpg" data-num-img="1" id="header-big-imgs"></div>
+<header class="header-section has-img">
+<div class="intro-header big-img">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-heading">
+<h1>Jupyter最佳实践</h1>
+<span class="post-meta">
+  
+    发表于 March 9, 2020
+  
+  
+  <span class="post-date">共202个字</span>，<span class="more-meta">阅读约1分钟</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<span class="img-desc" style="display: inline;"></span>
+</div>
+<div class="intro-header no-img">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-heading">
+<h1>Jupyter最佳实践</h1>
+<span class="post-meta">
+  
+    发表于 March 9, 2020
+  
+  
+  <span class="post-date">共202个字</span>，<span class="more-meta">阅读约1分钟</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<script src="https://justpic.org/js/jquery.js" type="text/javascript"></script>
+<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.js"></script>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<div id="particles-js"></div>
+<div class="container" role="main">
+<div class="row">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div>
+<h5 id="tags" style="margin-top: 30px;">标签:
+          
+          <a href="https://justpic.org/tags/python/">python</a>  
+          
+          <a href="https://justpic.org/tags/jupyter/">jupyter</a>  
+          
+          <a href="https://justpic.org/tags/%E6%8E%92%E7%89%88/">排版</a>  
+          
+          <a href="https://justpic.org/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>  
+          
+          <a href="https://justpic.org/tags/%E8%B0%83%E7%A0%94%E5%88%86%E6%9E%90/">调研分析</a>  
+          
+          <a href="https://justpic.org/tags/bi/">BI</a>  
+          
+        </h5>
+</div>
+<article class="blog-post" id="content" itemprop="articleBody" role="main">
+<p>广受各大企业赞助的<a href="https://jupyter.org/about">jupyter团队</a>所开发的jupyter系列产品(主要包括jupyter notebook、jupyterlab和jupyterhub)，在数据科学领域变得越来越火热，依托python强大的语言生态，得益于其良好的扩展性和友好的用户交互，jupyter逐渐成为数据分析可视化的首选开源工具之一，下面将对数据分析实践过程中针对jupyter的调研分析进行小结.如果你正在使用python语言进行相关数据分析，本文所记录的jupyter相关实践可能对你会有所帮助。</p>
+<div class="hugo-encryptor-container">
+<div class="hugo-encryptor-prompt">
+<p>文章的部分内容被密码保护：</p>
+</div>
+<div class="hugo-encryptor-form">
+<input class="hugo-encryptor-input" placeholder="请输入密码"/>
+<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="点击验证"/>
+</div>
+<div class="hugo-encryptor-cipher-text" style="display: none;">a3TO81P+xvYjF/bjFW/1Si3ifeDLe4YRIkqqHDp7TawT1IwJAdC9pSF1+1vXTWShUjgqIkB81qPECIdbBS2Dcf4yjKme1/bo2o2YJdeqUHd6z5yWTh4zeoKKynugBjK2</div>
+</div>
+<blockquote>
+<p>本文将主要从jupyter产品介绍、产品（jupyter notebook、jupyter lab和jupyterhub）的安装试用、jupyter 扩展优化、以及jupyter竞品分析等四大方面对jupyter的实践进行一个简短的介绍和回顾：</p>
+</blockquote>
+<h2 id="jupyter产品介绍">jupyter产品介绍：</h2>
+<p>根据jupyter官方网站，jupyter产品主要包括jupyter notebook、jupyter lab和jupyterhub三款产品，根据文章<code>jupyter notebook、jupyterlab与jupyterhub的区别与联系</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1" role="doc-noteref">1</a></sup>,三者的联系和区别如下：</p>
+<ol>
+<li>jupyter notebook提供了一个交互友好的类webIDE环境，但Jupyter Notebook 是传统的单体服务架构模式, 缺少多用户管理和访问认证等方面的功能, 无法直接部署于计算集群上, 难以充分利用和调度计算中心的计算资源 。</li>
+<li>jupyter lab提供了单用户管理和认证，没有提供独立的工作空间，与jupyter notebook相比，功能更为丰富。</li>
+<li>jupyter hub提供了多用户管理和认证，支持OAuth协议，为用户提供了独立的工作空间，工作内容可以私有不共享。</li>
+</ol>
+<p>在了解了jupyter系列产品后，就可以进行产品的安装和使用了。当然你也可以参考这些文章2<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" role="doc-noteref">2</a></sup>和3<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" role="doc-noteref">3</a></sup>、4<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" role="doc-noteref">4</a></sup>、5<sup id="fnref:5"><a class="footnote-ref" href="#fn:5" role="doc-noteref">5</a></sup>来快速入门jupyter的使用.</p>
+<h2 id="产品安装使用">产品安装使用</h2>
+<h3 id="安装">安装</h3>
+<blockquote>
+<p>根据以上的产品介绍，可以根据自己的需求选择安装jupyter notebook、jupyter lab还是jupyterhub。具体参考建议如下：</p>
+<ol>
+<li>个人本地使用，安装快速方便–jupyter notebook</li>
+<li>个人使用，可能会远程操作，需要额外的安装工作–jupyter lab</li>
+<li>小型团队使用，可能需要额外的运维工作– jupyter hub</li>
+</ol>
+</blockquote>
+<p><strong>安装jupyter notebook</strong><br/>
+jupyter notebook目前已经包含在Anaconda安装包中，随Anaconda将一同安装，不需要额外的安装操作，如果你想了解更多jupyter notebook安装细节，可以参考文章<sup id="fnref:6"><a class="footnote-ref" href="#fn:6" role="doc-noteref">6</a></sup>和文章<sup id="fnref:7"><a class="footnote-ref" href="#fn:7" role="doc-noteref">7</a></sup>。</p>
+<p><strong>安装jupyter lab</strong><br/>
+jupyter lab可以通过pip，conda命令(Anaconda环境)作为jupyter notebook的扩展进行选装。
+安装命令如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip install jupyterlab
+<span style="color:#6272a4">#或者</span>
+conda install -c conda-forge jupyterlab
+</code></pre></div><p>使用过程中，jupyterlab的作用更像一个功能强大的webshell，除支持文件上传，命令行等操作外，能够更直观地管理jupyter notebook的其他扩展。</p>
+<p><strong>安装jupyterhub</strong><br/>
+jupyterhub的docker化安装步骤如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#6272a4">#step1.创建共享目录</span>
+<span style="color:#8be9fd;font-style:italic">$mkdir</span> -p <span style="color:#ff79c6">$(</span><span style="color:#8be9fd;font-style:italic">pwd</span><span style="color:#ff79c6">)</span>/jupyterhub/jupyterhub
+<span style="color:#8be9fd;font-style:italic">$mkdir</span> -p <span style="color:#ff79c6">$(</span><span style="color:#8be9fd;font-style:italic">pwd</span><span style="color:#ff79c6">)</span>/jupyterhub/home
+
+<span style="color:#6272a4">#step2.启动镜像</span>
+<span style="color:#6272a4">#docker run -p 8000:8000 -d --name jupyterhub  -v /opt/jupyterhub/jupyterhub:/srv/jupyterhub -v /opt/jupyterhub/home:/home --restart=always jupyterhub/jupyterhub jupyterhub</span>
+
+docker run -p 8000:8000 -d --name jupyterhub   -v <span style="color:#ff79c6">$(</span><span style="color:#8be9fd;font-style:italic">pwd</span><span style="color:#ff79c6">)</span>/jupyterhub/jupyterhub:/srv/jupyterhub -v <span style="color:#ff79c6">$(</span><span style="color:#8be9fd;font-style:italic">pwd</span><span style="color:#ff79c6">)</span>/jupyterhub/home:/home jupyterhub/jupyterhub jupyterhub
+
+<span style="color:#6272a4">#step3.进入到容器内操作</span>
+docker <span style="color:#8be9fd;font-style:italic">exec</span> -it jupyterhub bash
+
+chmod -R <span style="color:#bd93f9">777</span> /home
+
+<span style="color:#6272a4">#step4.添加用户和设置密码</span>
+useradd jupyterhub
+
+passwd jupyterhub
+
+<span style="color:#6272a4">#step5.浏览器访问测试</span>
+http://<span style="color:#ff79c6">{</span>yourip<span style="color:#ff79c6">}</span>:8000    
+!替换yourip为本机ip地址
+</code></pre></div><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2665873967488848" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="3296880515" style="display:block; text-align:center;"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<h3 id="使用">使用</h3>
+<p><strong>启动jupyter</strong></p>
+<ol>
+<li>启动jupyter notebook
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">jupyter notebook <span style="color:#6272a4"># 更多命令可额外输入--help进行查看</span>
+</code></pre></div></li>
+<li>启动jupyter lab
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">jupyter lab <span style="color:#6272a4"># 更多命令可额外输入--help进行查看</span>
+</code></pre></div></li>
+</ol>
+<p><strong>excel表格处理</strong><br/>
+jupyternotebook中使用pandas可以方便的处理excel文件，简单的差集、并集、交集运算使用几句简单的代码即可完成。<br/>
+<strong>数据可视化分析</strong><br/>
+结合pandas工具包可以非常方便的进行数据的基础分析，使用plot工具包可以完成交互性比较友好的动态数据分析图表。</p>
+<h2 id="jupyter扩展">jupyter扩展</h2>
+<p>为了提升jupyter的使用体验，目前已经有非常多的jupyter扩展可供使用，其范围除了优化其本身可视化交互体验之外，还涵盖了排版、多语言支持等功能。 <br/>
+文章8<sup id="fnref:8"><a class="footnote-ref" href="#fn:8" role="doc-noteref">8</a></sup>介绍了常用的99种jupyter扩展，
+文章9<sup id="fnref:9"><a class="footnote-ref" href="#fn:9" role="doc-noteref">9</a></sup>中所介绍的扩展主要围绕人工智能（AI）进行展开，
+文章10<sup id="fnref:10"><a class="footnote-ref" href="#fn:10" role="doc-noteref">10</a></sup>介绍了提升jupyter使用环境体验的相关实践，
+文章11<sup id="fnref:11"><a class="footnote-ref" href="#fn:11" role="doc-noteref">11</a></sup>介绍了扩展jupyter的99种方法，
+文章12<sup id="fnref:12"><a class="footnote-ref" href="#fn:12" role="doc-noteref">12</a></sup>介绍了生成pages的方法，
+文章13<sup id="fnref:13"><a class="footnote-ref" href="#fn:13" role="doc-noteref">13</a></sup>中通过低代码方式使用jupyter notebook，进一步降低了jupyter的难度、提高了jupyter的交互友好度。
+文章14<sup id="fnref:14"><a class="footnote-ref" href="#fn:14" role="doc-noteref">14</a></sup>主要介绍了jupyter notebook的基础架构，如果需要进行进一步应用开发集成，对其基础架构了解是必须的。</p>
+<p><strong>pyspark集成</strong><br/>
+大数据相关技术的发展，jupyter支持与spark进行相关集成</p>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2665873967488848" data-ad-format="fluid" data-ad-layout-key="-73+ed+2i-1n-4w" data-ad-slot="2692397084" style="display:block"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<h3 id="技术架构分析">技术架构分析</h3>
+<p>jupyter 使用了较新的web技术（Websocket等）来保证用户交互的友好性，提供了一种混合的编辑方式, 将程序
+代码运行、文字图表编辑等功能糅合在同一电子笔记中, 打破了两者之间的隔离界限.fastpage<sup id="fnref:12"><a class="footnote-ref" href="#fn:12" role="doc-noteref">12</a></sup>介绍了将jupyternotebook内容导出为page，可以直接应用于博客或者出版，进一步提高了jupyter的可扩展性。为了集成和二次开发jupyter，通过文章<code>技术架构分析</code><sup id="fnref:14"><a class="footnote-ref" href="#fn:14" role="doc-noteref">14</a></sup>中对jupyter的技术架构进行简单的了解，得出如下jupyter架构图，<br/>
+<img alt="架构图" src="https://justpic.org/images/posts/jupyter-arch.jpg"/></p>
+<h2 id="jupyter竞品分析">jupyter竞品分析</h2>
+<p>通过搜索，Netflix发布的Polynote<sup id="fnref:15"><a class="footnote-ref" href="#fn:15" role="doc-noteref">15</a></sup>有可能成为jupyter的竞品，除此之外，阿里巴巴、kaggle以及大多数据竞赛平台也开始提供类似jupyter的数据分析平台以方便开发者快速使用。</p>
+<p>如果你有更好的想法和建议，欢迎留言。</p>
+<hr/>
+<p><strong>参考</strong></p>
+<section class="footnotes" role="doc-endnotes">
+<hr/>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://www.imooc.com/article/300868">jupyter notebook、jupyterlab与jupyterhub的区别与联系</a> <a class="footnote-backref" href="#fnref:1" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://mp.weixin.qq.com/s/O3vXXaqG9-E7mRT-_wARWw">数据科学和机器学习，jupyternotebook入门指南</a> <a class="footnote-backref" href="#fnref:2" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://mp.weixin.qq.com/s/aJRVh7BWOMq4KCoBMtLGGw">快速学习jupyternotebook</a> <a class="footnote-backref" href="#fnref:3" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p><a href="https://mp.weixin.qq.com/s/24B1TSmMPYphXI-0ij3fJQ">jupyter notebook数据格式解析</a> <a class="footnote-backref" href="#fnref:4" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p><a href="https://justpic.org/post/latex-math-symbol/">latex数学符号</a> <a class="footnote-backref" href="#fnref:5" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p><a href="https://mp.weixin.qq.com/s/PJmVJ-pESb6bkLf9Nq-A1Q">十分钟搭建你的jupyternotebook服务器</a> <a class="footnote-backref" href="#fnref:6" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:7" role="doc-endnote">
+<p><a href="https://mp.weixin.qq.com/s/1nTP7uLAJuOYW-WXVE_-cg">使用jupyternotebook进行远程炼丹</a> <a class="footnote-backref" href="#fnref:7" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:8" role="doc-endnote">
+<p><a href="https://mp.weixin.qq.com/s/BSim0lMo0T0JiunnKqHzNg">让jupyter更强大的99中武器</a> <a class="footnote-backref" href="#fnref:8" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:9" role="doc-endnote">
+<p><a href="https://github.com/elyra-ai/elyra">Elyra：基于AI技术的JupyterLab实用扩展集</a> <a class="footnote-backref" href="#fnref:9" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:10" role="doc-endnote">
+<p><a href="https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftowardsdatascience.com%2Felevate-your-jupyter-notebook-environment-experience-9bdd1101aa54">Elevate Your Jupyter Notebook Environment Experience</a> <a class="footnote-backref" href="#fnref:10" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:11" role="doc-endnote">
+<p><a href="https://python.freelycode.com/contribution/detail/1632">扩展Jupyter生态系统的99种方法</a> <a class="footnote-backref" href="#fnref:11" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:12" role="doc-endnote">
+<p><a href="https://fastpages.fast.ai/fastpages/jupyter/2020/02/21/introducing-fastpages.html">jupyter生成pages</a> <a class="footnote-backref" href="#fnref:12" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:13" role="doc-endnote">
+<p><a href="https://github.com/herqooly/herqooly">低代码方式使用jupyter</a> <a class="footnote-backref" href="#fnref:13" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:14" role="doc-endnote">
+<p><a href="https://blog.just4fun.site/post/%E6%9E%B6%E6%9E%84/jupyter-notebook-architecture/">jupyter notebook架构分析</a> <a class="footnote-backref" href="#fnref:14" role="doc-backlink">↩︎</a></p>
+</li>
+<li id="fn:15" role="doc-endnote">
+<p><a href="https://mp.weixin.qq.com/s/bwtENwhO7EFQqW5XJduJ-A">还有比 Jupyter 更好用的工具</a> <a class="footnote-backref" href="#fnref:15" role="doc-backlink">↩︎</a></p>
+</li>
+</ol>
+</section>
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2665873967488848" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="3296880515" style="display:block; text-align:center;"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="content-play">
+<p><a class="dashang" href="javascript:void(0)" onclick="dashangToggle()" title="打赏，支持一下">赞赏</a></p>
+<div class="hide_box-play"></div>
+<div class="shang_box-play">
+<a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img alt="取消" src="https://justpic.org/images/payimg/close.jpg"/></a>
+<div class="shang_tit-play">
+<p>感谢您的支持，我会继续写出更优秀的文章!</p>
+</div>
+<div class="shang_payimg">
+<img alt="扫码支持" src="https://justpic.org/images/wxpay.jpg" title="扫一扫"/>
+</div>
+<div class="shang_payimg">
+<img alt="扫码支持" src="https://justpic.org/images/alipay.jpg" title="扫一扫"/>
+</div>
+<div class="pay_explain">请我喝杯咖啡</div>
+<div class="shang_payselect">
+<div class="pay_item" data-id="weipay">
+<span class="pay_logo"><img alt="微信" src="https://justpic.org/images/payimg/wechat.jpg"/></span>
+</div>
+<div class="pay_item checked" data-id="alipay">
+<span class="pay_logo"><img alt="支付宝" src="https://justpic.org/images/payimg/alipay.jpg"/></span>
+</div>
+</div>
+<div class="shang_info-play">
+<p>打开<span id="shang_pay_txt">微信</span>扫一扫，即可进行扫码打赏哦</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    function dashangToggle(){
+        $(".hide_box-play").fadeToggle();
+        $(".shang_box-play").fadeToggle();
+    }
+</script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+<style type="text/css">
+    .content-play{}
+    .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+    .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;text-align:center;}
+    .shang_box-play img{border:none;border-width:0;}
+    .dashang{display:block;width:140px;margin:5px auto;height:40px;line-height:25px;padding:8px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+    .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+    .shang_close-play{float:right;display:inline-block;
+        margin-right: 10px;margin-top: 20px;
+    }
+    .shang_logo{display:block;text-align:center;margin:20px auto;}
+    .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+    .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+    .shang_payimg{width:140px;padding:10px; margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+    .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+    .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+    .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+    .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+    .shang_info-play{clear:both;}
+    .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+</style>
+<div class="social-share" data-initialized="true" style="margin-bottom: 20px;margin-top:20px;">
+<center>
+<a class="social-share-icon icon-weibo" href="#"></a>
+<a class="social-share-icon icon-wechat" href="#"></a>
+<a class="social-share-icon icon-twitter" href="#"></a>
+<a class="social-share-icon icon-linkedin" href="#"></a>
+<a class="social-share-icon icon-facebook" href="#"></a>
+<a class="social-share-icon icon-qq" href="#"></a>
+<a class="social-share-icon icon-qzone" href="#"></a>
+</center>
+</div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+</article>
+<h3>相关文章</h3>
+<ul style="margin-bottom: 25px;">
+<li><a href="https://justpic.org/post/markdown-writing-rules/">Markdown写作指南</a></li>
+<li><a href="https://justpic.org/post/tornado-async-web/">tornado异步网络编程实践</a></li>
+<li><a href="https://justpic.org/post/2015-03-14-use-python-in-windows/">windows系统使用python环境</a></li>
+<li><a href="https://justpic.org/post/latex-math-symbol/">latex数学符号</a></li>
+<li><a href="https://justpic.org/post/2014-04-27-tornado-with-i18n/">tornado 国际化实践</a></li>
+<li><a href="https://justpic.org/post/ubuntu-install-numpy-scipy/">ubuntu系统安装numpy和scipy</a></li>
+<li><a href="https://justpic.org/post/django-sqlalchemy-mapping/">sqlalchemy动态映射</a></li>
+<li><a href="https://justpic.org/post/python-async-programming/">使用python进行异步网络编程</a></li>
+</ul>
+<ul class="pager blog-pager">
+<li class="previous">
+<a data-placement="top" data-toggle="tooltip" href="https://justpic.org/post/software-engineering-best-rules/" title="什么是好的软件工程原则">← 前一篇</a>
+</li>
+<li class="next">
+<a data-placement="top" data-toggle="tooltip" href="https://justpic.org/post/requsts-advance-usage/" title="requests库中的那些高级用法">后一篇 →</a>
+</li>
+</ul>
+<script async="" crossorigin="anonymous" issue-term="title" repo="bpmbank/bpmbank.github.io" src="https://utteranc.es/client.js" theme="github-light">
+</script>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<img alt="justpic" src="https://justpic.org/images/weixin.jpg"/>
+<li>
+<a href="mailto:matrix.orz@gmail.com" title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://github.com/bpmbank" title="GitHub">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://weibo.com/" title="微博">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://instagram.com/" title="Instagram">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://justpic.org/index.xml" title="RSS">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+          
+
+           • 
+          2020
+
+          
+             • 
+            <a href="https://justpic.org/">桑河一榆</a>
+             • 
+            <a href="https://justpic.org/sitemap.xml">网站地图</a>
+             • 
+            <a href="https://justpic.org/page/archive/">归档</a>
+             • 
+            <a href="https://justpic.org/page/friend/">友链</a>
+             • 
+            
+            <a class="h" href="https://justpic.org/page/kubernetes.io">kubernetes.io</a>
+<a class="h" href="https://justpic.org/page/kubernetes.org.cn">Kubernetes中文社区</a>
+</p>
+<p class="text-center text-muted">
+<script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style="display:none">
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+          </span>
+           • 
+          <span id="busuanzi_container_site_uv" style="display:none">
+            访客数<span id="busuanzi_value_site_uv"></span>人次
+          </span>
+</p>
+<p class="credits theme-by text-muted">
+          由 <a href="http://gohugo.io">Hugo v0.65.3</a> 强力驱动  •  主题 <a href="https://github.com/cnych/qikqiak.com">qikqiak-blog</a> 移植自 <a href="https://github.com/rootsongjc/beautifulhugo">Beautiful Hugo</a>
+</p>
+</div>
+</div>
+</div>
+</footer>
+<script integrity="sha256-85LfKlRu4oan0DnmHGl48F068pBq+7z/z7vvXHfEoCU=" src="https://justpic.org/js/bundle.min.f392df2a546ee286a7d039e61c6978f05d3af2906afbbcffcfbbef5c77c4a025.js"></script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?148bce57cac06e37bb6a01cf0a77027f";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+$(document).ready(function() {
+  var int = setInterval(fixCount, 50);  
+  
+  var initPVCount = 584976;
+  var initUVCount = 153191;
+  function fixCount() {                   
+    if ($("#busuanzi_container_site_pv").css("display") != "none") {
+        $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + initPVCount); 
+        clearInterval(int); 
+    }
+    if ($("#busuanzi_container_site_uv").css("display") != "none") {
+      $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + initUVCount);
+      clearInterval(int); 
+    }  
+  }           
+});
+</script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$('.carousel').slick({
+    dots: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    centerMode: true,
+    prevArrow: '<button type="button" class="slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-next"></button>',
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script>
+const _do_decrypt = function(encrypted, password) {
+  let key = CryptoJS.enc.Utf8.parse(password);
+  let iv = CryptoJS.enc.Utf8.parse(password.substr(16));
+  let decrypted_data = CryptoJS.AES.decrypt(encrypted, key, {
+    iv: iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7
+  });
+  return decrypted_data.toString(CryptoJS.enc.Utf8);
+};
+const _click_handler = function(element) {
+  let parent = element.parentNode.parentNode;
+  let encrypted = parent.querySelector(
+    ".hugo-encryptor-cipher-text").innerText;
+  let password = parent.querySelector(
+    ".hugo-encryptor-input").value;
+  password = CryptoJS.MD5(password).toString();
+  let index = -1;
+  let elements = document.querySelectorAll(
+    ".hugo-encryptor-container");
+  for (index = 0; index < elements.length; ++index) {
+    if (elements[index].isSameNode(parent)) {
+      break;
+    }
+  }
+  let decrypted = "";
+  try {
+    decrypted = _do_decrypt(encrypted, password);
+  } catch (err) {
+    console.error(err);
+    alert("Failed to decrypt.");
+    return;
+  }
+  if (!decrypted.includes("--- DON'T MODIFY THIS LINE ---")) {
+    alert("Incorrect password.");
+    return;
+  }
+  let storage = localStorage;
+  let key = location.pathname + ".password." + index;
+  storage.setItem(key, password);
+  parent.innerHTML = decrypted;
+}
+window.onload = () => {
+  let index = -1;
+  let elements = document.querySelectorAll(
+    ".hugo-encryptor-container");
+  while (1) {
+    ++index;
+    let key = location.pathname + ".password." + index;
+    let password = localStorage.getItem(key);
+    if (!password) {
+      break;
+    } else {
+      console.log("Found password for part " + index);
+      let parent = elements[index];
+      let encrypted = parent.querySelector(".hugo-encryptor-cipher-text").innerText;
+      let decrypted = _do_decrypt(encrypted, password);
+      elements[index].innerHTML = decrypted;
+    }
+  }
+};</script></body>
+</html>

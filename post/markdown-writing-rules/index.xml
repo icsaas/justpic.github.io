@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown写作指南 on 桑河一榆</title>
+    <link>https://justpic.org/post/markdown-writing-rules/</link>
+    <description>Recent content in Markdown写作指南 on 桑河一榆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 04 Mar 2020 22:18:02 +0800</lastBuildDate>
+    
+	<atom:link href="https://justpic.org/post/markdown-writing-rules/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

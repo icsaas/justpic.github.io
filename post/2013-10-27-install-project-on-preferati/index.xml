@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>网站部署记录 on 桑河一榆</title>
+        <link>https://justpic.org/post/2013-10-27-install-project-on-preferati/</link>
+        <description>Recent content in 网站部署记录 on 桑河一榆</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sun, 27 Oct 2013 00:00:00 +0000</lastBuildDate>
+        
+        <atom:link href="https://justpic.org/post/2013-10-27-install-project-on-preferati/index.xml" rel="self" type="application/rss+xml" />
+        
+        
+    </channel>
+</rss>

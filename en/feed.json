@@ -1,0 +1,25 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "A Tree by the river",
+  "home_page_url": "https://justpic.org/",
+"feed_url": "https://justpic.org/en/feed.json",
+"description": "microservice、WebDev、AI",
+"author": { "name": "justpic" },
+"items": [
+{ 
+"id": "https://justpic.org/en/post/azure-bug/",
+"title": "Azure Bug",
+"content_text": "maybe a bug in azure when registering app\n",
+"url": "https://justpic.org/en/post/azure-bug/",
+"date_published": "Mon Mar 9 14:09:40 UTC 2020",
+"date_modified" : "Mon Mar 9 14:09:40 UTC 2020",
+},{ 
+"id": "https://justpic.org/en/post/2020-02-13-video-site/",
+"title": "online video stream site",
+"content_text": "online video stream site\n",
+"url": "https://justpic.org/en/post/2020-02-13-video-site/",
+"date_published": "Wed Feb 12 14:33:00 UTC 2020",
+"date_modified" : "Wed Feb 12 14:33:00 UTC 2020",
+},
+]
+}

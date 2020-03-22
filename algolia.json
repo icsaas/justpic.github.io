@@ -1,0 +1,500 @@
+[
+    {
+        "title": "About me",
+        "uri": "page/about",
+        "content": "python programmer   travel movies when free  virtual world I often go sites follows  Stack Overflow Google Codeforces LeetCode  V2EX  me Resume CV Linkedin contact issues justpic org Technical Python C   Nodejs Thanks",
+        "objectID": "page/about",
+        "subtitle": "Why you'd want to go on a date with me",
+        "comments": false,
+        "unrelated": true,
+        "nopager": true
+    },
+    {
+        "title": "Archive",
+        "uri": "page/archive",
+        "content": "devops python golang     AI     Kubernetes Docker     Traefik2     Traefik2 X      URL Rewrite         Kubernetes          Traefik2 1     Prometheus         Prometheus      Kubernetes Deployment             ingress nginx   Rewrite        OAM    Kubernetes      Kubernetes     Container Capabilities Gloo 1 0          Rook      Ceph    k8s         6      Golang     Kubernetes Ingress Controller Traefik 2 0        Traefik 2 0       HTTPS    Traefik 2 0    Redis               Kubernetes       inlets   kubernetes        Traefik 2 0       Helm V2     V3    Kubernetes Pod      PSP    Kubernetes       Argo Traefik          Service Mesh    Maesh VMWare     Kubernetes Dashboard    Octant    kubeadm    v1 15 3    Kubernetes       GitHub Actions       Golang       Kustomize    Kubernetes        Kubernetes       KubeSphere    Drone   CI CD       Drone   CI CD       Drone   CI CD       kubectl         Elasticsearch Operator    Elasticsearch      GitHub OAuth   Dex    Kubernetes       Configuration As Code    Jenkins      Kubernetes Admission Webhook Kubernetes Operator        Metrics Server       kubeadm    kubernetes    Kubelet        Groovy         Jenkins Gitlab Harbor Helm   Kubernetes   CI CD    Helm Chart        Kubernetes                      Kubernetes    nginx ingress          Jenkins Gitlab Harbor Helm   Kubernetes   CI CD         Prometheus  Gitlab CI   Kubernetes       Kubernetes     Gitlab CI Runner   Kubernetes     Gitlab Harbor        Harbor      Kubernetes        Helm monitor         Istio            Kubernetes     EFK        Kubernetes CKA              kubernetes        Prometheus        kubernetes      Prometheus Operator      Prometheus Operator       Prometheus Operator    etcd    Grafana        Loki Prometheus Operator     Docker        Dive      Kubernetes API      Kubernetes Ingress     HTTPS 360    K8S Dashboard Wayne       Grafana   Kubernetes      Kubernetes      Kubernetes           kubernetes       Kubernetes       Helm Hooks     Helm         Dockerfile      Kubernetes      Qos Helm          CloudNativeLives K8S              ingress        Kubernetes  ipvs      kubernetes               ingress              DNS    Jenkins   CI CD       Jenkins   CI CD       Jenkins   CI CD    Pod            kubernetes          kubernetes          Kubernetes RBAC    Secret       Service       Job   CronJob       RC RS            Kubernetes Pod       kubeadm  kubernetes1 10   k8s         3   Skaffold       kubernetes      k8s         2   kubernetes          k8s         1      Kubernetes        Kubernetes Downward API           kubernetes   ConfigMap   Secrets            Kubernetes   golang    Docker          YAML      Kubernetes Deployment Kubernetes Helm     kubernetes PodPreset      kubernetes dashboard           Prometheus  AlertManager   Kubernetes    Prometheus2 0 kubernetes        kubernetes    socket io        kubernetes      docker     Harbor kubernetes dashboard              kubernetes    Kubernetes Deployment     Kubernetes  Prometheus       Golang Go Modules      Python      Python      Django            DateTimeField    Mac     cryptography    TDD      Python         TDD      Python         Python           django2 0 10      Django  STATICROOT  STATICFILESDIRS    django      django url         django admin   action django      inclusion_tag       Python      PDF       Python        python  csv         Jenkins   DevOps               Kubernetes          Kubernetes   3           AI                  11              K8S        Django2 0      webpack3                               JetBrains        License              OSS     Keynote             Hugo Pipes          Hugo       Adsense           Hugo    Gitment      Hugo    Algolia        git log      HTTPS  awk      Nginx     301",
+        "objectID": "page/archive",
+        "comments": false,
+        "unrelated": true,
+        "nopager": true
+    },
+    {
+        "title": "友情链接",
+        "uri": "page/friend",
+        "content": "forecho JACK LEE Ryan Yang Jimmy Song Roc RECALL s Blog devopser sealyun wujunze           kuboard",
+        "objectID": "page/friend",
+        "comments": false,
+        "unrelated": true,
+        "nopager": true
+    },
+    {
+        "title": "Kubernetes",
+        "uri": "page/kubernetes.io",
+        "content": "Kubernetes                                                          Kubernetes     Google 15                              Kubernetes   1           Google                   Kubernetes                                                    Kubernetes                                            Kubernetes                                                     Kubernetes   2                                                                                                                                                                  UI      CPU                                                      Kubernetes           IP            DNS",
+        "objectID": "page/kubernetes.io",
+        "subtitle": "生产级别的容器编排系统",
+        "comments": false,
+        "unrelated": true,
+        "nopager": true
+    },
+    {
+        "title": "Kubernetes中文社区",
+        "uri": "page/kubernetes.org.cn",
+        "content": "",
+        "objectID": "page/kubernetes.org.cn",
+        "subtitle": "分享最新K8S资讯、教程、实践和中文文档",
+        "comments": false,
+        "unrelated": true,
+        "nopager": true
+    },
+    {
+        "title": "项目",
+        "uri": "page/project",
+        "content": "",
+        "objectID": "page/project",
+        "subtitle": "分享最新项目",
+        "comments": false,
+        "unrelated": true,
+        "nopager": true
+    },
+    {
+        "title": "百宝箱",
+        "uri": "page/tool",
+        "content": "",
+        "objectID": "page/tool",
+        "comments": false,
+        "unrelated": true,
+        "nopager": true,
+        "draft": false
+    },
+    {
+        "layout": "post",
+        "uri": "post/2013-06-05-installhdf5",
+        "content": "ubuntu     hdf5 install hdf5 ubuntu 12 04 1 you probably install debian libraries quantal no issues  precise less likely work  possibly will build source everything right  Code     apt get install devscripts equivs ubuntu dev tools  pull debian source hdf5 experimental  cd hdf5    sudo mk build deps  ir  debuild  us  uc   2             Google          hdf5          64bit linux   64            wget http   www hdfgroup org ftp HDF5 releases hdf5 1 8 9 bin linux x8664 hdf5 1 8 9 linux x8664 shared tar gz          bashrc        export LDLIBRARYPATH  LDLIBRARYPATH  usr local lib  HOME hdf5 1 8 9 linux x86_64 shared lib  export HDF5DIR  HOME hdf5 1 8 9 linux x8664 shared  source  bashrc   4    blosc      5    lzo2 2 lzo2 dev   sudo apt get install lzo2 2 lzo2 dev     HDF5",
+        "objectID": "post/2013-06-05-installhdf5",
+        "title": "ubuntu上安装hdf5",
+        "date": "2013-06-05T11:11:11.000Z",
+        "categories": [
+            "linux"
+        ],
+        "tags": [
+            "linux",
+            "bigdata"
+        ],
+        "slug": "ubuntu-install-hdf5"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2013-07-02-install-multiple-version-of-python-with-virtualenv",
+        "content": "ubuntu        python     ubuntu        python   python3 3 ubuntu    sudo apt get install python software properties sudo add apt repository ppa fkrull deadsnakes sudo apt get update sudo apt get install python3 3            ln  s  usr bin python3 3  usr bin python3 3m     python2 7 5 ubuntu     sudo add apt repository ppa fkrull deadsnakes sudo apt get update sudo apt get install python2 4 python2 5 python2 6     virtualenv           virtualenv  p  usr bin python3 3 python3 3env virtualenv  p  usr bin python2 7 5 python2 7 5env   Ok",
+        "objectID": "post/2013-07-02-install-multiple-version-of-python-with-virtualenv",
+        "title": "ubuntu系统上安装多版本python语言环境",
+        "description": "",
+        "category": "linux",
+        "tags": [
+            "“linux\""
+        ],
+        "slug": "ubuntu-install-multi-python",
+        "date": "2013-07-02T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2013-07-15-python-asynchrous-network",
+        "content": "python       select poll epoll test python  python selecttest py import select import socket import Queue  create socket server socket socket socket AFINET socket SOCKSTREAM  server setblocking False   set option reused server setsockopt socket SOLSOCKET socket SOREUSEADDR 1  server_address   localhost  10001  server bind server_address  server listen 10   sockets except read inputs  server   sockets expect write outputs     Outgoing message queues  socket Queue  message_queues     A optional parameter select TIMEOUT timeout 20 inputs  print  waiting next event   first parameter  read list second parameter  write list third parameter  error list readable writable exceptional select select inputs outputs inputs timeout   when timeout reached select return three empty list not  readable writable exceptional   print  Time out   break  s readable  s server   A  readable  socket ready accept connection connection client_address s accept   print   connection from  client_address connection setblocking 0  inputs append connection  message_queues connection  Queue Queue   else  data s recv 1024  data  print  received   data   from   s getpeername   message_queues s  put data   Add output channel response s not outputs  outputs append s  else   Interpret empty result closed connection print   closing   client_address s outputs  outputs remove s  inputs remove s  s close    remove message queue del message_queues s  s writable  try  nextmsg messagequeues s  get_nowait   except Queue Empty  print     s getpeername   queue empty  outputs remove s  else  print  sending   next_msg   to  s getpeername   s send next_msg  s exceptional  print   exception condition   s getpeername    stop listening input connection inputs remove s  s outputs  outputs remove s  s close    Remove message queue   polltest py   import socket import select import Queue server socket socket socket AFINET socket SOCKSTREAM  server setblocking False  server setsockopt socket SOLSOCKET socket SOREUSEADDR 1  server_address   localhost  10001  print  Starting  s port  s    server_address server bind server_address  server listen 5  message_queues     The timeout value represente milliseconds instead seconds timeout 100  Create limit next READ_ONLY  select POLLIN   select POLLPRI   select POLLHUP   select POLLERR  READWRITE  READONLY select POLLOUT   set poller poller select poll   poller register server READ_ONLY   map file descriptors socket objects fdtosocket  server fileno   server   True  print  Waiting next event  events poller poll timeout  print   20 print len events  print events print   20 fd flag events  s fdtosocket fd  flag    select POLLIN select POLLPRI   s server   A readable socket ready accept connection connection client_address s accept   print  Connection   client_address connection setblocking False  fdtosocket connection fileno    connection poller register connection READ_ONLY   Give connection queue send data message_queues connection  Queue Queue else  data s recv 1024  data  readable client socket data print   received  s  s      data s getpeername    message_queues s  put data  poller modify s READ_WRITE  else   Close connection print   closing   s getpeername    Stop listening input connection poller unregister s  s close   del message_queues s  elif flag   select POLLHUP   A client  Hang up  to closed  print  closing   s getpeername   HUP   poller unregister s  s close   elif flag   select POLLOUT   SOCKET ready send DATA if send try  nextmsg messagequeues s  get_nowait   except Queue Empty   No messages waiting so stop checking print s getpeername   queue empty  poller modify s READ_ONLY  else  print   sending  s  s    next_msg s getpeername    s send next_msg  elif flag   select POLLERR   Any events POLLER cause server close sockets print   exception on  s getpeername   poller unregister s  s close   del message_queues s    epolltest py   import socket logging import select errno logger logging getLogger  network server   def InitLog    logger setLevel logging DEBUG  fh logging FileHandler  network server log   fh setLevel logging DEBUG  ch logging StreamHandler   ch setLevel logging DEBUG  formatter logging Formatter    asctime s     name s     levelname s    message s   ch setFormatter formatter  fh setFormatter formatter  logger addHandler fh  logger addHandler ch  name   main   InitLog   try  listenfd socket socket socket AFINET socket SOCK_STREAM  except socket error msg  logger error  create socket failed   try  listenfd setsockopt socket SOLSOCKET socket SO_REUSEADDR 1  except socket error msg  logger error  setsocketopt error   try  listen_fd bind     10001   except socket error msg  logger error  listen file id bind ip error   try  listen_fd listen 10  except socket error msg  logger error msg  try  epoll_fd select epoll   epollfd register listenfd fileno   select EPOLLIN  except select error msg  logger error msg  connections    addresses    datalist    True  epolllist   epollfd poll   fd events epoll_list  fd  listen_fd fileno    conn addr listen_fd accept   logger debug  accept connction  s  d fd    d    addr 0  addr 1  conn fi",
+        "objectID": "post/2013-07-15-python-asynchrous-network",
+        "title": "使用python进行异步网络编程",
+        "description": "",
+        "category": "program",
+        "tags": [
+            "分布式"
+        ],
+        "slug": "python-async-programming",
+        "date": "2013-07-15T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2013-07-26-sqlalchemy-dynamic-mapping",
+        "content": "django   sqlalchemy       sqlalchemy             sqlalchemy import   sqlalchemy orm import   metadata MetaData create_engine  sqlite     echo True  t1 Table  t1  metadata Column  id  Integer primary_key True   t2 Table  t2  metadata Column  id  Integer primary_key True   metadata create_all   def mapclasstosometable cls table entity_name   kw   newcls type entity_name  cls       mapper newcls table   kw  return newcls class Foo object   pass T1Foo mapclasstosometable Foo t1  T1Foo   T2Foo mapclasstosometable Foo t2  T2Foo   sess sessionmaker     sess add_all  T1Foo   T1Foo   T2Foo   T1Foo     print sess query T1Foo  all   print sess query T2Foo  all",
+        "objectID": "post/2013-07-26-sqlalchemy-dynamic-mapping",
+        "title": "sqlalchemy动态映射",
+        "description": "",
+        "category": "python",
+        "tags": [
+            "python",
+            "django",
+            "数据库"
+        ],
+        "slug": "django-sqlalchemy-mapping",
+        "date": "2013-07-26T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2013-10-18-install-numpy-scipy-on-ubuntu",
+        "content": "ubuntu    numpy scipy linux   numpy scipy   sudo pip install numpy sudo apt get install libatlas base dev gfortran sudo pip install scipy sudo pip install matplotlib   recommended",
+        "objectID": "post/2013-10-18-install-numpy-scipy-on-ubuntu",
+        "title": "ubuntu系统安装numpy和scipy",
+        "description": "",
+        "category": "python",
+        "tags": [
+            "linux",
+            "python"
+        ],
+        "slug": "ubuntu-install-numpy-scipy",
+        "date": "2013-10-18T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2013-10-27-install-project-on-preferati",
+        "content": "python     sudo apt get install nginx sudo apt get install git sudo apt get install mysql server sudo apt get install python dev install easy_install ubuntu  sudo apt get install python setuptools sudo easy_install virtualenv sudo easy_install pip virtualenv   trade source   trade bin activate install numpy scipy pandas ta lib sudo pip install Cython      blas libs   sudo apt get install gfortran libopenblas dev liblapack dev g   pip install numpy pip install scipy      ta lib   cd   wget http   prdownloads sourceforge net ta lib ta lib 0 4 0 src tar gz sudo apt get install build essential tar  zxvf ta lib 0 4 0 src tar gz cd ta lib 0 4 0   configure   prefix  usr sudo install      gevent   wget https   github com downloads libevent libevent libevent 2 0 21 stable tar gz tar  zxvf   configure sudo install cd   www git clone https   github com pydata pandas git git clone https   github com mrjbq7 ta lib git   update nginx   sudo apt get install python software properties sudo apt get install sotware properties common sudo add apt repository ppa nginx stable sudo apt get update sudo apt get install nginx   mysql init   sudo apt get install mysql server libmysqld dev pip install MySQL python insert mysql user Host User Password  values  localhost   username  password  password                 mql                             123456    mysql grant privileges   username localhost identified  password        redis     install redis   uwsgi    gunicorn",
+        "objectID": "post/2013-10-27-install-project-on-preferati",
+        "title": "网站部署记录",
+        "description": "",
+        "category": "Web开发",
+        "tags": [
+            "linux"
+        ],
+        "date": "2013-10-27T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2013-11-19-install-world-community-grid-on-a-headless-ubuntu-server",
+        "content": "Ubuntu Server  World Community Grid  ubuntu   BOINC sudo apt get aptitude install boinc client  you download wcg install  find account key  boinccmd   lookup_account http   www worldcommunitygrid org username password response something dfb74c9b9    attach project boinccmd   project_attach http   www worldcommunitygrid org dfb74c     want verify attached enter following command  boinccmd   get_state       http   boinc berkeley edu wiki installingBOINCON_Ubuntu http   boinc berkeley edu wiki Client_configuration http   boinc berkeley edu wiki Stoporstart_BOINC     http   blog joelchristian com  p 291 http   misctechmusings com linux boinc cli for world community grid",
+        "objectID": "post/2013-11-19-install-world-community-grid-on-a-headless-ubuntu-server",
+        "title": "Ubuntu Server安装World Community Grid",
+        "description": "",
+        "category": "linux",
+        "tags": [
+            "linux"
+        ],
+        "slug": "ubuntu-install-wcg",
+        "date": "2013-11-19T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2014-04-04-mysql-shi-yong-zong-jie",
+        "content": "MySQL     Mysql      create database sina default character set utf8mb4 collate utf8mb4unicodeci  ALTER DATABASE dbname DEFAULT CHARACTER SET utf8 COLLATE utf8general_ci     utf8mb4   utf8    utf8       utf8    3    utf8mb4          5 5 3      mysql      utf8mb4 Mysql           mysqldump  uusername  ppassword   all databases all sql       mysql source all sql        mysqldump  uusername  ppassword   databases db1 db2  db1db2 sql       mysql source db1db2 sql       mysql  uusername  ppassword db1source db1 sql        mysqldump  uusername  ppassword db1 table1 table2 tb1tb2 sql         mysql  uusername  ppassword db1user db1  mysql source tb1tb2 sql  mysqldump       mysqldump  uusername  ppassword   default character set utf 8 db1 table1 tb1 sql Mysql     1      mysql  insert mysql user Host User Password  values  localhost   phplamp  password  1234     mysql grant privileges   jee localhost identified  123   2        mysql  UPDATE mysql user SET password PASSWORD        User  root   mysql  FLUSH PRIVILEGES  3        mysql select USER    Mysql     cd  etc mysql vi my cnf    bind address mysql  uusername  ppassword     mysql grant privileges   username  deniedhost  identified  password   GRANT PRIVILEGES   username     IDENTIFIED  password    if dynamic ip flush privileges  quit  Mysql      mysql                                                      my cnf          Alpha   mysqld  log bin binary log  log bin                MySQL             MySQL     DDL DML                    server id 1     MySQL     SQL  show master status                               Beta   mysqld  server id 2 read_only TRUE show slave status  change master MASTER_HOST  192 168 100 1                MASTER_USER  rep1   MASTER_PASSWORD  rep12009   change master MASTERLOGFILE  binary log 00001          show master status                  MASTERLOGPOS 106  slave start              show slave status  SlaveIORunning SlaveSQLRunning   Yes                 MySQL            MySQL    alpha          PROMPT alpha   alpha                 beta  show schemas  Mysql      create view v select   table  create view v select id name age table  create view v vid vname vage  select id name age table  ubuntu mysql5 7              mysql mysql  u root  p   mysql use mysql  update user set authentication_string PASSWORD       user  root   update user set plugin  mysqlnativepassword   flush privileges  quit   etc init d mysql restart  mysql  u root  p     on where having     on where having              on      where   having                                    on                                                              where   having               sum   having          having                                  having   left join  where     where           and                                       1NF                                                                   2NF                                    A       B     B                 mongodb          mysql",
+        "objectID": "post/2014-04-04-mysql-shi-yong-zong-jie",
+        "title": "MySQL使用总结",
+        "description": "",
+        "category": "default",
+        "tags": [
+            "数据库"
+        ],
+        "date": "2014-04-04T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2014-04-12-open-toolchain-on-ubuntu-1204",
+        "content": "ubuntu   ios       ubuntu 12 04   llvm3 4 ios lang        ubuntu 12 04    gcc 4 8     llvm clang libcxx libcxxabi   libcxx libcxxabi           libcxx     theos    ios        gcc 4 8     install gcc4 8 ubuntu 12 04   llvm clang  etc apt sources list         deb http   llvm org apt precise  llvm toolchain precise 3 4 main deb src http   llvm org apt precise  llvm toolchain precise 3 4 main       wget  O   http   llvm org apt llvm snapshot gpg key sudo apt key add      llvm 3 4 clang 3 4        apt get install clang 3 4 clang 3 4 doc libclang common 3 4 dev libclang 3 4 dev libclang1 3 4 libclang1 3 4 dbg libllvm 3 4 ocaml dev libllvm3 4 libllvm3 4 dbg lldb 3 4 llvm 3 4 llvm 3 4 dev llvm 3 4 doc llvm 3 4 examples llvm 3 4 runtime clang modernize 3 4 clang format 3 4 python clang 3 4 lldb 3 4 dev   libcxx  svn co http   llvm org svn llvm project libcxx trunk libcxx   g          echo   g    Wp  v  x c      fsyntax only             ignoring nonexistent directory   usr local include x86_64 linux gnu  ignoring nonexistent directory   usr lib gcc x8664 linux  gnu 4 8             x8664 linux gnu include   include       search starts here  include search starts here   usr include c   4 8  usr include c   4 8 x86_64 linux gnu  usr include c   4 8 backward  usr lib gcc x86_64 linux gnu 4 8 include  usr local include  usr lib gcc x86_64 linux gnu 4 8 include fixed  usr include x86_64 linux gnu  usr include End search list      libcxx  CC clang CXX clang   cmake  G  Unix Makefiles   DLIBCXXCXXABI libsupc     DLIBCXXLIBSUPCXXINCLUDEPATHS   usr include c   4 7   usr include x8664 linux  gnu c   4 7    DCMAKEBUILDTYPE Release  DCMAKEINSTALLPREFIX  usr sudo install   libcxxabi           sudo apt get install g   subversion cmake swig python dev libedit dev libunwind8 libunwind8 dev          svn co http   llvm org svn llvm project libcxxabi trunk libcxxabi cd libcxxabi lib   buildit sudo cp libc  abi so 1 0  usr lib sudo ln  s  usr lib libc  abi so 1 0  usr lib libc  abi so 1 sudo ln  s  usr lib libc  abi so 1  usr lib libc  abi so   libc  abi   libc   svn co http   llvm org svn llvm project libcxx trunk libcxx cd libcxx mkdir build cd build CC clang CXX clang   cmake  G  Unix Makefiles   DLIBCXXCXXABI libcxxabi   DLIBCXXLIBCXXABIINCLUDEPATHS   include    DCMAKEBUILDTYPE Release  DCMAKEINSTALL_PREFIX  usr     sudo install   ubuntu 12 04  LLVM",
+        "objectID": "post/2014-04-12-open-toolchain-on-ubuntu-1204",
+        "title": "ubuntu上构建ios交叉编译环境",
+        "description": "",
+        "category": "linux",
+        "tags": [
+            "linux"
+        ],
+        "slug": "ubuntu-install-ios-llvm-chain",
+        "date": "2014-04-12T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2014-04-27-tornado-with-i18n",
+        "content": "tornado i18n     i18n        Internationalization      I    N     18      tornado   i18n              pygettext msgfmt        po   mo   pygetext msgfmt      1   python     test py gettext import gettext _ print _  well down   print _  good   2        pygetext test py 3   messages pot          mv messages pot messages po 4   msgstr        messages mo    msgfmt messages po     locale cn LC_MESSAGES  mv messages po locale cn LC_MESSAGES cn          LC_MESSAGES gettext py       mo             gettext py   modfile os path join localedir lang  LC_MESSAGES    s mo   domain       python    gettext install  messages     locale  unicode True                                      unicode     unicode        unicode       True     gettext translation  messages     locale  languages   cn    install True     print _  good   tornado     1         xgettext  L python  k _  o openquant po   find    name   py    find template   name   html  2                po     msgfmt openquant po  o locale zhCN LCMESSAGES openquant mo   mo      4                      tornado locale loadgettexttranslations options I18N_PATH  openquant   5 handler    getuserlocale    def getuserlocale self    zhCN enUS userlocale   self getcookie  user_locale   user_locale  return tornado locale get user_locale  return None     iMind django",
+        "objectID": "post/2014-04-27-tornado-with-i18n",
+        "title": "tornado 国际化实践",
+        "description": "",
+        "category": "Web开发",
+        "tags": [
+            "python"
+        ],
+        "date": "2014-04-27T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2014-05-06-matlab-c",
+        "content": "Matalb C         C     C     MATLAB       MEX MAT        1 MEX    MATLAB     C Fortran      MEX   MATLAB     MEX               MEX            MATLAB              MEX                  C  Fortran         MATLAB   M      MATLAB         MATLAB             C  Frotran           2 MAT       MAT   MATLAB              MATLAB    MATLAB            MAT                                                     MATLAB                 MATLAB     MAT      MATLAB                     C C    Fortran    MAT    3        MATLAB                   MATLAB    MATLAB         MATLAB               UNIX      ActiveX  Windows       MATLAB       C C    Fortran    MEX    include  mex h      timestwo c example found API guide  Computational function takes scalar doubles  This MEX File MATLAB   Copyright c     void timestwo double y   double x     void timestwo double y   double x      y 0  2 0 x 0     void mexFunction int nlhs mxArray  plhs   int nrhs const mxArray  prhs      nlhs MATLAB               plhs MATLAB              nrhs MATLAB                prhs   MATLAB                  double x y  int mrows ncols   Check proper number arguments    nrhs  1   mexErrMsgTxt  One input required      else if nlhs  1    mexErrMsgTxt  Too output arguments         MATLAB        MEX        y timestwo x       x    1      y    1             nrhs    1  nlhs    1   MATLAB          ans   nlhs    0    The input non comlex scalar double   mrows mxGetM prhs 0          ncols mxGetN prhs 0            mxIsDouble prhs 0     mxIsComplex prhs 0      mrows  1 amp ncols  1     mexErrMsgTxt  Input noncomplex scalar double                 double                                        1 1  plhs 0  mxCreateDoubleMatrix mrows ncols mxREAL   x mxGetPr prhs 0    y mxGetPr plhs 0    timestwo y x     matlab            mex testmex cpp  x 2  y testmex x    MAT    libmat dll     mat   libmx dll     mat       MATLAB                    MATLAB                                     double         m n   m     m                                                                     pr   pointer real data            pi   pointer imaginary data                   pi                      Sparse Matrices  MATLAB                              pr pi               nzmax ir  jc  nzmax           ir pr pi                                  ir       nzmax             pr pi          jc       N 1       N                        j   0 j N 1 jc j   j         ir pr   pi      jc j 1  1  j              jc N    nnz               nnz  nzmax                                     MATFile matOpen const char filename  const char   mode          MATFile matOpen const char filename  const char   mode          MAT     int matClose MATFile  pMF       MAT     mxArray  mxCreateDoubleMatrix int m  int n  mxComplexity flag                  mxArray  mxCreateSparse int m  int n  int nzmax  mxComplexity flag              mxArray matGetNextArray MATFile pMF     MAT            const char mxGetName const mxArray pa       pa      void mxSetName mxArray pa const char s      pa         int mxGetM const mxArray  pa       pa       int mxGetN const mxArray  pa       pa       double mxGetPr const mxArray pa       pa pr     int mxGetIr const mxArray pa         pa ir     int mxGetJc const mxArray pa         pa jc     int matPutArray MATFile   pMF  const mxArray   pA      pA   MAT  pMAF   void mxDestroyArray mxArray  pa       pa",
+        "objectID": "post/2014-05-06-matlab-c",
+        "title": "Matlab C混合编程",
+        "description": "",
+        "category": "C++",
+        "tags": [
+            "matlab"
+        ],
+        "slug": "matlab-mixed-c",
+        "date": "2014-05-06T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2014-06-02-java-call-matlab",
+        "content": "Java  matlab  C   C  matlab     C     matlab          matlab    java   matlab      jar     deploytool    matlab           eclipse              toolbox javabuilder jar javabuilder jar                   java  matlab                  example",
+        "objectID": "post/2014-06-02-java-call-matlab",
+        "title": "Java调用matlab",
+        "description": "",
+        "category": "Java",
+        "tags": [
+            "matlab"
+        ],
+        "date": "2014-06-02T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2014-06-05-http-reversed-on-ssh",
+        "content": "http   nginx        upstream tunnel  server 127 0 0 1 8080    server   listen 80  server_name   location    proxysetheader Host  http_host  proxy_pass tunnel       ssh reverse ssh  R 8080 localhost     port local application used  and url url will visit public",
+        "objectID": "post/2014-06-05-http-reversed-on-ssh",
+        "title": "配置反向代理",
+        "description": "",
+        "category": "linux",
+        "tags": [
+            "network",
+            "linux"
+        ],
+        "date": "2014-06-05T00:00:00.000Z",
+        "slug": "reverse-proxy-setup"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2014-06-06-vps-initialization",
+        "content": "linux               useradd options            groupadd options           echo   all  all all  all   etc sudoers   ssh                 ssh keygen           ssh copy id  i    ssh idrsa pub username remote host              authorizedkeys  server authorized_keys          i                         etc ssh sshd_config   PasswordAuthentication no              ssh sudo service ssh restart",
+        "objectID": "post/2014-06-06-vps-initialization",
+        "title": "linux添加用户操作",
+        "description": "",
+        "category": "linux",
+        "tags": [
+            "Linux"
+        ],
+        "date": "2014-06-06T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2014-08-09-scatnet",
+        "content": "ScatNet              ScatNet                                                                scatnet                   f                  phi            m        J         lambda          m                      U                    U             S     U            C     m   q                  C  q   J_q               N         omega 2  J                N omega   2 2   2J                    N omega   2 2   2J   sum q 0  m C  q   Jq                                       Invariant Scattering Convolution Networks High Dimensional Classification Invariant Deep Networks ScatNet S Mallat      Plenary Talk Are Deep Networks Solution Curse Dimensionality 2scatnet",
+        "objectID": "post/2014-08-09-scatnet",
+        "title": "ScatNet散射卷积网络",
+        "description": "散射卷积网络",
+        "category": "program",
+        "tags": [
+            "AI"
+        ],
+        "date": "2014-08-09T00:00:00.000Z",
+        "slug": "scatter"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2014-09-10-latex-math-symbol",
+        "content": "latex     latex                 hat a       hat a      check a       check a      tilde a       tilde a      acute a       acute a      grave a       grave a      dot a       dot a      ddot a       ddot a      breve a       breve a      bar a       bar a      vec a       vec a      widehat A       widehat A      widetilde A       widetilde A              alpha      alpha     theta      theta    o    o     upsilon      upsilon     beta      beta     vartheta      vartheta     pi      pi     phi      phi     gamma      gamma     iota      iota     varpi      varpi     varphi      varphi     delta      delta     kappa      kappa     rho      rho     chi      chi     epsilon      epsilon     lambda      lambda     varrho      varrho     psi      psi     varepsilon      varepsilon     mu      mu     sigma      sigma     omega      omega     zeta      zeta     nu      nu     varsigma      varsigma     eta      eta     xi      xi     tau      tau            Gamma      Gamma     Lambda      Lambda     Sigma      Sigma     Psi      Psi     Delta      Delta     Xi      Xi     Upsilon      Upsilon     Omega      Omega     Theta      Theta     Pi      Pi     Phi      Phi                              leq  le      leq   le     geq  ge      geq   g     equiv      equiv     ll      ll     gg      gg     doteq      doteq     prec      prec     succ      succ     sim      sim     preceq      preceq     succeq      succeq     simeq      simeq     subset      subset     supset      supset     approx      approx     subseteq      subseteq     supseteq      supseteq     cong      cong     sqsubset      sqsubset     sqsupset      sqsupset     Join      Join     in      in     ni      ni   owns     propto      propto     vdash      vdash     dashv      dashv     models      models     mid      mid     parallel      parallel     perp      perp     smile      smile     frown      frown     asymp      asymp               notin      notin     neq      neq   ne                                triangleleft      triangleleft     pm      pm     mp      mp     triangleright      triangleright     cdot      cdot     div      div     times      times     setminus      setminus     star      star     cup      cup     cap      cap     ast      ast     sqcup      sqcup     circ      circ     vee      vee   lor     wedge      wedge   land     bullet      bullet     oplus      oplus     ominus      ominus     diamond      diamond     odot      odot     oslash      oslash     uplus      uplus     otimes      otimes     bigcirc      bigcirc     amalg        bigtriangleup        bigtriangledown        dagger      dagger     lhd      lhd     rhd      rhd     ddagger      ddagger     unlhd      unlhd     unrhd      unrhd     wr      wr            sum      sum     bigcup      bigcup     bigvee      bigvee     bigoplus      bigoplus     prod      prod     bigcap      bigcap     bigwedge      bigwedge     bigotimes      bigotimes     coprod      coprod     bigsqcup      bigsqcup     bigodot      bigodot     int      int     oint      oint     biguplus      biguplus        leftarrow      leftarrow   gets     longleftarrow      longleftarrow     uparrow      uparrow     rightarrow      rightarrow   to     longrightarrow      longrightarrow     downarrow      downarrow     leftrightarrow      leftrightarrow     longleftrightarrow      longleftrightarrow    mathsymb pdf        LaTex",
+        "objectID": "post/2014-09-10-latex-math-symbol",
+        "title": "latex数学符号",
+        "description": "",
+        "category": "math",
+        "tags": [
+            "排版"
+        ],
+        "slug": "latex-math-symbol",
+        "date": "2014-09-10T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2015-03-14-use-python-in-windows",
+        "content": "windows    python   windows 64  libxml2dom       no module named libxmlmods                  python windows         libxml2 python     pip wheel    pip wheeel libxml2python 2 9 2 cp27 none winamd64 whl pip install   use wheel   no index   find links wheelhouse libxml2 python easy_install libxml2dom     libxml2dom   windows 64  pycurl       curl 64bit mingw   git clone https   github com pycurl pycurl git    pycurl     setup py CURLDIR  CURLPATH                                                pycurl 7 19 5 1 cp27 none win_amd64 whl             pip wheel pycurl 7 19 5 1 cp27 none win_amd64 whl pip install    windows  python        Anaconda",
+        "objectID": "post/2015-03-14-use-python-in-windows",
+        "title": "windows系统使用python环境",
+        "description": "no module named libxmlmods",
+        "category": "DevOps",
+        "tags": [
+            "python"
+        ],
+        "draft": false,
+        "date": "2015-03-14T00:00:00.000Z"
+    },
+    {
+        "layout": "post",
+        "uri": "post/2019-10-15-lu-you-zhuan-fa-he-fan-xiang-dai-li-de-ying-yong",
+        "content": "1                                                                                                           IP                                                                                                       1  PC1 IP    172 11 100 25         11    2  PC3 IP    172 12 25 141         15          1    2      IP     172 11 100 249 172 12 25 130           11 13     PC1 PC2        ping              1 PC1 cmd      route print  4                  route add 172 12 25 0 mask 255 255 255 0 172 11 100 249 metric 8 11 2 PC2                               IPEnableRouter   1 IPEnableRouter               HKEYLOCALMACHINE SYSTEM CurrentControlSet Services Tcpip Parameters     IPEnableRouter               3 PC3 cmd      route print  4                 route add 172 11 100 0 mask 255 255 255 0 172 12 25 130 metric 8 15                 PC1 PC3     ping                                                                                     3    3  PC5 IP    192 168 0 201         11    PC4      2    3    IP     172 12 15 142 192 168 0 202           11 13     PC5 PC1               1 PC1 cmd      route print  4                 route add 192 168 0 0 mask 255 255 255 0 172 11 100 249 metric 8 11 2 PC2 cmd      route print  4                 route add 192 168 0 0 mask 255 255 255 0 172 12 15 142 metric 8 11 3 PC4                               IPEnableRouter  1  IPEnableRouter               HKEYLOCALMACHINE SYSTEM CurrentControlSet Services Tcpip Parameters     IPEnableRouter               4 PC5 cmd      route print  4               route add 172 11 100 0 mask 255 255 255 0 192 168 0 202 metric 8 11 5 PC4 cmd      route print  4               route add 172 11 100 0 mask 255 255 255 0 172 12 15 142 11 route add 192 168 0 0 mask 255 255 255 0 192 168 0 202 metric 8 13                 PC1 PC5     ping                                               2                                                                     frp         tcp udp         windows   netsh interface portproxy               tcp          Win7",
+        "objectID": "post/2019-10-15-lu-you-zhuan-fa-he-fan-xiang-dai-li-de-ying-yong",
+        "title": "路由转发和反向代理的应用",
+        "description": "技术应用：路由转发和反向代理",
+        "category": "default",
+        "tags": [
+            "network"
+        ],
+        "date": "2019-10-15T00:00:00.000Z",
+        "draft": false
+    },
+    {
+        "layout": "post",
+        "uri": "post/2019-10-27-apijson-shi-yong-xiao-jie",
+        "content": "APIJSON                   schema      http   localhost 8088 get   Test    ID_  5    schema   sxb    database   MYSQL                   count  100  Test     column   USERID TMID      schema   sxb    database   MYSQL    http   localhost 8088 get         count  100  Test     column   USERID TMID      schema   sxb    database   MYSQL               count  100  Test     column         schema   sxb    database   MYSQL     http   localhost 8088 get         count  100  Test     column         schema   sxb    database   MYSQL         count  100  page  0  Test     column         schema   sxb    database   MYSQL     http   localhost 8088 get         count  100  page  0  Test     column         schema   sxb    database   MYSQL            http   localhost 8088 get   Test    ID_  5    schema   sxb    database   MYSQL          http   localhost 8088 get   Test    END_TIME    2018 2019     schema   sxb    database   MYSQL                          count  100  Test    END_TIME      2018      schema   sxb    database   MYSQL    http   localhost 8088 get         count  100  Test    END_TIME      2018      schema   sxb    database   MYSQL           count  100  Test    END_TIME     2019       schema   sxb    database   MYSQL    http   localhost 8088 get         count  100  Test    END_TIME     2019       schema   sxb    database   MYSQL               key                key     1 2 3             key     1                key     function arg0 arg1                 key    key0 key1    targetKey           key     abc            key      0 9              key    2018 01 01 2018 10 01           key    1            key   888 88           name alias            combine   name  tag             column   id sex name            group   userId            having   max id   100            order   date  name             schema   sys            database   POSTGRESQL            explain  true           role   LOGIN",
+        "objectID": "post/2019-10-27-apijson-shi-yong-xiao-jie",
+        "title": "APIJSON实践",
+        "description": "",
+        "category": "Web开发",
+        "date": "2019-10-27T00:00:00.000Z",
+        "slug": "apijson-exercise",
+        "tags": [
+            "DSL"
+        ]
+    },
+    {
+        "layout": "post",
+        "uri": "post/2020-02-13-video-site.en",
+        "content": "online video stream site website address https   www kankanwu com  http   www vip1280 cn  https   www tv432 com  http   www qmaile com  https   www novipnoad com  https   www qpgys net  http   11k tw  https   tv huaqindz com  http   www nanawu vip      MkDocs      Material MkDocs                                   Reference    https   www mkdocs org",
+        "objectID": "post/2020-02-13-video-site.en",
+        "title": "online video stream site",
+        "date": "2020-02-12T14:33:00.000Z",
+        "bigimg": [
+            {
+                "src": "/images/posts/default.jpg",
+                "desc": "sunshine"
+            }
+        ]
+    },
+    {
+        "title": "Azure Bug",
+        "uri": "post/azure-bug.en",
+        "content": "maybe bug azure when registering app when registering app azure in period verifying publisher domain  it always error  The server returned unexpected content type header value    after google problem i found solution github repo offical document it says the github page does not support content type  application json  but return mime type application json charset utf 8  the azure doesn t think correct so backend server own yours support custom content type as example code nodejs  just follows  var http   require  http      https   github com MicrosoftDocs azure docs issues 39665 var server   http createServer function request  res    res writeHead 200     Content Type    application json      res write  JSON stringify   associatedApplications      applicationId    replace own id             res end        server listen 80   console log  Server listening     it done beer  References https   github com MicrosoftDocs azure docs issues 39665",
+        "objectID": "post/azure-bug.en",
+        "subtitle": "",
+        "date": "2020-03-09T14:09:40.000Z",
+        "publishdate": "2020-03-09T14:09:40.000Z",
+        "slug": "azure-bug",
+        "tags": [
+            "cloud"
+        ],
+        "keywords": [
+            "cloud"
+        ],
+        "category": "",
+        "bigimg": [
+            {
+                "src": "/images/posts/default.jpg",
+                "desc": "sunshine"
+            }
+        ],
+        "gitcomment": false,
+        "draft": false,
+        "notoc": false,
+        "comments": false,
+        "unrelated": false,
+        "nopager": false
+    },
+    {
+        "title": "Markdown写作指南",
+        "uri": "post/markdown写作指南",
+        "content": "Markdown                                                                                          Word                     Markdown                       easy to read easy to write                               vi            Markdown                          Markdown            Markdown      Markdown             1          Word           Windows macOS Android iOS         Word   Word       Microsoft Office WPS             Markdown  Write once export everywhere               Markdwon                           2           PDF Word HTML             Markdown            pandoc    markdown         3      html css Markdown      markdown     html css                                      id  jump_1                                                                                                                       id  jump_1                                                                                      Markdown     1                                                                                        1                              6                                             h1     h6   H5 H6                                                                   1                                                                                                                                 Markdown                     Foo  Bar  Foofoo  Barbar  Gargar Baz        Foo  Bar  Foofoo  Barbar  Gargar Baz         2 4      Tab                                                                                                                                                                                                                                                                                         2                                                      3      Markdown                    x                                          x                           4                                                     https     5 7                 ht        10 4                                                         https     5 7                 ht        10 4  5                 backtick  Tab       Markdown              Markdown                               Ctrl D                         Ctrl D                         Ctrl D                         Ctrl D                                     print  Hello python     markdown                             windows                     java cpp css xml javascript python php go kotlin lua objectivec                   javascript     function showSnackbar     var  snackbar       snackbar     snackbar addClass  show    setTimeout          snackbar removeClass  show       3000     6                       Enter        enticing neck short rounded arms plump enticin                       by    enticing Wozniak even prospect getting rich                              by       7                          markdown                        8                                                       id  jump_1       9               10      Markdown                                                 AND      amp  Markdown      6      1       Markdown Nice        Nice         CSS         Style                md           2    3      4     5      6    Markdown           Markdown            windows typora android      macos ios Ulysses    Markdown         Markdown              Markdown      Markdown          Google Markdown        Markdown Style Guide Google Typora          liquid617  markdown      markdown styles tech writing course hugo        markdown       justpic",
+        "objectID": "post/markdown写作指南",
+        "subtitle": "",
+        "date": "2020-03-04T14:18:02.000Z",
+        "publishdate": "2020-03-04T14:18:02.000Z",
+        "slug": "markdown-writing-rules",
+        "tags": [
+            "设计",
+            "排版",
+            "Markdwon"
+        ],
+        "keywords": [
+            "排版"
+        ],
+        "category": "",
+        "bigimg": [
+            {
+                "src": "https://images.unsplash.com/photo-1579765694446-eeb48e559bbd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80",
+                "desc": "排版"
+            }
+        ],
+        "gitcomment": false,
+        "draft": false,
+        "notoc": false,
+        "comments": false,
+        "unrelated": false,
+        "nopager": false
+    },
+    {
+        "title": "requests库中的那些高级用法",
+        "uri": "post/requst库的高级用法",
+        "content": "python     http       requests                    requests python      urllib3           HTTP            requests   API                                request                 API                              requests                               API               requests   raiseforstatus            HTTP      4xx  5xx                        response   requests get  https   api github com user repos page 1            response raiseforstatus           raiseforstatus      requests              hook                                       hook           raiseforstatus      http   requests Session   assertstatushook   lambda response args  kwargs  response raiseforstatus   http hooks  response      assertstatushook  http get  https   api github com user repos page 1     HTTPError  401 Client Error  Unauthorized url  https   api github com user repos page 1             api org    api                http       requests get  https   api org list   requests get  https   api org list 3 item     BaseUrlSession                        form requests_toolbelt import sessions http   sessions BaseUrlSession base_url    https   api org   http get   list   http get   list item      requests_toolbelt       requests                      requests                                               requests get  https   github com   timeout 0 001                                   Transport Adapters      HTTP                                          requests adapters import HTTPAdapter DEFAULT_TIMEOUT   5 class TimeoutHTTPAdapter HTTPAdapter   def init self args  kwargs   self timeout   DEFAULT_TIMEOUT  timeout  kwargs  self timeout   kwargs  timeout   del kwargs  timeout   super   init args  kwargs  def send self  request   kwargs   timeout   kwargs get  timeout   timeout None  kwargs  timeout     self timeout return super   send request   kwargs      import requests http   request Session   adapter   TimeoutHTTPAdapter timeout 2 5  http mount  https     adapter  http mount  http     adapter          response   http get  https   api weibo com           response   http get  https   api weibo com  timeout 10                                                                     Http                        HTTPAdapter    adapter      requests adapter import HTTPAdapter requests packages urllib3 util retry import Retry retry_strategy   Retry  total   3  status_forcelist    429 500 502 503 504   method_whitelist     HEAD   GET   OPTIONS     adapter   HTTPAdapter maxretries   retrystrategy  http   requests Session   http mount  https     adapter  http mount  http     adapter  response   http get  https   en wikipedia org w api php       Retry                                            total 3 total                                      urllib3 exceptions Maxretryerror      3         status_forcelist  413  429  503       HTTP                      500 502 503 504                       HTTP          429                   urllib                 method_whitelist   HEAD    GET    PUT    DELETE    OPTIONS    TRACE        HTTP                POST       HTTP       POST                    POST           API                                          bug     backoff_factor 0 backoff_factor                              backoff factor     2      number total retries    1                 1      0 5 1 2 4 8 16 32 64 128 256 2      1 2 4 8 16 32 64 128 256 512 10      5 10 20 40 80 160 320 640 1280 2560                                                        0                                       HTTPAdapter                              retries   Retry total 3  backofffactor 1  statusforcelist  429  500  502  503  504   http mount  https      TimeoutHTTPAdapter max_retries retries     HTTP                                                                                   HTTP        0               HTTP                       HTTP                API                                     import requests import http http client HTTPConnection debuglevel   1 requests get  https   www google com    Output send  b GET   HTTP 1 1 r nHost  www google com r nUser Agent  python requests 2 22 0 r nAccept Encoding  gzip  deflate r nAccept    r nConnection  keep alive r n r n  reply   HTTP 1 1 200 OK r n  header  Date  Fri  28 Feb 2020 12 13 26 GMT header  Expires   1 header  Cache Control  private  max age 0               HTTP                                                  REST   API                           import requests requests_toolbelt utils import dump def logging_hook response  args   kwargs   data   dump dump_all response  print data decode  utf 8    http   requests Session   http hooks  response      logging_hook  http get  https   api openaq org v1 cities   params   country    BA    Output HTTP 1 1 200 OK   Content Type  application json  charset utf 8   Transfer Encoding  chunked   Connection  keep alive      meta     name   openaq api    license   CC 4 0    website   https   docs openaq org     page  1   limit  100   found  1     results       country   BA    name   Gora de    city   Gora de    count  70797   locations  1                         API                            Sent",
+        "objectID": "post/requst库的高级用法",
+        "subtitle": "",
+        "date": "2020-03-12T14:21:33.000Z",
+        "publishdate": "2020-03-12T14:21:33.000Z",
+        "slug": "requsts-advance-usage",
+        "tags": [
+            "python",
+            "requests"
+        ],
+        "keywords": [
+            "python"
+        ],
+        "series": [
+            "python"
+        ],
+        "categories": [
+            "python"
+        ],
+        "bigimg": [
+            {
+                "src": "/images/posts/default.jpg",
+                "desc": "sunshine"
+            }
+        ],
+        "gitcomment": false,
+        "draft": false,
+        "notoc": false,
+        "comments": false,
+        "unrelated": false,
+        "nopager": false
+    },
+    {
+        "title": "什么是好的软件工程原则",
+        "uri": "post/什么是好的软件工程原则",
+        "content": "hugo encryptor  123345           cannot unless you ve password  content want encrypt  remember close hugo encryptor shortcodes tag       hugo encryptor                                 python                   Measure twice cut once                                                                                                                                                                                                                                               Don t Repeat Yourself                                                                                                                                                                                                                                                   bug                      bug                                                                          bug                        Occam s Razor                                                                                                                                                                                                                   Keep Simple Stupid                                                                                                                                                                                                                    Peter Hintiens                          You Aren t Gonna Need                                                                                                                                                                                                Big Design Front                                                                                                                                                                                                            Avoid Premature Optimization                                     Donald Knuth                                                                                                                                                                                                                                                                                          Principle Least Astonishment                                                            making cookies                                                                 S O L I D   SOLID                   SOLID                        Single responsibility                                                  Open closed                                          Liskov substitution                             Interface segregation                                Dependency inversion                                                      Demeter                                                                                         coupling               module   package          cohesion                                                                                                                                                          Best Software Engineering Principles",
+        "objectID": "post/什么是好的软件工程原则",
+        "subtitle": "",
+        "date": "2020-03-08T07:23:56.000Z",
+        "publishdate": "2020-03-08T07:23:56.000Z",
+        "slug": "software-engineering-best-rules",
+        "tags": [
+            "软件工程"
+        ],
+        "keywords": [
+            "软件工程"
+        ],
+        "category": "软件工程",
+        "gitcomment": false,
+        "draft": false,
+        "notoc": false,
+        "comments": false,
+        "unrelated": false,
+        "nopager": false
+    },
+    {
+        "title": "浅谈低代码开发",
+        "uri": "post/低代码",
+        "content": "2014   Forrester Research                 2001     OutSystems                         Software define anything                                                                                                                               2018                        OutSystems Mendix             magic     ClickPaas                                                                       Google Trends                                         3                       Google Trends  lowcode DDD DSL BPM               lowcode  google trends                         cloud DSL                                                       OA                        OA             OA           office       Web                                                 OA              OA                                                                                                                                              API                                                             RPA                                                                                  Devops BPM DSL                                                               Devops Devops                                      DevOps             BPM BPM                     activiti camunda flowable                           BPM             DSL DSL                                                                                                          DSL    DSL      TypeScript JSX syntax typed DSL DSL ts DDD  https   github com madawei2699 ddd_parklot           RPA         IT      https   github com phodal lowcode git   Web          2020                                                    typescript                 builder           CI CD  https   www stackbit com  wakatime",
+        "objectID": "post/低代码",
+        "subtitle": "低代码的前世今生",
+        "date": "2020-03-02T02:20:38.000Z",
+        "publishdate": "2020-03-02T02:20:38.000Z",
+        "slug": "lowcode-thoughts",
+        "tags": [
+            "低代码",
+            "BPM",
+            "工作流"
+        ],
+        "keywords": [
+            "工作流"
+        ],
+        "category": "",
+        "bigimg": [
+            {
+                "src": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+                "desc": "lowcode"
+            }
+        ],
+        "gitcomment": false,
+        "draft": false,
+        "notoc": false,
+        "comments": false,
+        "unrelated": false,
+        "nopager": false
+    }
+]

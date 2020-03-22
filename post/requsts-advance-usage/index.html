@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',4000,
+          {'GTM-WBT3QXS':true});</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102189849-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-102189849-1', { 'optimize_id': 'GTM-WBT3QXS'});
+  </script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WTRRBMC');</script>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="requests库中的那些高级用法" name="twitter:title"/>
+<meta content="作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。" name="twitter:description"/>
+<meta content="requests库中的那些高级用法" property="og:title"/>
+<meta content="作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://justpic.org/post/requsts-advance-usage/" property="og:url"/>
+<meta content="2020-03-12T22:21:33+08:00" property="article:published_time"/>
+<meta content="2020-03-12T22:21:33+08:00" property="article:modified_time"/><meta content="桑河一榆" property="og:site_name"/><meta content="https://justpic.org/post/jupyter-best-practice/" property="og:see_also"/>
+<title>requests库中的那些高级用法-|Programing|Cloud Native|Artificial Intelligence</title>
+<meta content="requests库中的那些高级用法" property="og:title"/>
+<meta content="requests库中的那些高级用法" name="twitter:title"/>
+<meta content="作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。" name="description"/>
+<meta content="作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。" property="og:description"/>
+<meta content="作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。" name="twitter:description"/>
+<meta content="" name="author"/>
+<meta content="https://justpic.org/images/avatar.png" property="og:image"/>
+<meta content="https://justpic.org/images/avatar.png" name="twitter:image"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="https://justpic.org/post/requsts-advance-usage/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="桑河一榆" property="og:site_name"/>
+<meta content="Hugo 0.65.3" name="generator"/>
+<link href="https://justpic.org/amp/post/requsts-advance-usage/" rel="amphtml" title="桑河一榆" type="text/html"/>
+<base href="https://justpic.org/post/requsts-advance-usage/"/>
+<link href="https://justpic.org/post/requsts-advance-usage/" rel="canonical"/>
+<link href="https://justpic.org/index.xml" rel="alternate" title="桑河一榆" type="application/rss+xml"/>
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700%7COpen+Sans:400,700" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css" rel="stylesheet"/>
+<link href="https://justpic.org/css/bundle.min.e38708182addf643182d68b57545fc397203375de5649238b6900b5a42df12f3.css" integrity="sha256-44cIGCrd9kMYLWi1dUX8OXIDN13lZJI4tpALWkLfEvM=" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <![endif]-->
+<meta content="qqgyYsb6kCSJvwxuvJ41bw-9tDmmmlwSgJbKhQzFqYI" name="google-site-verification"/>
+<meta content="BpiobbSKTO" name="baidu-site-verification"/>
+<meta content="python" name="keywords"/>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?148bce57cac06e37bb6a01cf0a77027f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-102189849-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<style>
+  @media (max-width: 780px) {
+    .minor-banner {
+      display:none;
+    }
+  }
+  i{
+    color:black;
+  }
+  ul.list-inline.social-link {
+    font-size: 36px;
+  }
+  .main-banner:after{
+    content:" ";
+    display:table;
+    clear:both;
+    min-height: 80px;
+  }
+   
+   
+   
+   
+</style>
+</head>
+<body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WTRRBMC" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class="container">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#main-navbar" data-toggle="collapse" type="button">
+<span class="sr-only">切换导航</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="https://justpic.org/" title="桑河一榆">
+<img alt="桑河一榆" src="https://justpic.org/images/justpic-logo.png" style="margin-top: -5px;height: 32px;"/>
+</a>
+</div>
+<div class="collapse navbar-collapse" id="main-navbar">
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a href="https://justpic.org/" title="首  页">首  页</a>
+</li>
+<li class="navlinks-container">
+<a class="navlinks-parent" href="javascript:void(0)">文章类别</a>
+<div class="navlinks-children">
+<a href="https://justpic.org/archives">归  档</a>
+<a href="https://justpic.org/tags">标签集 </a>
+<a href="https://justpic.org/tags/">kubernetes</a>
+<a href="https://justpic.org/tags/">python</a>
+<a href="https://justpic.org/tags/">devops模式</a>
+</div>
+</li>
+<li class="navlinks-container">
+<a class="navlinks-parent" href="javascript:void(0)">图  书</a>
+<div class="navlinks-children">
+<a href="http://justpic.org/md/">Markdown微信</a>
+<a href="https://labuladong.gitbook.io/algo/">算法分析</a>
+</div>
+</li>
+<li>
+<a href="https://justpic.org/page/tool" title="百宝箱">百宝箱</a>
+</li>
+<li>
+<a href="https://justpic.org/page/project" title="项  目">项  目</a>
+</li>
+<li>
+<a href="https://justpic.org/page/about/" title="关  于">关  于</a>
+</li>
+<li>
+<a href="https://justpic.org/en" lang="en">英文</a>
+</li>
+<li>
+<a data-target="#modalSearch" data-toggle="modal" href="#modalSearch" style="outline: none;">
+<span class="glyphicon glyphicon-search" id="searchGlyph"></span>
+</a>
+</li>
+</ul>
+</div>
+<progress id="content_progress" value="0"></progress>
+<style>
+      #content_progress {
+         
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 2px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        background-color: transparent;
+        color: #35a935;
+      }
+
+      #content_progress::-webkit-progress-bar {
+        background-color: transparent;
+      }
+
+      #content_progress::-webkit-progress-value {
+        background-color: #35a935;
+      }
+
+      #content_progress::-moz-progress-bar {
+        background-color: #35a935;
+      }
+
+      #particles-js {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        z-index: -50;
+        transform: scale(1.1, 1.1);
+        -ms-transition: all 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+        -webkit-transition: all 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+        transition: all 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+      }
+
+      #particles-js canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+    </style>
+<script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var winHeight = window.innerHeight,
+                docHeight = document.documentElement.scrollHeight,
+                progressBar = document.querySelector('#content_progress');
+        progressBar.max = docHeight - winHeight;
+        progressBar.value = window.scrollY;
+
+        document.addEventListener('scroll', function () {
+          progressBar.max = document.documentElement.scrollHeight - window.innerHeight;
+          progressBar.value = window.scrollY;
+        });
+      });
+    </script>
+</div>
+</nav>
+<div class="modal fade" id="modalSearch" role="dialog">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">×</button>
+<h4 class="modal-title">搜索</h4>
+</div>
+<div class="modal-body">
+<div class="aa-input-container" id="aa-input-container">
+<input autocomplete="off" class="aa-input-search" id="aa-search-input" name="search" placeholder="Search for titles or URIs..." type="search"/>
+<svg class="aa-input-icon" viewbox="654 -372 1664 1664">
+<path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z"></path>
+</svg>
+</div>
+<script src="https://justpic.org/js/algoliasearch.min.js"></script>
+<script src="https://justpic.org/js/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("W813GCTU6R", "a54627fcf15e2206773be495f10f4851");
+var index = client.initIndex('prod_:blog');
+
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 5}),
+    
+    displayKey: 'name',
+    
+    templates: {
+        
+        suggestion: function(suggestion) {
+            return '<span>' + '<a href="https://justpic.org/post/' + suggestion.slug + '">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+</div>
+<div class="modal-footer">
+<button class="btn btn-default" data-dismiss="modal" type="button">close</button>
+</div>
+</div>
+</div>
+</div>
+<div data-img-desc-1="sunshine" data-img-src-1="https://justpic.org/images/posts/default.jpg" data-num-img="1" id="header-big-imgs"></div>
+<header class="header-section has-img">
+<div class="intro-header big-img">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-heading">
+<h1>requests库中的那些高级用法</h1>
+<span class="post-meta">
+  
+    发表于 March 12, 2020
+  
+  
+  <span class="post-date">共496个字</span>，<span class="more-meta">阅读约3分钟</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<span class="img-desc" style="display: inline;"></span>
+</div>
+<div class="intro-header no-img">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-heading">
+<h1>requests库中的那些高级用法</h1>
+<span class="post-meta">
+  
+    发表于 March 12, 2020
+  
+  
+  <span class="post-date">共496个字</span>，<span class="more-meta">阅读约3分钟</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<script src="https://justpic.org/js/jquery.js" type="text/javascript"></script>
+<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.js"></script>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<div id="particles-js"></div>
+<div class="container" role="main">
+<div class="row">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div>
+<h5 id="tags" style="margin-top: 30px;">标签:
+          
+          <a href="https://justpic.org/tags/python/">python</a>  
+          
+          <a href="https://justpic.org/tags/requests/">requests</a>  
+          
+        </h5>
+</div>
+<article class="blog-post" id="content" itemprop="articleBody" role="main">
+<aside class="toc">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#请求钩子">请求钩子</a></li>
+<li><a href="#设置基链接">设置基链接</a></li>
+<li><a href="#设置默认超时">设置默认超时</a></li>
+<li><a href="#失败后的重试">失败后的重试</a>
+<ul>
+<li><a href="#结合超时和重试">结合超时和重试</a></li>
+</ul>
+</li>
+<li><a href="#调试http请求">调试HTTP请求</a>
+<ul>
+<li><a href="#打印http头文件">打印HTTP头文件</a></li>
+<li><a href="#打印所有">打印所有</a></li>
+</ul>
+</li>
+<li><a href="#测试和模拟请求">测试和模拟请求</a></li>
+<li><a href="#模仿浏览器行为">模仿浏览器行为</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+<p>作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。</p>
+<p>得益于requests简洁的API接口，在生产环境下得到了非常普遍的应用，即使在复杂的应用场景下，request的扩展性也非常好。如果你正在写一个API客户端或者网络爬虫，同时对断网情况比较棘手，那么下面所介绍的requests高级技巧可能会帮助你更好的进行程序调试。</p>
+<h2 id="请求钩子">请求钩子</h2>
+<p>应用第三方API时，需要验证应答内容是否合法，requests提供了raise_for_status()方法来判断应答内容的HTTP状态码是不是4xx或者5xx，表明请求产生了客户端或者服务器错误。
+例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">response <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">'https://api.github.com/user/repos?page=1'</span>)
+<span style="color:#6272a4"># 判断是否有无错误</span>
+response<span style="color:#ff79c6">.</span>raise_for_status()
+</code></pre></div><p>每一次请求都调用raise_for_status会非常繁琐，requests非常贴心的提供了一个'钩子(hook)‘接口（通过在请求过程的特定部分指定回调函数）。
+下面请看案例代码，通过使用hook来确保每次服务应答后，raise_for_status能被调用。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">http <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>Session()  
+assert_status_hook <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">lambda</span> response,<span style="color:#ff79c6">*</span>args,<span style="color:#ff79c6">**</span>kwargs: response<span style="color:#ff79c6">.</span>raise_for_status()  
+http<span style="color:#ff79c6">.</span>hooks[<span style="color:#f1fa8c">'response'</span>] <span style="color:#ff79c6">=</span> [assert_status_hook]  
+http<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">'https://api.github.com/user/repos?page=1")</span>
+<span style="color:#ff79c6">&gt;</span> HTTPError: <span style="color:#bd93f9">401</span> Client Error: Unauthorized <span style="color:#ff79c6">for</span> url: https:<span style="color:#ff79c6">//</span>api<span style="color:#ff79c6">.</span>github<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>user<span style="color:#ff79c6">/</span>repos?page<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>
+</code></pre></div><h2 id="设置基链接">设置基链接</h2>
+<p>假设你只使用api.org上的一个api，你可能在每次调用时都要重复编写http协议和域名。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">'https://api.org/list'</span>)  
+requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">'https://api.org/list/3/item'</span>)
+</code></pre></div><p>使用BaseUrlSession可以避免敲下这些重复的内容。
+下面看案例代码，</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">form requests_toolbelt <span style="color:#ff79c6">import</span> sessions 
+http <span style="color:#ff79c6">=</span> sessions<span style="color:#ff79c6">.</span>BaseUrlSession(base_url <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">"https://api.org"</span>) 
+http<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">"/list"</span>)
+http<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">"/list/item"</span>)
+</code></pre></div><p><strong>！注意requests_toolbelt没有默认包含在requests中的，使用时是需要额外安装的</strong></p>
+<h2 id="设置默认超时">设置默认超时</h2>
+<p>requests文档中推荐在生产环境下设置超时，如果你忘记设置超时，应用程序可能会当掉，尤其是在同步环境下，</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">'https://github.com/'</span>,timeout<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0.001</span>) 
+</code></pre></div><p>但是每次设置超时时间会非常繁琐，偶尔忘记设置超时会非常恼火。
+<img alt="giphy" src="https://justpic.org/images/posts/giphy.gif"/></p>
+<p>使用Transport Adapters可以为所有的HTTP调用设置默认超时时间，当然使用后也是可以通过再定义覆盖默认配置，
+下面看案例代码，</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">from</span> requests.adapters <span style="color:#ff79c6">import</span> HTTPAdapter 
+DEFAULT_TIMEOUT <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span> 
+<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">TimeoutHTTPAdapter</span>(HTTPAdapter):
+    <span style="color:#ff79c6">def</span> __init__(self,<span style="color:#ff79c6">*</span>args,<span style="color:#ff79c6">**</span>kwargs):
+        self<span style="color:#ff79c6">.</span>timeout <span style="color:#ff79c6">=</span> DEFAULT_TIMEOUT 
+        <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">"timeout"</span> <span style="color:#ff79c6">in</span> kwargs:
+            self<span style="color:#ff79c6">.</span>timeout <span style="color:#ff79c6">=</span> kwargs[<span style="color:#f1fa8c">"timeout"</span>]  
+            <span style="color:#ff79c6">del</span> kwargs[<span style="color:#f1fa8c">"timeout"</span>] 
+        <span style="color:#8be9fd;font-style:italic">super</span>()<span style="color:#ff79c6">.</span>__init__(<span style="color:#ff79c6">*</span>args,<span style="color:#ff79c6">**</span>kwargs)
+    
+    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">send</span>(self, request,<span style="color:#ff79c6">**</span>kwargs):
+        timeout <span style="color:#ff79c6">=</span> kwargs<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">"timeout"</span>)  
+        <span style="color:#ff79c6">if</span> timeout <span style="color:#ff79c6">is</span> None:
+            kwargs[<span style="color:#f1fa8c">"timeout"</span>] <span style="color:#ff79c6">=</span> self<span style="color:#ff79c6">.</span>timeout 
+        <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">super</span>()<span style="color:#ff79c6">.</span>send(request,<span style="color:#ff79c6">**</span>kwargs)
+
+<span style="color:#6272a4">#使用</span>
+<span style="color:#ff79c6">import</span> requests
+
+http <span style="color:#ff79c6">=</span> request<span style="color:#ff79c6">.</span>Session()
+adapter <span style="color:#ff79c6">=</span> TimeoutHTTPAdapter(timeout<span style="color:#ff79c6">=</span><span style="color:#bd93f9">2.5</span>) 
+http<span style="color:#ff79c6">.</span>mount(<span style="color:#f1fa8c">"https://"</span>,adapter)
+http<span style="color:#ff79c6">.</span>mount(<span style="color:#f1fa8c">"http://"</span>,adapter) 
+
+<span style="color:#6272a4">#使用默认配置</span>
+response <span style="color:#ff79c6">=</span> http<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">'https://api.weibo.com'</span>)
+
+<span style="color:#6272a4">#覆盖默认配置</span>
+response <span style="color:#ff79c6">=</span> http<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">'https://api.weibo.com'</span>,timeout<span style="color:#ff79c6">=</span><span style="color:#bd93f9">10</span>)
+   
+</code></pre></div><h2 id="失败后的重试">失败后的重试</h2>
+<p>服务器当掉后，网络连接会变得拥塞或者有损，如果想要建立更具鲁棒性的系统，那么必须考虑网络连接失败，以及建立重试策略。
+在Http客户端上添加重试策略是非常直接的，我们来创建一个HTTPAdapter，然后在adapter上添加策略</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">from</span> requests.adapter <span style="color:#ff79c6">import</span> HTTPAdapter 
+<span style="color:#ff79c6">from</span> requests.packages.urllib3.util.retry <span style="color:#ff79c6">import</span> Retry 
+
+retry_strategy <span style="color:#ff79c6">=</span> Retry(
+    total <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span>,
+    status_forcelist <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">429</span>,<span style="color:#bd93f9">500</span>,<span style="color:#bd93f9">502</span>,<span style="color:#bd93f9">503</span>,<span style="color:#bd93f9">504</span>],
+    method_whitelist <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">"HEAD"</span>,<span style="color:#f1fa8c">"GET"</span>,<span style="color:#f1fa8c">"OPTIONS"</span>] 
+)
+adapter <span style="color:#ff79c6">=</span> HTTPAdapter(max_retries <span style="color:#ff79c6">=</span> retry_strategy)
+http <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>Session() 
+http<span style="color:#ff79c6">.</span>mount(<span style="color:#f1fa8c">"https://"</span>,adapter) 
+http<span style="color:#ff79c6">.</span>mount(<span style="color:#f1fa8c">"http://"</span>,adapter) 
+
+response <span style="color:#ff79c6">=</span> http<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">"https://en.wikipedia.org/w/api.php"</span>)
+    
+</code></pre></div><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2665873967488848" data-ad-format="fluid" data-ad-layout-key="-73+ed+2i-1n-4w" data-ad-slot="2692397084" style="display:block"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p>默认的 Retry 类提供了健全的默认值，但是是高度可配置的，所以这里是我使用的最常见参数的纲要。
+其中</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">total<span style="color:#ff79c6">=</span><span style="color:#bd93f9">3</span>
+</code></pre></div><p>total代表重试的总次数，如果失败的请求或者重定向的次数超过这个数字，客户端将抛出 urllib3.exceptions.Maxretryerror 异常。通常3次重试就足够了。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">status_forcelist<span style="color:#ff79c6">=</span>[<span style="color:#bd93f9">413</span>, <span style="color:#bd93f9">429</span>, <span style="color:#bd93f9">503</span>]
+</code></pre></div><p>要重试的 HTTP 响应代码。 您可能希望对常见的服务器错误(500、502、503、504)进行重试，因为服务器和反向代理并不总是遵循 HTTP 规范。 总是在超出429速率限制的情况下重试，因为默认情况下，urllib 库应该在失败请求时增量地退出。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">method_whitelist<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">"HEAD"</span>, <span style="color:#f1fa8c">"GET"</span>, <span style="color:#f1fa8c">"PUT"</span>, <span style="color:#f1fa8c">"DELETE"</span>, <span style="color:#f1fa8c">"OPTIONS"</span>, <span style="color:#f1fa8c">"TRACE"</span>]
+</code></pre></div><p>要重试的 HTTP 方法。 默认情况下，这包括除 POST 以外的所有 HTTP 方法，因为 POST 可能导致新的插入。 修改此参数以包含 POST，因为大多数 i 处理的 API 不返回错误代码并在同一调用中执行插入操作。 如果他们这样做了，您可能应该发布一个 bug 报告。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">backoff_factor<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</code></pre></div><p>backoff_factor(退避因子)与失败的请求之间休眠的时间有关，其算法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{backoff factor} <span style="color:#ff79c6">*</span> (<span style="color:#bd93f9">2</span> <span style="color:#ff79c6">**</span> ({number of total retries} <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>))
+</code></pre></div><p>例如，如果退避因子设置为:
+1：连续睡眠：0.5，1，2，4，8，16，32，64，128，256
+2：连续睡眠：1，2，4，8，16，32，64，128，256，512
+10：连续睡眠：5，10，20，40，80，160，320，640，1280，2560
+作为重试策略的合理默认实现，连续睡眠值是呈指数增长的，通过设置退避因子，可以决定每个睡眠乘以多少。这个值默认为0，表示不会设置截断二进制指数退避算法，重试将立即执行。</p>
+<h3 id="结合超时和重试">结合超时和重试</h3>
+<p>由于 HTTPAdapter 具有类比的特性，我们可以像下面这样将重试和超时结合起来:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">retries <span style="color:#ff79c6">=</span> Retry(total<span style="color:#ff79c6">=</span><span style="color:#bd93f9">3</span>, backoff_factor<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>, status_forcelist<span style="color:#ff79c6">=</span>[<span style="color:#bd93f9">429</span>, <span style="color:#bd93f9">500</span>, <span style="color:#bd93f9">502</span>, <span style="color:#bd93f9">503</span>, <span style="color:#bd93f9">504</span>])
+http<span style="color:#ff79c6">.</span>mount(<span style="color:#f1fa8c">"https://"</span>, TimeoutHTTPAdapter(max_retries<span style="color:#ff79c6">=</span>retries))
+</code></pre></div><h2 id="调试http请求">调试HTTP请求</h2>
+<p>有时候请求会失败，而你却不知道为什么。 记录请求和响应可以帮助您了解故障。 有两种方法可以做到这一点——要么使用内置的调试日志记录设置，要么使用请求钩子。</p>
+<h3 id="打印http头文件">打印HTTP头文件</h3>
+<p>更改大于0的日志记录调试级别将记录响应 HTTP 报头。 这是最简单的选项，但它不允许您查看 HTTP 请求或响应体。 如果您处理的 API 返回一个不适合日志记录或包含二进制内容的大体有效负载，那么它是有用的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> requests
+<span style="color:#ff79c6">import</span> http
+
+http<span style="color:#ff79c6">.</span>client<span style="color:#ff79c6">.</span>HTTPConnection<span style="color:#ff79c6">.</span>debuglevel <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
+
+requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">"https://www.google.com/"</span>)
+
+<span style="color:#6272a4"># Output</span>
+send: <span style="color:#f1fa8c">b</span><span style="color:#f1fa8c">'GET / HTTP/1.1</span><span style="color:#f1fa8c">\r\n</span><span style="color:#f1fa8c">Host: www.google.com</span><span style="color:#f1fa8c">\r\n</span><span style="color:#f1fa8c">User-Agent: python-requests/2.22.0</span><span style="color:#f1fa8c">\r\n</span><span style="color:#f1fa8c">Accept-Encoding: gzip, deflate</span><span style="color:#f1fa8c">\r\n</span><span style="color:#f1fa8c">Accept: */*</span><span style="color:#f1fa8c">\r\n</span><span style="color:#f1fa8c">Connection: keep-alive</span><span style="color:#f1fa8c">\r\n\r\n</span><span style="color:#f1fa8c">'</span>
+reply: <span style="color:#f1fa8c">'HTTP/1.1 200 OK</span><span style="color:#f1fa8c">\r\n</span><span style="color:#f1fa8c">'</span>
+header: Date: Fri, <span style="color:#bd93f9">28</span> Feb <span style="color:#bd93f9">2020</span> <span style="color:#bd93f9">12</span>:<span style="color:#bd93f9">13</span>:<span style="color:#bd93f9">26</span> GMT
+header: Expires: <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
+header: Cache<span style="color:#ff79c6">-</span>Control: private, <span style="color:#8be9fd;font-style:italic">max</span><span style="color:#ff79c6">-</span>age<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</code></pre></div><h3 id="打印所有">打印所有</h3>
+<p>如果您想记录整个 HTTP 生命周期，包括请求和响应的文本表示，那么您可以使用请求钩子和请求工具自带的转储组件。
+在处理基于 REST 的 API 时，我更喜欢这个选项，因为它不会返回非常大的响应。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#ff79c6">import</span> requests
+<span style="color:#ff79c6">from</span> requests_toolbelt.utils <span style="color:#ff79c6">import</span> dump
+
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">logging_hook</span>(response, <span style="color:#ff79c6">*</span>args, <span style="color:#ff79c6">**</span>kwargs):
+    data <span style="color:#ff79c6">=</span> dump<span style="color:#ff79c6">.</span>dump_all(response)
+    <span style="color:#ff79c6">print</span>(data<span style="color:#ff79c6">.</span>decode(<span style="color:#f1fa8c">'utf-8'</span>))
+
+http <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>Session()
+http<span style="color:#ff79c6">.</span>hooks[<span style="color:#f1fa8c">"response"</span>] <span style="color:#ff79c6">=</span> [logging_hook]
+
+http<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">"https://api.openaq.org/v1/cities"</span>, params<span style="color:#ff79c6">=</span>{<span style="color:#f1fa8c">"country"</span>: <span style="color:#f1fa8c">"BA"</span>})
+
+<span style="color:#6272a4"># Output</span>
+<span style="color:#ff79c6">&lt;</span> GET <span style="color:#ff79c6">/</span>v1<span style="color:#ff79c6">/</span>cities?country<span style="color:#ff79c6">=</span>BA HTTP<span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<span style="color:#ff79c6">&lt;</span> Host: api<span style="color:#ff79c6">.</span>openaq<span style="color:#ff79c6">.</span>org
+
+<span style="color:#ff79c6">&gt;</span> HTTP<span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span> <span style="color:#bd93f9">200</span> OK
+<span style="color:#ff79c6">&gt;</span> Content<span style="color:#ff79c6">-</span>Type: application<span style="color:#ff79c6">/</span>json; charset<span style="color:#ff79c6">=</span>utf<span style="color:#ff79c6">-</span><span style="color:#bd93f9">8</span>
+<span style="color:#ff79c6">&gt;</span> Transfer<span style="color:#ff79c6">-</span>Encoding: chunked
+<span style="color:#ff79c6">&gt;</span> Connection: keep<span style="color:#ff79c6">-</span>alive
+<span style="color:#ff79c6">&gt;</span>
+{
+   <span style="color:#f1fa8c">"meta"</span>:{
+      <span style="color:#f1fa8c">"name"</span>:<span style="color:#f1fa8c">"openaq-api"</span>,
+      <span style="color:#f1fa8c">"license"</span>:<span style="color:#f1fa8c">"CC BY 4.0"</span>,
+      <span style="color:#f1fa8c">"website"</span>:<span style="color:#f1fa8c">"https://docs.openaq.org/"</span>,
+      <span style="color:#f1fa8c">"page"</span>:<span style="color:#bd93f9">1</span>,
+      <span style="color:#f1fa8c">"limit"</span>:<span style="color:#bd93f9">100</span>,
+      <span style="color:#f1fa8c">"found"</span>:<span style="color:#bd93f9">1</span>
+   },
+   <span style="color:#f1fa8c">"results"</span>:[
+      {
+         <span style="color:#f1fa8c">"country"</span>:<span style="color:#f1fa8c">"BA"</span>,
+         <span style="color:#f1fa8c">"name"</span>:<span style="color:#f1fa8c">"Goražde"</span>,
+         <span style="color:#f1fa8c">"city"</span>:<span style="color:#f1fa8c">"Goražde"</span>,
+         <span style="color:#f1fa8c">"count"</span>:<span style="color:#bd93f9">70797</span>,
+         <span style="color:#f1fa8c">"locations"</span>:<span style="color:#bd93f9">1</span>
+      }
+   ]
+}
+</code></pre></div><h2 id="测试和模拟请求">测试和模拟请求</h2>
+<p>在开发中使用第三方 API 会引入一个痛点——很难进行单元测试。 为减轻这种痛苦，Sentry 的工程师在开发过程中编写了一个模拟请求的库。</p>
+<blockquote>
+<p>不是将 HTTP 响应发送给服务器 getsentry / responses，而是截取 HTTP 请求，在应答时，测试过程中添加预定义的响应内容。</p>
+</blockquote>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2665873967488848" data-ad-format="fluid" data-ad-layout-key="-73+ed+2i-1n-4w" data-ad-slot="2692397084" style="display:block"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p>下面请看案例代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> unittest
+<span style="color:#ff79c6">import</span> requests
+<span style="color:#ff79c6">import</span> responses
+
+
+<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">TestAPI</span>(unittest<span style="color:#ff79c6">.</span>TestCase):
+    @responses.activate  <span style="color:#6272a4"># intercept HTTP calls within this method</span>
+    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">test_simple</span>(self):
+        response_data <span style="color:#ff79c6">=</span> {
+                <span style="color:#f1fa8c">"id"</span>: <span style="color:#f1fa8c">"ch_1GH8so2eZvKYlo2CSMeAfRqt"</span>,
+                <span style="color:#f1fa8c">"object"</span>: <span style="color:#f1fa8c">"charge"</span>,
+                <span style="color:#f1fa8c">"customer"</span>: {<span style="color:#f1fa8c">"id"</span>: <span style="color:#f1fa8c">"cu_1GGwoc2eZvKYlo2CL2m31GRn"</span>, <span style="color:#f1fa8c">"object"</span>: <span style="color:#f1fa8c">"customer"</span>},
+            }
+        <span style="color:#6272a4"># mock the Stripe API</span>
+        responses<span style="color:#ff79c6">.</span>add(
+            responses<span style="color:#ff79c6">.</span>GET,
+            <span style="color:#f1fa8c">"https://api.stripe.com/v1/charges"</span>,
+            json<span style="color:#ff79c6">=</span>response_data,
+        )
+
+        response <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">"https://api.stripe.com/v1/charges"</span>)
+        self<span style="color:#ff79c6">.</span>assertEqual(response<span style="color:#ff79c6">.</span>json(), response_data)
+</code></pre></div><p>如果发出的 HTTP 请求与模拟响应不匹配，则会抛出 ConnectionError。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">TestAPI</span>(unittest<span style="color:#ff79c6">.</span>TestCase):
+    @responses.activate
+    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">test_simple</span>(self):
+        responses<span style="color:#ff79c6">.</span>add(responses<span style="color:#ff79c6">.</span>GET, <span style="color:#f1fa8c">"https://api.stripe.com/v1/charges"</span>)
+        response <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">"https://invalid-request.com"</span>)
+</code></pre></div><p>输出：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests<span style="color:#ff79c6">.</span>exceptions<span style="color:#ff79c6">.</span>ConnectionError: Connection refused by Responses <span style="color:#ff79c6">-</span> the call doesn<span style="color:#f1fa8c">'t match any registered mock.</span>
+
+Request:
+<span style="color:#ff79c6">-</span> GET https:<span style="color:#ff79c6">//</span>invalid<span style="color:#ff79c6">-</span>request<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>
+
+Available matches:
+<span style="color:#ff79c6">-</span> GET https:<span style="color:#ff79c6">//</span>api<span style="color:#ff79c6">.</span>stripe<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>v1<span style="color:#ff79c6">/</span>charges
+</code></pre></div><h2 id="模仿浏览器行为">模仿浏览器行为</h2>
+<p>如果你已经写了足够多的网络爬虫代码，你将会注意到某些网站会根据浏览器或者请求方式返回不同的 HTML内容。 有时这是一种反抓取措施，但通常服务器会进行用户代理嗅探，以找出最适合设备的内容(例如桌面或移动设备)。
+如果你想返回与浏览器显示的内容相同的内容，你可以使用 Firefox 或 Chrome 发送的内容覆盖默认的 User-Agent 头请求集。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> requests
+http <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>Session()
+http<span style="color:#ff79c6">.</span>headers<span style="color:#ff79c6">.</span>update({
+    <span style="color:#f1fa8c">"User-Agent"</span>: <span style="color:#f1fa8c">"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"</span>
+})
+</code></pre></div><hr/>
+<p>参考：</p>
+<ul>
+<li><a href="https://hodovi.ch/blog/advanced-usage-python-requests-timeouts-retries-hooks/">Advanced usage of Python requests - timeouts, retries, hooks</a></li>
+</ul>
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2665873967488848" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="3296880515" style="display:block; text-align:center;"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="content-play">
+<p><a class="dashang" href="javascript:void(0)" onclick="dashangToggle()" title="打赏，支持一下">赞赏</a></p>
+<div class="hide_box-play"></div>
+<div class="shang_box-play">
+<a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img alt="取消" src="https://justpic.org/images/payimg/close.jpg"/></a>
+<div class="shang_tit-play">
+<p>感谢您的支持，我会继续写出更优秀的文章!</p>
+</div>
+<div class="shang_payimg">
+<img alt="扫码支持" src="https://justpic.org/images/wxpay.jpg" title="扫一扫"/>
+</div>
+<div class="shang_payimg">
+<img alt="扫码支持" src="https://justpic.org/images/alipay.jpg" title="扫一扫"/>
+</div>
+<div class="pay_explain">请我喝杯咖啡</div>
+<div class="shang_payselect">
+<div class="pay_item" data-id="weipay">
+<span class="pay_logo"><img alt="微信" src="https://justpic.org/images/payimg/wechat.jpg"/></span>
+</div>
+<div class="pay_item checked" data-id="alipay">
+<span class="pay_logo"><img alt="支付宝" src="https://justpic.org/images/payimg/alipay.jpg"/></span>
+</div>
+</div>
+<div class="shang_info-play">
+<p>打开<span id="shang_pay_txt">微信</span>扫一扫，即可进行扫码打赏哦</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    function dashangToggle(){
+        $(".hide_box-play").fadeToggle();
+        $(".shang_box-play").fadeToggle();
+    }
+</script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+<style type="text/css">
+    .content-play{}
+    .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+    .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;text-align:center;}
+    .shang_box-play img{border:none;border-width:0;}
+    .dashang{display:block;width:140px;margin:5px auto;height:40px;line-height:25px;padding:8px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+    .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+    .shang_close-play{float:right;display:inline-block;
+        margin-right: 10px;margin-top: 20px;
+    }
+    .shang_logo{display:block;text-align:center;margin:20px auto;}
+    .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+    .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+    .shang_payimg{width:140px;padding:10px; margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+    .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+    .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+    .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+    .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+    .shang_info-play{clear:both;}
+    .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+</style>
+<div class="social-share" data-initialized="true" style="margin-bottom: 20px;margin-top:20px;">
+<center>
+<a class="social-share-icon icon-weibo" href="#"></a>
+<a class="social-share-icon icon-wechat" href="#"></a>
+<a class="social-share-icon icon-twitter" href="#"></a>
+<a class="social-share-icon icon-linkedin" href="#"></a>
+<a class="social-share-icon icon-facebook" href="#"></a>
+<a class="social-share-icon icon-qq" href="#"></a>
+<a class="social-share-icon icon-qzone" href="#"></a>
+</center>
+</div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+</article>
+<h3>相关文章</h3>
+<ul style="margin-bottom: 25px;">
+<li><a href="https://justpic.org/post/jupyter-best-practice/">Jupyter最佳实践</a></li>
+<li><a href="https://justpic.org/post/tornado-async-web/">tornado异步网络编程实践</a></li>
+<li><a href="https://justpic.org/post/2015-03-14-use-python-in-windows/">windows系统使用python环境</a></li>
+<li><a href="https://justpic.org/post/2014-04-27-tornado-with-i18n/">tornado 国际化实践</a></li>
+<li><a href="https://justpic.org/post/ubuntu-install-numpy-scipy/">ubuntu系统安装numpy和scipy</a></li>
+<li><a href="https://justpic.org/post/django-sqlalchemy-mapping/">sqlalchemy动态映射</a></li>
+<li><a href="https://justpic.org/post/python-async-programming/">使用python进行异步网络编程</a></li>
+</ul>
+<ul class="pager blog-pager">
+<li class="previous">
+<a data-placement="top" data-toggle="tooltip" href="https://justpic.org/post/jupyter-best-practice/" title="Jupyter最佳实践">← 前一篇</a>
+</li>
+</ul>
+<script async="" crossorigin="anonymous" issue-term="title" repo="bpmbank/bpmbank.github.io" src="https://utteranc.es/client.js" theme="github-light">
+</script>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<img alt="justpic" src="https://justpic.org/images/weixin.jpg"/>
+<li>
+<a href="mailto:matrix.orz@gmail.com" title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://github.com/bpmbank" title="GitHub">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://weibo.com/" title="微博">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://instagram.com/" title="Instagram">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href="https://justpic.org/index.xml" title="RSS">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+          
+
+           • 
+          2020
+
+          
+             • 
+            <a href="https://justpic.org/">桑河一榆</a>
+             • 
+            <a href="https://justpic.org/sitemap.xml">网站地图</a>
+             • 
+            <a href="https://justpic.org/page/archive/">归档</a>
+             • 
+            <a href="https://justpic.org/page/friend/">友链</a>
+             • 
+            
+            <a class="h" href="https://justpic.org/page/kubernetes.io">kubernetes.io</a>
+<a class="h" href="https://justpic.org/page/kubernetes.org.cn">Kubernetes中文社区</a>
+</p>
+<p class="text-center text-muted">
+<script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style="display:none">
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+          </span>
+           • 
+          <span id="busuanzi_container_site_uv" style="display:none">
+            访客数<span id="busuanzi_value_site_uv"></span>人次
+          </span>
+</p>
+<p class="credits theme-by text-muted">
+          由 <a href="http://gohugo.io">Hugo v0.65.3</a> 强力驱动  •  主题 <a href="https://github.com/cnych/qikqiak.com">qikqiak-blog</a> 移植自 <a href="https://github.com/rootsongjc/beautifulhugo">Beautiful Hugo</a>
+</p>
+</div>
+</div>
+</div>
+</footer>
+<script integrity="sha256-85LfKlRu4oan0DnmHGl48F068pBq+7z/z7vvXHfEoCU=" src="https://justpic.org/js/bundle.min.f392df2a546ee286a7d039e61c6978f05d3af2906afbbcffcfbbef5c77c4a025.js"></script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?148bce57cac06e37bb6a01cf0a77027f";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+$(document).ready(function() {
+  var int = setInterval(fixCount, 50);  
+  
+  var initPVCount = 584976;
+  var initUVCount = 153191;
+  function fixCount() {                   
+    if ($("#busuanzi_container_site_pv").css("display") != "none") {
+        $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + initPVCount); 
+        clearInterval(int); 
+    }
+    if ($("#busuanzi_container_site_uv").css("display") != "none") {
+      $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + initUVCount);
+      clearInterval(int); 
+    }  
+  }           
+});
+</script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$('.carousel').slick({
+    dots: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    centerMode: true,
+    prevArrow: '<button type="button" class="slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-next"></button>',
+});
+</script>
+</body>
+</html>

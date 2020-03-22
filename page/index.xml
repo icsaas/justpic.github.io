@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Page on 桑河一榆</title>
+    <link>https://justpic.org/page/</link>
+    <description>Recent content in Page on 桑河一榆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="https://justpic.org/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://justpic.org/page/tool/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://justpic.org/page/tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://justpic.org/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://justpic.org/page/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Archive</title>
+      <link>https://justpic.org/page/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://justpic.org/page/archive/</guid>
+      <description>关注软件开发、devops、python、golang、微服务、AI等技术。
+ Kubernetes/Docker  自定义 Traefik2 中间件 Traefik2.X 版本 中 URL Rewrite 的使用 自定义 Kubernetes 调度器 一文搞懂 Traefik2.1 的使用 Prometheus 记录规则的使用 Prometheus 黑盒监控 Kubernetes Deployment 故障排查常见方法[译] ingress-nginx 中 Rewrite 的使用 使用 OAM 部署 Kubernetes 应用 在 Kubernetes 中配置 Container Capabilities Gloo 1.0 正式版发布 使用 Rook 快速搭建 Ceph 集群 k8s技术圈一周精选[第6期] 使用 Golang 自定义 Kubernetes Ingress Controller Traefik 2.0 实现灰度发布 Traefik 2.0 实现自动化 HTTPS 使用 Traefik 2.0 暴露 Redis 服务 基于自定义指标扩展的 Kubernetes 应用 使用 inlets 和 kubernetes 访问本地服务 Traefik 2.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://justpic.org/page/kubernetes.io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://justpic.org/page/kubernetes.io/</guid>
+      <description>Kubernetes 是用于自动部署，扩展和管理容器化应用程序的开源系统。 它将组成应用程序的容器组合成逻辑单元，以便于管理和服务发现，Kubernetes 构建在 Google 15 年生产环境经验基础之上，并结合来自社区的最佳创意和实践。
+Kubernetes 特性1  全球规模：基于允许 Google 每周运行数十亿个容器的原则进行设计，Kubernetes 可以在不增加您的运维团队的情况下进行弹性扩展。 永不过时：无论您应用运行在本地还是运行于全球任何地域，Kubernetes 的灵活性都可以随着您的需求复杂度不断增加，还可以持续、轻松地对外提供服务。 随处运行：Kubernetes 是开源的，可以让您自由地部署在企业内部，私有云、混合云或公有云基础架构，使您轻松将应用迁移至任何位置。  Kubernetes 特性2  自动包装：根据资源需求和其他约束自动放置容器，同时不会牺牲可用性，混合关键和最大努力的工作负载，以提高资源利用率并节省更多资源。 自我修复：重新启动失败的容器，在节点不可用时，替换和重新调度节点上的容器，对用户定义的健康检查不响应的容器会被中止，并且在容器准备好服务之前不会把其向客户端广播。 横向缩放：使用简单的命令或 UI，或者根据 CPU 的使用情况自动调整应用程序副本数。 服务发现和负载均衡：不需要修改您的应用程序来使用不熟悉的服务发现机制，Kubernetes 为容器提供了自己的 IP 地址和一组容器的单个 DNS 名称，并可以在它们之间进行负载均衡。</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes中文社区</title>
+      <link>https://justpic.org/page/kubernetes.org.cn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://justpic.org/page/kubernetes.org.cn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>友情链接</title>
+      <link>https://justpic.org/page/friend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://justpic.org/page/friend/</guid>
+      <description>海的一些朋友  forecho JACK LEE Ryan Yang Jimmy Song Roc RECALL&amp;rsquo;s Blog devopser sealyun wujunze (王丽兵)开发笔记 kuboard 风巢知识导航  </description>
+    </item>
+    
+    <item>
+      <title>项目</title>
+      <link>https://justpic.org/page/project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://justpic.org/page/project/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

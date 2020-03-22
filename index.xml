@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>桑河一榆</title>
+<link>https://justpic.org/</link>
+<description>Recent content on 桑河一榆</description>
+<generator>Hugo -- gohugo.io</generator>
+<language>zh-cn</language>
+<lastBuildDate>Thu, 12 Mar 2020 22:21:33 +0800</lastBuildDate>
+<atom:link href="https://justpic.org/index.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>requests库中的那些高级用法</title>
+<link>https://justpic.org/post/requsts-advance-usage/</link>
+<pubDate>Thu, 12 Mar 2020 22:21:33 +0800</pubDate>
+<guid>https://justpic.org/post/requsts-advance-usage/</guid>
+<description>&lt;p&gt;作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。&lt;/p&gt;</description>
+</item>
+<item>
+<title>什么是好的软件工程原则</title>
+<link>https://justpic.org/post/software-engineering-best-rules/</link>
+<pubDate>Sun, 08 Mar 2020 15:23:56 +0800</pubDate>
+<guid>https://justpic.org/post/software-engineering-best-rules/</guid>
+<description>&lt;p&gt;软件开发原则是一组具体的规则和建议，如果工程师想要编写工整、清晰和可维护的代码，那么他们需要在程序实现过程中应该遵循一些规则和建议。 没有魔杖可以把变量、类和函数的混合物变成完美的代码，但是有一些技巧和提示可以帮助工程师评判是否在做正确的事情。&lt;/p&gt;</description>
+</item>
+<item>
+<title>Markdown写作指南</title>
+<link>https://justpic.org/post/markdown-writing-rules/</link>
+<pubDate>Wed, 04 Mar 2020 22:18:02 +0800</pubDate>
+<guid>https://justpic.org/post/markdown-writing-rules/</guid>
+<description>&lt;p&gt;Markdown是一种轻量级标记语言。你不需要关心标题多大字号，段前距多少，列表缩进几格，只要在纯文本前后增加一些标记符号（例如 # - * &amp;gt;)，就能轻松写出工整精美的文章。与富文本编辑器（例如Word）是通过点击图形化的功能按钮来实现排版，而Markdown则是通过标记字符去赋予文字不同格式。易读易写（easy-to-read and easy-to-write),让任何与文字打交道的人专注于写作，不用操心排版，这一点类似vi编辑器功能。&lt;/p&gt;</description>
+</item>
+<item>
+<title>浅谈低代码开发</title>
+<link>https://justpic.org/post/lowcode-thoughts/</link>
+<pubDate>Mon, 02 Mar 2020 10:20:38 +0800</pubDate>
+<guid>https://justpic.org/post/lowcode-thoughts/</guid>
+<description>&lt;p&gt;本文从低代码发展历史、 相关领域发展情况、以及具体的实现三个方面对低代码的前世今生进行探索。&lt;/p&gt;</description>
+</item>
+<item>
+<title>APIJSON实践</title>
+<link>https://justpic.org/post/apijson-exercise/</link>
+<pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/apijson-exercise/</guid>
+<description>&lt;p&gt;APIJSON实践&lt;/p&gt;</description>
+</item>
+<item>
+<title>路由转发和反向代理的应用</title>
+<link>https://justpic.org/post/2019-10-15-lu-you-zhuan-fa-he-fan-xiang-dai-li-de-ying-yong/</link>
+<pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/2019-10-15-lu-you-zhuan-fa-he-fan-xiang-dai-li-de-ying-yong/</guid>
+<description/>
+</item>
+<item>
+<title>windows系统使用python环境</title>
+<link>https://justpic.org/post/2015-03-14-use-python-in-windows/</link>
+<pubDate>Sat, 14 Mar 2015 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/2015-03-14-use-python-in-windows/</guid>
+<description>&lt;p&gt;windows系统使用python环境&lt;/p&gt;</description>
+</item>
+<item>
+<title>latex数学符号</title>
+<link>https://justpic.org/post/latex-math-symbol/</link>
+<pubDate>Wed, 10 Sep 2014 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/latex-math-symbol/</guid>
+<description>&lt;p&gt;latex数学符号&lt;/p&gt;</description>
+</item>
+<item>
+<title>ScatNet散射卷积网络</title>
+<link>https://justpic.org/post/scatter/</link>
+<pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/scatter/</guid>
+<description>&lt;p&gt;ScatNet散射卷积网络&lt;/p&gt;</description>
+</item>
+<item>
+<title>linux添加用户操作</title>
+<link>https://justpic.org/post/2014-06-06-vps-initialization/</link>
+<pubDate>Fri, 06 Jun 2014 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/2014-06-06-vps-initialization/</guid>
+<description>&lt;p&gt;linux添加用户操作&lt;/p&gt;</description>
+</item>
+<item>
+<title>配置反向代理</title>
+<link>https://justpic.org/post/reverse-proxy-setup/</link>
+<pubDate>Thu, 05 Jun 2014 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/reverse-proxy-setup/</guid>
+<description>&lt;p&gt;配置反向代理&lt;/p&gt;</description>
+</item>
+<item>
+<title>Java调用matlab</title>
+<link>https://justpic.org/post/2014-06-02-java-call-matlab/</link>
+<pubDate>Mon, 02 Jun 2014 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/2014-06-02-java-call-matlab/</guid>
+<description>&lt;p&gt;Java调用matlab&lt;/p&gt;</description>
+</item>
+<item>
+<title>Matlab C混合编程</title>
+<link>https://justpic.org/post/matlab-mixed-c/</link>
+<pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/matlab-mixed-c/</guid>
+<description>&lt;p&gt;Matalb与C语言混合编程&lt;/p&gt;</description>
+</item>
+<item>
+<title>tornado 国际化实践</title>
+<link>https://justpic.org/post/2014-04-27-tornado-with-i18n/</link>
+<pubDate>Sun, 27 Apr 2014 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/2014-04-27-tornado-with-i18n/</guid>
+<description>&lt;p&gt;tornado i18n国际化&lt;/p&gt;</description>
+</item>
+<item>
+<title>ubuntu上构建ios交叉编译环境</title>
+<link>https://justpic.org/post/ubuntu-install-ios-llvm-chain/</link>
+<pubDate>Sat, 12 Apr 2014 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/ubuntu-install-ios-llvm-chain/</guid>
+<description>&lt;p&gt;ubuntu上构建ios交叉编译环境&lt;/p&gt;</description>
+</item>
+<item>
+<title>MySQL使用总结</title>
+<link>https://justpic.org/post/2014-04-04-mysql-shi-yong-zong-jie/</link>
+<pubDate>Fri, 04 Apr 2014 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/2014-04-04-mysql-shi-yong-zong-jie/</guid>
+<description>&lt;p&gt;MySQL使用总结&lt;/p&gt;</description>
+</item>
+<item>
+<title>Ubuntu Server安装World Community Grid</title>
+<link>https://justpic.org/post/ubuntu-install-wcg/</link>
+<pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/ubuntu-install-wcg/</guid>
+<description>&lt;p&gt;Ubuntu Server安装World Community Grid&lt;/p&gt;</description>
+</item>
+<item>
+<title>网站部署记录</title>
+<link>https://justpic.org/post/2013-10-27-install-project-on-preferati/</link>
+<pubDate>Sun, 27 Oct 2013 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/2013-10-27-install-project-on-preferati/</guid>
+<description>&lt;p&gt;网站部署记录&lt;/p&gt;</description>
+</item>
+<item>
+<title>ubuntu系统安装numpy和scipy</title>
+<link>https://justpic.org/post/ubuntu-install-numpy-scipy/</link>
+<pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/ubuntu-install-numpy-scipy/</guid>
+<description>&lt;p&gt;ubuntu系统安装numpy和scipy&lt;/p&gt;</description>
+</item>
+<item>
+<title>sqlalchemy动态映射</title>
+<link>https://justpic.org/post/django-sqlalchemy-mapping/</link>
+<pubDate>Fri, 26 Jul 2013 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/django-sqlalchemy-mapping/</guid>
+<description>&lt;p&gt;django中使用sqlalchemy进行动态映射&lt;/p&gt;</description>
+</item>
+<item>
+<title>使用python进行异步网络编程</title>
+<link>https://justpic.org/post/python-async-programming/</link>
+<pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/python-async-programming/</guid>
+<description>&lt;p&gt;python异步网络编程&lt;/p&gt;</description>
+</item>
+<item>
+<title>ubuntu系统上安装多版本python语言环境</title>
+<link>https://justpic.org/post/ubuntu-install-multi-python/</link>
+<pubDate>Tue, 02 Jul 2013 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/post/ubuntu-install-multi-python/</guid>
+<description>&lt;p&gt;ubuntu系统上安装多版本python语言环境&lt;/p&gt;</description>
+</item>
+<item>
+<title>ubuntu上安装hdf5</title>
+<link>https://justpic.org/post/ubuntu-install-hdf5/</link>
+<pubDate>Wed, 05 Jun 2013 11:11:11 +0000</pubDate>
+<guid>https://justpic.org/post/ubuntu-install-hdf5/</guid>
+<description>&lt;p&gt;ubuntu系统上安装hdf5&lt;/p&gt;</description>
+</item>
+<item>
+<title/>
+<link>https://justpic.org/page/tool/</link>
+<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/page/tool/</guid>
+<description/>
+</item>
+<item>
+<title>About me</title>
+<link>https://justpic.org/page/about/</link>
+<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/page/about/</guid>
+<description/>
+</item>
+<item>
+<title>Archive</title>
+<link>https://justpic.org/page/archive/</link>
+<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/page/archive/</guid>
+<description>关注软件开发、devops、python、golang、微服务、AI等技术。
+ Kubernetes/Docker  自定义 Traefik2 中间件 Traefik2.X 版本 中 URL Rewrite 的使用 自定义 Kubernetes 调度器 一文搞懂 Traefik2.1 的使用 Prometheus 记录规则的使用 Prometheus 黑盒监控 Kubernetes Deployment 故障排查常见方法[译] ingress-nginx 中 Rewrite 的使用 使用 OAM 部署 Kubernetes 应用 在 Kubernetes 中配置 Container Capabilities Gloo 1.0 正式版发布 使用 Rook 快速搭建 Ceph 集群 k8s技术圈一周精选[第6期] 使用 Golang 自定义 Kubernetes Ingress Controller Traefik 2.0 实现灰度发布 Traefik 2.0 实现自动化 HTTPS 使用 Traefik 2.0 暴露 Redis 服务 基于自定义指标扩展的 Kubernetes 应用 使用 inlets 和 kubernetes 访问本地服务 Traefik 2.</description>
+</item>
+<item>
+<title>Kubernetes</title>
+<link>https://justpic.org/page/kubernetes.io/</link>
+<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/page/kubernetes.io/</guid>
+<description>Kubernetes 是用于自动部署，扩展和管理容器化应用程序的开源系统。 它将组成应用程序的容器组合成逻辑单元，以便于管理和服务发现，Kubernetes 构建在 Google 15 年生产环境经验基础之上，并结合来自社区的最佳创意和实践。
+Kubernetes 特性1  全球规模：基于允许 Google 每周运行数十亿个容器的原则进行设计，Kubernetes 可以在不增加您的运维团队的情况下进行弹性扩展。 永不过时：无论您应用运行在本地还是运行于全球任何地域，Kubernetes 的灵活性都可以随着您的需求复杂度不断增加，还可以持续、轻松地对外提供服务。 随处运行：Kubernetes 是开源的，可以让您自由地部署在企业内部，私有云、混合云或公有云基础架构，使您轻松将应用迁移至任何位置。  Kubernetes 特性2  自动包装：根据资源需求和其他约束自动放置容器，同时不会牺牲可用性，混合关键和最大努力的工作负载，以提高资源利用率并节省更多资源。 自我修复：重新启动失败的容器，在节点不可用时，替换和重新调度节点上的容器，对用户定义的健康检查不响应的容器会被中止，并且在容器准备好服务之前不会把其向客户端广播。 横向缩放：使用简单的命令或 UI，或者根据 CPU 的使用情况自动调整应用程序副本数。 服务发现和负载均衡：不需要修改您的应用程序来使用不熟悉的服务发现机制，Kubernetes 为容器提供了自己的 IP 地址和一组容器的单个 DNS 名称，并可以在它们之间进行负载均衡。</description>
+</item>
+<item>
+<title>Kubernetes中文社区</title>
+<link>https://justpic.org/page/kubernetes.org.cn/</link>
+<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/page/kubernetes.org.cn/</guid>
+<description/>
+</item>
+<item>
+<title>友情链接</title>
+<link>https://justpic.org/page/friend/</link>
+<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/page/friend/</guid>
+<description>海的一些朋友  forecho JACK LEE Ryan Yang Jimmy Song Roc RECALL&amp;rsquo;s Blog devopser sealyun wujunze (王丽兵)开发笔记 kuboard 风巢知识导航  </description>
+</item>
+<item>
+<title>项目</title>
+<link>https://justpic.org/page/project/</link>
+<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+<guid>https://justpic.org/page/project/</guid>
+<description/>
+</item>
+</channel>
+</rss>
