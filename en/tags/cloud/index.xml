@@ -1,0 +1,19 @@
+<html><body><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cloud on A Tree by the river</title><link/>https://justpic.org/en/tags/cloud/<description>Recent content in cloud on A Tree by the river</description><generator>justpic</generator><language>en</language><managingeditor>matrix.orz@gmail.com (justpic)</managingeditor><webmaster>matrix.orz@gmail.com (justpic)</webmaster><copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright><lastbuilddate>Mon, 09 Mar 2020 22:09:40 +0800</lastbuilddate><atom:link href="https://justpic.org/en/tags/cloud/index.xml" rel="self" type="application/rss+xml"></atom:link><item><title>Azure Bug</title><link/>https://justpic.org/en/post/2020/03/09/azure-bug/<pubdate>Mon, 09 Mar 2020 22:09:40 +0800</pubdate><author>matrix.orz@gmail.com (justpic)</author><guid>https://justpic.org/en/post/2020/03/09/azure-bug/</guid><description><p>maybe a bug in azure when registering app</p><p>when registering app in azure,in the period of verifying the publisher domain ,it always said the error,“The server returned an unexpected content type header value. “,after google the problem,i found the solution in the github repo of offical document.it says,the github page does not support content type “application/json”,but return the mime type"application/json;charset=utf-8”.the azure doesn’t think it is correct,so the backend server must be own yours that support the custom content type.as also the example code(nodejs) just as follows,</p><div class="highlight"><div class="chroma"><table class="lntable"><tr><td class="lntd"><pre class="chroma"><code><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span></code></pre></td><td class="lntd"><pre class="chroma"><code class="language-fallback" data-lang="fallback">var http = require("http");
+//https://github.com/MicrosoftDocs/azure-docs/issues/39665
+var server = http.createServer(function(request, res) {
+res.writeHead(200, {
+'Content-Type': 'application/json'
+});
+res.write(
+JSON.stringify({
+associatedApplications: [
+{
+applicationId: '{replace of your own id}'
+}
+]
+})
+);
+res.end();
+});
+server.listen(80);
+console.log("Server is listening");</code></pre></td></tr></table></div></div><p><strong>after do that ,it is well done,beer!</strong></p><hr/><p>References</p><p><a href="https://github.com/MicrosoftDocs/azure-docs/issues/39665" rel="noopener noreffer" target="_blank">https://github.com/MicrosoftDocs/azure-docs/issues/39665</a></p></description></item></channel></rss></body></html>

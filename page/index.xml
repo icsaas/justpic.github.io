@@ -1,0 +1,65 @@
+<html><body><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on 桑河一榆</title><link/>https://justpic.org/page/<description>Recent content in Pages on 桑河一榆</description><generator>justpic</generator><language>zh-CN</language><managingeditor>matrix.orz@gmail.com (justpic)</managingeditor><webmaster>matrix.orz@gmail.com (justpic)</webmaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://justpic.org/page/index.xml" rel="self" type="application/rss+xml"></atom:link><item><title></title><link/>https://justpic.org/page/tool/<pubdate>Mon, 01 Jan 0001 00:00:00 +0000</pubdate><author>matrix.orz@gmail.com (justpic)</author><guid>https://justpic.org/page/tool/</guid><description><link href="./manifest.json" rel="manifest"/><link href="/css/main.f86bc672.chunk.css" rel="stylesheet"/><p></p><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>
+!function (l) {
+function e(e) {
+for (var r, t, n = e[0], o = e[1], u = e[2], f = 0, i = []; f< n.length;= f++)= t="[f]" p[t]= &&= i.push(p[t][0]),= p[t]="" for= (r= in= o)= Object.prototype.hasOwnProperty.call(o,= r)= &&= (l[r]="[r])" for= (s= &&= s(e);= i.length;)= i.shift()();= return= c.push.apply(c,= u= ||= []),= a()= }= function= a()= {= for= (var= e,= r="" r= <= c.length;= r++)= {= for= (var= t="[r]" n="0" o="" o= <= t.length;= o++)= {= var= u="[o]" 0= !== p[u]= &&= (n="1" }= n= &&= (c.splice(r--,= 1),= e="(f." ="[0])" }= return= e= }= var= t="}" p="1" 0},= c="]" function= f(e)= {= if= (t[e])= return= t[e].exports;= var= r="[e" ="i" e,= l:= !1,= exports:= {}};= return= l[e].call(r.exports,= r,= r.exports,= f),= r.l="0" r.exports= }= f.m="" f.c="" f.d="unctio" (e,= r,= t)= {= f.o(e,= r)= ||= Object.defineProperty(e,= r,= {enumerable:= !0,= get:= t})= },= f.r="unctio" (e)= {= "undefined"= !="ypeo" Symbol= &&= Symbol.toStringTag= &&= Object.defineProperty(e,= Symbol.toStringTag,= {value:= "Module"}),= Object.defineProperty(e,= "__esModule",= {value:= !0})= },= f.t="unctio" (r,= e)= {= if= (1= &= e= &&= (r="(r))" 8= &= e)= return= r;= if= (4= &= e= &&= "object"== typeof= r= &&= r= &&= r.__esModule)= return= r;= var= t="bject.create(null)" if= (f.r(t),= Object.defineProperty(t,= "default",= {= enumerable:= !0,= value:= r= }),= 2= &= e= &&= "string"= !="ypeo" r)= for= (var= n= in= r)= f.d(t,= n,= function= (e)= {= return= r[e]= }.bind(null,= n));= return= t= },= f.n="unctio" (e)= {= var= r=e &&= e.__esModule= ?= function= ()= {= return= e.default= }= := function= ()= {= return= e= };= return= f.d(r,= "a",= r),= r= },= f.o="unctio" (e,= r)= {= return= Object.prototype.hasOwnProperty.call(e,= r)= },= f.p="./" ;= var= r="indow.webpackJson" ="indow.webpackJson" ||= [],= n=".push.bind(r)" r.push="" r=".slice()" for= (var= o="" o= <= r.length;= o++)= e(r[o]);= var= s="" a()= }([])</script><script src="/js/2.744c36fb.chunk.js"></script><script src="/js/main.d77813cb.chunk.js"></script></description></item><item><title>Archive</title><link/>https://justpic.org/page/archive/<pubdate>Mon, 01 Jan 0001 00:00:00 +0000</pubdate><author>matrix.orz@gmail.com (justpic)</author><guid>https://justpic.org/page/archive/</guid><description><blockquote><p>关注软件开发、devops、python、golang、微服务、AI等技术。</p></blockquote></description></item><item><title>联盟链接</title><link/>https://justpic.org/page/friend/<pubdate>Mon, 01 Jan 0001 00:00:00 +0000</pubdate><author>matrix.orz@gmail.com (justpic)</author><guid>https://justpic.org/page/friend/</guid><description><h2 id="联盟列表">联盟列表</h2><ul><li><a href="https://blog.forecho.com/" rel="noopener noreffer" target="_blank">forecho</a></li><li><a href="http://lijinxiu.com?utm_source=justpic" rel="noopener noreffer" target="_blank">JACK LEE</a></li><li><a href="https://www.yangcs.net?utm_source=justpic" rel="noopener noreffer" target="_blank">Ryan Yang</a></li><li><a href="https://jimmysong.io?utm_source=justpic" rel="noopener noreffer" target="_blank">Jimmy Song</a></li><li><a href="https://imroc.io?utm_source=justpic" rel="noopener noreffer" target="_blank">Roc</a></li><li><a href="http://www.recall704.com?utm_source=justpic" rel="noopener noreffer" target="_blank">RECALL’s Blog</a></li><li><a href="http://www.devopser.org?utm_source=justpic" rel="noopener noreffer" target="_blank">devopser</a></li><li><a href="https://sealyun.com?utm_source=justpic" rel="noopener noreffer" target="_blank">sealyun</a></li><li><a href="https://wujunze.com?utm_source=justpic" rel="noopener noreffer" target="_blank">wujunze</a></li><li><a href="https://www.wanglibing.com?utm_source=justpic" rel="noopener noreffer" target="_blank">(王丽兵)开发笔记</a></li><li><a href="https://kuboard.cn?utm_source=justpic" rel="noopener noreffer" target="_blank">kuboard</a></li><li><a href="https://wind-nest.com?utm_source=justpic" rel="noopener noreffer" target="_blank">风巢知识导航</a></li></ul></description></item><item><title>项目</title><link/>https://justpic.org/page/project/<pubdate>Mon, 01 Jan 0001 00:00:00 +0000</pubdate><author>matrix.orz@gmail.com (justpic)</author><guid>https://justpic.org/page/project/</guid><description><div class="hugo-encryptor-container"><div class="hugo-encryptor-prompt"><p>文章的部分内容被密码保护：</p></div><div class="hugo-encryptor-form"><input class="hugo-encryptor-input" placeholder="请输入密码"/><input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="点击验证"/></div><div class="hugo-encryptor-cipher-text" style="display: none;">tXaYiHbFSfFBWxGsf3xX08bx8DQtD7LOTJ77OwbQ9HCoirOd5+NbLNfldsCCtAUPQReV068iPi0m5kCNWlwC7b+62k/zn6jLY3kkk+cHFuXv6vua84D5JVhrLGnv5L7S</div></div></description></item></channel></rss><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script>
+const _do_decrypt = function(encrypted, password) {
+  let key = CryptoJS.enc.Utf8.parse(password);
+  let iv = CryptoJS.enc.Utf8.parse(password.substr(16));
+  let decrypted_data = CryptoJS.AES.decrypt(encrypted, key, {
+    iv: iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7
+  });
+  return decrypted_data.toString(CryptoJS.enc.Utf8);
+};
+const _click_handler = function(element) {
+  let parent = element.parentNode.parentNode;
+  let encrypted = parent.querySelector(
+    ".hugo-encryptor-cipher-text").innerText;
+  let password = parent.querySelector(
+    ".hugo-encryptor-input").value;
+  password = CryptoJS.MD5(password).toString();
+  let index = -1;
+  let elements = document.querySelectorAll(
+    ".hugo-encryptor-container");
+  for (index = 0; index < elements.length; ++index) {
+    if (elements[index].isSameNode(parent)) {
+      break;
+    }
+  }
+  let decrypted = "";
+  try {
+    decrypted = _do_decrypt(encrypted, password);
+  } catch (err) {
+    console.error(err);
+    alert("Failed to decrypt.");
+    return;
+  }
+  if (!decrypted.includes("--- DON'T MODIFY THIS LINE ---")) {
+    alert("Incorrect password.");
+    return;
+  }
+  let storage = localStorage;
+  let key = location.pathname + ".password." + index;
+  storage.setItem(key, password);
+  parent.innerHTML = decrypted;
+}
+window.onload = () => {
+  let index = -1;
+  let elements = document.querySelectorAll(
+    ".hugo-encryptor-container");
+  while (1) {
+    ++index;
+    let key = location.pathname + ".password." + index;
+    let password = localStorage.getItem(key);
+    if (!password) {
+      break;
+    } else {
+      console.log("Found password for part " + index);
+      let parent = elements[index];
+      let encrypted = parent.querySelector(".hugo-encryptor-cipher-text").innerText;
+      let decrypted = _do_decrypt(encrypted, password);
+      elements[index].innerHTML = decrypted;
+    }
+  }
+};</script></body></html>

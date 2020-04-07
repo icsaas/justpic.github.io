@@ -1,0 +1,18 @@
+<html><body><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>django on 桑河一榆</title><link/>https://justpic.org/tags/django/<description>Recent content in django on 桑河一榆</description><generator>justpic</generator><language>zh-CN</language><managingeditor>matrix.orz@gmail.com (justpic)</managingeditor><webmaster>matrix.orz@gmail.com (justpic)</webmaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastbuilddate>Fri, 26 Jul 2013 00:00:00 +0000</lastbuilddate><atom:link href="https://justpic.org/tags/django/index.xml" rel="self" type="application/rss+xml"></atom:link><item><title>sqlalchemy动态映射</title><link/>https://justpic.org/post/2013/07/26/django-sqlalchemy-mapping/<pubdate>Fri, 26 Jul 2013 00:00:00 +0000</pubdate><author>matrix.orz@gmail.com (justpic)</author><guid>https://justpic.org/post/2013/07/26/django-sqlalchemy-mapping/</guid><description><p>django中使用sqlalchemy进行动态映射</p><h1 id="sqlalchemy动态映射">sqlalchemy动态映射</h1><p>代码如下:</p><div class="highlight"><div class="chroma"><table class="lntable"><tr><td class="lntd"><pre class="chroma"><code><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span></code></pre></td><td class="lntd"><pre class="chroma"><code class="language-fallback" data-lang="fallback"> from sqlalchemy import *
+from sqlalchemy.orm import *
+metadata=MetaData(create_engine("sqlite://",echo=True)
+t1=Table("t1",metadata,Column('id',Integer,primary_key=True))
+t2=Table("t2",metadata,Column("id",Integer,primary_key=True))
+metadata.create_all()
+def map_class_to_some_table(cls,table,entity_name,**kw):
+newcls=type(entity_name,(cls,),{})
+mapper(newcls,table,**kw)
+return newcls
+class Foo(object):
+pass
+T1Foo=map_class_to_some_table(Foo,t1,"T1Foo")
+T2Foo=map_class_to_some_table(Foo,t2,"T2Foo")
+sess=sessionmaker()()
+sess.add_all([T1Foo(),T1Foo(),T2Foo(),T1Foo()])
+print sess.query(T1Foo).all()
+print sess.query(T2Foo).all()</code></pre></td></tr></table></div></div></description></item></channel></rss></body></html>

@@ -1,0 +1,132 @@
+<html><body><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tornado on 桑河一榆</title><link/>https://justpic.org/tags/tornado/<description>Recent content in tornado on 桑河一榆</description><generator>justpic</generator><language>zh-CN</language><managingeditor>matrix.orz@gmail.com (justpic)</managingeditor><webmaster>matrix.orz@gmail.com (justpic)</webmaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastbuilddate>Thu, 08 Sep 2016 00:00:00 +0000</lastbuilddate><atom:link href="https://justpic.org/tags/tornado/index.xml" rel="self" type="application/rss+xml"></atom:link><item><title>tornado异步网络编程实践</title><link/>https://justpic.org/post/2016/09/08/tornado-async-web/<pubdate>Thu, 08 Sep 2016 00:00:00 +0000</pubdate><author>matrix.orz@gmail.com (justpic)</author><guid>https://justpic.org/post/2016/09/08/tornado-async-web/</guid><description><p>tornado异步网络编程实践</p><p><strong>异步tornado请求</strong><br/>
+底层建立socket通讯，服务器采用epoll方案，即时返回请求，轮询到后台任务结束时，通过socket发送数据到客户端。<br/>
+理解异步过程：
+http请求断了，tcp层面上的socket连接还在保持，客户端通过再次发送http请求，可以得到后台处理的结果，long pooling技术，socket套接字主要由ip地址、tcp/ip协议和端口号决定，利用epoll的套接字复用技术，能够保证任务请求能够发送到正确的客户端上，</p><div class="highlight"><div class="chroma"><table class="lntable"><tr><td class="lntd"><pre class="chroma"><code><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="lnt">24</span><span class="lnt">25</span><span class="lnt">26</span><span class="lnt">27</span><span class="lnt">28</span><span class="lnt">29</span><span class="lnt">30</span><span class="lnt">31</span><span class="lnt">32</span><span class="lnt">33</span><span class="lnt">34</span><span class="lnt">35</span><span class="lnt">36</span><span class="lnt">37</span><span class="lnt">38</span><span class="lnt">39</span><span class="lnt">40</span><span class="lnt">41</span><span class="lnt">42</span><span class="lnt">43</span><span class="lnt">44</span><span class="lnt">45</span><span class="lnt">46</span><span class="lnt">47</span><span class="lnt">48</span><span class="lnt">49</span><span class="lnt">50</span><span class="lnt">51</span><span class="lnt">52</span><span class="lnt">53</span><span class="lnt">54</span><span class="lnt">55</span><span class="lnt">56</span><span class="lnt">57</span><span class="lnt">58</span><span class="lnt">59</span><span class="lnt">60</span><span class="lnt">61</span><span class="lnt">62</span><span class="lnt">63</span><span class="lnt">64</span><span class="lnt">65</span><span class="lnt">66</span><span class="lnt">67</span><span class="lnt">68</span><span class="lnt">69</span><span class="lnt">70</span><span class="lnt">71</span><span class="lnt">72</span><span class="lnt">73</span><span class="lnt">74</span><span class="lnt">75</span><span class="lnt">76</span><span class="lnt">77</span><span class="lnt">78</span><span class="lnt">79</span><span class="lnt">80</span><span class="lnt">81</span></code></pre></td><td class="lntd"><pre class="chroma"><code class="language-fallback" data-lang="fallback">server {
+listen 80;
+server_name yourdomain.tld;
+location / {
+try_files $uri @tornado;
+}
+location @tornado {
+proxy_pass http://localhost:8888;
+}
+}
+user nginx;
+worker_processes 1;
+error_log /var/log/nginx/error.log;
+pid /var/run/nginx.pid;
+events {
+worker_connections 1024;
+use epoll;
+}
+http {
+# 在upstream中列出所有的tornado server,当然如果你要做不同的路由跳转的时候可以定义多个upstream
+upstream frontends {
+server 127.0.0.1:8000;
+server 127.0.0.1:8001;
+server 127.0.0.1:8002;
+server 127.0.0.1:8003;
+}
+include /etc/nginx/mime.types;
+default_type application/octet-stream;
+access_log /var/log/nginx/access.log;
+keepalive_timeout 65;
+proxy_read_timeout 200;
+sendfile on;
+tcp_nopush on;
+tcp_nodelay on;
+gzip on;
+gzip_min_length 1000;
+gzip_proxied any;
+gzip_types text/plain text/html text/css text/xml
+application/x-javascript application/xml
+application/atom+xml text/javascript;
+# Only retry if there was a communication error, not a timeout
+# on the Tornado server (to avoid propagating "queries of death"
+# to all frontends)
+proxy_next_upstream error;
+server {
+listen 80;
+# Allow file uploads
+client_max_body_size 50M;
+location ^~ /static/ {
+root /var/www;
+if ($query_string) {
+expires max;
+}
+}
+location = /favicon.ico {
+rewrite (.*) /static/favicon.ico;
+}
+location = /robots.txt {
+rewrite (.*) /static/robots.txt;
+}
+location / {
+proxy_pass_header Server;
+proxy_set_header Host $http_host;
+proxy_redirect off;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Scheme $scheme;
+proxy_pass http://frontends;
+}
+}
+}</code></pre></td></tr></table></div></div><div class="highlight"><div class="chroma"><table class="lntable"><tr><td class="lntd"><pre class="chroma"><code><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="lnt">24</span><span class="lnt">25</span><span class="lnt">26</span><span class="lnt">27</span><span class="lnt">28</span><span class="lnt">29</span><span class="lnt">30</span><span class="lnt">31</span><span class="lnt">32</span><span class="lnt">33</span><span class="lnt">34</span><span class="lnt">35</span><span class="lnt">36</span><span class="lnt">37</span><span class="lnt">38</span><span class="lnt">39</span><span class="lnt">40</span><span class="lnt">41</span><span class="lnt">42</span><span class="lnt">43</span><span class="lnt">44</span><span class="lnt">45</span><span class="lnt">46</span><span class="lnt">47</span><span class="lnt">48</span><span class="lnt">49</span><span class="lnt">50</span><span class="lnt">51</span><span class="lnt">52</span><span class="lnt">53</span><span class="lnt">54</span><span class="lnt">55</span><span class="lnt">56</span><span class="lnt">57</span><span class="lnt">58</span><span class="lnt">59</span><span class="lnt">60</span><span class="lnt">61</span><span class="lnt">62</span><span class="lnt">63</span><span class="lnt">64</span><span class="lnt">65</span><span class="lnt">66</span><span class="lnt">67</span><span class="lnt">68</span><span class="lnt">69</span><span class="lnt">70</span><span class="lnt">71</span></code></pre></td><td class="lntd"><pre class="chroma"><code class="language-fallback" data-lang="fallback">user nginx;
+worker_processes 1;
+error_log /var/log/nginx/error.log;
+pid /var/run/nginx.pid;
+events {
+worker_connections 1024;
+use epoll;
+}
+http {
+# 在upstream中列出所有的tornado server,当然如果你要做不同的路由跳转的时候可以定义多个upstream
+upstream frontends {
+server 127.0.0.1:8000;
+server 127.0.0.1:8001;
+server 127.0.0.1:8002;
+server 127.0.0.1:8003;
+}
+include /etc/nginx/mime.types;
+default_type application/octet-stream;
+access_log /var/log/nginx/access.log;
+keepalive_timeout 65;
+proxy_read_timeout 200;
+sendfile on;
+tcp_nopush on;
+tcp_nodelay on;
+gzip on;
+gzip_min_length 1000;
+gzip_proxied any;
+gzip_types text/plain text/html text/css text/xml
+application/x-javascript application/xml
+application/atom+xml text/javascript;
+# Only retry if there was a communication error, not a timeout
+# on the Tornado server (to avoid propagating "queries of death"
+# to all frontends)
+proxy_next_upstream error;
+server {
+listen 80;
+# Allow file uploads
+client_max_body_size 50M;
+location ^~ /static/ {
+root /var/www;
+if ($query_string) {
+expires max;
+}
+}
+location = /favicon.ico {
+rewrite (.*) /static/favicon.ico;
+}
+location = /robots.txt {
+rewrite (.*) /static/robots.txt;
+}
+location / {
+proxy_pass_header Server;
+proxy_set_header Host $http_host;
+proxy_redirect off;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Scheme $scheme;
+proxy_pass http://frontends;
+}
+}
+}</code></pre></td></tr></table></div></div><hr/><p>参考</p><ul><li><a href="http://golubenco.org/understanding-the-code-inside-tornado-the-asynchronous-web-server-powering-friendfeed.html" rel="noopener noreffer" target="_blank">http://golubenco.org/understanding-the-code-inside-tornado-the-asynchronous-web-server-powering-friendfeed.html</a></li><li><a href="http://zqdevres.qiniucdn.com/data/20100927213110/index.html" rel="noopener noreffer" target="_blank">http://zqdevres.qiniucdn.com/data/20100927213110/index.html</a></li><li><a href="http://xiaorui.cc/2016/06/26/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%8E%8B%E6%B5%8B%E5%BC%95%E8%B5%B7%E7%9A%84nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/" rel="noopener noreffer" target="_blank">http://xiaorui.cc/2016/06/26/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%8E%8B%E6%B5%8B%E5%BC%95%E8%B5%B7%E7%9A%84nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/</a></li><li><a href="http://stackoverflow.com/questions/32261494/should-we-do-database-calls-async-with-tornado" rel="noopener noreffer" target="_blank">http://stackoverflow.com/questions/32261494/should-we-do-database-calls-async-with-tornado</a></li><li><a href="http://www.dongwm.com/archives/shi-yong-tornadorang-ni-de-qing-qiu-yi-bu-fei-zu-sai/" rel="noopener noreffer" target="_blank">http://www.dongwm.com/archives/shi-yong-tornadorang-ni-de-qing-qiu-yi-bu-fei-zu-sai/</a></li><li><a href="http://qinxuye.me/article/ways-to-continual-sync-browser-and-server/" rel="noopener noreffer" target="_blank">http://qinxuye.me/article/ways-to-continual-sync-browser-and-server/</a></li></ul></description></item></channel></rss></body></html>
