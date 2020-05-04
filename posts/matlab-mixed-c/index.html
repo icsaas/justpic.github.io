@@ -1,0 +1,150 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Matlab C混合编程 - 桑河一榆</title><meta name=Description content="微服务、Web开发、人工智能"><meta property="og:title" content="Matlab C混合编程"><meta property="og:description" content="Matalb与C/C__语言混合编程"><meta property="og:type" content="article"><meta property="og:url" content="https://justpic.org/posts/matlab-mixed-c/"><meta property="article:published_time" content="2014-05-06T00:00:00+00:00"><meta property="article:modified_time" content="2014-05-06T00:00:00+00:00"><meta property="og:site_name" content="桑河一榆"><meta name=twitter:card content="summary"><meta name=twitter:title content="Matlab C混合编程"><meta name=twitter:description content="Matalb与C/C__语言混合编程"><meta name=application-name content="桑河一榆"><meta name=apple-mobile-web-app-title content="桑河一榆"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://justpic.org/posts/matlab-mixed-c/><link rel=prev href=https://justpic.org/posts/ai-collection-2014/><link rel=next href=https://justpic.org/posts/reverse-proxy-setup/><link rel=alternate href=/posts/matlab-mixed-c/index.xml type=application/rss+xml title=桑河一榆><link rel=feed href=/posts/matlab-mixed-c/index.xml type=application/rss+xml title=桑河一榆><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.zh-cn.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="qqgyYsb6kCSJvwxuvJ41bw-9tDmmmlwSgJbKhQzFqYI"><meta name=msvalidate.01 content="94176D92C6AC7E15BEF5E893A08BBF4C"><meta name=yandex-verification content="ad84c72035313a61"><meta name=p:domain_verify content="3195ab5af9839dfedefc07c1f2325523"><meta name=baidu-site-verification content="wTTF78WL8a"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Matlab C混合编程","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/justpic.org\/posts\/matlab-mixed-c\/"},"image":{"@type":"ImageObject","url":"https:\/\/justpic.org\/cover.png","width":800,"height":600},"genre":"posts","keywords":"matlab, hybird","wordcount":2348,"url":"https:\/\/justpic.org\/posts\/matlab-mixed-c\/","datePublished":"2014-05-06T00:00:00+00:00","dateModified":"2014-05-06T00:00:00+00:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":{"@type":"ImageObject","url":"https:\/\/justpic.org\/logo.png","width":127,"height":40}},"author":{"@type":"Person","name":"justpic"},"description":""}</script></head><body><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=桑河一榆>桑河一榆</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/>首 页 </a><a class=menu-item href=/>文章类别 </a><a class=menu-item href=/>图 书 </a><a class=menu-item href=/page/tool>百宝箱 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value;"><option value=/posts/matlab-mixed-c/ selected>简体中文</option></select>
+</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=桑河一榆>桑河一榆</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><a class=menu-item href=/>首 页</a><a class=menu-item href=/>文章类别</a><a class=menu-item href=/>图 书</a><a class=menu-item href=/page/tool>百宝箱</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a><a href=javascript:void(0); class=menu-item title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value;"><option value=/posts/matlab-mixed-c/ selected>简体中文</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Matlab C混合编程</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://justpic.org title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i><time datetime=2014-05-06>2014-05-06</time>&nbsp;
+<i class="fas fa-pencil-alt fa-fw"></i>约 2348 字&nbsp;
+<i class="far fa-clock fa-fw"></i>预计阅读 5 分钟&nbsp;<span id=/posts/matlab-mixed-c/ class=leancloud_visitors data-flag-title="Matlab C混合编程">
+<i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+</span>&nbsp;</div></div><div class="details toc" id=toc-static><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#1mex文件>1.MEX文件</a></li><li><a href=#2mat文件应用程序>2.MAT文件应用程序</a></li><li><a href=#3引擎应用程序>3.引擎应用程序</a></li></ul></li></ul></li></ul></nav></div></div><div class=content id=content><p>Matalb与C/C__语言混合编程</p><blockquote><p>用C++（或者C）语言操作MATLAB，有三种途径：MEX、MAT、引擎应用程序</p></blockquote><h4 id=1mex文件>1.MEX文件</h4><p>在MATLAB中可调用的C或Fortran语言程序称为MEX文件。MATLAB可以直接把MEX文件视为它的内建函数进行调用。MEX文件是动态链接的子例程，MATLAB解释器可以自动载入并执行它。MEX文件主要有以下用途：<br>对于大量现有的C或者Fortran程序可以无须改写成MATLAB专用的M文件格式而在MATLAB中执行。<br>对于那些MATLAB运算速度过慢的算法，可以用C或者Frotran语言编写以提高效率。</p><h4 id=2mat文件应用程序>2.MAT文件应用程序</h4><p>MAT文件是MATLAB专用的用于保存数据至磁盘和向MATLAB导入、从MATLAB导出数据的数据文件格式。MAT文件提供了一种简便的机制，它允许你在两个平台之间以灵活的方式移动数据。而且，它还提供了一种途径来向其它单机MATLAB应用导入或者导出数据。<br>为了简化在MATLAB环境之外对MAT文件的使用，MATLAB给出了一个操作例程库，通过它，我们可以使用C/C++或者Fortran程序读写MAT文件。</p><h4 id=3引擎应用程序>3.引擎应用程序</h4><p>MATLAB提供了一系列的例程使得别的程序可以调用MATLAB，从而把MATLAB用作一个计算引擎。MATLAB引擎程序指的是那些通过管道（在UNIX系统中）或者ActiveX（在Windows系统中）与独立MATLAB进程进行通信的C/C++或者Fortran程序。<br>MEX文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>#include “mex.h”  
+/*
+*timestwo.c-example found in API guide  
+*  
+*Computational function that takes a scalar and doubles it  
+*  
+*This is a MEX-File for MATLAB.  
+*Copyright(c)  
+*/  
+void timestwo(double y[],double x[]); 
+void timestwo(double y[],double x[]) 
+{ 
+y[0]=2.0*x[0]; 
+} 
+void mexFunction(int nlhs,mxArray* plhs[],int nrhs,const mxArray *prhs[])
+/*nlhs是MATLAB命令行方式下输出参数的个数 
+*plhs是MATLAB命令行方式下的输出参数; 
+*nrhs是MATLAB命令行方式下输入参数的个数； 
+*prhs[]是MATLAB命令行方式下的输入参数； 
+*/ 
+{ 
+double *x,*y; 
+int mrows,ncols; 
+/*Check for proper number of arguments.*/ 
+if (nrhs!=1){ 
+mexErrMsgTxt(“One input required”); 
+}
+else if(nlhs&gt;=1) 
+{ 
+mexErrMsgTxt(“Too many output arguments”); 
+} 
+/*在MATLAB命令行方式下，本MEX文件的调用格式是y=timestwo(x)
+输入参数（x）个数=1，输出参数（y）个数=1，所以在程序一开始就检查
+nrhs时候==1以及nlhs是否&gt;=1（因为MATLAB有一个缺省的输出参数ans，所以nlhs可以==0*/
+/*The input must be a non comlex scalar double.*/
+mrows=mxGetM(prhs[0]);//矩阵行数&lt;br&gt;
+ncols=mxGetN(prhs[0]);//矩阵列数&lt;br&gt;
+if (!mxIsDouble(prhs[0])|| mxIsComplex(prhs[0])||!(mrows==1&amp;amp;ncols==1))
+{
+mexErrMsgTxt(“Input must be a noncomplex scalar double”);
+}
+//判断输入举证是否是double类，以及它是否只包含单个元素无嵌套
+//为输出创建一个矩阵，显然这个矩阵也应该是1*1的
+plhs[0]=mxCreateDoubleMatrix(mrows,ncols,mxREAL);
+x=mxGetPr(prhs[0]);
+y=mxGetPr(plhs[0]);
+timestwo(y,x);
+}
+</code></pre></td></tr></table></div></div><p>matlab命令行上输入以下语句：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>mex testmex.cpp;
+x=2;
+y=testmex(x);
+</code></pre></td></tr></table></div></div><blockquote><p>MAT文件：<br>libmat.dll:用于操作mat文件<br>libmx.dll:用于操作mat文件中的矩阵<br>MATLAB中常用的矩阵类型：</p></blockquote><p>(复)双精度矩阵：<br>MATLAB中最常用的数据类型便是（复）双精度、非稀疏矩阵，这些矩阵的元素都是双精度（double）的，矩阵的尺寸为m×n，其中m是总行数，m是总列数。矩阵数据实际存放在两个双精度向量中——一个向量存放的是数据的实部，另一个向量存放的是数据的虚部。指向这两个向量的指针一般被写做“pr” （pointer to real data，指向实数据的指针）和“pi” （pointer to imaginary data，指向虚数据的指针）”。如果一个矩阵的pi为空的话，说明它是实双精度矩阵。<br>稀疏矩阵（Sparse Matrices）<br>MATLAB中稀疏矩阵的存储格式与众不同。如同双精度矩阵一样，它拥有参数pr和pi，同时它还具用三个附加的参数：nzmax，ir以及jc。<br>nzmax是个整型数，其值为向量ir及pr、pi（如果存在的话）可能的最大长度。它是稀疏矩阵中不为零的元素的个数。
+ir指向一个长度为nzmax的整型数阵列，阵列包含的是pr和pi中对应元素的行号。<br>jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中包含的是列号信息。对于任意的j，如果0≤j≥N-1，jc[j]是第j列中第一个非零项在ir、pr（以及pi）中的序号，jc[j+1]-1是第j列最后一个非零项的序号。因此jc[N]总等于nnz——矩阵中非零项的总个数。如果nnz小于nzmax，可以继续向矩阵中添加非零项而无需分配额外的存储空间&lt;</p><p>主要函数举例:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>·MATFile *matOpen(const char *filename, const char * mode)——打开/创建
+·MATFile *matOpen(const char *filename, const char * mode)——打开/创建一个MAT文件；
+·int matClose(MATFile *pMF)——关闭一个MAT文件；
+·mxArray *mxCreateDoubleMatrix(int m, int n, mxComplexity flag)
+   #创建一个（复）双精度矩阵；
+·mxArray *mxCreateSparse(int m, int n, int nzmax, mxComplexity flag)
+   #创建一个稀疏矩阵；
+·mxArray *matGetNextArray(MATFile *pMF)——获得MAT文件里面下一个矩阵；
+·const char *mxGetName(const mxArray *pa)——获得矩阵pa的名称；
+·void mxSetName(mxArray *pa,const char *s)——为矩阵pa设置一个名称；
+·int mxGetM(const mxArray *pa)——获得矩阵pa的总行数；
+·int mxGetN(const mxArray *pa)——获得矩阵pa的总列数；
+·double *mxGetPr(const mxArray *pa)——获得矩阵pa的pr指针；
+·int *mxGetIr(const mxArray *pa)——获得稀疏矩阵pa的ir指针；
+·int *mxGetJc(const mxArray *pa)——获得稀疏矩阵pa的jc指针；
+·int matPutArray(MATFile * pMF, const mxArray * pA)
+ #把矩阵pA存储入MAT文件pMAF；  
+·void mxDestroyArray(mxArray *pa)——释放矩阵pa（把它从内存中撤销）；
+</code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>本文于 2014-05-06 更新</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://justpic.org/posts/matlab-mixed-c/ data-title="Matlab C混合编程" data-via=xxxx data-hashtags=matlab,hybird><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://justpic.org/posts/matlab-mixed-c/ data-hashtag=matlab><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://justpic.org/posts/matlab-mixed-c/ data-title="Matlab C混合编程" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://justpic.org/posts/matlab-mixed-c/ data-title="Matlab C混合编程"><i class="fab fa-line fa-fw"></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://justpic.org/posts/matlab-mixed-c/ data-title="Matlab C混合编程" data-ralateuid=xxxx><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="分享到 Myspace" data-sharer=myspace data-url=https://justpic.org/posts/matlab-mixed-c/ data-title="Matlab C混合编程" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://justpic.org/posts/matlab-mixed-c/ data-title="Matlab C混合编程" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://justpic.org/posts/matlab-mixed-c/ data-title="Matlab C混合编程"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/matlab/>matlab</a>,&nbsp;<a href=/tags/hybird/>hybird</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/ai-collection-2014/ class=prev rel=prev title=计算机视觉><i class="fas fa-angle-left fa-fw"></i>计算机视觉</a>
+<a href=/posts/reverse-proxy-setup/ class=next rel=next title=配置反向代理>配置反向代理<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=valine class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.4"><i class="far fa-kiss-wink-heart fa-fw"></i>LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2013 - 2020</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://justpic.org target=_blank>justpic</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><style>.lg-toolbar .lg-icon::after{color:#999}</style><script type=text/javascript>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"4R8KL7gXd86iKHjaWTqbnD52-gzGzoHsz","appKey":"5kBqleDSlcBzUlRTBsDvARdT","avatar":"mp","el":"#valine","enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"headerMode":{"desktop":"fixed","mobile":"auto"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type=text/javascript src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type=text/javascript src=/lib/valine/Valine.min.js></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/object-fit-images/ofi.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/js/theme.min.js></script></body></html>

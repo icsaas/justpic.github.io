@@ -1,0 +1,345 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>requests库中的那些高级用法 - 桑河一榆</title><meta name=Description content="微服务、Web开发、人工智能"><meta property="og:title" content="requests库中的那些高级用法"><meta property="og:description" content="作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。"><meta property="og:type" content="article"><meta property="og:url" content="https://justpic.org/posts/requsts-advance-usage/"><meta property="article:published_time" content="2020-03-12T22:21:33+08:00"><meta property="article:modified_time" content="2020-03-12T22:21:33+08:00"><meta property="og:site_name" content="桑河一榆"><meta name=twitter:card content="summary"><meta name=twitter:title content="requests库中的那些高级用法"><meta name=twitter:description content="作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。"><meta name=application-name content="桑河一榆"><meta name=apple-mobile-web-app-title content="桑河一榆"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://justpic.org/posts/requsts-advance-usage/><link rel=prev href=https://justpic.org/posts/jupyter-best-practice/><link rel=next href=https://justpic.org/posts/ubuntu-18.04-install-opencv-4.2.0/><link rel=alternate href=/posts/requsts-advance-usage/index.xml type=application/rss+xml title=桑河一榆><link rel=feed href=/posts/requsts-advance-usage/index.xml type=application/rss+xml title=桑河一榆><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.zh-cn.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="qqgyYsb6kCSJvwxuvJ41bw-9tDmmmlwSgJbKhQzFqYI"><meta name=msvalidate.01 content="94176D92C6AC7E15BEF5E893A08BBF4C"><meta name=yandex-verification content="ad84c72035313a61"><meta name=p:domain_verify content="3195ab5af9839dfedefc07c1f2325523"><meta name=baidu-site-verification content="wTTF78WL8a"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"requests库中的那些高级用法","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/justpic.org\/posts\/requsts-advance-usage\/"},"image":{"@type":"ImageObject","url":"https:\/\/justpic.org\/cover.png","width":800,"height":600},"genre":"posts","keywords":"python, requests","wordcount":2734,"url":"https:\/\/justpic.org\/posts\/requsts-advance-usage\/","datePublished":"2020-03-12T22:21:33+08:00","dateModified":"2020-03-12T22:21:33+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":{"@type":"ImageObject","url":"https:\/\/justpic.org\/logo.png","width":127,"height":40}},"author":{"@type":"Person","name":"justpic"},"description":""}</script></head><body><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=桑河一榆>桑河一榆</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/>首 页 </a><a class=menu-item href=/>文章类别 </a><a class=menu-item href=/>图 书 </a><a class=menu-item href=/page/tool>百宝箱 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value;"><option value=/posts/requsts-advance-usage/ selected>简体中文</option></select>
+</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=桑河一榆>桑河一榆</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><a class=menu-item href=/>首 页</a><a class=menu-item href=/>文章类别</a><a class=menu-item href=/>图 书</a><a class=menu-item href=/page/tool>百宝箱</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a><a href=javascript:void(0); class=menu-item title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value;"><option value=/posts/requsts-advance-usage/ selected>简体中文</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">requests库中的那些高级用法</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://justpic.org title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>justpic</a></span>&nbsp;
+<span class=post-category>收录于<a href=/categories/python/>
+<i class="far fa-folder fa-fw"></i>python</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-12>2020-03-12</time>&nbsp;
+<i class="fas fa-pencil-alt fa-fw"></i>约 2734 字&nbsp;
+<i class="far fa-clock fa-fw"></i>预计阅读 6 分钟&nbsp;<span id=/posts/requsts-advance-usage/ class=leancloud_visitors data-flag-title=requests库中的那些高级用法>
+<i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+</span>&nbsp;</div></div><div class="details toc" id=toc-static><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#请求钩子>请求钩子</a></li><li><a href=#设置基链接>设置基链接</a></li><li><a href=#设置默认超时>设置默认超时</a></li><li><a href=#失败后的重试>失败后的重试</a><ul><li><a href=#结合超时和重试>结合超时和重试</a></li></ul></li><li><a href=#调试http请求>调试HTTP请求</a><ul><li><a href=#打印http头文件>打印HTTP头文件</a></li><li><a href=#打印所有>打印所有</a></li></ul></li><li><a href=#测试和模拟请求>测试和模拟请求</a></li><li><a href=#模仿浏览器行为>模仿浏览器行为</a></li></ul></nav></div></div><div class=content id=content><p>作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。</p><p>得益于requests简洁的API接口，在生产环境下得到了非常普遍的应用，即使在复杂的应用场景下，request的扩展性也非常好。如果你正在写一个API客户端或者网络爬虫，同时对断网情况比较棘手，那么下面所介绍的requests高级技巧可能会帮助你更好的进行程序调试。</p><h2 id=请求钩子>请求钩子</h2><p>应用第三方API时，需要验证应答内容是否合法，requests提供了raise_for_status()方法来判断应答内容的HTTP状态码是不是4xx或者5xx，表明请求产生了客户端或者服务器错误。</p><p>例如：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-toml data-lang=toml><span class=nx>response</span> <span class=p>=</span> <span class=nx>requests</span><span class=p>.</span><span class=nx>get</span><span class=err>(</span><span class=s1>&#39;https://api.github.com/user/repos?page=1&#39;</span><span class=err>)</span>
+<span class=c># 判断是否有无错误</span>
+<span class=nx>response</span><span class=p>.</span><span class=nx>raise_for_status</span><span class=err>()</span>
+</code></pre></td></tr></table></div></div><p>每一次请求都调用raise_for_status会非常繁琐，requests非常贴心的提供了一个&rsquo;钩子(hook)&lsquo;接口（通过在请求过程的特定部分指定回调函数）。
+下面请看案例代码，通过使用hook来确保每次服务应答后，raise_for_status能被调用。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>http</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>Session</span><span class=p>()</span>  
+<span class=n>assert_status_hook</span> <span class=o>=</span> <span class=k>lambda</span> <span class=n>response</span><span class=p>,</span><span class=o>*</span><span class=n>args</span><span class=p>,</span><span class=o>**</span><span class=n>kwargs</span><span class=p>:</span> <span class=n>response</span><span class=o>.</span><span class=n>raise_for_status</span><span class=p>()</span>  
+<span class=n>http</span><span class=o>.</span><span class=n>hooks</span><span class=p>[</span><span class=s1>&#39;response&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span><span class=n>assert_status_hook</span><span class=p>]</span>  
+<span class=n>http</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;https://api.github.com/user/repos?page=1&#34;)</span>
+<span class=o>&gt;</span> <span class=n>HTTPError</span><span class=p>:</span> <span class=mi>401</span> <span class=n>Client</span> <span class=n>Error</span><span class=p>:</span> <span class=n>Unauthorized</span> <span class=k>for</span> <span class=n>url</span><span class=p>:</span> <span class=n>https</span><span class=p>:</span><span class=o>//</span><span class=n>api</span><span class=o>.</span><span class=n>github</span><span class=o>.</span><span class=n>com</span><span class=o>/</span><span class=n>user</span><span class=o>/</span><span class=n>repos</span><span class=err>?</span><span class=n>page</span><span class=o>=</span><span class=mi>1</span>
+</code></pre></td></tr></table></div></div><h2 id=设置基链接>设置基链接</h2><p>假设你只使用api.org上的一个api，你可能在每次调用时都要重复编写http协议和域名。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;https://api.org/list&#39;</span><span class=p>)</span>  
+<span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;https://api.org/list/3/item&#39;</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p>使用BaseUrlSession可以避免敲下这些重复的内容。
+下面看案例代码，</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>form</span> <span class=n>requests_toolbelt</span> <span class=kn>import</span> <span class=nn>sessions</span> 
+<span class=n>http</span> <span class=o>=</span> <span class=n>sessions</span><span class=o>.</span><span class=n>BaseUrlSession</span><span class=p>(</span><span class=n>base_url</span> <span class=o>=</span> <span class=s2>&#34;https://api.org&#34;</span><span class=p>)</span> 
+<span class=n>http</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;/list&#34;</span><span class=p>)</span>
+<span class=n>http</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;/list/item&#34;</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p><strong>！注意requests_toolbelt没有默认包含在requests中的，使用时是需要额外安装的</strong></p><h2 id=设置默认超时>设置默认超时</h2><p>requests文档中推荐在生产环境下设置超时，如果你忘记设置超时，应用程序可能会当掉，尤其是在同步环境下，</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;https://github.com/&#39;</span><span class=p>,</span><span class=n>timeout</span><span class=o>=</span><span class=mf>0.001</span><span class=p>)</span> 
+</code></pre></td></tr></table></div></div><p>但是每次设置超时时间会非常繁琐，偶尔忘记设置超时会非常恼火。
+<img class=lazyload src=/svg/loading/small.min.svg data-src=/images/posts/giphy.gif data-srcset="/images/posts/giphy.gif, /images/posts/giphy.gif 1.5x, /images/posts/giphy.gif 2x" data-sizes=auto alt=giphy title=giphy></p><p>使用Transport Adapters可以为所有的HTTP调用设置默认超时时间，当然使用后也是可以通过再定义覆盖默认配置，
+下面看案例代码，</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>requests.adapters</span> <span class=kn>import</span> <span class=n>HTTPAdapter</span> 
+<span class=n>DEFAULT_TIMEOUT</span> <span class=o>=</span> <span class=mi>5</span> 
+<span class=k>class</span> <span class=nc>TimeoutHTTPAdapter</span><span class=p>(</span><span class=n>HTTPAdapter</span><span class=p>):</span>
+    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span><span class=o>*</span><span class=n>args</span><span class=p>,</span><span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>timeout</span> <span class=o>=</span> <span class=n>DEFAULT_TIMEOUT</span> 
+        <span class=k>if</span> <span class=s2>&#34;timeout&#34;</span> <span class=ow>in</span> <span class=n>kwargs</span><span class=p>:</span>
+            <span class=bp>self</span><span class=o>.</span><span class=n>timeout</span> <span class=o>=</span> <span class=n>kwargs</span><span class=p>[</span><span class=s2>&#34;timeout&#34;</span><span class=p>]</span>  
+            <span class=k>del</span> <span class=n>kwargs</span><span class=p>[</span><span class=s2>&#34;timeout&#34;</span><span class=p>]</span> 
+        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=fm>__init__</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span><span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+    
+    <span class=k>def</span> <span class=nf>send</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>request</span><span class=p>,</span><span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+        <span class=n>timeout</span> <span class=o>=</span> <span class=n>kwargs</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;timeout&#34;</span><span class=p>)</span>  
+        <span class=k>if</span> <span class=n>timeout</span> <span class=ow>is</span> <span class=bp>None</span><span class=p>:</span>
+            <span class=n>kwargs</span><span class=p>[</span><span class=s2>&#34;timeout&#34;</span><span class=p>]</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>timeout</span> 
+        <span class=k>return</span> <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=n>send</span><span class=p>(</span><span class=n>request</span><span class=p>,</span><span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+
+<span class=c1>#使用</span>
+<span class=kn>import</span> <span class=nn>requests</span>
+
+<span class=n>http</span> <span class=o>=</span> <span class=n>request</span><span class=o>.</span><span class=n>Session</span><span class=p>()</span>
+<span class=n>adapter</span> <span class=o>=</span> <span class=n>TimeoutHTTPAdapter</span><span class=p>(</span><span class=n>timeout</span><span class=o>=</span><span class=mf>2.5</span><span class=p>)</span> 
+<span class=n>http</span><span class=o>.</span><span class=n>mount</span><span class=p>(</span><span class=s2>&#34;https://&#34;</span><span class=p>,</span><span class=n>adapter</span><span class=p>)</span>
+<span class=n>http</span><span class=o>.</span><span class=n>mount</span><span class=p>(</span><span class=s2>&#34;http://&#34;</span><span class=p>,</span><span class=n>adapter</span><span class=p>)</span> 
+
+<span class=c1>#使用默认配置</span>
+<span class=n>response</span> <span class=o>=</span> <span class=n>http</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;https://api.weibo.com&#39;</span><span class=p>)</span>
+
+<span class=c1>#覆盖默认配置</span>
+<span class=n>response</span> <span class=o>=</span> <span class=n>http</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;https://api.weibo.com&#39;</span><span class=p>,</span><span class=n>timeout</span><span class=o>=</span><span class=mi>10</span><span class=p>)</span>
+   
+</code></pre></td></tr></table></div></div><h2 id=失败后的重试>失败后的重试</h2><p>服务器当掉后，网络连接会变得拥塞或者有损，如果想要建立更具鲁棒性的系统，那么必须考虑网络连接失败，以及建立重试策略。
+在Http客户端上添加重试策略是非常直接的，我们来创建一个HTTPAdapter，然后在adapter上添加策略</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>requests.adapter</span> <span class=kn>import</span> <span class=n>HTTPAdapter</span> 
+<span class=kn>from</span> <span class=nn>requests.packages.urllib3.util.retry</span> <span class=kn>import</span> <span class=n>Retry</span> 
+
+<span class=n>retry_strategy</span> <span class=o>=</span> <span class=n>Retry</span><span class=p>(</span>
+    <span class=n>total</span> <span class=o>=</span> <span class=mi>3</span><span class=p>,</span>
+    <span class=n>status_forcelist</span> <span class=o>=</span> <span class=p>[</span><span class=mi>429</span><span class=p>,</span><span class=mi>500</span><span class=p>,</span><span class=mi>502</span><span class=p>,</span><span class=mi>503</span><span class=p>,</span><span class=mi>504</span><span class=p>],</span>
+    <span class=n>method_whitelist</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;HEAD&#34;</span><span class=p>,</span><span class=s2>&#34;GET&#34;</span><span class=p>,</span><span class=s2>&#34;OPTIONS&#34;</span><span class=p>]</span> 
+<span class=p>)</span>
+<span class=n>adapter</span> <span class=o>=</span> <span class=n>HTTPAdapter</span><span class=p>(</span><span class=n>max_retries</span> <span class=o>=</span> <span class=n>retry_strategy</span><span class=p>)</span>
+<span class=n>http</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>Session</span><span class=p>()</span> 
+<span class=n>http</span><span class=o>.</span><span class=n>mount</span><span class=p>(</span><span class=s2>&#34;https://&#34;</span><span class=p>,</span><span class=n>adapter</span><span class=p>)</span> 
+<span class=n>http</span><span class=o>.</span><span class=n>mount</span><span class=p>(</span><span class=s2>&#34;http://&#34;</span><span class=p>,</span><span class=n>adapter</span><span class=p>)</span> 
+
+<span class=n>response</span> <span class=o>=</span> <span class=n>http</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;https://en.wikipedia.org/w/api.php&#34;</span><span class=p>)</span>
+    
+</code></pre></td></tr></table></div></div><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-2665873967488848 data-ad-slot=3296880515></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><p>默认的 Retry 类提供了健全的默认值，但是是高度可配置的，所以这里是我使用的最常见参数的纲要。
+其中</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>total</span><span class=o>=</span><span class=mi>3</span>
+</code></pre></td></tr></table></div></div><p>total代表重试的总次数，如果失败的请求或者重定向的次数超过这个数字，客户端将抛出 urllib3.exceptions.Maxretryerror 异常。通常3次重试就足够了。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>status_forcelist</span><span class=o>=</span><span class=p>[</span><span class=mi>413</span><span class=p>,</span> <span class=mi>429</span><span class=p>,</span> <span class=mi>503</span><span class=p>]</span>
+</code></pre></td></tr></table></div></div><p>要重试的 HTTP 响应代码。 您可能希望对常见的服务器错误(500、502、503、504)进行重试，因为服务器和反向代理并不总是遵循 HTTP 规范。 总是在超出429速率限制的情况下重试，因为默认情况下，urllib 库应该在失败请求时增量地退出。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>method_whitelist</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;HEAD&#34;</span><span class=p>,</span> <span class=s2>&#34;GET&#34;</span><span class=p>,</span> <span class=s2>&#34;PUT&#34;</span><span class=p>,</span> <span class=s2>&#34;DELETE&#34;</span><span class=p>,</span> <span class=s2>&#34;OPTIONS&#34;</span><span class=p>,</span> <span class=s2>&#34;TRACE&#34;</span><span class=p>]</span>
+</code></pre></td></tr></table></div></div><p>要重试的 HTTP 方法。 默认情况下，这包括除 POST 以外的所有 HTTP 方法，因为 POST 可能导致新的插入。 修改此参数以包含 POST，因为大多数 i 处理的 API 不返回错误代码并在同一调用中执行插入操作。 如果他们这样做了，您可能应该发布一个 bug 报告。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>backoff_factor</span><span class=o>=</span><span class=mi>0</span>
+</code></pre></td></tr></table></div></div><p>backoff_factor(退避因子)与失败的请求之间休眠的时间有关，其算法如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=p>{</span><span class=n>backoff</span> <span class=n>factor</span><span class=p>}</span> <span class=o>*</span> <span class=p>(</span><span class=mi>2</span> <span class=o>**</span> <span class=p>({</span><span class=n>number</span> <span class=n>of</span> <span class=n>total</span> <span class=n>retries</span><span class=p>}</span> <span class=o>-</span> <span class=mi>1</span><span class=p>))</span>
+</code></pre></td></tr></table></div></div><p>例如，如果退避因子设置为:
+1：连续睡眠：0.5，1，2，4，8，16，32，64，128，256
+2：连续睡眠：1，2，4，8，16，32，64，128，256，512
+10：连续睡眠：5，10，20，40，80，160，320，640，1280，2560
+作为重试策略的合理默认实现，连续睡眠值是呈指数增长的，通过设置退避因子，可以决定每个睡眠乘以多少。这个值默认为0，表示不会设置截断二进制指数退避算法，重试将立即执行。</p><h3 id=结合超时和重试>结合超时和重试</h3><p>由于 HTTPAdapter 具有类比的特性，我们可以像下面这样将重试和超时结合起来:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>retries</span> <span class=o>=</span> <span class=n>Retry</span><span class=p>(</span><span class=n>total</span><span class=o>=</span><span class=mi>3</span><span class=p>,</span> <span class=n>backoff_factor</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>status_forcelist</span><span class=o>=</span><span class=p>[</span><span class=mi>429</span><span class=p>,</span> <span class=mi>500</span><span class=p>,</span> <span class=mi>502</span><span class=p>,</span> <span class=mi>503</span><span class=p>,</span> <span class=mi>504</span><span class=p>])</span>
+<span class=n>http</span><span class=o>.</span><span class=n>mount</span><span class=p>(</span><span class=s2>&#34;https://&#34;</span><span class=p>,</span> <span class=n>TimeoutHTTPAdapter</span><span class=p>(</span><span class=n>max_retries</span><span class=o>=</span><span class=n>retries</span><span class=p>))</span>
+</code></pre></td></tr></table></div></div><h2 id=调试http请求>调试HTTP请求</h2><p>有时候请求会失败，而你却不知道为什么。 记录请求和响应可以帮助您了解故障。 有两种方法可以做到这一点——要么使用内置的调试日志记录设置，要么使用请求钩子。</p><h3 id=打印http头文件>打印HTTP头文件</h3><p>更改大于0的日志记录调试级别将记录响应 HTTP 报头。 这是最简单的选项，但它不允许您查看 HTTP 请求或响应体。 如果您处理的 API 返回一个不适合日志记录或包含二进制内容的大体有效负载，那么它是有用的。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>requests</span>
+<span class=kn>import</span> <span class=nn>http</span>
+
+<span class=n>http</span><span class=o>.</span><span class=n>client</span><span class=o>.</span><span class=n>HTTPConnection</span><span class=o>.</span><span class=n>debuglevel</span> <span class=o>=</span> <span class=mi>1</span>
+
+<span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;https://www.google.com/&#34;</span><span class=p>)</span>
+
+<span class=c1># Output</span>
+<span class=n>send</span><span class=p>:</span> <span class=sa>b</span><span class=s1>&#39;GET / HTTP/1.1</span><span class=se>\r\n</span><span class=s1>Host: www.google.com</span><span class=se>\r\n</span><span class=s1>User-Agent: python-requests/2.22.0</span><span class=se>\r\n</span><span class=s1>Accept-Encoding: gzip, deflate</span><span class=se>\r\n</span><span class=s1>Accept: */*</span><span class=se>\r\n</span><span class=s1>Connection: keep-alive</span><span class=se>\r\n\r\n</span><span class=s1>&#39;</span>
+<span class=n>reply</span><span class=p>:</span> <span class=s1>&#39;HTTP/1.1 200 OK</span><span class=se>\r\n</span><span class=s1>&#39;</span>
+<span class=n>header</span><span class=p>:</span> <span class=n>Date</span><span class=p>:</span> <span class=n>Fri</span><span class=p>,</span> <span class=mi>28</span> <span class=n>Feb</span> <span class=mi>2020</span> <span class=mi>12</span><span class=p>:</span><span class=mi>13</span><span class=p>:</span><span class=mi>26</span> <span class=n>GMT</span>
+<span class=n>header</span><span class=p>:</span> <span class=n>Expires</span><span class=p>:</span> <span class=o>-</span><span class=mi>1</span>
+<span class=n>header</span><span class=p>:</span> <span class=n>Cache</span><span class=o>-</span><span class=n>Control</span><span class=p>:</span> <span class=n>private</span><span class=p>,</span> <span class=nb>max</span><span class=o>-</span><span class=n>age</span><span class=o>=</span><span class=mi>0</span>
+</code></pre></td></tr></table></div></div><h3 id=打印所有>打印所有</h3><p>如果您想记录整个 HTTP 生命周期，包括请求和响应的文本表示，那么您可以使用请求钩子和请求工具自带的转储组件。
+在处理基于 REST 的 API 时，我更喜欢这个选项，因为它不会返回非常大的响应。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python>
+<span class=kn>import</span> <span class=nn>requests</span>
+<span class=kn>from</span> <span class=nn>requests_toolbelt.utils</span> <span class=kn>import</span> <span class=n>dump</span>
+
+<span class=k>def</span> <span class=nf>logging_hook</span><span class=p>(</span><span class=n>response</span><span class=p>,</span> <span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+    <span class=n>data</span> <span class=o>=</span> <span class=n>dump</span><span class=o>.</span><span class=n>dump_all</span><span class=p>(</span><span class=n>response</span><span class=p>)</span>
+    <span class=k>print</span><span class=p>(</span><span class=n>data</span><span class=o>.</span><span class=n>decode</span><span class=p>(</span><span class=s1>&#39;utf-8&#39;</span><span class=p>))</span>
+
+<span class=n>http</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>Session</span><span class=p>()</span>
+<span class=n>http</span><span class=o>.</span><span class=n>hooks</span><span class=p>[</span><span class=s2>&#34;response&#34;</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span><span class=n>logging_hook</span><span class=p>]</span>
+
+<span class=n>http</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;https://api.openaq.org/v1/cities&#34;</span><span class=p>,</span> <span class=n>params</span><span class=o>=</span><span class=p>{</span><span class=s2>&#34;country&#34;</span><span class=p>:</span> <span class=s2>&#34;BA&#34;</span><span class=p>})</span>
+
+<span class=c1># Output</span>
+<span class=o>&lt;</span> <span class=n>GET</span> <span class=o>/</span><span class=n>v1</span><span class=o>/</span><span class=n>cities</span><span class=err>?</span><span class=n>country</span><span class=o>=</span><span class=n>BA</span> <span class=n>HTTP</span><span class=o>/</span><span class=mf>1.1</span>
+<span class=o>&lt;</span> <span class=n>Host</span><span class=p>:</span> <span class=n>api</span><span class=o>.</span><span class=n>openaq</span><span class=o>.</span><span class=n>org</span>
+
+<span class=o>&gt;</span> <span class=n>HTTP</span><span class=o>/</span><span class=mf>1.1</span> <span class=mi>200</span> <span class=n>OK</span>
+<span class=o>&gt;</span> <span class=n>Content</span><span class=o>-</span><span class=n>Type</span><span class=p>:</span> <span class=n>application</span><span class=o>/</span><span class=n>json</span><span class=p>;</span> <span class=n>charset</span><span class=o>=</span><span class=n>utf</span><span class=o>-</span><span class=mi>8</span>
+<span class=o>&gt;</span> <span class=n>Transfer</span><span class=o>-</span><span class=n>Encoding</span><span class=p>:</span> <span class=n>chunked</span>
+<span class=o>&gt;</span> <span class=n>Connection</span><span class=p>:</span> <span class=n>keep</span><span class=o>-</span><span class=n>alive</span>
+<span class=o>&gt;</span>
+<span class=p>{</span>
+   <span class=s2>&#34;meta&#34;</span><span class=p>:{</span>
+      <span class=s2>&#34;name&#34;</span><span class=p>:</span><span class=s2>&#34;openaq-api&#34;</span><span class=p>,</span>
+      <span class=s2>&#34;license&#34;</span><span class=p>:</span><span class=s2>&#34;CC BY 4.0&#34;</span><span class=p>,</span>
+      <span class=s2>&#34;website&#34;</span><span class=p>:</span><span class=s2>&#34;https://docs.openaq.org/&#34;</span><span class=p>,</span>
+      <span class=s2>&#34;page&#34;</span><span class=p>:</span><span class=mi>1</span><span class=p>,</span>
+      <span class=s2>&#34;limit&#34;</span><span class=p>:</span><span class=mi>100</span><span class=p>,</span>
+      <span class=s2>&#34;found&#34;</span><span class=p>:</span><span class=mi>1</span>
+   <span class=p>},</span>
+   <span class=s2>&#34;results&#34;</span><span class=p>:[</span>
+      <span class=p>{</span>
+         <span class=s2>&#34;country&#34;</span><span class=p>:</span><span class=s2>&#34;BA&#34;</span><span class=p>,</span>
+         <span class=s2>&#34;name&#34;</span><span class=p>:</span><span class=s2>&#34;Goražde&#34;</span><span class=p>,</span>
+         <span class=s2>&#34;city&#34;</span><span class=p>:</span><span class=s2>&#34;Goražde&#34;</span><span class=p>,</span>
+         <span class=s2>&#34;count&#34;</span><span class=p>:</span><span class=mi>70797</span><span class=p>,</span>
+         <span class=s2>&#34;locations&#34;</span><span class=p>:</span><span class=mi>1</span>
+      <span class=p>}</span>
+   <span class=p>]</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><h2 id=测试和模拟请求>测试和模拟请求</h2><p>在开发中使用第三方 API 会引入一个痛点——很难进行单元测试。 为减轻这种痛苦，Sentry 的工程师在开发过程中编写了一个模拟请求的库。</p><blockquote><p>不是将 HTTP 响应发送给服务器 getsentry / responses，而是截取 HTTP 请求，在应答时，测试过程中添加预定义的响应内容。</p></blockquote><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-2665873967488848 data-ad-slot=3296880515></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><p>下面请看案例代码</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>unittest</span>
+<span class=kn>import</span> <span class=nn>requests</span>
+<span class=kn>import</span> <span class=nn>responses</span>
+
+
+<span class=k>class</span> <span class=nc>TestAPI</span><span class=p>(</span><span class=n>unittest</span><span class=o>.</span><span class=n>TestCase</span><span class=p>):</span>
+    <span class=nd>@responses.activate</span>  <span class=c1># intercept HTTP calls within this method</span>
+    <span class=k>def</span> <span class=nf>test_simple</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=n>response_data</span> <span class=o>=</span> <span class=p>{</span>
+                <span class=s2>&#34;id&#34;</span><span class=p>:</span> <span class=s2>&#34;ch_1GH8so2eZvKYlo2CSMeAfRqt&#34;</span><span class=p>,</span>
+                <span class=s2>&#34;object&#34;</span><span class=p>:</span> <span class=s2>&#34;charge&#34;</span><span class=p>,</span>
+                <span class=s2>&#34;customer&#34;</span><span class=p>:</span> <span class=p>{</span><span class=s2>&#34;id&#34;</span><span class=p>:</span> <span class=s2>&#34;cu_1GGwoc2eZvKYlo2CL2m31GRn&#34;</span><span class=p>,</span> <span class=s2>&#34;object&#34;</span><span class=p>:</span> <span class=s2>&#34;customer&#34;</span><span class=p>},</span>
+            <span class=p>}</span>
+        <span class=c1># mock the Stripe API</span>
+        <span class=n>responses</span><span class=o>.</span><span class=n>add</span><span class=p>(</span>
+            <span class=n>responses</span><span class=o>.</span><span class=n>GET</span><span class=p>,</span>
+            <span class=s2>&#34;https://api.stripe.com/v1/charges&#34;</span><span class=p>,</span>
+            <span class=n>json</span><span class=o>=</span><span class=n>response_data</span><span class=p>,</span>
+        <span class=p>)</span>
+
+        <span class=n>response</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;https://api.stripe.com/v1/charges&#34;</span><span class=p>)</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>assertEqual</span><span class=p>(</span><span class=n>response</span><span class=o>.</span><span class=n>json</span><span class=p>(),</span> <span class=n>response_data</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p>如果发出的 HTTP 请求与模拟响应不匹配，则会抛出 ConnectionError。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>class</span> <span class=nc>TestAPI</span><span class=p>(</span><span class=n>unittest</span><span class=o>.</span><span class=n>TestCase</span><span class=p>):</span>
+    <span class=nd>@responses.activate</span>
+    <span class=k>def</span> <span class=nf>test_simple</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=n>responses</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>responses</span><span class=o>.</span><span class=n>GET</span><span class=p>,</span> <span class=s2>&#34;https://api.stripe.com/v1/charges&#34;</span><span class=p>)</span>
+        <span class=n>response</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;https://invalid-request.com&#34;</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p>输出：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>requests</span><span class=o>.</span><span class=n>exceptions</span><span class=o>.</span><span class=n>ConnectionError</span><span class=p>:</span> <span class=n>Connection</span> <span class=n>refused</span> <span class=n>by</span> <span class=n>Responses</span> <span class=o>-</span> <span class=n>the</span> <span class=n>call</span> <span class=n>doesn</span><span class=s1>&#39;t match any registered mock.</span>
+
+<span class=n>Request</span><span class=p>:</span>
+<span class=o>-</span> <span class=n>GET</span> <span class=n>https</span><span class=p>:</span><span class=o>//</span><span class=n>invalid</span><span class=o>-</span><span class=n>request</span><span class=o>.</span><span class=n>com</span><span class=o>/</span>
+
+<span class=n>Available</span> <span class=n>matches</span><span class=p>:</span>
+<span class=o>-</span> <span class=n>GET</span> <span class=n>https</span><span class=p>:</span><span class=o>//</span><span class=n>api</span><span class=o>.</span><span class=n>stripe</span><span class=o>.</span><span class=n>com</span><span class=o>/</span><span class=n>v1</span><span class=o>/</span><span class=n>charges</span>
+</code></pre></td></tr></table></div></div><h2 id=模仿浏览器行为>模仿浏览器行为</h2><p>如果你已经写了足够多的网络爬虫代码，你将会注意到某些网站会根据浏览器或者请求方式返回不同的 HTML内容。 有时这是一种反抓取措施，但通常服务器会进行用户代理嗅探，以找出最适合设备的内容(例如桌面或移动设备)。
+如果你想返回与浏览器显示的内容相同的内容，你可以使用 Firefox 或 Chrome 发送的内容覆盖默认的 User-Agent 头请求集。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>requests</span>
+<span class=n>http</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>Session</span><span class=p>()</span>
+<span class=n>http</span><span class=o>.</span><span class=n>headers</span><span class=o>.</span><span class=n>update</span><span class=p>({</span>
+    <span class=s2>&#34;User-Agent&#34;</span><span class=p>:</span> <span class=s2>&#34;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0&#34;</span>
+<span class=p>})</span>
+</code></pre></td></tr></table></div></div><hr><p>参考：</p><ul><li><a href=https://hodovi.ch/blog/advanced-usage-python-requests-timeouts-retries-hooks/ target=_blank rel="noopener noreffer">Advanced usage of Python requests - timeouts, retries, hooks</a></li></ul></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>本文于 2020-03-12 更新</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://justpic.org/posts/requsts-advance-usage/ data-title=requests库中的那些高级用法 data-via=xxxx data-hashtags=python,requests><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://justpic.org/posts/requsts-advance-usage/ data-hashtag=python><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://justpic.org/posts/requsts-advance-usage/ data-title=requests库中的那些高级用法 data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://justpic.org/posts/requsts-advance-usage/ data-title=requests库中的那些高级用法><i class="fab fa-line fa-fw"></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://justpic.org/posts/requsts-advance-usage/ data-title=requests库中的那些高级用法 data-ralateuid=xxxx><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="分享到 Myspace" data-sharer=myspace data-url=https://justpic.org/posts/requsts-advance-usage/ data-title=requests库中的那些高级用法 data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://justpic.org/posts/requsts-advance-usage/ data-title=requests库中的那些高级用法 data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://justpic.org/posts/requsts-advance-usage/ data-title=requests库中的那些高级用法><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/python/>python</a>,&nbsp;<a href=/tags/requests/>requests</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/jupyter-best-practice/ class=prev rel=prev title=Jupyter最佳实践><i class="fas fa-angle-left fa-fw"></i>Jupyter最佳实践</a>
+<a href=/posts/ubuntu-18.04-install-opencv-4.2.0/ class=next rel=next title="ubuntu 18.04系统安装OpenCV 4.2.0">ubuntu 18.04系统安装OpenCV 4.2.0 <i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=valine class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.4"><i class="far fa-kiss-wink-heart fa-fw"></i>LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2013 - 2020</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://justpic.org target=_blank>justpic</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><style>.lg-toolbar .lg-icon::after{color:#999}</style><script type=text/javascript>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"4R8KL7gXd86iKHjaWTqbnD52-gzGzoHsz","appKey":"5kBqleDSlcBzUlRTBsDvARdT","avatar":"mp","el":"#valine","enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"headerMode":{"desktop":"fixed","mobile":"auto"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type=text/javascript src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type=text/javascript src=/lib/valine/Valine.min.js></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/object-fit-images/ofi.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/js/theme.min.js></script></body></html>
