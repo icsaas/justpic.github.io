@@ -1,1 +1,29 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>排版 - 标签 - 桑河一榆</title><link>https://justpic.org/tags/%E6%8E%92%E7%89%88/</link><description>排版 - 标签 - 桑河一榆</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor><webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 09 Mar 2020 23:30:29 +0800</lastBuildDate><atom:link href="https://justpic.org/tags/%E6%8E%92%E7%89%88/" rel="self" type="application/rss+xml"/><item><title>Jupyter最佳实践</title><link>https://justpic.org/posts/2020/03/09/jupyter-best-practice/</link><pubDate>Mon, 09 Mar 2020 23:30:29 +0800</pubDate><author>作者</author><guid>https://justpic.org/posts/2020/03/09/jupyter-best-practice/</guid><description>&lt;p>广受各大企业赞助的&lt;a href="https://jupyter.org/about" target="_blank" rel="noopener noreffer">jupyter团队&lt;/a>所开发的jupyter系列产品(主要包括jupyter notebook、jupyterlab和jupyterhub)，在数据科学领域变得越来越火热，依托python强大的语言生态，得益于其良好的扩展性和友好的用户交互，jupyter逐渐成为数据分析可视化的首选开源工具之一，下面将对数据分析实践过程中针对jupyter的调研分析进行小结.如果你正在使用python语言进行相关数据分析，本文所记录的jupyter相关实践可能对你会有所帮助。&lt;/p></description></item><item><title>Markdown写作指南</title><link>https://justpic.org/posts/2020/03/04/markdown-writing-rules/</link><pubDate>Wed, 04 Mar 2020 22:18:02 +0800</pubDate><author>作者</author><guid>https://justpic.org/posts/2020/03/04/markdown-writing-rules/</guid><description>&lt;p>Markdown是一种轻量级标记语言。你不需要关心标题多大字号，段前距多少，列表缩进几格，只要在纯文本前后增加一些标记符号（例如 # - * &amp;gt;)，就能轻松写出工整精美的文章。与富文本编辑器（例如Word）是通过点击图形化的功能按钮来实现排版，而Markdown则是通过标记字符去赋予文字不同格式。易读易写（easy-to-read and easy-to-write),让任何与文字打交道的人专注于写作，不用操心排版，这一点类似vi编辑器功能。&lt;/p></description></item><item><title>latex数学符号</title><link>https://justpic.org/posts/2014/09/10/latex-math-symbol/</link><pubDate>Wed, 10 Sep 2014 00:00:00 +0000</pubDate><author>作者</author><guid>https://justpic.org/posts/2014/09/10/latex-math-symbol/</guid><description>&lt;p>latex数学符号&lt;/p></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>排版 - 标签 - 桑河一榆</title>
+        <link>https://justpic.org/tags/%E6%8E%92%E7%89%88/</link>
+        <description>排版 - 标签 - 桑河一榆</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
+            <webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 09 Mar 2020 23:30:29 &#43;0800</lastBuildDate><atom:link href="https://justpic.org/tags/%E6%8E%92%E7%89%88/" rel="self" type="application/rss+xml" /><item>
+    <title>Jupyter最佳实践</title>
+    <link>https://justpic.org/posts/2020/03/09/jupyter-best-practice/</link>
+    <pubDate>Mon, 09 Mar 2020 23:30:29 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://justpic.org/posts/2020/03/09/jupyter-best-practice/</guid>
+    <description><![CDATA[<p>广受各大企业赞助的<a href="https://jupyter.org/about" target="_blank" rel="noopener noreffer">jupyter团队</a>所开发的jupyter系列产品(主要包括jupyter notebook、jupyterlab和jupyterhub)，在数据科学领域变得越来越火热，依托python强大的语言生态，得益于其良好的扩展性和友好的用户交互，jupyter逐渐成为数据分析可视化的首选开源工具之一，下面将对数据分析实践过程中针对jupyter的调研分析进行小结.如果你正在使用python语言进行相关数据分析，本文所记录的jupyter相关实践可能对你会有所帮助。</p>]]></description>
+</item><item>
+    <title>Markdown写作指南</title>
+    <link>https://justpic.org/posts/2020/03/04/markdown-writing-rules/</link>
+    <pubDate>Wed, 04 Mar 2020 22:18:02 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://justpic.org/posts/2020/03/04/markdown-writing-rules/</guid>
+    <description><![CDATA[<p>Markdown是一种轻量级标记语言。你不需要关心标题多大字号，段前距多少，列表缩进几格，只要在纯文本前后增加一些标记符号（例如 # - * &gt;)，就能轻松写出工整精美的文章。与富文本编辑器（例如Word）是通过点击图形化的功能按钮来实现排版，而Markdown则是通过标记字符去赋予文字不同格式。易读易写（easy-to-read and easy-to-write),让任何与文字打交道的人专注于写作，不用操心排版，这一点类似vi编辑器功能。</p>]]></description>
+</item><item>
+    <title>latex数学符号</title>
+    <link>https://justpic.org/posts/2014/09/10/latex-math-symbol/</link>
+    <pubDate>Wed, 10 Sep 2014 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://justpic.org/posts/2014/09/10/latex-math-symbol/</guid>
+    <description><![CDATA[<p>latex数学符号</p>]]></description>
+</item></channel>
+</rss>
