@@ -1,15 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>jupyter - 标签 - 桑河一榆</title>
-        <link>https://justpic.org/tags/jupyter/</link>
-        <description>jupyter - 标签 - 桑河一榆</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
-            <webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 09 Mar 2020 23:30:29 &#43;0800</lastBuildDate><atom:link href="https://justpic.org/tags/jupyter/" rel="self" type="application/rss+xml" /><item>
-    <title>Jupyter最佳实践</title>
-    <link>https://justpic.org/posts/2020/03/09/jupyter-best-practice/</link>
-    <pubDate>Mon, 09 Mar 2020 23:30:29 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://justpic.org/posts/2020/03/09/jupyter-best-practice/</guid>
-    <description><![CDATA[<p>广受各大企业赞助的<a href="https://jupyter.org/about" target="_blank" rel="noopener noreffer">jupyter团队</a>所开发的jupyter系列产品(主要包括jupyter notebook、jupyterlab和jupyterhub)，在数据科学领域变得越来越火热，依托python强大的语言生态，得益于其良好的扩展性和友好的用户交互，jupyter逐渐成为数据分析可视化的首选开源工具之一，下面将对数据分析实践过程中针对jupyter的调研分析进行小结.如果你正在使用python语言进行相关数据分析，本文所记录的jupyter相关实践可能对你会有所帮助。</p>]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>jupyter - 标签 - 桑河一榆</title><link>https://justpic.org/tags/jupyter/</link><description>jupyter - 标签 - 桑河一榆</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor><webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 09 Mar 2020 23:30:29 +0800</lastBuildDate><atom:link href="https://justpic.org/tags/jupyter/" rel="self" type="application/rss+xml"/><item><title>Jupyter最佳实践</title><link>https://justpic.org/posts/2020/03/09/jupyter-best-practice/</link><pubDate>Mon, 09 Mar 2020 23:30:29 +0800</pubDate><author>作者</author><guid>https://justpic.org/posts/2020/03/09/jupyter-best-practice/</guid><description>&lt;p>广受各大企业赞助的&lt;a href="https://jupyter.org/about" target="_blank" rel="noopener noreffer">jupyter团队&lt;/a>所开发的jupyter系列产品(主要包括jupyter notebook、jupyterlab和jupyterhub)，在数据科学领域变得越来越火热，依托python强大的语言生态，得益于其良好的扩展性和友好的用户交互，jupyter逐渐成为数据分析可视化的首选开源工具之一，下面将对数据分析实践过程中针对jupyter的调研分析进行小结.如果你正在使用python语言进行相关数据分析，本文所记录的jupyter相关实践可能对你会有所帮助。&lt;/p></description></item></channel></rss>

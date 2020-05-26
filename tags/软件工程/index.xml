@@ -1,15 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>软件工程 - 标签 - 桑河一榆</title>
-        <link>https://justpic.org/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</link>
-        <description>软件工程 - 标签 - 桑河一榆</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
-            <webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 08 Mar 2020 15:23:56 &#43;0800</lastBuildDate><atom:link href="https://justpic.org/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
-    <title>什么是好的软件工程原则</title>
-    <link>https://justpic.org/posts/2020/03/08/software-engineering-best-rules/</link>
-    <pubDate>Sun, 08 Mar 2020 15:23:56 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://justpic.org/posts/2020/03/08/software-engineering-best-rules/</guid>
-    <description><![CDATA[<p>软件开发原则是一组具体的规则和建议，如果工程师想要编写工整、清晰和可维护的代码，那么他们需要在程序实现过程中应该遵循一些规则和建议。 没有魔杖可以把变量、类和函数的混合物变成完美的代码，但是有一些技巧和提示可以帮助工程师评判是否在做正确的事情。</p>]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>软件工程 - 标签 - 桑河一榆</title><link>https://justpic.org/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</link><description>软件工程 - 标签 - 桑河一榆</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor><webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 08 Mar 2020 15:23:56 +0800</lastBuildDate><atom:link href="https://justpic.org/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="self" type="application/rss+xml"/><item><title>什么是好的软件工程原则</title><link>https://justpic.org/posts/2020/03/08/software-engineering-best-rules/</link><pubDate>Sun, 08 Mar 2020 15:23:56 +0800</pubDate><author>作者</author><guid>https://justpic.org/posts/2020/03/08/software-engineering-best-rules/</guid><description>&lt;p>软件开发原则是一组具体的规则和建议，如果工程师想要编写工整、清晰和可维护的代码，那么他们需要在程序实现过程中应该遵循一些规则和建议。 没有魔杖可以把变量、类和函数的混合物变成完美的代码，但是有一些技巧和提示可以帮助工程师评判是否在做正确的事情。&lt;/p></description></item></channel></rss>

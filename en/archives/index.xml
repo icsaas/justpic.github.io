@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Archives on A Tree by the river</title>
-    <link>https://justpic.org/en/archives/</link>
-    <description>Recent content in Archives on A Tree by the river</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
-    <webMaster>matrix.orz@gmail.com (justpic)</webMaster>
-    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    
-	<atom:link href="https://justpic.org/en/archives/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Archives on A Tree by the river</title><link>https://justpic.org/en/archives/</link><description>Recent content in Archives on A Tree by the river</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor><webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright><atom:link href="https://justpic.org/en/archives/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
