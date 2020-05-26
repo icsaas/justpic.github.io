@@ -1,8 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>所有什么是好的软件工程原则 - 桑河一榆</title>
-        <link>https://justpic.org/posts/2020/03/08/software-engineering-best-rules/</link>
-        <description>所有什么是好的软件工程原则 | 桑河一榆</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
-            <webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 08 Mar 2020 15:23:56 &#43;0800</lastBuildDate><atom:link href="https://justpic.org/posts/2020/03/08/software-engineering-best-rules/" rel="self" type="application/rss+xml" /></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>所有什么是好的软件工程原则 - 桑河一榆</title><link>https://justpic.org/posts/2020/03/08/software-engineering-best-rules/</link><description>所有什么是好的软件工程原则 | 桑河一榆</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor><webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 08 Mar 2020 15:23:56 +0800</lastBuildDate><atom:link href="https://justpic.org/posts/2020/03/08/software-engineering-best-rules/" rel="self" type="application/rss+xml"/></channel></rss>

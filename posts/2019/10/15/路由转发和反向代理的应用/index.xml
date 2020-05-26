@@ -1,8 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>所有路由转发和反向代理的应用 - 桑河一榆</title>
-        <link>https://justpic.org/posts/2019/10/15/%E8%B7%AF%E7%94%B1%E8%BD%AC%E5%8F%91%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/</link>
-        <description>所有路由转发和反向代理的应用 | 桑河一榆</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
-            <webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 15 Oct 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://justpic.org/posts/2019/10/15/%E8%B7%AF%E7%94%B1%E8%BD%AC%E5%8F%91%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/" rel="self" type="application/rss+xml" /></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>所有路由转发和反向代理的应用 - 桑河一榆</title><link>https://justpic.org/posts/2019/10/15/%E8%B7%AF%E7%94%B1%E8%BD%AC%E5%8F%91%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/</link><description>所有路由转发和反向代理的应用 | 桑河一榆</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor><webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://justpic.org/posts/2019/10/15/%E8%B7%AF%E7%94%B1%E8%BD%AC%E5%8F%91%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/" rel="self" type="application/rss+xml"/></channel></rss>
