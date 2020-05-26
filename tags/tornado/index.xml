@@ -1,1 +1,15 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>tornado - 标签 - 桑河一榆</title><link>https://justpic.org/tags/tornado/</link><description>tornado - 标签 - 桑河一榆</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor><webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 08 Sep 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://justpic.org/tags/tornado/" rel="self" type="application/rss+xml"/><item><title>tornado异步网络编程实践</title><link>https://justpic.org/posts/2016/09/08/tornado-async-web/</link><pubDate>Thu, 08 Sep 2016 00:00:00 +0000</pubDate><author>作者</author><guid>https://justpic.org/posts/2016/09/08/tornado-async-web/</guid><description>&lt;p>tornado异步网络编程实践&lt;/p></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>tornado - 标签 - 桑河一榆</title>
+        <link>https://justpic.org/tags/tornado/</link>
+        <description>tornado - 标签 - 桑河一榆</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
+            <webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 08 Sep 2016 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://justpic.org/tags/tornado/" rel="self" type="application/rss+xml" /><item>
+    <title>tornado异步网络编程实践</title>
+    <link>https://justpic.org/posts/2016/09/08/tornado-async-web/</link>
+    <pubDate>Thu, 08 Sep 2016 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://justpic.org/posts/2016/09/08/tornado-async-web/</guid>
+    <description><![CDATA[<p>tornado异步网络编程实践</p>]]></description>
+</item></channel>
+</rss>

@@ -1,327 +1,894 @@
-<!doctype html><html amp lang=zh-cn class=no-js><head><title>ubuntu 18.04系统安装OpenCV 4.2.0</title><meta charset=utf-8><script async custom-element=amp-ad src=https://cdn.ampproject.org/v0/amp-ad-0.1.js></script><script async custom-element=amp-analytics src=https://cdn.ampproject.org/v0/amp-analytics-0.1.js></script><script async custom-element=amp-audio src=https://cdn.ampproject.org/v0/amp-audio-0.1.js></script><script async src=https://cdn.ampproject.org/v0.js></script><link rel=canonical href=https://justpic.org/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/><link rel=icon href=/favicon.png type=image/png sizes=144x144><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1"><meta name=theme-color content="#000000"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"桑河一榆","url":"https:\/\/justpic.org\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/justpic.org\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/justpic.org\/","name":"home"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/justpic.org\/amp\/","name":"amp"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/justpic.org\/amp\/posts\/","name":"posts"}},{"@type":"ListItem","position":4,"item":{"@id":"https:\/\/justpic.org\/amp\/posts\/2020\/","name":"2020"}},{"@type":"ListItem","position":5,"item":{"@id":"https:\/\/justpic.org\/amp\/posts\/2020\/03\/","name":"03"}},{"@type":"ListItem","position":6,"item":{"@id":"https:\/\/justpic.org\/amp\/posts\/2020\/03\/27\/","name":"27"}},{"@type":"ListItem","position":7,"item":{"@id":"https:\/\/justpic.org\/amp\/posts\/2020\/03\/27\/ubuntu-18.04-install-opencv-4.2.0\/","name":"ubuntu-18.04-install-opencv-4.2.0"}}]}</script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end)0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end)0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end)0s 1 normal both;animation:-amp-start 8s steps(1,end)0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:0 0}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}td,th{padding:0}*{box-sizing:border-box}button,input,select,textarea{font:13px/1.4 Helvetica,arial,freesans,clean,sans-serif}a{color:#4183c4;text-decoration:none}a:active,a:focus,a:hover{text-decoration:underline}.rule,hr{height:0;margin:15px 0;overflow:hidden;background:0 0;border:0;border-bottom:1px solid #ddd}.rule:after,.rule:before,hr:after,hr:before{display:table;content:""}.rule:after,hr:after{clear:both}fieldset{padding:0;margin:0;border:0}label{font-size:13px;font-weight:700}#adv_code_search .search-page-label,input[type=email],input[type=number],input[type=password],input[type=tel],input[type=text],input[type=url],textarea{min-height:34px;padding:7px 8px;font-size:13px;color:#333;vertical-align:middle;background-color:#fff;background-repeat:no-repeat;background-position:100%;border:1px solid #ccc;border-radius:3px;outline:none;box-shadow:inset 0 1px 2px rgba(0,0,0,.075)}#adv_code_search .focus.search-page-label,#adv_code_search .search-page-label:focus,.focused .drag-and-drop,input[type=email].focus,input[type=email]:focus,input[type=number].focus,input[type=number]:focus,input[type=password].focus,input[type=password]:focus,input[type=tel].focus,input[type=tel]:focus,input[type=text].focus,input[type=text]:focus,input[type=url].focus,input[type=url]:focus,textarea.focus,textarea:focus{border-color:#51a7e8;box-shadow:inset 0 1px 2px rgba(0,0,0,.075),0 0 5px rgba(81,167,232,.5)}.input-contrast,input.input-contrast{background-color:#fafafa}.input-contrast:focus,input.input-contrast:focus{background-color:#fff}:-moz-placeholder,::-webkit-input-placeholder{color:#aaa}::-webkit-validation-bubble-message{font-size:12px;color:#fff;background:#9c2400;border:0;border-radius:3px;-webkit-box-shadow:1px 1px 1px rgba(0,0,0,.1)}input::-webkit-validation-bubble-icon{display:none}::-webkit-validation-bubble-arrow{background-color:#9c2400;border:1px solid #9c2400;-webkit-box-shadow:1px 1px 1px rgba(0,0,0,.1)}.absent{color:#c00}.anchor{position:absolute;top:0;bottom:0;left:0;display:block;padding-right:6px;padding-left:30px;margin-left:-30px}.anchor:focus{outline:none}h1,h2,h3,h4,h5,h6{position:relative;margin-top:1em;margin-bottom:16px;font-weight:700;line-height:1.4}h1 .octicon-link,h2 .octicon-link,h3 .octicon-link,h4 .octicon-link,h5 .octicon-link,h6 .octicon-link{display:none;color:#000;vertical-align:middle}h1:hover .anchor,h2:hover .anchor,h3:hover .anchor,h4:hover .anchor,h5:hover .anchor,h6:hover .anchor{height:1em;padding-left:8px;margin-left:-30px;line-height:1;text-decoration:none}h1:hover .anchor .octicon-link,h2:hover .anchor .octicon-link,h3:hover .anchor .octicon-link,h4:hover .anchor .octicon-link,h5:hover .anchor .octicon-link,h6:hover .anchor .octicon-link{display:inline-block}h1 code,h1 tt,h2 code,h2 tt,h3 code,h3 tt,h4 code,h4 tt,h5 code,h5 tt,h6 code,h6 tt{font-size:inherit}h1{font-size:2.25em;line-height:1.2}h1,h2{padding-bottom:.3em;border-bottom:1px solid #eee}h2{font-size:1.75em;line-height:1.225}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5,h6{font-size:1em}h6{color:#777}blockquote,dl,ol,p,pre,table,ul{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px 0;background-color:#e7e7e7;border:0}ol,ul{padding-left:2em}ol.no-list,ul.no-list{padding:0;list-style-type:none}ol ol,ol ul,ul ol,ul ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl,dl dt{padding:0}dl dt{margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0 16px;margin-bottom:16px}blockquote{padding:0 15px;color:#777;border-left:4px solid #ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}table th{font-weight:700}table td,table th{padding:6px 13px;border:1px solid #ddd}table tr{background-color:#fff;border-top:1px solid #ccc}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;box-sizing:border-box}span.frame,span.frame>span{display:block;overflow:hidden}span.frame>span{float:left;width:auto;padding:7px;margin:13px 0 0;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0 auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}span.align-right span img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left span{margin:13px 0 0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:"\00a0"}code br,tt br{display:none}del code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.highlight{margin-bottom:16px}.highlight pre,pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.highlight pre{margin-bottom:0;word-break:normal}pre,pre code,pre tt{word-wrap:normal}pre code,pre tt{display:inline;max-width:none;padding:0;margin:0;overflow:initial;line-height:inherit;background-color:transparent;border:0}pre code:after,pre code:before,pre tt:after,pre tt:before{content:normal}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:0 0}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:0 0}ins{text-decoration:none}ins,mark{background-color:#ff9;color:#000}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}body{background-color:#fff;color:#123;font-size:14px;font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif}main{max-width:1180px;padding:30px;margin:0 auto}@media(min-width:900px){main h1+p{font-size:2em}}h1{font-weight:300;font-size:2em;line-height:1.4em;margin:.5em 0;font-family:Georgia,serif;-webkit-transition:color .4s;transition:color .4s}h2{font-size:2em}h2,h3{font-weight:300;margin:30px 0}h3{font-size:1.8em}h4{font-size:1.6em}h4,h5{font-weight:300}h5{font-size:1.2em}h6{font-weight:300;font-size:1em}p{line-height:1.4em;font-size:1.2em;margin:15px 0}blockquote{border-left:5px solid #ff1d55;background-color:#ffe9ee;padding:1em;margin-bottom:1em}.lightbox{background-color:rgba(3,121,196,.4);min-height:100vh;min-width:100vw;padding:30px}code{font:12px Consolas,Liberation Mono,Menlo,Courier,monospace}p>code{color:#ff1d55}pre code{display:block;background-color:#f7f7f7;padding:15px;overflow:auto;color:#123;line-height:1.4em}a{color:#ff1d55;text-decoration:none;-webkit-transition:color .4s,background .4s;transition:color .4s,background .4s}a:hover{color:#e9003a}ol,ul{margin:7.5px;padding:7.5px 15px}ol li,ul li{margin:7.5px 15px}.doc-parameters{list-style-type:none;padding:0}.doc-parameters li{display:block;margin:0;margin-bottom:15px}.doc-parameters .example,.doc-parameters blockquote{border-left:5px solid #0379c4;background-color:#96d5fd;color:#123;line-height:1em;font-size:1em;padding:1em;margin:0}.doc-parameters .example{background-color:#c8e9fe}.doc-parameters .parameter{display:block;padding:1em;background-color:#0379c4;color:#fff;margin:0}.doc-parameters .parameter strong{display:inline-block;padding:0 .5em;border-radius:.25em;line-height:2em;background-color:#025a92}hr{height:.25em;padding:0;margin:24px 0;background-color:#f7f7f7;border:0}.teaser{display:-webkit-box;display:-ms-flexbox;display:flex;text-align:left;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.teaser aside{-ms-flex-preferred-size:60%;flex-basis:60%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:30px}@media(max-width:700px){.teaser aside{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser .content{-ms-flex-preferred-size:40%;flex-basis:40%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;color:dimgray;font-size:12px}@media(max-width:700px){.teaser .content{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser .content.content-full{-ms-flex-preferred-size:100%;flex-basis:100%}.teaser .content h3{font-size:14px;text-transform:uppercase;font-weight:600;color:#123}.main-index{text-align:center}.main-index amp-img{margin:15px auto;width:50%}@media(min-width:900px){.main-index p{font-size:2em}}.breadcrumbs{padding:1em;background-color:#f7f7f7}.breadcrumbs ul{display:block;margin:0;padding:0}.breadcrumbs ul li{display:inline-block;margin:0 .5em}.breadcrumbs ul li:before{content:' / ';position:relative;margin-left:-.5em;color:dimgray}.breadcrumbs ul li a{color:dimgray}.breadcrumbs ul li:last-child a{color:#ff1d55}header{background-color:#000;color:#fff;padding:30px;position:relative}header .brand{display:inline-block;position:absolute;left:30px;top:20px;line-height:15px;text-transform:uppercase;padding:7.5px;font-size:1.4em}header .brand:hover{background-color:#ff1d55;color:#fff}header a{color:#fff;text-decoration:none;border-radius:7.5px;padding:7.5px}header a:hover{text-decoration:none;background-color:#fff;color:#ff1d55}header nav ul{padding:0;margin:0;display:block;text-align:right}header nav ul li{padding:0;margin:0 7.5px;display:inline-block}header nav ul li.hamburger{display:none}header nav ul li.hamburger button{position:absolute;right:30px;top:20px;border:0;background-color:#fff;color:#ff1d55;font-weight:700;border-radius:50%;width:30px;height:30px;overflow:hidden;text-align:center;padding:0;margin:0}@media(max-width:900px){header nav ul li{display:none}header nav ul li.hamburger{display:inline-block}}.sidebarNavigation{width:210px;max-width:95%}.sidebarNavigation ul{padding:0;margin:0}.sidebarNavigation ul li{display:block}.sidebarNavigation ul li a{display:block;line-height:1.4em;padding:7.5px}footer{margin:60px auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;max-width:1180px;padding:30px;font-size:12px}footer a:hover{text-decoration:none}footer strong{text-transform:uppercase;margin-bottom:15px;display:block}footer strong a{color:#1d1d1d}footer ul{display:block;padding:0;margin:0}footer ul li{display:block;line-height:1.4em;padding:7.5px 0;margin:0}footer ul li a{color:dimgray}footer .quarter-section{margin-bottom:30px;-ms-flex-preferred-size:25%;flex-basis:25%}@media(max-width:900px){footer .quarter-section{-ms-flex-preferred-size:33%;flex-basis:33%}}@media(max-width:700px){footer .quarter-section{-ms-flex-preferred-size:50%;flex-basis:50%}}@media(max-width:500px){footer .quarter-section{-ms-flex-preferred-size:100%;flex-basis:100%}}.boxes{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:12px}.boxes .box{-ms-flex-preferred-size:30%;flex-basis:30%;background-color:#f7f7f7;padding:30px;margin:7.5px 0;text-align:left;font-size:12px}.boxes .box h3{font-size:12px;line-height:1em;padding:0;margin:0}.boxes .box a{padding:0;color:#ff1d55}.boxes .box p{color:dimgray;font-size:12px;margin:7.5px 0}@media(max-width:900px){.boxes .box{-ms-flex-preferred-size:45%;flex-basis:45%}}@media(max-width:500px){.boxes .box{-ms-flex-preferred-size:100%;flex-basis:100%}}.fixed-container{position:relative;width:100%;height:300px;margin:auto}amp-img.contain img{object-fit:contain}.footnotes{overflow-wrap:break-word}</style><script data-ad-client=ca-pub-2665873967488848 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script async custom-element=amp-auto-ads src=https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js></script></head><body><main><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">ubuntu 18.04系统安装OpenCV 4.2.0</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://justpic.org title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>justpic</a></span>&nbsp;
-<span class=post-category>收录于<a href=/categories/opencv/>
-<i class="far fa-folder fa-fw"></i>opencv</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-27>2020-03-27</time>&nbsp;
-<i class="fas fa-pencil-alt fa-fw"></i>约 1329 字&nbsp;
-<i class="far fa-clock fa-fw"></i>预计阅读 3 分钟&nbsp;<span id=/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/ class=leancloud_visitors data-flag-title="ubuntu 18.04系统安装OpenCV 4.2.0">
-<i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
-</span>&nbsp;</div></div><div class="details toc" id=toc-static><div class="details-summary toc-title"><span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#更新系统>更新系统</a></li><li><a href=#安装前置依赖包>安装前置依赖包</a></li><li><a href=#正式安装opencv-420步骤>正式安装Opencv 4.2.0步骤</a></li><li><a href=#测试安装>测试安装　　</a></li><li><a href=#faq>FAQ</a></li><li><a href=#安装或者编译错误>安装或者编译错误　　</a></li></ul></nav></div></div><div class=content id=content><p>主要介绍ubuntu 18.04安装OpenCV 4.2.0</p><h2 id=更新系统>更新系统</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo apt update 
-$ sudo apt upgrade
-</code></pre></td></tr></table></div></div><h2 id=安装前置依赖包>安装前置依赖包</h2><ul><li>通用工具</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>  $ sudo apt install build-essential cmake pkg-config unzip yasm git checkinstall
+<!DOCTYPE html>
 
-</code></pre></td></tr></table></div></div><ul><li>图像I/O库　</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo apt install libjpeg-dev libpng-dev libtiff-dev
-</code></pre></td></tr></table></div></div><ul><li>视频/音频库-FFMPEG,GSTREAMER,x264等等</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo apt install libavcodec-dev libavformat-dev libswscale-dev libavresample-dev
+
+
+
+<html amp lang="zh-CN" class="no-js">
+<head>
+  <title>ubuntu 18.04系统安装OpenCV 4.2.0 </title>
+  <meta charset="utf-8">
+
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script><script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+
+
+
+  <link rel="canonical" href="https://justpic.org/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/">
+
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="144x144">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <meta name="theme-color" content="#000000" />
+
+  
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "桑河一榆",
+    
+    "url": "https:\/\/justpic.org\/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/justpic.org\/"
+  
+  
+  
+  
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/amp\/",
+          "name": "amp"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/amp\/posts\/",
+          "name": "posts"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/amp\/posts\/2020\/",
+          "name": "2020"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/amp\/posts\/2020\/03\/",
+          "name": "03"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/amp\/posts\/2020\/03\/27\/",
+          "name": "27"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  7 ,
+        "item": {
+          "@id": "https:\/\/justpic.org\/amp\/posts\/2020\/03\/27\/ubuntu-18.04-install-opencv-4.2.0\/",
+          "name": "ubuntu-18.04-install-opencv-4.2.0"
+        }
+    }]
+}
+</script>
+
+
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        /**
+* stylesheet.html
+* ---------------
+* This is the stylesheet that gets injected as a fallback if no layouts/partials/stylesheet.html file is available
+* in your project file.
+*
+* For further details, please have a look at:
+* https://gohugo-amp.gohugohq.com/install/
+*
+**/
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px
+dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em
+0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em
+40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html
+input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html
+input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px
+solid silver;margin:0 2px;padding:.35em .625em
+.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}td,th{padding:0}*{box-sizing:border-box}button,input,select,textarea{font:13px/1.4
+Helvetica,arial,freesans,clean,sans-serif}a{color:#4183c4;text-decoration:none}a:active,a:focus,a:hover{text-decoration:underline}.rule,hr{height:0;margin:15px
+0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid
+#ddd}.rule:after,.rule:before,hr:after,hr:before{display:table;content:""}.rule:after,hr:after{clear:both}fieldset{padding:0;margin:0;border:0}label{font-size:13px;font-weight:700}#adv_code_search
+.search-page-label,input[type=email],input[type=number],input[type=password],input[type=tel],input[type=text],input[type=url],textarea{min-height:34px;padding:7px
+8px;font-size:13px;color:#333;vertical-align:middle;background-color:#fff;background-repeat:no-repeat;background-position:100%;border:1px
+solid #ccc;border-radius:3px;outline:none;box-shadow:inset 0 1px 2px rgba(0,0,0,.075)}#adv_code_search
+.focus.search-page-label,#adv_code_search .search-page-label:focus,.focused
+.drag-and-drop,input[type=email].focus,input[type=email]:focus,input[type=number].focus,input[type=number]:focus,input[type=password].focus,input[type=password]:focus,input[type=tel].focus,input[type=tel]:focus,input[type=text].focus,input[type=text]:focus,input[type=url].focus,input[type=url]:focus,textarea.focus,textarea:focus{border-color:#51a7e8;box-shadow:inset
+0 1px 2px rgba(0,0,0,.075),0 0 5px
+rgba(81,167,232,.5)}.input-contrast,input.input-contrast{background-color:#fafafa}.input-contrast:focus,input.input-contrast:focus{background-color:#fff}:-moz-placeholder,::-webkit-input-placeholder{color:#aaa}::-webkit-validation-bubble-message{font-size:12px;color:#fff;background:#9c2400;border:0;border-radius:3px;-webkit-box-shadow:1px
+1px 1px
+rgba(0,0,0,.1)}input::-webkit-validation-bubble-icon{display:none}::-webkit-validation-bubble-arrow{background-color:#9c2400;border:1px
+solid #9c2400;-webkit-box-shadow:1px 1px 1px
+rgba(0,0,0,.1)}.absent{color:#c00}.anchor{position:absolute;top:0;bottom:0;left:0;display:block;padding-right:6px;padding-left:30px;margin-left:-30px}.anchor:focus{outline:none}h1,h2,h3,h4,h5,h6{position:relative;margin-top:1em;margin-bottom:16px;font-weight:700;line-height:1.4}h1
+.octicon-link,h2 .octicon-link,h3 .octicon-link,h4 .octicon-link,h5 .octicon-link,h6
+.octicon-link{display:none;color:#000;vertical-align:middle}h1:hover .anchor,h2:hover .anchor,h3:hover .anchor,h4:hover
+.anchor,h5:hover .anchor,h6:hover
+.anchor{height:1em;padding-left:8px;margin-left:-30px;line-height:1;text-decoration:none}h1:hover .anchor
+.octicon-link,h2:hover .anchor .octicon-link,h3:hover .anchor .octicon-link,h4:hover .anchor .octicon-link,h5:hover
+.anchor .octicon-link,h6:hover .anchor .octicon-link{display:inline-block}h1 code,h1 tt,h2 code,h2 tt,h3 code,h3 tt,h4
+code,h4 tt,h5 code,h5 tt,h6 code,h6
+tt{font-size:inherit}h1{font-size:2.25em;line-height:1.2}h1,h2{padding-bottom:.3em;border-bottom:1px solid
+#eee}h2{font-size:1.75em;line-height:1.225}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5,h6{font-size:1em}h6{color:#777}blockquote,dl,ol,p,pre,table,ul{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px
+0;background-color:#e7e7e7;border:0 none}ol,ul{padding-left:2em}ol.no-list,ul.no-list{padding:0;list-style-type:none}ol
+ol,ol ul,ul ol,ul ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl,dl dt{padding:0}dl
+dt{margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0
+16px;margin-bottom:16px}blockquote{padding:0 15px;color:#777;border-left:4px solid
+#ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}table
+th{font-weight:700}table td,table th{padding:6px 13px;border:1px solid #ddd}table
+tr{background-color:#fff;border-top:1px solid #ccc}table
+tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;box-sizing:border-box}span.frame,span.frame>span{display:block;overflow:hidden}span.frame>span{float:left;width:auto;padding:7px;margin:13px
+0 0;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0
+0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px
+auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0
+auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px
+0 0;overflow:hidden;text-align:right}span.align-right span
+img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left
+span{margin:13px 0
+0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px
+auto
+0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:"\00a0"}code
+br,tt br{display:none}del
+code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight
+pre,pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.highlight
+pre{margin-bottom:0;word-break:normal}pre,pre code,pre tt{word-wrap:normal}pre code,pre
+tt{display:inline;max-width:none;padding:0;margin:0;overflow:initial;line-height:inherit;background-color:transparent;border:0}pre
+code:after,pre code:before,pre tt:after,pre
+tt:before{content:normal}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav
+ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{text-decoration:none}ins,mark{background-color:#ff9;color:#000}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px
+dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px
+solid #ccc;margin:1em
+0;padding:0}input,select{vertical-align:middle}body{background-color:#fff;color:#123;font-size:14px;font-family:Helvetica
+Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif}main{max-width:1180px;padding:30px;margin:0 auto}@media
+(min-width:900px){main h1+p{font-size:2em}}h1{font-weight:300;font-size:2em;line-height:1.4em;margin:.5em
+0;font-family:Georgia,serif;-webkit-transition:color .4s;transition:color
+.4s}h2{font-size:2em}h2,h3{font-weight:300;margin:30px
+0}h3{font-size:1.8em}h4{font-size:1.6em}h4,h5{font-weight:300}h5{font-size:1.2em}h6{font-weight:300;font-size:1em}p{line-height:1.4em;font-size:1.2em;margin:15px
+0}blockquote{border-left:5px solid
+#ff1d55;background-color:#ffe9ee;padding:1em;margin-bottom:1em}.lightbox{background-color:rgba(3,121,196,.4);min-height:100vh;min-width:100vw;padding:30px}code{font:12px
+Consolas,Liberation Mono,Menlo,Courier,monospace}p>code{color:#ff1d55}pre
+code{display:block;background-color:#f7f7f7;padding:15px;overflow:auto;color:#123;line-height:1.4em}a{color:#ff1d55;text-decoration:none;-webkit-transition:color
+.4s,background .4s;transition:color .4s,background .4s}a:hover{color:#e9003a}ol,ul{margin:7.5px;padding:7.5px 15px}ol
+li,ul li{margin:7.5px 15px}.doc-parameters{list-style-type:none;padding:0}.doc-parameters
+li{display:block;margin:0;margin-bottom:15px}.doc-parameters .example,.doc-parameters blockquote{border-left:5px solid
+#0379c4;background-color:#96d5fd;color:#123;line-height:1em;font-size:1em;padding:1em;margin:0}.doc-parameters
+.example{background-color:#c8e9fe}.doc-parameters
+.parameter{display:block;padding:1em;background-color:#0379c4;color:#fff;margin:0}.doc-parameters .parameter
+strong{display:inline-block;padding:0
+.5em;border-radius:.25em;line-height:2em;background-color:#025a92}hr{height:.25em;padding:0;margin:24px
+0;background-color:#f7f7f7;border:0}.teaser{display:-webkit-box;display:-ms-flexbox;display:flex;text-align:left;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.teaser
+aside{-ms-flex-preferred-size:60%;flex-basis:60%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:30px}@media
+(max-width:700px){.teaser aside{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content{-ms-flex-preferred-size:40%;flex-basis:40%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;color:dimgray;font-size:12px}@media
+(max-width:700px){.teaser .content{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content.content-full{-ms-flex-preferred-size:100%;flex-basis:100%}.teaser .content
+h3{font-size:14px;text-transform:uppercase;font-weight:600;color:#123}.main-index{text-align:center}.main-index
+amp-img{margin:15px auto;width:50%}@media (min-width:900px){.main-index
+p{font-size:2em}}.breadcrumbs{padding:1em;background-color:#f7f7f7}.breadcrumbs
+ul{display:block;margin:0;padding:0}.breadcrumbs ul li{display:inline-block;margin:0 .5em}.breadcrumbs ul
+li:before{content:' / ';position:relative;margin-left:-.5em;color:dimgray}.breadcrumbs ul li
+a{color:dimgray}.breadcrumbs ul li:last-child
+a{color:#ff1d55}header{background-color:#000000;color:#fff;padding:30px;position:relative}header
+.brand{display:inline-block;position:absolute;left:30px;top:20px;line-height:15px;text-transform:uppercase;padding:7.5px;font-size:1.4em}header
+.brand:hover{background-color:#ff1d55;color:#fff}header
+a{color:#fff;text-decoration:none;border-radius:7.5px;padding:7.5px}header
+a:hover{text-decoration:none;background-color:#fff;color:#ff1d55}header nav
+ul{padding:0;margin:0;display:block;text-align:right}header nav ul li{padding:0;margin:0
+7.5px;display:inline-block}header nav ul li.hamburger{display:none}header nav ul li.hamburger
+button{position:absolute;right:30px;top:20px;border:0;background-color:#fff;color:#ff1d55;font-weight:700;border-radius:50%;width:30px;height:30px;overflow:hidden;text-align:center;padding:0;margin:0}@media
+(max-width:900px){header nav ul li{display:none}header nav ul
+li.hamburger{display:inline-block}}.sidebarNavigation{width:210px;max-width:95%}.sidebarNavigation
+ul{padding:0;margin:0}.sidebarNavigation ul li{display:block}.sidebarNavigation ul li
+a{display:block;line-height:1.4em;padding:7.5px}footer{margin:60px
+auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;max-width:1180px;padding:30px;font-size:12px}footer
+a:hover{text-decoration:none}footer strong{text-transform:uppercase;margin-bottom:15px;display:block}footer strong
+a{color:#1d1d1d}footer ul{display:block;padding:0;margin:0}footer ul li{display:block;line-height:1.4em;padding:7.5px
+0;margin:0}footer ul li a{color:dimgray}footer
+.quarter-section{margin-bottom:30px;-ms-flex-preferred-size:25%;flex-basis:25%}@media (max-width:900px){footer
+.quarter-section{-ms-flex-preferred-size:33%;flex-basis:33%}}@media (max-width:700px){footer
+.quarter-section{-ms-flex-preferred-size:50%;flex-basis:50%}}@media (max-width:500px){footer
+.quarter-section{-ms-flex-preferred-size:100%;flex-basis:100%}}.boxes{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:12px}.boxes
+.box{-ms-flex-preferred-size:30%;flex-basis:30%;background-color:#f7f7f7;padding:30px;margin:7.5px
+0;text-align:left;font-size:12px}.boxes .box h3{font-size:12px;line-height:1em;padding:0;margin:0}.boxes .box
+a{padding:0;color:#ff1d55}.boxes .box p{color:dimgray;font-size:12px;margin:7.5px 0}@media (max-width:900px){.boxes
+.box{-ms-flex-preferred-size:45%;flex-basis:45%}}@media (max-width:500px){.boxes
+.box{-ms-flex-preferred-size:100%;flex-basis:100%}}
+
+.fixed-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+}
+
+amp-img.contain img {
+  object-fit: contain;
+}
+
+.footnotes {
+  overflow-wrap: break-word;
+}
+
+    </style>
+
+  <script data-ad-client="ca-pub-2665873967488848" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script async custom-element="amp-auto-ads"
+          src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+  </script>
+</head>
+
+<body>
+
+
+<main>
+  <div class="toc" id="toc-auto">
+    <h2 class="toc-title">目录</h2>
+    <div class="toc-content" id="toc-content-auto"></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">ubuntu 18.04系统安装OpenCV 4.2.0 </h1><div class="post-meta">
+        <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/opencv/"><i class="far fa-folder fa-fw"></i>opencv</a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-27">2020-03-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1329 字&nbsp;
+            <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/" class="leancloud_visitors" data-flag-title="ubuntu 18.04系统安装OpenCV 4.2.0 ">
+                <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+            </span>&nbsp;</span>
+        </div>
+    </div><div class="details toc" id="toc-static" kept="">
+        <div class="details-summary toc-title">
+            <span>目录</span>
+            <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#更新系统">更新系统</a></li>
+    <li><a href="#安装前置依赖包">安装前置依赖包</a></li>
+    <li><a href="#正式安装opencv-420步骤">正式安装Opencv 4.2.0步骤</a></li>
+    <li><a href="#测试安装">测试安装　　</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#安装或者编译错误">安装或者编译错误　　</a></li>
+  </ul>
+</nav></div>
+    </div><div class="content" id="content"><p>主要介绍ubuntu 18.04安装OpenCV 4.2.0</p>
+<h2 id="更新系统">更新系统</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt update 
+$ sudo apt upgrade
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装前置依赖包">安装前置依赖包</h2>
+<ul>
+<li>通用工具</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">  $ sudo apt install build-essential cmake pkg-config unzip yasm git checkinstall
+
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>图像I/O库　</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt install libjpeg-dev libpng-dev libtiff-dev
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>视频/音频库-FFMPEG,GSTREAMER,x264等等</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt install libavcodec-dev libavformat-dev libswscale-dev libavresample-dev
 $ sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
 $ sudo apt install libxvidcore-dev x264 libx264-dev libfaac-dev libmp3lame-dev libtheora-dev 
 $ sudo apt install libfaac-dev libmp3lame-dev libvorbis-dev
-</code></pre></td></tr></table></div></div><ul><li>OpenCore-</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo apt install libopencore-amrnb-dev libopencore-amrwb-dev
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>OpenCore-</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt install libopencore-amrnb-dev libopencore-amrwb-dev
 
-</code></pre></td></tr></table></div></div><ul><li>照相编程接口库　</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo apt-get install libdc1394-22 libdc1394-22-dev libxine2-dev libv4l-dev v4l-utils
-$ <span class=nb>cd</span> /usr/include/linux
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>照相编程接口库　</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install libdc1394-22 libdc1394-22-dev libxine2-dev libv4l-dev v4l-utils
+$ <span class="nb">cd</span> /usr/include/linux
 $ sudo ln -s -f ../libv4l1-videodev.h videodev.h
-$ <span class=nb>cd</span> ~
-</code></pre></td></tr></table></div></div><ul><li>GTK库－图形用户界面</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo apt-get install libgtk-3-dev
-</code></pre></td></tr></table></div></div><ul><li>python3所使用的库　</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo apt-get install python3-dev python3-pip
+$ <span class="nb">cd</span> ~
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>GTK库－图形用户界面</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install libgtk-3-dev
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>python3所使用的库　</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install python3-dev python3-pip
 $ sudo -H pip3 install -U pip numpy
 $ sudo apt install python3-testresources
-</code></pre></td></tr></table></div></div><ul><li>用于CPU的C++并行库</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo apt-get install libtbb-dev
-</code></pre></td></tr></table></div></div><ul><li>用于OpenCV的优化库　</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>sudo apt-get install libatlas-base-dev gfortran
-</code></pre></td></tr></table></div></div><ul><li>可选安装　</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo apt-get install libprotobuf-dev protobuf-compiler
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>用于CPU的C++并行库</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install libtbb-dev
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>用于OpenCV的优化库　</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install libatlas-base-dev gfortran
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>可选安装　</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install libprotobuf-dev protobuf-compiler
 $ sudo apt-get install libgoogle-glog-dev libgflags-dev
 $ sudo apt-get install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
-</code></pre></td></tr></table></div></div><h2 id=正式安装opencv-420步骤>正式安装Opencv 4.2.0步骤</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span><span class=lnt>33
-</span><span class=lnt>34
-</span><span class=lnt>35
-</span><span class=lnt>36
-</span><span class=lnt>37
-</span><span class=lnt>38
-</span><span class=lnt>39
-</span><span class=lnt>40
-</span><span class=lnt>41
-</span><span class=lnt>42
-</span><span class=lnt>43
-</span><span class=lnt>44
-</span><span class=lnt>45
-</span><span class=lnt>46
-</span><span class=lnt>47
-</span><span class=lnt>48
-</span><span class=lnt>49
-</span><span class=lnt>50
-</span><span class=lnt>51
-</span><span class=lnt>52
-</span><span class=lnt>53
-</span><span class=lnt>54
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ <span class=nb>cd</span> ~
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="正式安装opencv-420步骤">正式安装Opencv 4.2.0步骤</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">cd</span> ~
 $ mkdir -p installcv1
-$ <span class=nb>cd</span> installcv1
+$ <span class="nb">cd</span> installcv1
 $ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.1.1.zip
 $ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.1.1.zip
 $ unzip opencv.zip
 $ unzip opencv_contrib.zip
 
-$ <span class=nb>echo</span> <span class=s2>&#34;Create a virtual environtment for the python binding module&#34;</span>
+$ <span class="nb">echo</span> <span class="s2">&#34;Create a virtual environtment for the python binding module&#34;</span>
 $ sudo pip install virtualenv virtualenvwrapper
 $ sudo rm -rf ~/.cache/pip
-$ <span class=nb>echo</span> <span class=s2>&#34;Edit ~/.bashrc&#34;</span>
-$ <span class=nb>export</span> <span class=nv>WORKON_HOME</span><span class=o>=</span><span class=nv>$HOME</span>/.virtualenvs
-$ <span class=nb>export</span> <span class=nv>VIRTUALENVWRAPPER_PYTHON</span><span class=o>=</span>/usr/bin/python3
-$ <span class=nb>source</span> /usr/local/bin/virtualenvwrapper.sh
+$ <span class="nb">echo</span> <span class="s2">&#34;Edit ~/.bashrc&#34;</span>
+$ <span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+$ <span class="nb">export</span> <span class="nv">VIRTUALENVWRAPPER_PYTHON</span><span class="o">=</span>/usr/bin/python3
+$ <span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 $ mkvirtualenv cv -p python3
 $ pip install numpy
 
-$ <span class=nb>echo</span> <span class=s2>&#34;Procced with the installation&#34;</span>
-$ <span class=nb>cd</span> opencv-4.2.0
+$ <span class="nb">echo</span> <span class="s2">&#34;Procced with the installation&#34;</span>
+$ <span class="nb">cd</span> opencv-4.2.0
 $ mkdir build
-$ <span class=nb>cd</span> build
+$ <span class="nb">cd</span> build
 
-$ cmake -D <span class=nv>CMAKE_BUILD_TYPE</span><span class=o>=</span>RELEASE 
-	-D <span class=nv>CMAKE_C_COMPILER</span><span class=o>=</span>/usr/bin/gcc 
--D <span class=nv>CMAKE_INSTALL_PREFIX</span><span class=o>=</span>/home/<span class=o>{</span>youraccount<span class=o>}</span>/opencv
--D <span class=nv>INSTALL_PYTHON_EXAMPLES</span><span class=o>=</span>ON 
--D <span class=nv>INSTALL_C_EXAMPLES</span><span class=o>=</span>OFF 
--D <span class=nv>WITH_TBB</span><span class=o>=</span>ON 
--D <span class=nv>WITH_CUDA</span><span class=o>=</span>ON 
--D <span class=nv>BUILD_opencv_cudacodec</span><span class=o>=</span>OFF 
--D <span class=nv>ENABLE_FAST_MATH</span><span class=o>=</span><span class=m>1</span> 
--D <span class=nv>CUDA_FAST_MATH</span><span class=o>=</span><span class=m>1</span> 
--D <span class=nv>WITH_CUBLAS</span><span class=o>=</span><span class=m>1</span> 
--D <span class=nv>WITH_V4L</span><span class=o>=</span>ON 
--D <span class=nv>WITH_QT</span><span class=o>=</span>OFF 
--D <span class=nv>WITH_OPENGL</span><span class=o>=</span>ON 
--D <span class=nv>WITH_GSTREAMER</span><span class=o>=</span>ON 
--D <span class=nv>OPENCV_GENERATE_PKGCONFIG</span><span class=o>=</span>ON 
--D <span class=nv>OPENCV_PC_FILE_NAME</span><span class=o>=</span>opencv.pc 
--D <span class=nv>OPENCV_ENABLE_NONFREE</span><span class=o>=</span>ON 
--D <span class=nv>OPENCV_PYTHON3_INSTALL_PATH</span><span class=o>=</span>~/.virtualenvs/cv/lib/python3.6/site-packages 
--D <span class=nv>OPENCV_EXTRA_MODULES_PATH</span><span class=o>=</span>~/installcv/opencv_contrib-4.2.0/modules 
--D <span class=nv>PYTHON_EXECUTABLE</span><span class=o>=</span>~/.virtualenvs/cv/bin/python 
--D <span class=nv>BUILD_EXAMPLES</span><span class=o>=</span>ON　-D <span class=nv>WITH_CUDNN</span><span class=o>=</span>ON 
--D <span class=nv>OPENCV_DNN_CUDA</span><span class=o>=</span>ON 
--D <span class=nv>CUDA_ARCH_BIN</span><span class=o>=</span>6.1  
--D <span class=nv>WITH_INF_ENGINE</span><span class=o>=</span>ON
--D <span class=nv>ENABLE_CXX11</span><span class=o>=</span>ON
--D <span class=nv>INTEL_CVSDK_DIR</span><span class=o>=</span>/home/sn0w/intel/openvino_2020.1.023/deployment_tools
--D <span class=nv>IE_PLUGINS_PATH</span><span class=o>=</span>/home/sn0w/intel/openvino_2020.1.023/deployment_tools/inference_engine/lib/intel64/
--D <span class=nv>INF_ENGINE_RELEASE</span><span class=o>=</span><span class=m>2020010000</span>
--D <span class=nv>OPENCV_GENERATE_PKGCONFIG</span><span class=o>=</span>ON
--D <span class=nv>BUILD_EXAMPLES</span><span class=o>=</span>ON  ..
-</code></pre></td></tr></table></div></div><p><strong>如果你只是想编译静态库，只需要在Cmake时附加<code> -D BUILD_SHARED_LIBS=OFF</code></strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ cmake -D <span class=nv>CMAKE_BUILD_TYPE</span><span class=o>=</span>RELEASE -D <span class=nv>CMAKE_C_COMPILER</span><span class=o>=</span>/usr/bin/gcc -D <span class=nv>CMAKE_INSTALL_PREFIX</span><span class=o>=</span>/usr/local -D <span class=nv>INSTALL_PYTHON_EXAMPLES</span><span class=o>=</span>ON -D <span class=nv>INSTALL_C_EXAMPLES</span><span class=o>=</span>OFF -D <span class=nv>WITH_TBB</span><span class=o>=</span>ON -D <span class=nv>WITH_CUDA</span><span class=o>=</span>ON -D <span class=nv>BUILD_opencv_cudacodec</span><span class=o>=</span>OFF -D <span class=nv>ENABLE_FAST_MATH</span><span class=o>=</span><span class=m>1</span> -D <span class=nv>CUDA_FAST_MATH</span><span class=o>=</span><span class=m>1</span> -D <span class=nv>WITH_CUBLAS</span><span class=o>=</span><span class=m>1</span> -D <span class=nv>WITH_V4L</span><span class=o>=</span>ON -D <span class=nv>WITH_QT</span><span class=o>=</span>OFF -D <span class=nv>WITH_OPENGL</span><span class=o>=</span>ON -D <span class=nv>WITH_GSTREAMER</span><span class=o>=</span>ON -D <span class=nv>OPENCV_GENERATE_PKGCONFIG</span><span class=o>=</span>ON -D <span class=nv>OPENCV_PC_FILE_NAME</span><span class=o>=</span>opencv.pc -D <span class=nv>OPENCV_ENABLE_NONFREE</span><span class=o>=</span>ON -D <span class=nv>OPENCV_PYTHON3_INSTALL_PATH</span><span class=o>=</span>~/.virtualenvs/cv/lib/python3.6/site-packages -D <span class=nv>OPENCV_EXTRA_MODULES_PATH</span><span class=o>=</span>~／installcv/opencv_contrib-4.2.0/modules -D <span class=nv>PYTHON_EXECUTABLE</span><span class=o>=</span>~/.virtualenvs/cv/bin/python -D <span class=nv>BUILD_EXAMPLES</span><span class=o>=</span>ON -D <span class=nv>BUILD_SHARED_LIBS</span><span class=o>=</span>OFF ..
+$ cmake -D <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>RELEASE 
+	-D <span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/usr/bin/gcc 
+-D <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span>/home/<span class="o">{</span>youraccount<span class="o">}</span>/opencv
+-D <span class="nv">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span>ON 
+-D <span class="nv">INSTALL_C_EXAMPLES</span><span class="o">=</span>OFF 
+-D <span class="nv">WITH_TBB</span><span class="o">=</span>ON 
+-D <span class="nv">WITH_CUDA</span><span class="o">=</span>ON 
+-D <span class="nv">BUILD_opencv_cudacodec</span><span class="o">=</span>OFF 
+-D <span class="nv">ENABLE_FAST_MATH</span><span class="o">=</span><span class="m">1</span> 
+-D <span class="nv">CUDA_FAST_MATH</span><span class="o">=</span><span class="m">1</span> 
+-D <span class="nv">WITH_CUBLAS</span><span class="o">=</span><span class="m">1</span> 
+-D <span class="nv">WITH_V4L</span><span class="o">=</span>ON 
+-D <span class="nv">WITH_QT</span><span class="o">=</span>OFF 
+-D <span class="nv">WITH_OPENGL</span><span class="o">=</span>ON 
+-D <span class="nv">WITH_GSTREAMER</span><span class="o">=</span>ON 
+-D <span class="nv">OPENCV_GENERATE_PKGCONFIG</span><span class="o">=</span>ON 
+-D <span class="nv">OPENCV_PC_FILE_NAME</span><span class="o">=</span>opencv.pc 
+-D <span class="nv">OPENCV_ENABLE_NONFREE</span><span class="o">=</span>ON 
+-D <span class="nv">OPENCV_PYTHON3_INSTALL_PATH</span><span class="o">=</span>~/.virtualenvs/cv/lib/python3.6/site-packages 
+-D <span class="nv">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=</span>~/installcv/opencv_contrib-4.2.0/modules 
+-D <span class="nv">PYTHON_EXECUTABLE</span><span class="o">=</span>~/.virtualenvs/cv/bin/python 
+-D <span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON　-D <span class="nv">WITH_CUDNN</span><span class="o">=</span>ON 
+-D <span class="nv">OPENCV_DNN_CUDA</span><span class="o">=</span>ON 
+-D <span class="nv">CUDA_ARCH_BIN</span><span class="o">=</span>6.1  
+-D <span class="nv">WITH_INF_ENGINE</span><span class="o">=</span>ON
+-D <span class="nv">ENABLE_CXX11</span><span class="o">=</span>ON
+-D <span class="nv">INTEL_CVSDK_DIR</span><span class="o">=</span>/home/sn0w/intel/openvino_2020.1.023/deployment_tools
+-D <span class="nv">IE_PLUGINS_PATH</span><span class="o">=</span>/home/sn0w/intel/openvino_2020.1.023/deployment_tools/inference_engine/lib/intel64/
+-D <span class="nv">INF_ENGINE_RELEASE</span><span class="o">=</span><span class="m">2020010000</span>
+-D <span class="nv">OPENCV_GENERATE_PKGCONFIG</span><span class="o">=</span>ON
+-D <span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON  ..
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>如果你只是想编译静态库，只需要在Cmake时附加<code> -D BUILD_SHARED_LIBS=OFF</code></strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cmake -D <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>RELEASE -D <span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/usr/bin/gcc -D <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span>/usr/local -D <span class="nv">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span>ON -D <span class="nv">INSTALL_C_EXAMPLES</span><span class="o">=</span>OFF -D <span class="nv">WITH_TBB</span><span class="o">=</span>ON -D <span class="nv">WITH_CUDA</span><span class="o">=</span>ON -D <span class="nv">BUILD_opencv_cudacodec</span><span class="o">=</span>OFF -D <span class="nv">ENABLE_FAST_MATH</span><span class="o">=</span><span class="m">1</span> -D <span class="nv">CUDA_FAST_MATH</span><span class="o">=</span><span class="m">1</span> -D <span class="nv">WITH_CUBLAS</span><span class="o">=</span><span class="m">1</span> -D <span class="nv">WITH_V4L</span><span class="o">=</span>ON -D <span class="nv">WITH_QT</span><span class="o">=</span>OFF -D <span class="nv">WITH_OPENGL</span><span class="o">=</span>ON -D <span class="nv">WITH_GSTREAMER</span><span class="o">=</span>ON -D <span class="nv">OPENCV_GENERATE_PKGCONFIG</span><span class="o">=</span>ON -D <span class="nv">OPENCV_PC_FILE_NAME</span><span class="o">=</span>opencv.pc -D <span class="nv">OPENCV_ENABLE_NONFREE</span><span class="o">=</span>ON -D <span class="nv">OPENCV_PYTHON3_INSTALL_PATH</span><span class="o">=</span>~/.virtualenvs/cv/lib/python3.6/site-packages -D <span class="nv">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=</span>~／installcv/opencv_contrib-4.2.0/modules -D <span class="nv">PYTHON_EXECUTABLE</span><span class="o">=</span>~/.virtualenvs/cv/bin/python -D <span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON -D <span class="nv">BUILD_SHARED_LIBS</span><span class="o">=</span>OFF ..
 
-</code></pre></td></tr></table></div></div><p><strong>如果你不想包括CUDA，只需要设置<code>-D WITH_CUDA=OFF</code></strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ cmake -D <span class=nv>CMAKE_BUILD_TYPE</span><span class=o>=</span>RELEASE -D <span class=nv>CMAKE_C_COMPILER</span><span class=o>=</span>/usr/bin/gcc-6 -D <span class=nv>CMAKE_INSTALL_PREFIX</span><span class=o>=</span>/home/<span class=o>{</span>youraccount<span class=o>}</span>/opencv -D <span class=nv>INSTALL_PYTHON_EXAMPLES</span><span class=o>=</span>ON -D <span class=nv>INSTALL_C_EXAMPLES</span><span class=o>=</span>OFF -D <span class=nv>WITH_TBB</span><span class=o>=</span>ON -D <span class=nv>WITH_CUDA</span><span class=o>=</span>OFF -D <span class=nv>BUILD_opencv_cudacodec</span><span class=o>=</span>OFF -D <span class=nv>ENABLE_FAST_MATH</span><span class=o>=</span><span class=m>1</span> -D <span class=nv>CUDA_FAST_MATH</span><span class=o>=</span><span class=m>1</span> -D <span class=nv>WITH_CUBLAS</span><span class=o>=</span><span class=m>1</span> -D <span class=nv>WITH_V4L</span><span class=o>=</span>ON -D <span class=nv>WITH_QT</span><span class=o>=</span>OFF -D <span class=nv>WITH_OPENGL</span><span class=o>=</span>ON -D <span class=nv>WITH_GSTREAMER</span><span class=o>=</span>ON -D <span class=nv>OPENCV_GENERATE_PKGCONFIG</span><span class=o>=</span>ON -D <span class=nv>OPENCV_PC_FILE_NAME</span><span class=o>=</span>opencv.pc -D <span class=nv>OPENCV_ENABLE_NONFREE</span><span class=o>=</span>ON -D <span class=nv>OPENCV_PYTHON3_INSTALL_PATH</span><span class=o>=</span>~/.virtualenvs/cv/lib/python3.6/site-packages -D <span class=nv>OPENCV_EXTRA_MODULES_PATH</span><span class=o>=</span>~/installcv1/opencv_contrib-4.2.0/modules -D <span class=nv>PYTHON_EXECUTABLE</span><span class=o>=</span>~/.virtualenvs/cv/bin/python -D <span class=nv>BUILD_EXAMPLES</span><span class=o>=</span>ON  ..
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>如果你不想包括CUDA，只需要设置<code>-D WITH_CUDA=OFF</code></strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cmake -D <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>RELEASE -D <span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/usr/bin/gcc-6 -D <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span>/home/<span class="o">{</span>youraccount<span class="o">}</span>/opencv -D <span class="nv">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span>ON -D <span class="nv">INSTALL_C_EXAMPLES</span><span class="o">=</span>OFF -D <span class="nv">WITH_TBB</span><span class="o">=</span>ON -D <span class="nv">WITH_CUDA</span><span class="o">=</span>OFF -D <span class="nv">BUILD_opencv_cudacodec</span><span class="o">=</span>OFF -D <span class="nv">ENABLE_FAST_MATH</span><span class="o">=</span><span class="m">1</span> -D <span class="nv">CUDA_FAST_MATH</span><span class="o">=</span><span class="m">1</span> -D <span class="nv">WITH_CUBLAS</span><span class="o">=</span><span class="m">1</span> -D <span class="nv">WITH_V4L</span><span class="o">=</span>ON -D <span class="nv">WITH_QT</span><span class="o">=</span>OFF -D <span class="nv">WITH_OPENGL</span><span class="o">=</span>ON -D <span class="nv">WITH_GSTREAMER</span><span class="o">=</span>ON -D <span class="nv">OPENCV_GENERATE_PKGCONFIG</span><span class="o">=</span>ON -D <span class="nv">OPENCV_PC_FILE_NAME</span><span class="o">=</span>opencv.pc -D <span class="nv">OPENCV_ENABLE_NONFREE</span><span class="o">=</span>ON -D <span class="nv">OPENCV_PYTHON3_INSTALL_PATH</span><span class="o">=</span>~/.virtualenvs/cv/lib/python3.6/site-packages -D <span class="nv">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=</span>~/installcv1/opencv_contrib-4.2.0/modules -D <span class="nv">PYTHON_EXECUTABLE</span><span class="o">=</span>~/.virtualenvs/cv/bin/python -D <span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON  ..
 
-</code></pre></td></tr></table></div></div><p><strong>如果你想使用CUDNN，你必须在Cmake时包含这些标记（正确的设置CUDA_ARCH_BIN的值)</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>-D <span class=nv>WITH_CUDNN</span><span class=o>=</span>ON <span class=se>\
-</span><span class=se></span>-D <span class=nv>OPENCV_DNN_CUDA</span><span class=o>=</span>ON <span class=se>\
-</span><span class=se></span>-D <span class=nv>CUDA_ARCH_BIN</span><span class=o>=</span>6.1 <span class=se>\
-</span></code></pre></td></tr></table></div></div><p>在<a href=https://developer.nvidia.com/cuda-gpus target=_blank rel="noopener noreffer">https://developer.nvidia.com/cuda-gpus</a>网站上可以看到自己网卡可兼容的CUDA版本情况．</p><p><strong>正式编译前，你必须检查CUDA在Cmake输出时是否启用</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>--   NVIDIA CUDA:                   YES (ver 10.0, CUFFT CUBLAS NVCUVID FAST_MATH)
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>如果你想使用CUDNN，你必须在Cmake时包含这些标记（正确的设置CUDA_ARCH_BIN的值)</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">-D <span class="nv">WITH_CUDNN</span><span class="o">=</span>ON <span class="se">\
+</span><span class="se"></span>-D <span class="nv">OPENCV_DNN_CUDA</span><span class="o">=</span>ON <span class="se">\
+</span><span class="se"></span>-D <span class="nv">CUDA_ARCH_BIN</span><span class="o">=</span>6.1 <span class="se">\
+</span></code></pre></td></tr></table>
+</div>
+</div><p>在<a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener noreffer">https://developer.nvidia.com/cuda-gpus</a>网站上可以看到自己网卡可兼容的CUDA版本情况．</p>
+<p><strong>正式编译前，你必须检查CUDA在Cmake输出时是否启用</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">--   NVIDIA CUDA:                   YES (ver 10.0, CUFFT CUBLAS NVCUVID FAST_MATH)
 --     NVIDIA GPU arch:             30 35 37 50 52 60 61 70 75
 --     NVIDIA PTX archs:
-</code></pre></td></tr></table></div></div><p><strong>正式编译和安装</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ nproc
-$ make -j8 <span class=c1>#！ubuntu 18.04编译过程中出现错误：sudo ln -s /usr/include/eigen3/Eigen /usr/include/Eigen</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>正式编译和安装</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ nproc
+$ make -j8 <span class="c1">#！ubuntu 18.04编译过程中出现错误：sudo ln -s /usr/include/eigen3/Eigen /usr/include/Eigen</span>
 $ sudo make install
-</code></pre></td></tr></table></div></div><p><strong>配置环境变量</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo /bin/bash -c <span class=s1>&#39;echo &#34;/usr/local/lib&#34; &gt;&gt; /etc/ld.so.conf.d/opencv.conf&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>配置环境变量</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo /bin/bash -c <span class="s1">&#39;echo &#34;/usr/local/lib&#34; &gt;&gt; /etc/ld.so.conf.d/opencv.conf&#39;</span>
 $ sudo ldconfig
 $ 
-</code></pre></td></tr></table></div></div><p><strong>如果你想让python的cv包能够在系统环境下使用，必须要下面的复制工作</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ sudo cp -r ~/.virtualenvs/cv/lib/python3.6/site-packages/cv2 /usr/local/lib/python3.6/dist-packages
-$ <span class=nb>export</span> <span class=nv>LD_LIBRARY_PATH</span><span class=o>=</span>/home/<span class=o>{</span>youraccount<span class=o>}</span>/ev_sdk/lib:/home/<span class=o>{</span>youraccount<span class=o>}</span>/opencv/lib:/usr/local/lib:/usr/local/cuda-10.0/lib64<span class=si>${</span><span class=nv>LD_LIBRARY_PATH</span><span class=p>:+:</span><span class=si>${</span><span class=nv>LD_LIBRARY_PATH</span><span class=si>}}</span>
-$ <span class=nb>export</span> <span class=nv>OpenCV_DIR</span><span class=o>=</span>/home/<span class=o>{</span>youraccount<span class=o>}</span>/opencv
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>如果你想让python的cv包能够在系统环境下使用，必须要下面的复制工作</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo cp -r ~/.virtualenvs/cv/lib/python3.6/site-packages/cv2 /usr/local/lib/python3.6/dist-packages
+$ <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/home/<span class="o">{</span>youraccount<span class="o">}</span>/ev_sdk/lib:/home/<span class="o">{</span>youraccount<span class="o">}</span>/opencv/lib:/usr/local/lib:/usr/local/cuda-10.0/lib64<span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="p">:+:</span><span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}}</span>
+$ <span class="nb">export</span> <span class="nv">OpenCV_DIR</span><span class="o">=</span>/home/<span class="o">{</span>youraccount<span class="o">}</span>/opencv
 
-$ <span class=nb>echo</span> <span class=s2>&#34;Modify config-3.6.py to point to the target directory&#34;</span> 
+$ <span class="nb">echo</span> <span class="s2">&#34;Modify config-3.6.py to point to the target directory&#34;</span> 
 $ sudo nano /usr/local/lib/python3.6/dist-packages/cv2/config-3.6.py 
 
-    <span class=sb>```</span> 
-    <span class=nv>PYTHON_EXTENSIONS_PATHS</span> <span class=o>=</span> <span class=o>[</span>
-    os.path.join<span class=o>(</span><span class=s1>&#39;/usr/local/lib/python3.6/dist-packages/cv2&#39;</span>, <span class=s1>&#39;python-3.6&#39;</span><span class=o>)</span>
-    <span class=o>]</span> + PYTHON_EXTENSIONS_PATHS
-    <span class=sb>```</span> 
-</code></pre></td></tr></table></div></div><h2 id=测试安装>测试安装　　</h2><p>案例程序</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span><span class=lnt>33
-</span><span class=lnt>34
-</span><span class=lnt>35
-</span><span class=lnt>36
-</span><span class=lnt>37
-</span><span class=lnt>38
-</span><span class=lnt>39
-</span><span class=lnt>40
-</span><span class=lnt>41
-</span><span class=lnt>42
-</span><span class=lnt>43
-</span><span class=lnt>44
-</span><span class=lnt>45
-</span><span class=lnt>46
-</span><span class=lnt>47
-</span><span class=lnt>48
-</span><span class=lnt>49
-</span><span class=lnt>50
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=c1>//test.cpp
-</span><span class=c1></span><span class=cp>#include</span> <span class=cpf>&lt;iostream&gt;</span><span class=cp>
-</span><span class=cp>#include</span> <span class=cpf>&lt;ctime&gt;</span><span class=cp>
-</span><span class=cp>#include</span> <span class=cpf>&lt;cmath&gt;</span><span class=cp>
-</span><span class=cp>#include</span> <span class=cpf>&#34;bits/time.h&#34;</span><span class=cp>
-</span><span class=cp></span>
-<span class=cp>#include</span> <span class=cpf>&lt;opencv2/core.hpp&gt;</span><span class=cp>
-</span><span class=cp>#include</span> <span class=cpf>&lt;opencv2/highgui.hpp&gt;</span><span class=cp>
-</span><span class=cp>#include</span> <span class=cpf>&lt;opencv2/imgproc.hpp&gt;</span><span class=cp>
-</span><span class=cp>#include</span> <span class=cpf>&lt;opencv2/imgcodecs.hpp&gt;</span><span class=cp>
-</span><span class=cp></span>
-<span class=cp>#include</span> <span class=cpf>&lt;opencv2/core/cuda.hpp&gt;</span><span class=cp>
-</span><span class=cp>#include</span> <span class=cpf>&lt;opencv2/cudaarithm.hpp&gt;</span><span class=cp>
-</span><span class=cp>#include</span> <span class=cpf>&lt;opencv2/cudaimgproc.hpp&gt;</span><span class=cp>
-</span><span class=cp></span>
-<span class=cp>#define TestCUDA true
-</span><span class=cp></span>
-<span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-    <span class=n>std</span><span class=o>::</span><span class=n>clock_t</span> <span class=n>begin</span> <span class=o>=</span> <span class=n>std</span><span class=o>::</span><span class=n>clock</span><span class=p>();</span>
+    <span class="sb">```</span> 
+    <span class="nv">PYTHON_EXTENSIONS_PATHS</span> <span class="o">=</span> <span class="o">[</span>
+    os.path.join<span class="o">(</span><span class="s1">&#39;/usr/local/lib/python3.6/dist-packages/cv2&#39;</span>, <span class="s1">&#39;python-3.6&#39;</span><span class="o">)</span>
+    <span class="o">]</span> + PYTHON_EXTENSIONS_PATHS
+    <span class="sb">```</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="测试安装">测试安装　　</h2>
+<p>案例程序</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//test.cpp
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;ctime&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&#34;bits/time.h&#34;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;opencv2/core.hpp&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;opencv2/highgui.hpp&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;opencv2/imgproc.hpp&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;opencv2/imgcodecs.hpp&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;opencv2/core/cuda.hpp&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;opencv2/cudaarithm.hpp&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;opencv2/cudaimgproc.hpp&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="cp">#define TestCUDA true
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">clock_t</span> <span class="n">begin</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">clock</span><span class="p">();</span>
 
-        <span class=k>try</span> <span class=p>{</span>
-            <span class=n>cv</span><span class=o>::</span><span class=n>String</span> <span class=n>filename</span> <span class=o>=</span> <span class=s>&#34;/home/raul/Pictures/Screenshot_20170317_105454.png&#34;</span><span class=p>;</span>
-            <span class=n>cv</span><span class=o>::</span><span class=n>Mat</span> <span class=n>srcHost</span> <span class=o>=</span> <span class=n>cv</span><span class=o>::</span><span class=n>imread</span><span class=p>(</span><span class=n>filename</span><span class=p>,</span> <span class=n>cv</span><span class=o>::</span><span class=n>IMREAD_GRAYSCALE</span><span class=p>);</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">cv</span><span class="o">::</span><span class="n">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">&#34;/home/raul/Pictures/Screenshot_20170317_105454.png&#34;</span><span class="p">;</span>
+            <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">srcHost</span> <span class="o">=</span> <span class="n">cv</span><span class="o">::</span><span class="n">imread</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">cv</span><span class="o">::</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">);</span>
 
-            <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;</span><span class=mi>1000</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
-                <span class=k>if</span><span class=p>(</span><span class=n>TestCUDA</span><span class=p>)</span> <span class=p>{</span>
-                    <span class=n>cv</span><span class=o>::</span><span class=n>cuda</span><span class=o>::</span><span class=n>GpuMat</span> <span class=n>dst</span><span class=p>,</span> <span class=n>src</span><span class=p>;</span>
-                    <span class=n>src</span><span class=p>.</span><span class=n>upload</span><span class=p>(</span><span class=n>srcHost</span><span class=p>);</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">TestCUDA</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">cv</span><span class="o">::</span><span class="n">cuda</span><span class="o">::</span><span class="n">GpuMat</span> <span class="n">dst</span><span class="p">,</span> <span class="n">src</span><span class="p">;</span>
+                    <span class="n">src</span><span class="p">.</span><span class="n">upload</span><span class="p">(</span><span class="n">srcHost</span><span class="p">);</span>
 
-                    <span class=c1>//cv::cuda::threshold(src,dst,128.0,255.0, CV_THRESH_BINARY);
-</span><span class=c1></span>                    <span class=n>cv</span><span class=o>::</span><span class=n>cuda</span><span class=o>::</span><span class=n>bilateralFilter</span><span class=p>(</span><span class=n>src</span><span class=p>,</span><span class=n>dst</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>1</span><span class=p>);</span>
+                    <span class="c1">//cv::cuda::threshold(src,dst,128.0,255.0, CV_THRESH_BINARY);
+</span><span class="c1"></span>                    <span class="n">cv</span><span class="o">::</span><span class="n">cuda</span><span class="o">::</span><span class="n">bilateralFilter</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="n">dst</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
-                    <span class=n>cv</span><span class=o>::</span><span class=n>Mat</span> <span class=n>resultHost</span><span class=p>;</span>
-                    <span class=n>dst</span><span class=p>.</span><span class=n>download</span><span class=p>(</span><span class=n>resultHost</span><span class=p>);</span>
-                <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
-                    <span class=n>cv</span><span class=o>::</span><span class=n>Mat</span> <span class=n>dst</span><span class=p>;</span>
-                    <span class=n>cv</span><span class=o>::</span><span class=n>bilateralFilter</span><span class=p>(</span><span class=n>srcHost</span><span class=p>,</span><span class=n>dst</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>1</span><span class=p>);</span>
-                <span class=p>}</span>
-            <span class=p>}</span>
+                    <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">resultHost</span><span class="p">;</span>
+                    <span class="n">dst</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="n">resultHost</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">dst</span><span class="p">;</span>
+                    <span class="n">cv</span><span class="o">::</span><span class="n">bilateralFilter</span><span class="p">(</span><span class="n">srcHost</span><span class="p">,</span><span class="n">dst</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
 
-            <span class=c1>//cv::imshow(&#34;Result&#34;,resultHost);
-</span><span class=c1></span>            <span class=c1>//cv::waitKey();
-</span><span class=c1></span>
-        <span class=p>}</span> <span class=k>catch</span><span class=p>(</span><span class=k>const</span> <span class=n>cv</span><span class=o>::</span><span class=n>Exception</span><span class=o>&amp;</span> <span class=n>ex</span><span class=p>)</span> <span class=p>{</span>
-            <span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;Error: &#34;</span> <span class=o>&lt;&lt;</span> <span class=n>ex</span><span class=p>.</span><span class=n>what</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
-        <span class=p>}</span>
+            <span class="c1">//cv::imshow(&#34;Result&#34;,resultHost);
+</span><span class="c1"></span>            <span class="c1">//cv::waitKey();
+</span><span class="c1"></span>
+        <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="k">const</span> <span class="n">cv</span><span class="o">::</span><span class="n">Exception</span><span class="o">&amp;</span> <span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Error: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">ex</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
 
-    <span class=n>std</span><span class=o>::</span><span class=n>clock_t</span> <span class=n>end</span> <span class=o>=</span> <span class=n>std</span><span class=o>::</span><span class=n>clock</span><span class=p>();</span>
-    <span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=kt>double</span><span class=p>(</span><span class=n>end</span><span class=o>-</span><span class=n>begin</span><span class=p>)</span> <span class=o>/</span> <span class=n>CLOCKS_PER_SEC</span>  <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
-<span class=p>}</span>
-</code></pre></td></tr></table></div></div><p><strong>编译和执行</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>$ g++ -o test test.cpp `pkg-config opencv --cflags --libs` 
+    <span class="n">std</span><span class="o">::</span><span class="n">clock_t</span> <span class="n">end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">clock</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="kt">double</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">begin</span><span class="p">)</span> <span class="o">/</span> <span class="n">CLOCKS_PER_SEC</span>  <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>编译和执行</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ g++ -o test test.cpp `pkg-config opencv --cflags --libs` 
 $ ./test
-</code></pre></td></tr></table></div></div><h2 id=faq>FAQ</h2><p>编译过程中如果出现如下错误，说明显卡不支持CUDA的最低要求</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>CUDA backend for DNN module requires CC 5.3 or higher.  Please remove unsupported architectures from CUDA_ARCH_BIN option.
-</code></pre></td></tr></table></div></div><h2 id=安装或者编译错误>安装或者编译错误　　</h2><p>opencv_contrib-4.1.1/modules/cudaimgproc/src/cuda/bilateral_filter.cu:140: error: (-217:Gpu API call) invalid configuration argument in function &lsquo;bilateral_caller&rsquo;</p><p>cmake项目编译出现undefined reference to `cv::freetype::createFreeType2()　　</p><p><strong>参考</strong><br><a href=https://medium.com/repro-repo/install-cuda-10-1-and-cudnn-7-5-0-for-pytorch-on-ubuntu-18-04-lts-9b6124c44cc target=_blank rel="noopener noreffer">https://medium.com/repro-repo/install-cuda-10-1-and-cudnn-7-5-0-for-pytorch-on-ubuntu-18-04-lts-9b6124c44cc</a><br><a href=https://gist.github.com/raulqf/f42c718a658cddc16f9df07ecc627be7 target=_blank rel="noopener noreffer">https://gist.github.com/raulqf/f42c718a658cddc16f9df07ecc627be7</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>本文于 2020-03-27 更新</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/ data-title="ubuntu 18.04系统安装OpenCV 4.2.0" data-via=xxxx data-hashtags=linux><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/ data-hashtag=linux><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/ data-title="ubuntu 18.04系统安装OpenCV 4.2.0" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/ data-title="ubuntu 18.04系统安装OpenCV 4.2.0"><i class="fab fa-line fa-fw"></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/ data-title="ubuntu 18.04系统安装OpenCV 4.2.0" data-ralateuid=xxxx><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="分享到 Myspace" data-sharer=myspace data-url=https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/ data-title="ubuntu 18.04系统安装OpenCV 4.2.0" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/ data-title="ubuntu 18.04系统安装OpenCV 4.2.0" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/ data-title="ubuntu 18.04系统安装OpenCV 4.2.0"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/linux/>linux</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/amp/posts/2020/03/12/requsts-advance-usage/ class=prev rel=prev title=requests库中的那些高级用法><i class="fas fa-angle-left fa-fw"></i>requests库中的那些高级用法</a>
-<a href=/amp/posts/2020/04/06/mask-helmet-recognition/ class=next rel=next title=口罩和安全帽识别>口罩和安全帽识别<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=valine class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.</noscript></div></article><div class=adsblock><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:block data-ad-format=fluid data-ad-layout-key=-73+ed+2i-1n-4w data-ad-client=ca-pub-2665873967488848 data-ad-slot=2692397084></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></main><amp-analytics type=googleanalytics><script type=application/json>{"vars":{"account":""},"triggers":{"trackEvent":{"on":"click","request":"event","selector":"body","vars":{"eventAction":"click","eventCategory":"body-click"}},"trackPageview":{"on":"visible","request":"pageview"}}}</script></amp-analytics><amp-auto-ads type=adsense data-ad-client=ca-pub-2665873967488848></amp-auto-ads></body></html>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="faq">FAQ</h2>
+<p>编译过程中如果出现如下错误，说明显卡不支持CUDA的最低要求</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">CUDA backend for DNN module requires CC 5.3 or higher.  Please remove unsupported architectures from CUDA_ARCH_BIN option.
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装或者编译错误">安装或者编译错误　　</h2>
+<p>opencv_contrib-4.1.1/modules/cudaimgproc/src/cuda/bilateral_filter.cu:140: error: (-217:Gpu API call) invalid configuration argument in function &lsquo;bilateral_caller&rsquo;</p>
+<p>cmake项目编译出现undefined reference to `cv::freetype::createFreeType2()　　</p>
+<p><strong>参考</strong><br>
+<a href="https://medium.com/repro-repo/install-cuda-10-1-and-cudnn-7-5-0-for-pytorch-on-ubuntu-18-04-lts-9b6124c44cc" target="_blank" rel="noopener noreffer">https://medium.com/repro-repo/install-cuda-10-1-and-cudnn-7-5-0-for-pytorch-on-ubuntu-18-04-lts-9b6124c44cc</a><br>
+<a href="https://gist.github.com/raulqf/f42c718a658cddc16f9df07ecc627be7" target="_blank" rel="noopener noreffer">https://gist.github.com/raulqf/f42c718a658cddc16f9df07ecc627be7</a></p></div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-03-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/" data-title="ubuntu 18.04系统安装OpenCV 4.2.0 " data-via="xxxx" data-hashtags="linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/" data-hashtag="linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/" data-title="ubuntu 18.04系统安装OpenCV 4.2.0 " data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/" data-title="ubuntu 18.04系统安装OpenCV 4.2.0 "><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/" data-title="ubuntu 18.04系统安装OpenCV 4.2.0 " data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/" data-title="ubuntu 18.04系统安装OpenCV 4.2.0 " data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/" data-title="ubuntu 18.04系统安装OpenCV 4.2.0 " data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://justpic.org/amp/posts/2020/03/27/ubuntu-18.04-install-opencv-4.2.0/" data-title="ubuntu 18.04系统安装OpenCV 4.2.0 "><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/amp/posts/2020/03/12/requsts-advance-usage/" class="prev" rel="prev" title="requests库中的那些高级用法"><i class="fas fa-angle-left fa-fw"></i>requests库中的那些高级用法</a>
+            <a href="/amp/posts/2020/04/06/mask-helmet-recognition/" class="next" rel="next" title="口罩和安全帽识别">口罩和安全帽识别<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article>
+<div class="adsblock">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-73+ed+2i-1n-4w"
+        data-ad-client="ca-pub-2665873967488848" data-ad-slot="2692397084"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+</main>
+
+<amp-analytics type="googleanalytics">
+    <script type="application/json">
+        {
+            "vars": {
+                "account": ""
+            },
+            "triggers": {"trackEvent":{"on":"click","request":"event","selector":"body","vars":{"eventAction":"click","eventCategory":"body-click"}},"trackPageview":{"on":"visible","request":"pageview"}}
+        }
+    </script>
+</amp-analytics>
+
+<amp-auto-ads type="adsense"
+              data-ad-client="ca-pub-2665873967488848">
+</amp-auto-ads>
+</body>
+
+</html>

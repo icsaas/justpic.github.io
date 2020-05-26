@@ -1,1 +1,8 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>所有latex数学符号 - 桑河一榆</title><link>https://justpic.org/posts/2014/09/10/latex-math-symbol/</link><description>所有latex数学符号 | 桑河一榆</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor><webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 10 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://justpic.org/posts/2014/09/10/latex-math-symbol/" rel="self" type="application/rss+xml"/></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有latex数学符号 - 桑河一榆</title>
+        <link>https://justpic.org/posts/2014/09/10/latex-math-symbol/</link>
+        <description>所有latex数学符号 | 桑河一榆</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
+            <webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 10 Sep 2014 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://justpic.org/posts/2014/09/10/latex-math-symbol/" rel="self" type="application/rss+xml" /></channel>
+</rss>
