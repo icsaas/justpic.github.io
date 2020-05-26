@@ -1,1 +1,15 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>math - 标签 - 桑河一榆</title><link>https://justpic.org/tags/math/</link><description>math - 标签 - 桑河一榆</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor><webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 10 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://justpic.org/tags/math/" rel="self" type="application/rss+xml"/><item><title>latex数学符号</title><link>https://justpic.org/posts/2014/09/10/latex-math-symbol/</link><pubDate>Wed, 10 Sep 2014 00:00:00 +0000</pubDate><author>作者</author><guid>https://justpic.org/posts/2014/09/10/latex-math-symbol/</guid><description>&lt;p>latex数学符号&lt;/p></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>math - 标签 - 桑河一榆</title>
+        <link>https://justpic.org/tags/math/</link>
+        <description>math - 标签 - 桑河一榆</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
+            <webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 10 Sep 2014 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://justpic.org/tags/math/" rel="self" type="application/rss+xml" /><item>
+    <title>latex数学符号</title>
+    <link>https://justpic.org/posts/2014/09/10/latex-math-symbol/</link>
+    <pubDate>Wed, 10 Sep 2014 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://justpic.org/posts/2014/09/10/latex-math-symbol/</guid>
+    <description><![CDATA[<p>latex数学符号</p>]]></description>
+</item></channel>
+</rss>
