@@ -40,6 +40,14 @@
     <guid>https://justpic.org/posts/2020/03/08/software-engineering-best-rules/</guid>
     <description><![CDATA[<p>软件开发原则是一组具体的规则和建议，如果工程师想要编写工整、清晰和可维护的代码，那么他们需要在程序实现过程中应该遵循一些规则和建议。 没有魔杖可以把变量、类和函数的混合物变成完美的代码，但是有一些技巧和提示可以帮助工程师评判是否在做正确的事情。</p>]]></description>
 </item><item>
+    <title>Java基础知识总结</title>
+    <link>https://justpic.org/posts/2020/03/05/java-summary-2020/</link>
+    <pubDate>Thu, 05 Mar 2020 02:14:29 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://justpic.org/posts/2020/03/05/java-summary-2020/</guid>
+    <description><![CDATA[<p>Java基础知识清单<br>
+主要包括面向对象、基础语法、高级进阶三部分</p>]]></description>
+</item><item>
     <title>Markdown写作指南</title>
     <link>https://justpic.org/posts/2020/03/04/markdown-writing-rules/</link>
     <pubDate>Wed, 04 Mar 2020 22:18:02 &#43;0800</pubDate>
@@ -67,12 +75,5 @@
     <author>作者</author>
     <guid>https://justpic.org/posts/2019/10/15/%E8%B7%AF%E7%94%B1%E8%BD%AC%E5%8F%91%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
     <description><![CDATA[技术应用：路由转发和反向代理]]></description>
-</item><item>
-    <title>tornado异步网络编程实践</title>
-    <link>https://justpic.org/posts/2016/09/08/tornado-async-web/</link>
-    <pubDate>Thu, 08 Sep 2016 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://justpic.org/posts/2016/09/08/tornado-async-web/</guid>
-    <description><![CDATA[<p>tornado异步网络编程实践</p>]]></description>
 </item></channel>
 </rss>
