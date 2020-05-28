@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on 桑河一榆</title>
+    <link>https://justpic.org/page/</link>
+    <description>Recent content in Pages on 桑河一榆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
+    <webMaster>matrix.orz@gmail.com (justpic)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    
+	<atom:link href="https://justpic.org/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://justpic.org/page/tool/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>matrix.orz@gmail.com (justpic)</author>
+      <guid>https://justpic.org/page/tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Archive</title>
+      <link>https://justpic.org/page/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>matrix.orz@gmail.com (justpic)</author>
+      <guid>https://justpic.org/page/archive/</guid>
+      <description>关注软件开发、devops、python、golang、微服务、AI等技术。</description>
+    </item>
+    
+    <item>
+      <title>联盟链接</title>
+      <link>https://justpic.org/page/friend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>matrix.orz@gmail.com (justpic)</author>
+      <guid>https://justpic.org/page/friend/</guid>
+      <description>联盟列表 forecho JACK LEE Ryan Yang Jimmy Song Roc RECALL&amp;rsquo;s Blog devopser sealyun wujunze (王丽兵)开发笔记 kuboard 风巢知识导航 猫爪导航</description>
+    </item>
+    
+    <item>
+      <title>项目</title>
+      <link>https://justpic.org/page/project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>matrix.orz@gmail.com (justpic)</author>
+      <guid>https://justpic.org/page/project/</guid>
+      <description>文章的部分内容被密码保护： --- DON&#39;T MODIFY THIS LINE ---</description>
+    </item>
+    
+  </channel>
+</rss>

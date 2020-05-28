@@ -51,6 +51,16 @@
                     href="https://justpic.org/en/about/"
                     /></url><url>
             <loc>https://justpic.org/en/posts/2018/02/12/online-video-stream-site/</loc><lastmod>2018-02-12T22:33:00&#43;08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
+            <loc>https://justpic.org/en/page/tool/</loc><lastmod>2020-04-08T01:51:13&#43;08:00</lastmod><changefreq>daily</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://justpic.org/page/tool/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://justpic.org/en/page/tool/"
+                    /></url><url>
+            <loc>https://justpic.org/en/page/about/</loc><lastmod>2020-04-08T01:51:13&#43;08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
             <loc>https://justpic.org/en/archives/</loc><lastmod>2020-04-08T01:51:13&#43;08:00</lastmod><changefreq>daily</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -59,4 +69,13 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://justpic.org/en/archives/"
+                    /></url><url>
+            <loc>https://justpic.org/en/page/</loc><lastmod>2020-04-08T01:51:13&#43;08:00</lastmod><changefreq>daily</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://justpic.org/page/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://justpic.org/en/page/"
                     /></url></urlset>
