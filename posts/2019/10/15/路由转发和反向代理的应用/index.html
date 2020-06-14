@@ -262,7 +262,7 @@ MathJax.Hub.Config({
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
+    </div><div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -292,133 +292,7 @@ MathJax.Hub.Config({
       </ul>
     </li>
   </ul>
-</nav>=======
-    <article class="page single"><h1 class="single-title animated flipInX">路由转发和反向代理的应用</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/default/"><i class="far fa-folder fa-fw"></i>default</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-15">2019-10-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1685 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/posts/2019/10/15/%E8%B7%AF%E7%94%B1%E8%BD%AC%E5%8F%91%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/" class="leancloud_visitors" data-flag-title="路由转发和反向代理的应用">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#简单实践">简单实践</a>
-          <ul>
-            <li><a href="#1-路由转发">1. 路由转发：</a></li>
-            <li><a href="#2-配置pc1">2. 配置PC1</a></li>
-            <li><a href="#3-配置pc2">3. 配置PC2</a></li>
-            <li><a href="#4-配置pc3">4. 配置PC3</a></li>
-          </ul>
-        </li>
-        <li><a href="#多个上位机网络通信">多个上位机网络通信</a>
-          <ul>
-            <li><a href="#1-配置pc1">1. 配置PC1</a></li>
-            <li><a href="#2-配置pc2">2. 配置PC2</a></li>
-            <li><a href="#3-配置pc4">3. 配置PC4</a></li>
-            <li><a href="#4-配置pc5">4. 配置PC5</a></li>
-            <li><a href="#5-查看pc4路由并配置">5. 查看PC4路由并配置</a></li>
-          </ul>
-        </li>
-        <li><a href="#反向代理">反向代理：</a></li>
-      </ul>
-    </li>
-  </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>路由转发和反向代理的应用</p>
-<h3 id="简单实践">简单实践</h3>
-<h4 id="1-路由转发">1. 路由转发：</h4>
-<p>工业互联网环境下，很多上位机是双网卡或者多网卡，上位机通常处于多重网络环境下，就上位机本身而言，可以与这些网络进行通信，再缺少网络路由器的直接配置情况下，各个网络之间是不能直接进行通信的，极端网络环境下，直接使用PC网卡进行路由转发是可以快速解决跨网设备通信的，一般来说，路由转发是从IP层协议解决网络连通性问题，与一般的反向代理处于传输层的解决方案相比，能够更好的支持网络应用，但同时也增加了网络的路由跃点数，会对工业软件的认证授权产生影响。</p>
-<p>下面主要从一个上位机多重网络联通性测试说明两个局域网环境下的路由转发应用：</p>
-<p>假设局域网1中的PC1的IP地址为：172.11.100.25，对应的网卡编号为11，局域网2中的PC3的IP地址为:172.12.25.141，对应的网卡编号为15.上位机连接着局域网1和局域网2，对应的网络IP地址分别为172.11.100.249和172.12.25.130，对应的网卡编号分别为11和13。为了实现PC1和PC2互通（即相互可以ping通），需要做如下三步操作：</p>
-<h4 id="2-配置pc1">2. 配置PC1</h4>
-<p>PC1下cmd进入命令行，route print -4 查看当前路由，添加以下路由信息：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">route add 172.12.25.0 mask 255.255.255.0 172.11.100.249 metric <span class="m">8</span> <span class="k">if</span> <span class="m">11</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="3-配置pc2">3. 配置PC2</h4>
-<p>PC2下注意，需要设置一个网卡的网关地址为空，然后进入到注册表下修改IPEnableRouter的值为1,IPEnableRouter的具体注册表路径为 “计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters”</p>
-<p>!注意：IPEnableRouter修改后需要重启电脑才能生效。</p>
-<h4 id="4-配置pc3">4. 配置PC3</h4>
-<p>PC3下cmd进入命令行，route print -4查看当前路由，添加以下路由信息：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">route add 172.11.100.0 mask 255.255.255.0 172.12.25.130 metric <span class="m">8</span> <span class="k">if</span> <span class="m">15</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>至此，相关路由转发配置基本结束，PC1和PC3是可以相互ping通的。</p>
-<blockquote>
-<p>想象一下，如果要打通多个上位机的局域网，需要怎样做？</p>
-</blockquote>
-<h3 id="多个上位机网络通信">多个上位机网络通信</h3>
-<p>下面主要从两个上位机的多重网络连通性测试说明三个局域网环境下的路由转发应用：</p>
-<p>在上面的网络情景下，增加局域网3，局域网3下的PC5的IP地址为：192.168.0.201，对应的网卡编号为11，上位机PC4连接着局域网2和局域网3，对应的IP地址分别为172.12.15.142和192.168.0.202，对应的网卡编号分别为11和13，为了打通PC5和PC1的网络，需要做如下五步操作：</p>
-<h4 id="1-配置pc1">1. 配置PC1</h4>
-<p>PC1下cmd进入命令行，route print -4查看当前路由，添加以下路由信息：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">route add 192.168.0.0 mask 255.255.255.0 172.11.100.249 metric <span class="m">8</span> <span class="k">if</span> <span class="m">11</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="2-配置pc2">2. 配置PC2</h4>
-<p>PC2下cmd进入命令行，route print -4查看当前路由，添加以下路由信息：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">route add 192.168.0.0 mask 255.255.255.0 172.12.15.142 metric <span class="m">8</span> <span class="k">if</span> <span class="m">11</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="3-配置pc4">3. 配置PC4</h4>
-<p>PC4下注意，需要设置一个网卡的网关地址为空，然后进入到注册表下修改IPEnableRouter的值1，,IPEnableRouter的具体注册表路径为 “计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters”</p>
-<p>！注意：IPEnableRouter修改后需要重启电脑才能生效。</p>
-<h4 id="4-配置pc5">4. 配置PC5</h4>
-<p>PC5下cmd进入命令行，route print -4查看路由，添加以下路由信息：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">route add 172.11.100.0 mask 255.255.255.0 192.168.0.202 metric <span class="m">8</span> <span class="k">if</span> <span class="m">11</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="5-查看pc4路由并配置">5. 查看PC4路由并配置</h4>
-<p>PC4下cmd进入命令行，route print -4查看路由，添加以下路由信息：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">route add 172.11.100.0 mask 255.255.255.0 172.12.15.142 <span class="k">if</span> <span class="m">11</span>
-route add  192.168.0.0 mask 255.255.255.0 192.168.0.202 metric <span class="m">8</span> <span class="k">if</span> <span class="m">13</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>至此，相关路由转发配置基本结束，PC1和PC5是可以相互ping通的。
-会了三个局域网的路由转发，多个局域网的路由转发以此类推，就可以实现异构网络间的互通。</p>
-<h3 id="反向代理">反向代理：</h3>
-<p>反向代理的应用非常广泛，包括网站负载均衡、内网穿透、高可用等等。由于反向代理一般都软件化了，这里就不做过多介绍，可以推荐使用frp作为反向代理，支持tcp、udp等多种协议。
-当然windows自带的netsh interface portproxy也是一个不错的选择，但是只支持tcp协议。</p>
-<p>参考文章：</p>
-<p><a href="https://www.cnblogs.com/Bonker/p/4849295.html?from=singlemessage" target="_blank" rel="noopener noreffer">Win7中的路由转发配置实验</a></p>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
-        </div>
     </div><div class="content" id="content"><p>路由转发和反向代理的应用</p>
 <h3 id="简单实践">简单实践</h3>
 <h4 id="1-路由转发">1. 路由转发：</h4>

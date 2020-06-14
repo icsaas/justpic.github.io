@@ -319,49 +319,12 @@ amp-img.contain img {
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
+    </div><div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
         </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav>=======
-    <article class="page single"><h1 class="single-title animated flipInX">ScatNet散射卷积网络</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-08-09">2014-08-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 443 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/amp/posts/2014/08/09/scatter/" class="leancloud_visitors" data-flag-title="ScatNet散射卷积网络">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>ScatNet散射卷积网络</p>
-<p>散射卷积网络(ScatNet)通过卷积网络对图像的小波系数做级联运算，运用深度学习的思想，生成树状结构的散射系数，使用散射系数作为特征进行学习。
-理解和分析scatnet就暂且从下面这幅图入手</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/post/st.jpg"
-        data-srcset="/images/post/st.jpg, /images/post/st.jpg 1.5x, /images/post/st.jpg 2x"
-        data-sizes="auto"
-        alt="/images/post/st.jpg"
-        title="scat transform" /></p>
-<p>在这里，\(f\)为输入的图像矩阵数据、\(\phi\)代表一个小波函数、m代表变换的阶数、J代表尺度,\(\lambda\)代表路径对应于m定义的各个阶，左上箭头代表计算出的散射系数、U代表的是各个小波系数的模结果。散射算子对U变换将会计算出该层散射系数S和下一层的U。
-若散射变换的方向数为C，总阶数为m，则第q阶散射变换沿频率递减的路径数为\(C^{q}(^J_q)\)，假设图像的橡树大小为N，采样值为\(\omega 2^{J}\),则每条散射路径有\(N\omega^{-2}2^{-2J}\)个系数，则所有的系数个数为<br>
-$$N\omega^{-2}2^{-2J} \sum_{q=0}^m C^{q}(^J_q)$$</p>
-<blockquote>
-<p>散射卷积网络、小波变换、分形、自然常数之间的关系</p>
-</blockquote>
-<p>参考文章与资料：</p>
-<p><a href="http://arxiv.org/abs/1203.1513" target="_blank" rel="noopener noreffer">Invariant Scattering Convolution Networks</a><br>
-<a href="http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf" target="_blank" rel="noopener noreffer">High Dimensional Classification with Invariant Deep Networks</a><br>
-<a href="http://www.di.ens.fr/data/software/scatnet/" target="_blank" rel="noopener noreffer">ScatNet</a><br>
-<a href="http://www.dailymotion.com/video/x10r1zw_stephane-mallat-mathematicien_tech" target="_blank" rel="noopener noreffer">S.Mallat的一个访谈</a><br>
-<a href="http://techtalks.tv/talks/plenary-talk-are-deepnetworks-a-soluSon-to-curse-of-dimensionality/60315/" target="_blank" rel="noopener noreffer">Plenary Talk:Are Deep Networks a Solution to Curse of Dimensionality</a><br>
-<a href="https://staff.fnwi.uva.nl/t.e.j.mensink/rdg/slides/2scatnets.pdf" target="_blank" rel="noopener noreffer">2scatnet</a></p>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
-        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
     </div><div class="content" id="content"><p>ScatNet散射卷积网络</p>
 <p>散射卷积网络(ScatNet)通过卷积网络对图像的小波系数做级联运算，运用深度学习的思想，生成树状结构的散射系数，使用散射系数作为特征进行学习。
 理解和分析scatnet就暂且从下面这幅图入手</p>

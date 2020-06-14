@@ -262,77 +262,12 @@ MathJax.Hub.Config({
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
+    </div><div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
         </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav>=======
-    <article class="page single"><h1 class="single-title animated flipInX">sqlalchemy动态映射</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2013-07-26">2013-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 94 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/posts/2013/07/26/django-sqlalchemy-mapping/" class="leancloud_visitors" data-flag-title="sqlalchemy动态映射">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>django中使用sqlalchemy进行动态映射</p>
-<h1 id="sqlalchemy动态映射">sqlalchemy动态映射</h1>
-<p>代码如下:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">    from sqlalchemy import *
-    from sqlalchemy.orm import *
-    metadata=MetaData(create_engine(&#34;sqlite://&#34;,echo=True)
-    t1=Table(&#34;t1&#34;,metadata,Column(&#39;id&#39;,Integer,primary_key=True))
-    t2=Table(&#34;t2&#34;,metadata,Column(&#34;id&#34;,Integer,primary_key=True))
-    metadata.create_all()
-    def map_class_to_some_table(cls,table,entity_name,**kw):
-        newcls=type(entity_name,(cls,),{})
-        mapper(newcls,table,**kw)
-        return newcls
-       
-    class Foo(object):
-        pass
-    
-    T1Foo=map_class_to_some_table(Foo,t1,&#34;T1Foo&#34;)
-    T2Foo=map_class_to_some_table(Foo,t2,&#34;T2Foo&#34;)
-    
-    sess=sessionmaker()()
-    sess.add_all([T1Foo(),T1Foo(),T2Foo(),T1Foo()])
-    print sess.query(T1Foo).all()
-    print sess.query(T2Foo).all()
-</code></pre></td></tr></table>
-</div>
-</div>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
-        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
     </div><div class="content" id="content"><p>django中使用sqlalchemy进行动态映射</p>
 <h1 id="sqlalchemy动态映射">sqlalchemy动态映射</h1>
 <p>代码如下:</p>

@@ -262,7 +262,7 @@ MathJax.Hub.Config({
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
+    </div><div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -281,74 +281,7 @@ MathJax.Hub.Config({
       </ul>
     </li>
   </ul>
-</nav>=======
-    <article class="page single"><h1 class="single-title animated flipInX">windows系统使用python环境</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2015-03-14">2015-03-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 374 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/posts/2015/03/14/windows%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8python%E7%8E%AF%E5%A2%83/" class="leancloud_visitors" data-flag-title="windows系统使用python环境">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#windows-64安装libxml2dom小记">windows 64安装libxml2dom小记</a>
-          <ul>
-            <li><a href="#用于解决no-module-named-libxmlmods等错误">用于解决no module named libxmlmods等错误</a></li>
-          </ul>
-        </li>
-        <li><a href="#windows-64安装pycurl小记">windows 64安装pycurl小记</a></li>
-        <li><a href="#windows上的python环境搭建">windows上的python环境搭建：</a></li>
-      </ul>
-    </li>
-  </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>windows系统使用python环境</p>
-<h3 id="windows-64安装libxml2dom小记">windows 64安装libxml2dom小记</h3>
-<h4 id="用于解决no-module-named-libxmlmods等错误">用于解决no module named libxmlmods等错误</h4>
-<blockquote>
-<p>此<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="noopener noreffer">网站</a>上面有编译好了的各种python windows包.</p>
-</blockquote>
-<p>我们首先下载<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/z94jfosk/libxml2_python-2.9.2-cp27-none-win_amd64.whl" target="_blank" rel="noopener noreffer">libxml2-python</a><br>
-然后使用pip wheel安装：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip wheeel libxml2_python-2.9.2-cp27-none-win_amd64.whl  
-pip install --use-wheel --no-index --find-links=wheelhouse libxml2-python
-easy_install libxml2dom
-</code></pre></td></tr></table>
-</div>
-</div><p>至此安装libxml2dom完毕</p>
-<h3 id="windows-64安装pycurl小记">windows 64安装pycurl小记</h3>
-<p>首先下载<a href="http://curl.haxx.se/gknw.net/7.40.0/dist-w64/curl-7.40.0-devel-mingw64.7z" target="_blank" rel="noopener noreffer">curl 64bit mingw</a><br>
-然后git clone <a href="https://github.com/pycurl/pycurl.git">https://github.com/pycurl/pycurl.git</a>，进入到pycurl目录，修改setup.py<br>
-CURL_DIR=$CURL_PATH
-编译，安装，完毕。
-以上方法还是没有安装成功，还是使用上面网站里的编译好的安装包进行安装，下载<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/z94jfosk/pycurl-7.19.5.1-cp27-none-win_amd64.whl" target="_blank" rel="noopener noreffer">pycurl-7.19.5.1-cp27-none-win_amd64.whl</a> <br>
-使用以下命令进行安装：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"> pip wheel pycurl-7.19.5.1-cp27-none-win_amd64.whl
- pip install --
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="windows上的python环境搭建">windows上的python环境搭建：</h3>
-<p>安装Anaconda。</p>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
-        </div>
     </div><div class="content" id="content"><p>windows系统使用python环境</p>
 <h3 id="windows-64安装libxml2dom小记">windows 64安装libxml2dom小记</h3>
 <h4 id="用于解决no-module-named-libxmlmods等错误">用于解决no module named libxmlmods等错误</h4>

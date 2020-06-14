@@ -319,90 +319,12 @@ amp-img.contain img {
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
+    </div><div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
         </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav>=======
-    <article class="page single"><h1 class="single-title animated flipInX">ubuntu上安装gcc</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-04-02">2014-04-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 257 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/amp/posts/2014/04/02/ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85gcc/" class="leancloud_visitors" data-flag-title="ubuntu上安装gcc">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>命令行中输入以下命令安装相关包</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:boost-latest/ppa
-sudo apt-get update
-sudo apt-get install libboost1.55-all-dev
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo apt-get update
-sudo apt-get install gcc-4.8 g++-4.8
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.6 
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
-sudo update-alternatives --config gcc
-</code></pre></td></tr></table>
-</div>
-</div><p>安装完gcc-4.8后即可安装llvm-3.4 参考 <a href="" rel="">llvm/apt</a><br>
-下载<a href="" rel="">osxcross</a><br>
-编译若出现错误： fatal error:limits can&rsquo;t find?<br>
-使用以下命令进行修正</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$echo &#39;#include &lt;limits.h&gt;&#39; | clang -v -xc -o /dev/null -
-</code></pre></td></tr></table>
-</div>
-</div><p>使用上述命令排错，依依对照toolchain查找的include顺序，修改include链接，即可解决问题
-其实这是一个llvm的bug<br>
-临时解决方案</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">    $cd /usr/lib/clang/&lt;clang-version/
-    $sudo ln -sf ../../llvm-3.4/lib/clang/&lt;clang-version&gt;/include include
-</code></pre></td></tr></table>
-</div>
-</div><p>再次编译可以通过。
-一个查找文件的有用命令:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">    $grep notification `find ./*`
-</code></pre></td></tr></table>
-</div>
-</div><hr>
-<p>参考：<br>
-<a href="https://bugs.launchpad.net/ubuntu/&#43;source/llvm-defaults/&#43;bug/1242300" target="_blank" rel="noopener noreffer">https://bugs.launchpad.net/ubuntu/+source/llvm-defaults/+bug/1242300</a>:</p>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
-        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
     </div><div class="content" id="content"><p>命令行中输入以下命令安装相关包</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

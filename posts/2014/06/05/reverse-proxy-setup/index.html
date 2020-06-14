@@ -262,7 +262,7 @@ MathJax.Hub.Config({
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
+    </div><div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -271,64 +271,7 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="#建立一个简单的反向http代理">建立一个简单的反向http代理</a></li>
   </ul>
-</nav>=======
-    <article class="page single"><h1 class="single-title animated flipInX">配置反向代理</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-06-05">2014-06-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 83 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/posts/2014/06/05/reverse-proxy-setup/" class="leancloud_visitors" data-flag-title="配置反向代理">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#建立一个简单的反向http代理">建立一个简单的反向http代理</a></li>
-  </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>配置反向代理</p>
-<h2 id="建立一个简单的反向http代理">建立一个简单的反向http代理</h2>
-<p>nginx 配置情况</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">upstream tunnel{
-   server 127.0.0.1:8080;
-}
-server {
-   listen 80;
-   server_name &lt;url&gt;;
-   
-   location /{
-   proxy_set_header Host $http_host;
-   proxy_pass tunnel;
-   }
-}
-#ssh reverse 
-ssh -R 8080:localhost:&lt;port&gt; &lt;user_name&gt;@&lt;server&gt;
-#port is your local application used ,and url is the url you will to visit public 
-</code></pre></td></tr></table>
-</div>
-</div>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
-        </div>
     </div><div class="content" id="content"><p>配置反向代理</p>
 <h2 id="建立一个简单的反向http代理">建立一个简单的反向http代理</h2>
 <p>nginx 配置情况</p>

@@ -319,113 +319,12 @@ amp-img.contain img {
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
+    </div><div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
         </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav>=======
-    <article class="page single"><h1 class="single-title animated flipInX">ubuntu 14.04 安装 haskell</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>linux</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-09-06">2014-09-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 616 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/amp/posts/2014/09/06/ubuntu-14.04-%E5%AE%89%E8%A3%85-haskell/" class="leancloud_visitors" data-flag-title="ubuntu 14.04 安装 haskell">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>ubuntu 14.04 安装 haskell</p>
-<blockquote>
-<p>haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：</p>
-</blockquote>
-<ol>
-<li>下载源码并编译
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo aptitude build-dep ghc
-sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
-wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2
-tar jxvf ghc-7.8.3-src.tar.bz2
-cd ghc-7.8.3-src
-./configure --prefix=/usr/local/ghc
-make -j8
-sudo paco -D make install
-sudo aptitude purge ghc
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>编辑.bashrc文件
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">PATH=&#34;/usr/local/ghc/bin:$PATH&#34;
-source ~/.bashrc
-ghci   #验证是否安装成功
-sudo aptitude purge ghc 
-</code></pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-<blockquote>
-<p>Cabal是Haskell的一个package，提供Haskell包安装框架，类似python的easy_install、debian的apt-get等。
-cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，该程序在安装新包时会自动解决包依赖关系。
-安装了cabal-install就可以了，因为cabal-install依赖与cabal，安装程序会自动下载cabal并安装。
-下面是安装cabal的步骤</p>
-</blockquote>
-<ol>
-<li>下载源码并编译
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
-tar zxvf cabal-install-1.20.0.3.tar.gz
-<span class="nb">cd</span> cabal-install-2.10.0.3
-./bootstrap.sh
-vim ~/.bahsrc
-<span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.cabal/bin:<span class="nv">$PATH</span>
-<span class="nb">source</span> ~/.bashrc
-cabal update
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>异常处理
-安装包haskell-platform中包含这些包，但是由于使用apt-get安装时不能获得最新的版本或者会出现一些问题，比如network-2.6.0.2通过cabal总是安装不上，报编译错误
-这种使用源码安装的方式很好的解决了这些问题。非常高效！
-在安装相关haskell包的时候可能会出现broken package错误，可以通过以下命令在haskell中移除broken package
-<code>ghc-pkg check --simple-output | xargs -n 1 ghc-pkg unregister --force</code></li>
-</ol>
-<hr>
-<p><strong>参考</strong><br>
-<a href="http://howistart.org/posts/haskell/1" target="_blank" rel="noopener noreffer">how i start</a></p>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
-        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
     </div><div class="content" id="content"><p>ubuntu 14.04 安装 haskell</p>
 <blockquote>
 <p>haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：</p>
