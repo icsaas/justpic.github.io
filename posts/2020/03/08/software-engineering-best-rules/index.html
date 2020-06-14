@@ -77,7 +77,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="桑河一榆" />
 
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <link rel="amphtml" type="text/html" href="https://justpic.org/amp/posts/2020/03/08/software-engineering-best-rules/" title="桑河一榆" />
   <link rel="alternate" type="application/rss+xml" href="https://justpic.org/posts/2020/03/08/software-engineering-best-rules/index.xml" title="桑河一榆" />
@@ -173,22 +173,10 @@ MathJax.Hub.Config({
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/justpic.org\/posts\/2020\/03\/08\/software-engineering-best-rules\/"
-        },"image": {
-                "@type": "ImageObject",
-                "url": "https:\/\/justpic.org\/cover.png",
-                "width":  800 ,
-                "height":  600 
-            },"genre": "posts","keywords": "软件工程","wordcount":  2678 ,
+        },"genre": "posts","keywords": "软件工程","wordcount":  2678 ,
         "url": "https:\/\/justpic.org\/posts\/2020\/03\/08\/software-engineering-best-rules\/","datePublished": "2020-03-08T15:23:56+08:00","dateModified": "2020-03-08T15:23:56+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
-                "@type": "Organization",
-                "name": "xxxx",
-                "logo": {
-                "@type": "ImageObject",
-                "url": "https:\/\/justpic.org\/logo.png",
-                "width":  127 ,
-                "height":  40 
-                }
-            },"author": {
+            "@type": "Organization",
+            "name": "xxxx"},"author": {
                 "@type": "Person",
                 "name": "justpic"
             },"description": ""
@@ -268,13 +256,13 @@ MathJax.Hub.Config({
     <h2 class="toc-title">目录</h2>
     <div class="toc-content" id="toc-content-auto"></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">什么是好的软件工程原则</h1><div class="post-meta">
-        <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span></div>
         <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-08">2020-03-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2678 字&nbsp;
             <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/posts/2020/03/08/software-engineering-best-rules/" class="leancloud_visitors" data-flag-title="什么是好的软件工程原则">
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div><div class="details toc" id="toc-static" kept="">
+    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -297,7 +285,133 @@ MathJax.Hub.Config({
       </ul>
     </li>
   </ul>
+</nav>=======
+    <article class="page single"><h1 class="single-title animated flipInX">什么是好的软件工程原则</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-08">2020-03-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2678 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/posts/2020/03/08/software-engineering-best-rules/" class="leancloud_visitors" data-flag-title="什么是好的软件工程原则">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#量两次切一次measure-twice-and-cut-once">量两次，切一次(Measure twice and cut once)</a></li>
+    <li><a href="#不要重复自己dont-repeat-yourself">不要重复自己(Don&rsquo;t Repeat Yourself)</a></li>
+    <li><a href="#奥卡姆剃刀occams-razor">奥卡姆剃刀(Occam’s Razor)</a></li>
+    <li><a href="#保持足够简单keep-it-simple-stupid-">保持足够简单(Keep It Simple Stupid )</a></li>
+    <li><a href="#你不会需要它you-arent-gonna-need-it-">你不会需要它（You Aren’t Gonna Need It ）</a></li>
+    <li><a href="#前期大设计big-design-up-front">前期大设计(Big Design Up Front)</a></li>
+    <li><a href="#避免过早优化avoid-premature-optimization">避免过早优化(Avoid Premature Optimization)</a></li>
+    <li><a href="#最小惊奇原则principle-of-least-astonishment">最小惊奇原则(Principle Of Least Astonishment)</a></li>
+    <li><a href="#solid">S.O.L.I.D.</a></li>
+    <li><a href="#demeter定律">Demeter定律</a></li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#参考">参考：</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav></div>
+            </div><div class="content" id="content"><p>软件开发原则是一组具体的规则和建议，如果工程师想要编写工整、清晰和可维护的代码，那么他们需要在程序实现过程中应该遵循一些规则和建议。 没有魔杖可以把变量、类和函数的混合物变成完美的代码，但是有一些技巧和提示可以帮助工程师评判是否在做正确的事情。</p>
+
+
+
+
+<div class="hugo-encryptor-container">
+  <div class="hugo-encryptor-prompt">
+    
+      <p>文章的部分内容被密码保护：</p>
+    
+  </div>
+  <div class="hugo-encryptor-form">
+    <input
+      class="hugo-encryptor-input"
+      placeholder='请输入密码'
+    />
+    <input
+      class="hugo-encryptor-button"
+      type="button"
+      value='点击验证'
+      onclick="_click_handler(this)"
+    />
+  </div>
+  <div
+    class="hugo-encryptor-cipher-text"
+    data-password="123345"
+    style="display: none;"
+  >
+    <span style="display: none;">--- DON'T MODIFY THIS LINE ---</span>
+    <p><a href="http://www.gaoxiaojob.com/" target="_blank" rel="noopener noreffer">高校人才网</a><br>
+<a href="http://www.gaoxiaojob.com/zhaopin/diqu/sichuan/" target="_blank" rel="noopener noreffer">四川的</a><br>
+<a href="http://www.hbggzp.cn/JobWork/PubjobSearch?znid=010000&amp;key=" target="_blank" rel="noopener noreffer">湖北的</a></p>
+
+  </div>
+</div>
+
+<blockquote>
+<p>让我们来看看这些基本的建议。 下面的一些原则是特定于 python 的，但大多数不是。</p>
+</blockquote>
+<h2 id="量两次切一次measure-twice-and-cut-once">量两次，切一次(Measure twice and cut once)</h2>
+<p>如果你只能从这篇文章中学到一个原则且最重要的一个，那么就是这个。 开发人员，架构师和经理人经常因为个人情绪、以及其他问题而难以集中注意力。 就工程师来说，这个原则意味着选择正确的解决方案，选择正确的方法来解决问题，选择正确的工具来解决问题，对建立的解决方案必须充满信心。 选择这里意味着投入一些思考，找到必要的资源，组建合适的团队，思考设计，思考方法，设定任务，控制结果，并为此承担责任。 这就是“活在当下”。 我认为我自己还没有准备好用正确的词汇来描述它。</p>
+<h2 id="不要重复自己dont-repeat-yourself">不要重复自己(Don&rsquo;t Repeat Yourself)</h2>
+<p>这是一个相当简单但非常有用的原则，它说在不同的地方重复同样的事情是非常糟糕的。 首先，它涉及到进一步支持和修改代码的必要性。 如果某个代码片段在程序中的几个地方被复制，那么很有可能出现两种灾难性的情况:</p>
+<ol>
+<li>当对源代码进行哪怕是很小的改动时，您需要在几个地方更改相同的代码。 这需要额外的时间、精力和注意力，而这件事件通常也非常不容易。</li>
+<li>第一项紧随第二项。 团队中的其他开发人员可能会意外地错过其中一个更改(只合并了控制系统中的分支) ，并将面对应用程序中随后出现的一系列错误。 这些 bug 可能会让您感到沮丧，因为您已经听说这样的 bug 似乎已经被修复了。</li>
+</ol>
+<p>在这方面，有一个建议ーー如果在清单中发现任何代码超过两次，则应以单独的方式来处置。 这是通用做法。 事实上，即使再次遇到重复的bug，您也应该考虑创建一个单独的方法。</p>
+<h2 id="奥卡姆剃刀occams-razor">奥卡姆剃刀(Occam’s Razor)</h2>
+<p>这是一个非常普遍的想法，它来自于哲学编程。 这个原则得名于奥克姆的英国修道士威廉。 这一原则表明: ”没有必要，不得增加实体”。 在工程学中，这一原则被解释为: 没有必要创建不必要的实体。 因此，首先考虑添加另一个方法 / 类 / 工具 / 流程等的好处不见得总是一个好主意。 毕竟，如果您添加了另一个方法 / 类 / 工具 / 流程等等，除了增加复杂性之外，您没有得到任何其他好处，那还有什么意义呢？</p>
+<h2 id="保持足够简单keep-it-simple-stupid-">保持足够简单(Keep It Simple Stupid )</h2>
+<p>这是一个与上面非常类似的原则，但它的含义略有不同。 这个原则要求代码必须尽可能简单，不能有复杂的结构，否则会使代码的调试和维护复杂化。 此外，对于另一个程序员来说，理解代码的逻辑将会更加困难，这反过来也将需要额外的时间和精力。 这就是为什么您应该始终尝试使用简单的构造来尽可能多地解决问题，而不需要使用大量的分支、深层嵌套和过度重载的类结构。 通过这样做，你将使自己和同事的生活更加轻松，因为复杂性会产生错误。 记住 Peter Hintiens 说过的话: “简单永远比功能好”。</p>
+<h2 id="你不会需要它you-arent-gonna-need-it-">你不会需要它（You Aren’t Gonna Need It ）</h2>
+<p>这是许多程序员都会遇到的问题。 从项目一开始就希望立即实现所有必要的(有时甚至是不必要的)功能。 也就是说，当开发人员从一开始就将所有可能的方法添加到类中并实现它们时，甚至可能在未来永远不会使用它们。 因此，根据这个建议，首先，只实现您需要的东西，然后，如果必要的话，再扩展相应功能。 这样，您就可以节省调试代码的工作量、时间以及精力，而实际上这些代码却并不需要。</p>
+<h2 id="前期大设计big-design-up-front">前期大设计(Big Design Up Front)</h2>
+<p>在开始开发功能之前，您应该首先考虑应用程序架构，并将整个系统设计为足够小的细节，然后才按照预定义的计划进行实现。 原则是有存在的权利的，但是最近，它受到了相当多的批评。 这首先与设计和制定过程中的方案陈旧有关。 在这方面，仍然有必要进行后续的修改。 但它也具有不可否认的优点，在正确的设计中，可以大大降低进一步调试和纠错的成本。 此外，这样的信息系统，作为一个规则，更简洁的架构是正确的。</p>
+<h2 id="避免过早优化avoid-premature-optimization">避免过早优化(Avoid Premature Optimization)</h2>
+<blockquote>
+<p>“过早的优化是编程中所有问题(或者至少是大部分问题)的根源” &ndash; Donald Knuth</p>
+</blockquote>
+<p>优化是加快程序运行速度，降低系统资源消耗的一个非常正确和必要的过程。 但是每件事都有它自己的时机。 如果在开发的早期阶段进行优化，可能弊大于利。 首先，它与这样一个事实相关，即优化代码的开发需要更多的时间和精力用于开发和支持。 在这种情况下，您通常必须首先检查所选择的开发方法的正确性。 这就是为什么一开始使用一个简单但不是最优的方法更有利可图。 稍后，在估计这种方法会降低应用程序的工作速度时，可以使用一种更快或更少资源密集型的算法。 此外，只要你最初实现了最优的算法，需求就可能改变，代码就会变成垃圾。 因此，没有必要在过早的优化上浪费时间。</p>
+<h2 id="最小惊奇原则principle-of-least-astonishment">最小惊奇原则(Principle Of Least Astonishment)</h2>
+<p>这个原则意味着您的代码应该是直观和明显的，并且在检查代码时不会让其他开发人员感到惊讶。 例如，如果这个方法被称为“ making cookies” ，但是结果是得到了土豆，那么这段代码就是不好的(很明显)。 此外，如果无法避免副作用，应尽量避免副作用，并将副作用记录在案。</p>
+<h2 id="solid">S.O.L.I.D.</h2>
+<p>“SOLID”实际上是一组面向对象设计原则。 “ SOLID”中的每个字母代表一个原则，它们是:</p>
+<ol>
+<li><u>单一责任（Single responsibility）:</u> <br>
+声明每个模块或类应该对软件提供的功能的一个部分负责，并且这个责任应该完全由类封装;</li>
+<li><u>开闭原则（Open-closed): </u><br>
+声明软件实体(类、模块、功能等)应该对扩展开放，但对修改关闭;</li>
+<li><u>李斯科夫替换(Liskov substitution)</u><br>
+声明继承的类应该补充而不是替换基类的行为;</li>
+<li><u>界面隔离(Interface segregation)</u><br>
+声明任何客户端都不应该被迫依赖于它不使用的方法;</li>
+<li><u>依赖反转(Dependency inversion)</u><br>
+程序员应该在接口层而不是在实现层工作</li>
+</ol>
+<p>当一起应用时，这些原则可以帮助开发人员创建易于维护和扩展的代码。</p>
+<h2 id="demeter定律">Demeter定律</h2>
+<p>该原则的基本思想是在类之间划分职责区域，并将逻辑封装在类、方法或结构中。 可以从这一原则中区分出若干建议:</p>
+<ol>
+<li>类或实体应该是独立的</li>
+<li>你应该尝试减少不同类之间的连接数量(所谓的coupling 耦合)</li>
+<li>关联的类必须在一个 module / package / 目录中(也称为cohesion 凝聚力.）</li>
+</ol>
+<p>遵循这些原则，应用程序变得更加灵活、易于理解和易于维护。</p>
+<h2 id="总结">总结</h2>
+<p>同胞们，让我们成为伟大的工程师吧！ 让我们考虑一下设计和构建健壮且实现良好的系统，而不是成长中的有机怪物。 列举的原则在本质上是高度相关和联系的。 当然，我没有创造它们，但是一个小小的提醒也不会伤害到我，至少我是健忘的。</p>
+<hr>
+<h3 id="参考">参考：</h3>
+<ul>
+<li><a href="https://luminousmen.com/post/what-are-the-best-engineering-principles" target="_blank" rel="noopener noreffer">What Are The Best Software Engineering Principles?</a></li>
+<li><a href="https://mp.weixin.qq.com/s/2EJrdmOt_Of-o2IrtK9wlQ" target="_blank" rel="noopener noreffer">工程效能提升</a></li>
+<li><a href="https://dev.tasubo.com/2020/02/how-my-software-development-has-changed-in-the-last-10-year-part-2.html" target="_blank" rel="noopener noreffer">我的十年</a></li>
+</ul>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
+        </div>
     </div><div class="content" id="content"><p>软件开发原则是一组具体的规则和建议，如果工程师想要编写工整、清晰和可维护的代码，那么他们需要在程序实现过程中应该遵循一些规则和建议。 没有魔杖可以把变量、类和函数的混合物变成完美的代码，但是有一些技巧和提示可以帮助工程师评判是否在做正确的事情。</p>
 
 
@@ -588,5 +702,5 @@ MathJax.Hub.Config({
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><style>.lg-toolbar .lg-icon::after { color: #999; }</style><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"4R8KL7gXd86iKHjaWTqbnD52-gzGzoHsz","appKey":"5kBqleDSlcBzUlRTBsDvARdT","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"W813GCTU6R","algoliaIndex":"index.zh-cn","algoliaSearchKey":"a54627fcf15e2206773be495f10f4851","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"4R8KL7gXd86iKHjaWTqbnD52-gzGzoHsz","appKey":"5kBqleDSlcBzUlRTBsDvARdT","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"W813GCTU6R","algoliaIndex":"index.zh-cn","algoliaSearchKey":"a54627fcf15e2206773be495f10f4851","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

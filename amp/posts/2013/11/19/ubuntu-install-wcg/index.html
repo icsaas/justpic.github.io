@@ -313,13 +313,13 @@ amp-img.contain img {
     <h2 class="toc-title">目录</h2>
     <div class="toc-content" id="toc-content-auto"></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Ubuntu Server安装World Community Grid</h1><div class="post-meta">
-        <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span></div>
         <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2013-11-19">2013-11-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 101 字&nbsp;
             <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/amp/posts/2013/11/19/ubuntu-install-wcg/" class="leancloud_visitors" data-flag-title="Ubuntu Server安装World Community Grid">
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div><div class="details toc" id="toc-static" kept="">
+    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -333,7 +333,76 @@ amp-img.contain img {
       </ul>
     </li>
   </ul>
+</nav>=======
+    <article class="page single"><h1 class="single-title animated flipInX">Ubuntu Server安装World Community Grid</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2013-11-19">2013-11-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 101 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/amp/posts/2013/11/19/ubuntu-install-wcg/" class="leancloud_visitors" data-flag-title="Ubuntu Server安装World Community Grid">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#在ubuntu上安装boinc">在ubuntu上安装BOINC</a>
+      <ul>
+        <li><a href="#更多资源">更多资源:</a></li>
+        <li><a href="#参考">参考:</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav></div>
+            </div><div class="content" id="content"><p>Ubuntu Server安装World Community Grid</p>
+<h2 id="在ubuntu上安装boinc">在ubuntu上安装BOINC</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get aptitude install boinc-client
+</code></pre></td></tr></table>
+</div>
+</div><p>(you can also download it from wcg and install)</p>
+<p>find your account key:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">boinccmd --lookup_account http://www.worldcommunitygrid.org username password
+</code></pre></td></tr></table>
+</div>
+</div><p>You should get a response something like this
+dfb74c9b9&hellip;</p>
+<p>attach to your project</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">boinccmd --project_attach http://www.worldcommunitygrid.org dfb74c....
+</code></pre></td></tr></table>
+</div>
+</div><p>if you want to verify your attached enter the following command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">boinccmd --get_state
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="更多资源">更多资源:</h3>
+<p><a href="http://boinc.berkeley.edu/wiki/installing_BOINC_ON_Ubuntu" target="_blank" rel="noopener noreffer">http://boinc.berkeley.edu/wiki/installing_BOINC_ON_Ubuntu</a><br>
+<a href="http://boinc.berkeley.edu/wiki/Client_configuration" target="_blank" rel="noopener noreffer">http://boinc.berkeley.edu/wiki/Client_configuration</a><br>
+<a href="http://boinc.berkeley.edu/wiki/Stop_or_start_BOINC" target="_blank" rel="noopener noreffer">http://boinc.berkeley.edu/wiki/Stop_or_start_BOINC</a></p>
+<h3 id="参考">参考:</h3>
+<p><a href="http://blog.joelchristian.com/?p=291" target="_blank" rel="noopener noreffer">http://blog.joelchristian.com/?p=291</a><br>
+<a href="http://misctechmusings.com/linux/boinc-cli-for-world-community-grid/" target="_blank" rel="noopener noreffer">http://misctechmusings.com/linux/boinc-cli-for-world-community-grid/</a></p>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
+        </div>
     </div><div class="content" id="content"><p>Ubuntu Server安装World Community Grid</p>
 <h2 id="在ubuntu上安装boinc">在ubuntu上安装BOINC</h2>
 <div class="highlight"><div class="chroma">

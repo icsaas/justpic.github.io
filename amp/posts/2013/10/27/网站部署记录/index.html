@@ -313,18 +313,165 @@ amp-img.contain img {
     <h2 class="toc-title">目录</h2>
     <div class="toc-content" id="toc-content-auto"></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">网站部署记录</h1><div class="post-meta">
-        <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/web%E5%BC%80%E5%8F%91/"><i class="far fa-folder fa-fw"></i>Web开发</a></span></div>
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/web%E5%BC%80%E5%8F%91/"><i class="far fa-folder fa-fw"></i>Web开发</a></span></div>
         <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2013-10-27">2013-10-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 290 字&nbsp;
             <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/amp/posts/2013/10/27/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="网站部署记录">
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div><div class="details toc" id="toc-static" kept="">
+    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
         </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav>=======
+    <article class="page single"><h1 class="single-title animated flipInX">网站部署记录</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/web%E5%BC%80%E5%8F%91/"><i class="far fa-folder fa-fw"></i>Web开发</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2013-10-27">2013-10-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 290 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/amp/posts/2013/10/27/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="网站部署记录">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>网站部署记录</p>
+<p>安装基础python环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get install nginx
+sudo apt-get install git
+sudo apt-get install mysql-server
+sudo apt-get install python-dev
+install easy_install on ubuntu:
+sudo apt-get install python-setuptools
+sudo easy_install virtualenv
+sudo easy_install pip
+virtualenv ~/trade
+source ~/trade/bin/activate
+install numpy scipy pandas and ta-lib
+sudo pip install Cython
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>安装 blas libs</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
+pip install numpy
+pip install scipy
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>安装 ta-lib</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd ~
+wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+sudo apt-get  install  build-essential
+tar -zxvf ta-lib-0.4.0-src.tar.gz
+cd ta-lib-0.4.0
+./configure --prefix=/usr
+make
+sudo make install
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>安装 gevent</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+tar -zxvf 
+./configure
+make 
+sudo make install
+cd ~/www
+git clone https://github.com/pydata/pandas.git
+git clone https://github.com/mrjbq7/ta-lib.git
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>update the nginx</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get install python-software-properties
+sudo apt-get install sotware-properties-common
+sudo add-apt-repository ppa:nginx/stable
+sudo apt-get update
+sudo apt-get install nginx
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>mysql init</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get install mysql-server libmysqld-dev
+pip install MySQL-python
+insert into mysql.user(Host,User,Password) values(&#34;localhost&#34;,&#34;username&#34;,password(&#34;password&#34;));
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>用户授权</strong><br>
+给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysql&gt;grant all privileges on *.* to username@localhost identified by &#39;password&#39;;
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>安装 redis</strong><br>
+具体参考<a href="http://rubyer.me/blog/638/redis.io" target="_blank" rel="noopener noreffer">install redis</a></p>
+<p><strong>安装uwsgi 或者 gunicorn(可选)</strong></p>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
+        </div>
     </div><div class="content" id="content"><p>网站部署记录</p>
 <p>安装基础python环境</p>
 <div class="highlight"><div class="chroma">

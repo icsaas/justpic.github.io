@@ -313,13 +313,13 @@ amp-img.contain img {
     <h2 class="toc-title">目录</h2>
     <div class="toc-content" id="toc-content-auto"></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">ubuntu上构建ios交叉编译环境</h1><div class="post-meta">
-        <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span></div>
         <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-04-12">2014-04-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 568 字&nbsp;
             <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/amp/posts/2014/04/12/ubuntu-install-ios-llvm-chain/" class="leancloud_visitors" data-flag-title="ubuntu上构建ios交叉编译环境">
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div><div class="details toc" id="toc-static" kept="">
+    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -342,7 +342,187 @@ amp-img.contain img {
       </ul>
     </li>
   </ul>
+</nav>=======
+    <article class="page single"><h1 class="single-title animated flipInX">ubuntu上构建ios交叉编译环境</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-04-12">2014-04-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 568 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/amp/posts/2014/04/12/ubuntu-install-ios-llvm-chain/" class="leancloud_visitors" data-flag-title="ubuntu上构建ios交叉编译环境">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#ubuntu-1204-安装llvm34ios-lang交叉编译环境">ubuntu 12.04 安装llvm3.4、ios-lang交叉编译环境</a></li>
+        <li><a href="#安装llvmclang">安装llvm,clang</a></li>
+        <li><a href="#检索签名">检索签名：</a></li>
+        <li><a href="#安装与llvm-34clang-34相关的所有包">安装与llvm-3.4,clang-3.4相关的所有包：</a></li>
+        <li><a href="#安装libcxx">安装libcxx：</a></li>
+        <li><a href="#查看g使用的头文件">查看g++使用的头文件:</a></li>
+        <li><a href="#将会输出类似如下结果">将会输出类似如下结果：</a></li>
+        <li><a href="#编译安装libcxx">编译安装libcxx：</a></li>
+        <li><a href="#安装libcxxabi">安装libcxxabi</a></li>
+        <li><a href="#下载源码并编译">下载源码并编译：</a></li>
+        <li><a href="#使用libcabi来安装libc">使用libc++abi来安装libc++</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav></div>
+            </div><div class="content" id="content"><p>ubuntu上构建ios交叉编译环境</p>
+<h3 id="ubuntu-1204-安装llvm34ios-lang交叉编译环境">ubuntu 12.04 安装llvm3.4、ios-lang交叉编译环境</h3>
+<p>在ubuntu 12.04上先安装gcc-4.8，然后安装llvm,clang,libcxx,libcxxabi.由于libcxx和libcxxabi相互依赖，需要两次安装libcxx。最后安装theos等开放的ios开发工具链<br>
+安装gcc-4.8如前文所述<a href="/2014/04/02/gcc-48-on-ubuntu/" rel="">install gcc4.8 on ubuntu 12.04</a></p>
+<h3 id="安装llvmclang">安装llvm,clang</h3>
+<p>/etc/apt/sources.list中添加如下两行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main
+deb-src http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="检索签名">检索签名：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="安装与llvm-34clang-34相关的所有包">安装与llvm-3.4,clang-3.4相关的所有包：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">apt-get install clang-3.4 clang-3.4-doc libclang-common-3.4-dev libclang-3.4-dev libclang1-3.4 libclang1-3.4-dbg libllvm-3.4-ocaml-dev libllvm3.4 libllvm3.4-dbg lldb-3.4 llvm-3.4 llvm-3.4-dev llvm-3.4-doc llvm-3.4-examples llvm-3.4-runtime clang-modernize-3.4 clang-format-3.4 python-clang-3.4 lldb-3.4-dev
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="安装libcxx">安装libcxx：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="查看g使用的头文件">查看g++使用的头文件:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo | g++ -Wp,-v -x c++ - -fsyntax-only
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="将会输出类似如下结果">将会输出类似如下结果：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ignoring nonexistent directory &#34;/usr/local/include/x86_64-linux-gnu&#34;
+ignoring nonexistent directory &#34;/usr/lib/gcc/x86_64-linux- gnu/4.8/../../../../x86_64-linux-gnu/include&#34;
+### #include &#34;...&#34; search starts here:
+### include &lt;...&gt; search starts here:
+/usr/include/c++/4.8
+/usr/include/c++/4.8/x86_64-linux-gnu
+/usr/include/c++/4.8/backward
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include
+/usr/local/include
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+/usr/include/x86_64-linux-gnu
+/usr/include
+End of search list.
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="编译安装libcxx">编译安装libcxx：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">CC=clang CXX=clang++ cmake -G &#34;Unix Makefiles&#34; -DLIBCXX_CXX_ABI=libsupc++ - DLIBCXX_LIBSUPCXX_INCLUDE_PATHS=&#34;/usr/include/c++/4.7/;/usr/include/x86_64-linux- gnu/c++/4.7/&#34; -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr &lt;libc++-source-dir&gt;
+make
+sudo make install
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="安装libcxxabi">安装libcxxabi</h3>
+<p>首先安装相关依赖：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get install g++ subversion cmake swig python-dev libedit-dev libunwind8 libunwind8-dev
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="下载源码并编译">下载源码并编译：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">svn co http://llvm.org/svn/llvm-project/libcxxabi/trunk libcxxabi
+cd libcxxabi/lib
+./buildit
+sudo cp libc++abi.so.1.0 /usr/lib
+sudo ln -s /usr/lib/libc++abi.so.1.0 /usr/lib/libc++abi.so.1
+sudo ln -s /usr/lib/libc++abi.so.1 /usr/lib/libc++abi.so
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="使用libcabi来安装libc">使用libc++abi来安装libc++</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
+cd libcxx
+mkdir build
+cd build
+CC=clang CXX=clang++ cmake -G &#34;Unix Makefiles&#34; -DLIBCXX_CXX_ABI=libcxxabi -  DLIBCXX_LIBCXXABI_INCLUDE_PATHS=&#34;&lt;libc++abi-source-dir&gt;/include&#34; -  DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ../
+make
+sudo make install
+</code></pre></td></tr></table>
+</div>
+</div><p>至此ubuntu 12.04上的LLVM环境就算搭建好了。</p>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
+        </div>
     </div><div class="content" id="content"><p>ubuntu上构建ios交叉编译环境</p>
 <h3 id="ubuntu-1204-安装llvm34ios-lang交叉编译环境">ubuntu 12.04 安装llvm3.4、ios-lang交叉编译环境</h3>
 <p>在ubuntu 12.04上先安装gcc-4.8，然后安装llvm,clang,libcxx,libcxxabi.由于libcxx和libcxxabi相互依赖，需要两次安装libcxx。最后安装theos等开放的ios开发工具链<br>

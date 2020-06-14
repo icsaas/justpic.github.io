@@ -77,7 +77,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="桑河一榆" />
 
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <link rel="amphtml" type="text/html" href="https://justpic.org/amp/posts/2014/04/04/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" title="桑河一榆" />
   <link rel="alternate" type="application/rss+xml" href="https://justpic.org/posts/2014/04/04/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/index.xml" title="桑河一榆" />
@@ -173,22 +173,10 @@ MathJax.Hub.Config({
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/justpic.org\/posts\/2014\/04\/04\/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93\/"
-        },"image": {
-                "@type": "ImageObject",
-                "url": "https:\/\/justpic.org\/cover.png",
-                "width":  800 ,
-                "height":  600 
-            },"genre": "posts","keywords": "数据库","wordcount":  3251 ,
+        },"genre": "posts","keywords": "数据库","wordcount":  3373 ,
         "url": "https:\/\/justpic.org\/posts\/2014\/04\/04\/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93\/","datePublished": "2014-04-04T00:00:00+00:00","dateModified": "2014-04-04T00:00:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
-                "@type": "Organization",
-                "name": "xxxx",
-                "logo": {
-                "@type": "ImageObject",
-                "url": "https:\/\/justpic.org\/logo.png",
-                "width":  127 ,
-                "height":  40 
-                }
-            },"author": {
+            "@type": "Organization",
+            "name": "xxxx"},"author": {
                 "@type": "Person",
                 "name": "justpic"
             },"description": ""
@@ -268,13 +256,13 @@ MathJax.Hub.Config({
     <h2 class="toc-title">目录</h2>
     <div class="toc-content" id="toc-content-auto"></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">MySQL使用总结</h1><div class="post-meta">
-        <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
-        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-04-04">2014-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3251 字&nbsp;
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-04-04">2014-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3373 字&nbsp;
             <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/posts/2014/04/04/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="MySQL使用总结">
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
-    </div><div class="details toc" id="toc-static" kept="">
+    </div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<div class="details toc" id="toc-static" kept="">
         <div class="details-summary toc-title">
             <span>目录</span>
             <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -297,7 +285,530 @@ MathJax.Hub.Config({
     </li>
     <li><a href="#查询优化">查询优化</a></li>
   </ul>
+</nav>=======
+    <article class="page single"><h1 class="single-title animated flipInX">MySQL使用总结</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-04-04">2014-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3373 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/posts/2014/04/04/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="MySQL使用总结">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#mysql创建数据库">Mysql创建数据库</a></li>
+        <li><a href="#mysql导入导出">Mysql导入导出</a></li>
+        <li><a href="#mysql用户管理">Mysql用户管理</a></li>
+        <li><a href="#mysql大小写敏感配置">mysql大小写敏感配置</a></li>
+        <li><a href="#mysql启用远程">Mysql启用远程</a></li>
+        <li><a href="#mysql-主从复制">Mysql 主从复制</a></li>
+        <li><a href="#测试mysql复制">测试MySQL复制</a></li>
+        <li><a href="#mysql-创建视图">Mysql 创建视图</a></li>
+        <li><a href="#ubuntu-mysql57解决不用密码也能登陆">ubuntu mysql5.7解决不用密码也能登陆:</a></li>
+        <li><a href="#onwherehaving的区别">on,where,having的区别</a></li>
+      </ul>
+    </li>
+    <li><a href="#查询优化">查询优化</a></li>
+  </ul>
 </nav></div>
+            </div><div class="content" id="content"><p>MySQL使用总结</p>
+<h3 id="mysql创建数据库">Mysql创建数据库</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">create database sina default character set utf8mb4 collate utf8mb4_unicode_ci;   
+ALTER DATABASE db_name DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;  
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>使用utf8mb4而不是utf8 ，应为utf8的长度不确定，utf8编码占用3个字节，utf8mb4能保证长度的够用， 5.5.3 版本以后的mysql版本开始支持utf8mb4</p>
+</blockquote>
+<h3 id="mysql导入导出">Mysql导入导出</h3>
+<ol>
+<li>
+<p>导出所有库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysqldump -uusername -ppassword --all-databases&gt;all.sql  
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>导入所有库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysql&gt;source all.sql;
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>导出某些库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysqldump -uusername -ppassword --databases db1 db2 &gt;db1db2.sql 
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>导入某些库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysql&gt;source db1db2.sql 
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>导入某个库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysql -uusername -ppassword db1&lt;db1.sql;  mysql&gt;source db1.sql;  
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>导出某个库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysqldump -uusername -ppassword db1 table1 table2&gt;tb1tb2.sql  
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>导入某些数据表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysql -uusername -ppassword db1&lt;tb1tb2.sql  
+mysql&gt;user db1;  
+mysql&gt;source tb1tb2.sql; 
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>mysqldump字符集设置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$mysqldump -uusername -ppassword --default-character-set=utf-8 db1 table1&gt;tb1.sql  
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="mysql用户管理">Mysql用户管理</h3>
+<ol>
+<li>创建用户
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysql&gt; insert into mysql.user(Host,User,Password) values(&#34;localhost&#34;,&#34;phplamp&#34;,password(&#34;1234&#34;));  
+mysql&gt;grant all privileges on *.* to jee@localhost identified by ‘123′；  
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>修改用户密码
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysql&gt; UPDATE mysql.user SET password=PASSWORD(’新密码’) WHERE User=’root’;  
+mysql&gt; FLUSH PRIVILEGES;  
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>显示当前用户
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mysql&gt;select USER<span class="o">()</span><span class="p">;</span> 
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>第一次启用用户
+进入到/etc/mysql/debian.cnf查看用户名和密码（）后临时登录到mysql shell，运行一下命令，设置root用的密码为123456。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> use mysql;
+ // 下面这句命令有点长，请注意。
+ update mysql.user set authentication_string=password(&#39;root&#39;) where user=&#39;root&#39; and Host =&#39;localhost&#39;;
+ update user set plugin=&#34;mysql_native_password&#34;; 
+ flush privileges;
+ quit;
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="mysql大小写敏感配置">mysql大小写敏感配置</h3>
+<ol>
+<li>查看
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">show global variables like <span class="s1">&#39;%lower_case%&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>配置
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#0-大小写敏感，1-不敏感（先把表名转为小写，再执行操作）。</span>
+<span class="nv">low_case_table_names</span> <span class="o">=</span> <span class="m">0</span> <span class="nv">或lower_low_case_table_names_low_case_table_names</span> <span class="o">=</span><span class="m">1</span> <span class="c1">#my.cnf文件下</span>
+  
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="mysql启用远程">Mysql启用远程</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /etc/mysql  
+vi my.cnf  #注释bind-address  
+mysql -uusername -ppassword #进入到mysql  
+grant all privileges on *.* to username@&#39;deniedhost&#39; identified by &#39;password&#39;;  
+GRANT ALL PRIVILEGES ON *.* TO user_name@&#39;%&#39; IDENTIFIED BY ‘pass_word’;  #if dynamic ip  
+flush privileges;  
+quit;  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="mysql-主从复制">Mysql 主从复制</h3>
+<ul>
+<li>mysql复制的用途:</li>
+</ul>
+<ul>
+<li>读取扩展</li>
+<li>主备份服务器</li>
+<li>故障转移服务器</li>
+<li>地理空间冗余</li>
+<li>数据仓库</li>
+<li>基准测试</li>
+<li>软件更新</li>
+<li>复制配置(my.cnf):</li>
+<li>主服务器配置(Alpha)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[mysqld]   
+log-bin=binary-log #log-bin参数启动二进制日志.二进制日志在MySQL环境中提供了多种用途.它为MySQL复制提供了DDL和DML语句流,能够重新应用于复制的从服务器.  
+server-id=1   
+重新启动MySQL后 ,使用SQL命令show master status;进行验证.(对于配置复制的从服务器是必要的)   
+从服务器配置(Beta)   
+[mysqld]   
+server-id=2   
+read_only=TRUE   
+show slave status;   
+change master to  
+MASTER_HOST=&#39;192.168.100.1&#39;,#主服务器上的用户名和密码   
+MASTER_USER=&#39;rep1&#39;,   
+MASTER_PASSWORD=&#39;rep12009&#39;;   
+
+change master to   
+MASTER_LOG_FILE=&#39;binary-log.00001&#39;,#主服务器上运行show 
+ master status命令所检索到的日志文件名称和位置.       
+MASTER_LOG_POS=106;   
+
+slave start;#启动从服务器验证其操作   
+show slave status;#Slave_IO_Running和Slave_SQL_Running的值为Yes,就证明&#34;主服务器-从服务器&#34;式的MySQL拓扑已经正常运行.   
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="测试mysql复制">测试MySQL复制</h3>
+<p>在alpha上测试下面的代码:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PROMPT alpha&gt;; 
+alpha&gt;   
+</code></pre></td></tr></table>
+</div>
+</div><p>确认从服务器上什么都不存在:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">beta&gt; show schemas;   
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="mysql-创建视图">Mysql 创建视图</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">create view v as select * from table;  
+create view v as select id,name,age from table;  
+create view v[vid,vname,vage] as select id,name,age from table;  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="ubuntu-mysql57解决不用密码也能登陆">ubuntu mysql5.7解决不用密码也能登陆:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">登录mysql    mysql -u root -p 或 mysql
+use mysql;
+update user set authentication_string=PASSWORD(&#34;密码&#34;) where user=&#39;root&#39;;
+update user set plugin=&#34;mysql_native_password&#34;;
+flush privileges;
+quit;
+/etc/init.d/mysql restart;
+mysql -u root -p 密码;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="onwherehaving的区别">on,where,having的区别</h3>
+<blockquote>
+<p>on,where,having这三个都可以加条件的子句中,on是最先执行,where次之,having最后.有时候如果这先后顺序不影响中间结果的话,那最终结果是相同的.但因为on是先把不符合条件的记录过滤后才进行统计,它就可以减少中间运算要处理的数据,按理说应该速度是最快的.
+根据上面的分析,可以知道where应该比having快一点,应为它过滤数据后才进行sum,所以having是最慢的.但也不是说having没用,因为有时在步骤三还没有出来都不知道那个记录才符合要求时,就要用having了.
+left join加上where 条件<br>
+用where是先连接然后再筛选 <br>
+用and是先筛选再连接<br>
+数据库范式:<br>
+第一范式:强调的是列的原子性.<br>
+第二范式:首先使1NF,另外包含两部分内容,一是表必须有一个主键;二是没有包含在主键中的列必须完全依赖于主键,而不能只依赖于主键的一部分. <br>
+第三范式:首先是2NF,另外非主键列必须直接依赖于主键,不能存在传递依赖.即不能存在:非主键列A依赖于非主键列B,非主键列B依赖于主键的情况.</p>
+</blockquote>
+<h2 id="查询优化">查询优化</h2>
+<ol>
+<li>jvm调优，内存结构</li>
+<li>内存碎片问题<br>
+MajorGC是清理老年代
+MinorGC是从年轻代空间（包括Eden和Survivor区域）回收内存。
+FullGC是清理整个堆空间包括年轻代和老年代。</li>
+<li>mysql执行计划，查询慢</li>
+</ol>
+<ul>
+<li>MySQL查询优化：</li>
+<li>查询性能衡量标准
+<ul>
+<li>查询时间</li>
+<li>慢查询（几乎所有大道秒级别的查询都可以认为比较慢）</li>
+<li>执行计划
+<ul>
+<li>type查询的方式</li>
+<li>key使用的索引</li>
+<li>Rows结果集大小</li>
+<li>Extra提示信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>影响查询性能的因素
+<ul>
+<li>SQL解析时间#使用prepared stmt语句减少重复SQL的解析</li>
+<li>查询优化算法
+<ul>
+<li>执行计划分析</li>
+<li>索引优化
+<ul>
+<li>表优化（建主键unsigned int）</li>
+<li>表优化（字段尽量使用NOT NULL）</li>
+<li>表优化（能使用enum的尽量不要使用varchar）</li>
+<li>表优化（ip字段使用unsigned int并使用INET_NTOA和INET_ATON)</li>
+<li>索引优化（为频繁搜索的字段建立索引）</li>
+<li>索引优化（为varchar text建立全文索引，避免使用 like)</li>
+<li>索引优化（避免使用blob字段，该字段只能建立前缀索引）</li>
+<li>索引优化（最多匹配原则和最高区分度原则）</li>
+</ul>
+</li>
+<li>查询优化
+<ul>
+<li>索引字段不参与计算，否则索引失效</li>
+<li>避免使用 select*，select count(*)等</li>
+<li>知道结果数量的使用，使用limit，尽早结果过程。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Query Cache的使用#关了吧
+<ul>
+<li>磁盘IO次数#IO优化，增大buffer pool，开取MRR，避免select *</li>
+<li>事务键锁的影响#锁优化：避免使用大事务，RC比RR好，不适用GAP锁，避免使用select *，可能会锁权标</li>
+</ul>
+</li>
+<li>join优化#利用index nexted-loop join算法，在没有索引的情况下，合理设置join_buffer_size.</li>
+<li>走索引OR全表扫描</li>
+<li>结果集大小与运算过程</li>
+<li>查询计划分析</li>
+<li>查询优化技巧<br>
+<strong>MySQL执行计划</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">  语法：
+     EXPLAIN select ...
+  变体：
+     1.将执行计划“反翻译”成SELECT 语句，运行show warnings 可得到MySQL优化器优化后的查询语句
+      EXPLAIN EXTENDED select ...
+    2.用于分区表的EXPLAIN
+      EXPLAIN PARTITIONS SELECT ...
+</code></pre></td></tr></table>
+</div>
+</div><p>执行计划包含的信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    id:包含一组数字，标识查询语句中执行SELECT子句或者操作表的顺序。id相同，执行顺序由上至下。若是子查询，id序号递增，id值越大优先级越高，越会被执行  
+    select_type:表示每个select子句的类型（简单或复杂）  
+    SIMPLE：查询中不包含子查询或者UNION  
+    PRIMARY：查询中包含任何复杂的子部分，最外层查询则被标记为该类型   
+    SUBQUERY:在SELECT或where列表中包含了子查询，该子查询就被标记为SUBQUERY   
+    DERIVED：在FROM列表中包含的子查询被标记为DERIVED（衍生）   
+    UNION：若第二个SELECT出现在UNION之后，则被标记为UNION    
+    UNION RESULT：从UNION表获取结果的SELECT被标记为UNION RESULT   
+    type：标识MySQL在表中找到所需行的方式，又称为“访问类型”   
+    这列很重要,显示了连接使用了哪种类别,有无使用索引.   
+</code></pre></td></tr></table>
+</div>
+</div><p>从最好到最差的连接类型为const、eq_reg、ref、range、index和AL
+mysql explain用法和结果的含义：https://www.cnblogs.com/yycc/p/7338894.html
+MYSQL 5.6.3以前只能EXPLAIN SELECT; MYSQL5.6.3以后就可以EXPLAIN SELECT,UPDATE,DELETE</p>
+<p><strong>不走索引情况</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">select * tb1 where name like ‘%comnn’ %再在前不走索引
+select * tb1 where reverse（name） = ‘xu’ 条件出现函数运算不走索引
+使用 or 不走索引     特别的： 当or条件中有 未 建立索引的列，会走索引
+数据类型不一致   select * tb1 where name = 0999
+！=      特别的： 如果是主键 索引生效
+ &gt;        特别的： 如果是主键 或者索引是int类型 索引生效
+ order by
+ 选择的映射是索引才生效    特别的： 如果是主键 索引生效
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<p>参考<br>
+<a href="http://stackoverflow.com/questions/16995616/monogodb-service-cannot-start-after-storage-extension-under-ubuntu-12-04" target="_blank" rel="noopener noreffer">无法启动mongodb的解决方法</a><br>
+<a href="http://supportcenter.verio.com/KB/questions.php?questionid=494" target="_blank" rel="noopener noreffer">启用远程mysql</a></p>>>>>>>> 96cf051546c4058e7330cba7a1301014bc499ad2
+        </div>
     </div><div class="content" id="content"><p>MySQL使用总结</p>
 <h3 id="mysql创建数据库">Mysql创建数据库</h3>
 <div class="highlight"><div class="chroma">
@@ -441,6 +952,27 @@ mysql&gt; FLUSH PRIVILEGES;
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">mysql&gt;select USER<span class="o">()</span><span class="p">;</span> 
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>第一次启用用户
+进入到/etc/mysql/debian.cnf查看用户名和密码（）后临时登录到mysql shell，运行一下命令，设置root用的密码为123456。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> use mysql;
+ // 下面这句命令有点长，请注意。
+ update mysql.user set authentication_string=password(&#39;root&#39;) where user=&#39;root&#39; and Host =&#39;localhost&#39;;
+ update user set plugin=&#34;mysql_native_password&#34;; 
+ flush privileges;
+ quit;
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -954,5 +1486,5 @@ select * tb1 where reverse（name） = ‘xu’ 条件出现函数运算不走�
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><style>.lg-toolbar .lg-icon::after { color: #999; }</style><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"4R8KL7gXd86iKHjaWTqbnD52-gzGzoHsz","appKey":"5kBqleDSlcBzUlRTBsDvARdT","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"W813GCTU6R","algoliaIndex":"index.zh-cn","algoliaSearchKey":"a54627fcf15e2206773be495f10f4851","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"4R8KL7gXd86iKHjaWTqbnD52-gzGzoHsz","appKey":"5kBqleDSlcBzUlRTBsDvARdT","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"W813GCTU6R","algoliaIndex":"index.zh-cn","algoliaSearchKey":"a54627fcf15e2206773be495f10f4851","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
