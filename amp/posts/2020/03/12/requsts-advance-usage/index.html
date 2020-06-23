@@ -313,7 +313,7 @@ amp-img.contain img {
     <h2 class="toc-title">目录</h2>
     <div class="toc-content" id="toc-content-auto"></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">requests库中的那些高级用法</h1><div class="post-meta">
-        <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>python</a></span></div>
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>python</a></span></div>
         <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-12">2020-03-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2734 字&nbsp;
             <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/amp/posts/2020/03/12/requsts-advance-usage/" class="leancloud_visitors" data-flag-title="requests库中的那些高级用法">
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -344,7 +344,19 @@ amp-img.contain img {
     <li><a href="#模仿浏览器行为">模仿浏览器行为</a></li>
   </ul>
 </nav></div>
-    </div><div class="content" id="content"><p>作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。</p>
+    </div><div class="content" id="content">
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        <p>作为python中最通用的http工具库之一——requests，具有简洁、直观和全面的特点，一般来说，requests与python中的内置模块urllib3已经逐渐成为程序员处理HTTP请求的首选工具。</p>
 <p>得益于requests简洁的API接口，在生产环境下得到了非常普遍的应用，即使在复杂的应用场景下，request的扩展性也非常好。如果你正在写一个API客户端或者网络爬虫，同时对断网情况比较棘手，那么下面所介绍的requests高级技巧可能会帮助你更好的进行程序调试。</p>
 <h2 id="请求钩子">请求钩子</h2>
 <p>应用第三方API时，需要验证应答内容是否合法，requests提供了raise_for_status()方法来判断应答内容的HTTP状态码是不是4xx或者5xx，表明请求产生了客户端或者服务器错误。</p>
@@ -421,11 +433,11 @@ amp-img.contain img {
 </div><p>但是每次设置超时时间会非常繁琐，偶尔忘记设置超时会非常恼火。
 <img
         class="lazyload"
-        src="/svg/loading/small.min.svg"
+        src="/svg/loading.min.svg"
         data-src="/images/posts/giphy.gif"
         data-srcset="/images/posts/giphy.gif, /images/posts/giphy.gif 1.5x, /images/posts/giphy.gif 2x"
         data-sizes="auto"
-        alt="giphy"
+        alt="/images/posts/giphy.gif"
         title="giphy" /></p>
 <p>使用Transport Adapters可以为所有的HTTP调用设置默认超时时间，当然使用后也是可以通过再定义覆盖默认配置，
 下面看案例代码，</p>
@@ -534,7 +546,17 @@ amp-img.contain img {
     
 </code></pre></td></tr></table>
 </div>
-</div><!--adsense-->
+</div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2665873967488848"
+     data-ad-slot="3296880515"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <p>默认的 Retry 类提供了健全的默认值，但是是高度可配置的，所以这里是我使用的最常见参数的纲要。
 其中</p>
 <div class="highlight"><div class="chroma">
@@ -730,7 +752,17 @@ amp-img.contain img {
 <blockquote>
 <p>不是将 HTTP 响应发送给服务器 getsentry / responses，而是截取 HTTP 请求，在应答时，测试过程中添加预定义的响应内容。</p>
 </blockquote>
-<!--adsense-->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2665873967488848"
+     data-ad-slot="3296880515"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <p>下面请看案例代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -843,7 +875,8 @@ amp-img.contain img {
 <p>参考：</p>
 <ul>
 <li><a href="https://hodovi.ch/blog/advanced-usage-python-requests-timeouts-retries-hooks/" target="_blank" rel="noopener noreffer">Advanced usage of Python requests - timeouts, retries, hooks</a></li>
-</ul></div><div class="post-footer" id="post-footer">
+</ul>
+    </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

@@ -313,8 +313,8 @@ amp-img.contain img {
     <h2 class="toc-title">目录</h2>
     <div class="toc-content" id="toc-content-auto"></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">MySQL使用总结</h1><div class="post-meta">
-        <div class="post-meta-line"><span class="post-author"><a href="https://justpic.org" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>justpic</a></span></div>
-        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-04-04">2014-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3251 字&nbsp;
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-04-04">2014-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3373 字&nbsp;
             <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/amp/posts/2014/04/04/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="MySQL使用总结">
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
@@ -343,7 +343,19 @@ amp-img.contain img {
     <li><a href="#查询优化">查询优化</a></li>
   </ul>
 </nav></div>
-    </div><div class="content" id="content"><p>MySQL使用总结</p>
+    </div><div class="content" id="content">
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        <p>MySQL使用总结</p>
 <h3 id="mysql创建数据库">Mysql创建数据库</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -486,6 +498,27 @@ mysql&gt; FLUSH PRIVILEGES;
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">mysql&gt;select USER<span class="o">()</span><span class="p">;</span> 
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>第一次启用用户
+进入到/etc/mysql/debian.cnf查看用户名和密码（）后临时登录到mysql shell，运行一下命令，设置root用的密码为123456。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> use mysql;
+ // 下面这句命令有点长，请注意。
+ update mysql.user set authentication_string=password(&#39;root&#39;) where user=&#39;root&#39; and Host =&#39;localhost&#39;;
+ update user set plugin=&#34;mysql_native_password&#34;; 
+ flush privileges;
+ quit;
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -813,7 +846,8 @@ select * tb1 where reverse（name） = ‘xu’ 条件出现函数运算不走�
 </div><hr>
 <p>参考<br>
 <a href="http://stackoverflow.com/questions/16995616/monogodb-service-cannot-start-after-storage-extension-under-ubuntu-12-04" target="_blank" rel="noopener noreffer">无法启动mongodb的解决方法</a><br>
-<a href="http://supportcenter.verio.com/KB/questions.php?questionid=494" target="_blank" rel="noopener noreffer">启用远程mysql</a></p></div><div class="post-footer" id="post-footer">
+<a href="http://supportcenter.verio.com/KB/questions.php?questionid=494" target="_blank" rel="noopener noreffer">启用远程mysql</a></p>
+    </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
