@@ -9,7 +9,7 @@
         <meta name="Description" content="微服务、Web开发、人工智能">
 <meta name="google-site-verification" content="qqgyYsb6kCSJvwxuvJ41bw-9tDmmmlwSgJbKhQzFqYI" />
 <meta name="baidu-site-verification" content="BpiobbSKTO" />
-<meta name="keywords" content="python">
+<meta name="keywords" content="database">
 <script>
     var _hmt = _hmt || [];
     (function() {
@@ -66,9 +66,9 @@
   <meta property="og:title" content="时序数据库使用总结" />
   <meta name="twitter:title" content="时序数据库使用总结" />
 
-  <meta name="description" content="时序数据库在当下产业互联网背景下，能够处理高并发、巨量数据等应用场景中。">
-  <meta property="og:description" content="时序数据库在当下产业互联网背景下，能够处理高并发、巨量数据等应用场景中。">
-  <meta name="twitter:description" content="时序数据库在当下产业互联网背景下，能够处理高并发、巨量数据等应用场景中。">
+  <meta name="description" content="时序数据库在当下产业互联网背景下，在金融、工业等领域得到越来越多的应用，主要面向高并发、海量时序数据等应用场景中。">
+  <meta property="og:description" content="时序数据库在当下产业互联网背景下，在金融、工业等领域得到越来越多的应用，主要面向高并发、海量时序数据等应用场景中。">
+  <meta name="twitter:description" content="时序数据库在当下产业互联网背景下，在金融、工业等领域得到越来越多的应用，主要面向高并发、海量时序数据等应用场景中。">
   <meta name="author" content="justpic"/>
   <meta property="og:image" content="" />
   <meta name="twitter:image" content="" />
@@ -152,14 +152,14 @@ MathJax.Hub.Config({
    
    
 </style><meta name="Description" content="微服务、Web开发、人工智能"><meta property="og:title" content="时序数据库使用总结" />
-<meta property="og:description" content="时序数据库在当下产业互联网背景下，能够处理高并发、巨量数据等应用场景中。" />
+<meta property="og:description" content="时序数据库在当下产业互联网背景下，在金融、工业等领域得到越来越多的应用，主要面向高并发、海量时序数据等应用场景中。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" />
 <meta property="article:published_time" content="2020-05-07T14:51:35+08:00" />
 <meta property="article:modified_time" content="2020-05-07T14:51:35+08:00" /><meta property="og:site_name" content="桑河一榆" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="时序数据库使用总结"/>
-<meta name="twitter:description" content="时序数据库在当下产业互联网背景下，能够处理高并发、巨量数据等应用场景中。"/>
+<meta name="twitter:description" content="时序数据库在当下产业互联网背景下，在金融、工业等领域得到越来越多的应用，主要面向高并发、海量时序数据等应用场景中。"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -173,7 +173,7 @@ MathJax.Hub.Config({
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/justpic.org\/posts\/2020\/05\/07\/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93\/"
-        },"genre": "posts","wordcount":  480 ,
+        },"genre": "posts","wordcount":  561 ,
         "url": "https:\/\/justpic.org\/posts\/2020\/05\/07\/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93\/","datePublished": "2020-05-07T14:51:35+08:00","dateModified": "2020-05-07T14:51:35+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx"},"author": {
@@ -256,9 +256,9 @@ MathJax.Hub.Config({
     <h2 class="toc-title">目录</h2>
     <div class="toc-content" id="toc-content-auto"></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">时序数据库使用总结</h1><div class="post-meta">
-        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>python</a></span></div>
-        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-07">2020-05-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 480 字&nbsp;
-            <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="时序数据库使用总结">
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/database/"><i class="far fa-folder fa-fw"></i>database</a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-07">2020-05-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 561 字&nbsp;
+            <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="时序数据库使用总结">
                 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
             </span>&nbsp;</span>
         </div>
@@ -302,13 +302,24 @@ MathJax.Hub.Config({
         
         
 
-        <p>时序数据库在当下产业互联网背景下，能够处理高并发、巨量数据等应用场景中。</p>
+        <p>时序数据库在当下产业互联网背景下，在金融、工业等领域得到越来越多的应用，主要面向高并发、海量时序数据等应用场景中。</p>
 <h3 id="大规模时序数据具有特点">大规模时序数据具有特点</h3>
 <ul>
 <li>占用空间极大</li>
 <li>数据总吞吐量大</li>
 <li>产生速度快且不间断</li>
 </ul>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2665873967488848"
+     data-ad-slot="3296880515"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <h3 id="时序数据存储的需求">时序数据存储的需求</h3>
 <ul>
 <li>全时全量</li>
@@ -328,6 +339,7 @@ mysql innodb最大为1017列</li>
 <li>水平、垂直分表；分库
 键值数据库可管理海量条时间序列数据，但查询受限：主要包括按时间纬度的查询，按值纬度的查询，多序列的时间对齐查询。</li>
 </ol>
+<p>除此之外，时序数据库还有一个优点：由于时序数据库其具有时间相关性，不需要处理关系性数据库下的分布式锁这类比较繁琐的事务。</p>
 <h3 id="时序数据库大体上可分为三种">时序数据库大体上可分为三种：</h3>
 <ol>
 <li>
@@ -345,8 +357,20 @@ OpenTSDB,KairosDB
 这类时序数据库一般基于HBase/Cassandra衍生，
 支持时序分区键，定时任务构件索引。但存在压缩不友好，查询不友好的缺点。</p>
 </li>
-<li>
-<p>原生时序数据库：
+</ol>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2665873967488848"
+     data-ad-slot="3296880515"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<ol start="3">
+<li>原生时序数据库：
 influxdb
 基于LSM机制的时序库，
 专属文件结构
@@ -354,8 +378,7 @@ influxdb
 特定工业场景下性能会下降
 iotdb
 grafana-adaptor
-pisa索引</p>
-</li>
+pisa索引</li>
 </ol>
 <h3 id="常用时序数据库">常用时序数据库：</h3>
 <p>iotdb influxdb taosdb timescale kairosdb</p>
@@ -373,7 +396,7 @@ pisa索引</p>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结" data-image="https://cdn.jsdelivr.net/gh/justpic/jscdn/posts/default.jpg" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结" data-image="https://cdn.jsdelivr.net/gh/justpic/jscdn/posts/iotdb.png" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-title="时序数据库使用总结"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -540,7 +563,12 @@ pisa索引</p>
             }
         }
     });
-</script></div>
+</script>
+ 
+<script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.src = "https://cdn.webpushr.com/app.min.js";
+fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));
+webpushr('setup',{'key':'BFEAM2ugKHu1sFxTbh2LHoc_Ztl-IuXeU2rKHJbm7-gM4WoaNpNYraZ4BtoeT7XUOe-qGdPDPJLsVWzBi4iKxe8' });</script>
+</div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
                 <i class="fas fa-arrow-up fa-fw"></i>

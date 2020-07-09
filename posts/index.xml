@@ -11,14 +11,15 @@
     <author>作者</author>
     <guid>https://justpic.org/posts/2020/05/07/2020-05-07-%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/justpic/jscdn/posts/default.jpg" referrerpolicy="no-referrer">
-            </div><p>时序数据库在当下产业互联网背景下，能够处理高并发、巨量数据等应用场景中。</p>
+                <img src="https://cdn.jsdelivr.net/gh/justpic/jscdn/posts/iotdb.png" referrerpolicy="no-referrer">
+            </div><p>时序数据库在当下产业互联网背景下，在金融、工业等领域得到越来越多的应用，主要面向高并发、海量时序数据等应用场景中。</p>
 <h3 id="大规模时序数据具有特点">大规模时序数据具有特点</h3>
 <ul>
 <li>占用空间极大</li>
 <li>数据总吞吐量大</li>
 <li>产生速度快且不间断</li>
 </ul>
+<!--adsense-->
 <h3 id="时序数据存储的需求">时序数据存储的需求</h3>
 <ul>
 <li>全时全量</li>
@@ -38,6 +39,7 @@ mysql innodb最大为1017列</li>
 <li>水平、垂直分表；分库
 键值数据库可管理海量条时间序列数据，但查询受限：主要包括按时间纬度的查询，按值纬度的查询，多序列的时间对齐查询。</li>
 </ol>
+<p>除此之外，时序数据库还有一个优点：由于时序数据库其具有时间相关性，不需要处理关系性数据库下的分布式锁这类比较繁琐的事务。</p>
 <h3 id="时序数据库大体上可分为三种">时序数据库大体上可分为三种：</h3>
 <ol>
 <li>
@@ -55,8 +57,10 @@ OpenTSDB,KairosDB
 这类时序数据库一般基于HBase/Cassandra衍生，
 支持时序分区键，定时任务构件索引。但存在压缩不友好，查询不友好的缺点。</p>
 </li>
-<li>
-<p>原生时序数据库：
+</ol>
+<!--adsense-->
+<ol start="3">
+<li>原生时序数据库：
 influxdb
 基于LSM机制的时序库，
 专属文件结构
@@ -64,8 +68,7 @@ influxdb
 特定工业场景下性能会下降
 iotdb
 grafana-adaptor
-pisa索引</p>
-</li>
+pisa索引</li>
 </ol>
 <h3 id="常用时序数据库">常用时序数据库：</h3>
 <p>iotdb influxdb taosdb timescale kairosdb</p>
