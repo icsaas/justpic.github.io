@@ -8,10 +8,6 @@
     <language>en</language>
     <managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
     <webMaster>matrix.orz@gmail.com (justpic)</webMaster>
-    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    
-	<atom:link href="https://justpic.org/en/page/about/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright><atom:link href="https://justpic.org/en/page/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>kubernetes - Category - A Tree by the river</title>
+        <link>https://justpic.org/en/categories/kubernetes/</link>
+        <description>kubernetes - Category - A Tree by the river</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>matrix.orz@gmail.com (justpic)</managingEditor>
+            <webMaster>matrix.orz@gmail.com (justpic)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright><lastBuildDate>Sat, 22 Feb 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://justpic.org/en/categories/kubernetes/" rel="self" type="application/rss+xml" /><item>
+    <title>Helm monitor 插件(附视频)</title>
+    <link>https://justpic.org/en/posts/2020/02/22/helm-monitor-plugin-en/</link>
+    <pubDate>Sat, 22 Feb 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://justpic.org/en/posts/2020/02/22/helm-monitor-plugin-en/</guid>
+    <description><![CDATA[<p>这是一个描述</p>]]></description>
+</item></channel>
+</rss>

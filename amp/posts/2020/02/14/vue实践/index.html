@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+
+
+
+<html amp lang="zh-CN" class="no-js">
+<head><script src="/livereload.js?port=1313&amp;mindelay=10&amp;v=2" data-no-instant defer></script>
+  <title>Vue实践</title>
+  <meta charset="utf-8">
+
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script><script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+
+
+
+  <link rel="canonical" href="http://localhost:1313/posts/2020/02/14/vue%E5%AE%9E%E8%B7%B5/">
+
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="144x144">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <meta name="theme-color" content="#000000" />
+
+  
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "桑河一榆",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/",
+          "name": "amp"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/",
+          "name": "posts"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/",
+          "name": "2020"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/02\/",
+          "name": "02"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/02\/14\/",
+          "name": "14"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  7 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/02\/14\/vue%E5%AE%9E%E8%B7%B5\/",
+          "name": "vue%E5%AE%9E%E8%B7%B5"
+        }
+    }]
+}
+</script>
+
+
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        /**
+* stylesheet.html
+* ---------------
+* This is the stylesheet that gets injected as a fallback if no layouts/partials/stylesheet.html file is available
+* in your project file.
+*
+* For further details, please have a look at:
+* https://gohugo-amp.gohugohq.com/install/
+*
+**/
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px
+dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em
+0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em
+40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html
+input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html
+input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px
+solid silver;margin:0 2px;padding:.35em .625em
+.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}td,th{padding:0}*{box-sizing:border-box}button,input,select,textarea{font:13px/1.4
+Helvetica,arial,freesans,clean,sans-serif}a{color:#4183c4;text-decoration:none}a:active,a:focus,a:hover{text-decoration:underline}.rule,hr{height:0;margin:15px
+0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid
+#ddd}.rule:after,.rule:before,hr:after,hr:before{display:table;content:""}.rule:after,hr:after{clear:both}fieldset{padding:0;margin:0;border:0}label{font-size:13px;font-weight:700}#adv_code_search
+.search-page-label,input[type=email],input[type=number],input[type=password],input[type=tel],input[type=text],input[type=url],textarea{min-height:34px;padding:7px
+8px;font-size:13px;color:#333;vertical-align:middle;background-color:#fff;background-repeat:no-repeat;background-position:100%;border:1px
+solid #ccc;border-radius:3px;outline:none;box-shadow:inset 0 1px 2px rgba(0,0,0,.075)}#adv_code_search
+.focus.search-page-label,#adv_code_search .search-page-label:focus,.focused
+.drag-and-drop,input[type=email].focus,input[type=email]:focus,input[type=number].focus,input[type=number]:focus,input[type=password].focus,input[type=password]:focus,input[type=tel].focus,input[type=tel]:focus,input[type=text].focus,input[type=text]:focus,input[type=url].focus,input[type=url]:focus,textarea.focus,textarea:focus{border-color:#51a7e8;box-shadow:inset
+0 1px 2px rgba(0,0,0,.075),0 0 5px
+rgba(81,167,232,.5)}.input-contrast,input.input-contrast{background-color:#fafafa}.input-contrast:focus,input.input-contrast:focus{background-color:#fff}:-moz-placeholder,::-webkit-input-placeholder{color:#aaa}::-webkit-validation-bubble-message{font-size:12px;color:#fff;background:#9c2400;border:0;border-radius:3px;-webkit-box-shadow:1px
+1px 1px
+rgba(0,0,0,.1)}input::-webkit-validation-bubble-icon{display:none}::-webkit-validation-bubble-arrow{background-color:#9c2400;border:1px
+solid #9c2400;-webkit-box-shadow:1px 1px 1px
+rgba(0,0,0,.1)}.absent{color:#c00}.anchor{position:absolute;top:0;bottom:0;left:0;display:block;padding-right:6px;padding-left:30px;margin-left:-30px}.anchor:focus{outline:none}h1,h2,h3,h4,h5,h6{position:relative;margin-top:1em;margin-bottom:16px;font-weight:700;line-height:1.4}h1
+.octicon-link,h2 .octicon-link,h3 .octicon-link,h4 .octicon-link,h5 .octicon-link,h6
+.octicon-link{display:none;color:#000;vertical-align:middle}h1:hover .anchor,h2:hover .anchor,h3:hover .anchor,h4:hover
+.anchor,h5:hover .anchor,h6:hover
+.anchor{height:1em;padding-left:8px;margin-left:-30px;line-height:1;text-decoration:none}h1:hover .anchor
+.octicon-link,h2:hover .anchor .octicon-link,h3:hover .anchor .octicon-link,h4:hover .anchor .octicon-link,h5:hover
+.anchor .octicon-link,h6:hover .anchor .octicon-link{display:inline-block}h1 code,h1 tt,h2 code,h2 tt,h3 code,h3 tt,h4
+code,h4 tt,h5 code,h5 tt,h6 code,h6
+tt{font-size:inherit}h1{font-size:2.25em;line-height:1.2}h1,h2{padding-bottom:.3em;border-bottom:1px solid
+#eee}h2{font-size:1.75em;line-height:1.225}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5,h6{font-size:1em}h6{color:#777}blockquote,dl,ol,p,pre,table,ul{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px
+0;background-color:#e7e7e7;border:0 none}ol,ul{padding-left:2em}ol.no-list,ul.no-list{padding:0;list-style-type:none}ol
+ol,ol ul,ul ol,ul ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl,dl dt{padding:0}dl
+dt{margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0
+16px;margin-bottom:16px}blockquote{padding:0 15px;color:#777;border-left:4px solid
+#ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}table
+th{font-weight:700}table td,table th{padding:6px 13px;border:1px solid #ddd}table
+tr{background-color:#fff;border-top:1px solid #ccc}table
+tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;box-sizing:border-box}span.frame,span.frame>span{display:block;overflow:hidden}span.frame>span{float:left;width:auto;padding:7px;margin:13px
+0 0;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0
+0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px
+auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0
+auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px
+0 0;overflow:hidden;text-align:right}span.align-right span
+img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left
+span{margin:13px 0
+0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px
+auto
+0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:"\00a0"}code
+br,tt br{display:none}del
+code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight
+pre,pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.highlight
+pre{margin-bottom:0;word-break:normal}pre,pre code,pre tt{word-wrap:normal}pre code,pre
+tt{display:inline;max-width:none;padding:0;margin:0;overflow:initial;line-height:inherit;background-color:transparent;border:0}pre
+code:after,pre code:before,pre tt:after,pre
+tt:before{content:normal}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav
+ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{text-decoration:none}ins,mark{background-color:#ff9;color:#000}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px
+dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px
+solid #ccc;margin:1em
+0;padding:0}input,select{vertical-align:middle}body{background-color:#fff;color:#123;font-size:14px;font-family:Helvetica
+Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif}main{max-width:1180px;padding:30px;margin:0 auto}@media
+(min-width:900px){main h1+p{font-size:2em}}h1{font-weight:300;font-size:2em;line-height:1.4em;margin:.5em
+0;font-family:Georgia,serif;-webkit-transition:color .4s;transition:color
+.4s}h2{font-size:2em}h2,h3{font-weight:300;margin:30px
+0}h3{font-size:1.8em}h4{font-size:1.6em}h4,h5{font-weight:300}h5{font-size:1.2em}h6{font-weight:300;font-size:1em}p{line-height:1.4em;font-size:1.2em;margin:15px
+0}blockquote{border-left:5px solid
+#ff1d55;background-color:#ffe9ee;padding:1em;margin-bottom:1em}.lightbox{background-color:rgba(3,121,196,.4);min-height:100vh;min-width:100vw;padding:30px}code{font:12px
+Consolas,Liberation Mono,Menlo,Courier,monospace}p>code{color:#ff1d55}pre
+code{display:block;background-color:#f7f7f7;padding:15px;overflow:auto;color:#123;line-height:1.4em}a{color:#ff1d55;text-decoration:none;-webkit-transition:color
+.4s,background .4s;transition:color .4s,background .4s}a:hover{color:#e9003a}ol,ul{margin:7.5px;padding:7.5px 15px}ol
+li,ul li{margin:7.5px 15px}.doc-parameters{list-style-type:none;padding:0}.doc-parameters
+li{display:block;margin:0;margin-bottom:15px}.doc-parameters .example,.doc-parameters blockquote{border-left:5px solid
+#0379c4;background-color:#96d5fd;color:#123;line-height:1em;font-size:1em;padding:1em;margin:0}.doc-parameters
+.example{background-color:#c8e9fe}.doc-parameters
+.parameter{display:block;padding:1em;background-color:#0379c4;color:#fff;margin:0}.doc-parameters .parameter
+strong{display:inline-block;padding:0
+.5em;border-radius:.25em;line-height:2em;background-color:#025a92}hr{height:.25em;padding:0;margin:24px
+0;background-color:#f7f7f7;border:0}.teaser{display:-webkit-box;display:-ms-flexbox;display:flex;text-align:left;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.teaser
+aside{-ms-flex-preferred-size:60%;flex-basis:60%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:30px}@media
+(max-width:700px){.teaser aside{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content{-ms-flex-preferred-size:40%;flex-basis:40%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;color:dimgray;font-size:12px}@media
+(max-width:700px){.teaser .content{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content.content-full{-ms-flex-preferred-size:100%;flex-basis:100%}.teaser .content
+h3{font-size:14px;text-transform:uppercase;font-weight:600;color:#123}.main-index{text-align:center}.main-index
+amp-img{margin:15px auto;width:50%}@media (min-width:900px){.main-index
+p{font-size:2em}}.breadcrumbs{padding:1em;background-color:#f7f7f7}.breadcrumbs
+ul{display:block;margin:0;padding:0}.breadcrumbs ul li{display:inline-block;margin:0 .5em}.breadcrumbs ul
+li:before{content:' / ';position:relative;margin-left:-.5em;color:dimgray}.breadcrumbs ul li
+a{color:dimgray}.breadcrumbs ul li:last-child
+a{color:#ff1d55}header{background-color:#000000;color:#fff;padding:30px;position:relative}header
+.brand{display:inline-block;position:absolute;left:30px;top:20px;line-height:15px;text-transform:uppercase;padding:7.5px;font-size:1.4em}header
+.brand:hover{background-color:#ff1d55;color:#fff}header
+a{color:#fff;text-decoration:none;border-radius:7.5px;padding:7.5px}header
+a:hover{text-decoration:none;background-color:#fff;color:#ff1d55}header nav
+ul{padding:0;margin:0;display:block;text-align:right}header nav ul li{padding:0;margin:0
+7.5px;display:inline-block}header nav ul li.hamburger{display:none}header nav ul li.hamburger
+button{position:absolute;right:30px;top:20px;border:0;background-color:#fff;color:#ff1d55;font-weight:700;border-radius:50%;width:30px;height:30px;overflow:hidden;text-align:center;padding:0;margin:0}@media
+(max-width:900px){header nav ul li{display:none}header nav ul
+li.hamburger{display:inline-block}}.sidebarNavigation{width:210px;max-width:95%}.sidebarNavigation
+ul{padding:0;margin:0}.sidebarNavigation ul li{display:block}.sidebarNavigation ul li
+a{display:block;line-height:1.4em;padding:7.5px}footer{margin:60px
+auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;max-width:1180px;padding:30px;font-size:12px}footer
+a:hover{text-decoration:none}footer strong{text-transform:uppercase;margin-bottom:15px;display:block}footer strong
+a{color:#1d1d1d}footer ul{display:block;padding:0;margin:0}footer ul li{display:block;line-height:1.4em;padding:7.5px
+0;margin:0}footer ul li a{color:dimgray}footer
+.quarter-section{margin-bottom:30px;-ms-flex-preferred-size:25%;flex-basis:25%}@media (max-width:900px){footer
+.quarter-section{-ms-flex-preferred-size:33%;flex-basis:33%}}@media (max-width:700px){footer
+.quarter-section{-ms-flex-preferred-size:50%;flex-basis:50%}}@media (max-width:500px){footer
+.quarter-section{-ms-flex-preferred-size:100%;flex-basis:100%}}.boxes{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:12px}.boxes
+.box{-ms-flex-preferred-size:30%;flex-basis:30%;background-color:#f7f7f7;padding:30px;margin:7.5px
+0;text-align:left;font-size:12px}.boxes .box h3{font-size:12px;line-height:1em;padding:0;margin:0}.boxes .box
+a{padding:0;color:#ff1d55}.boxes .box p{color:dimgray;font-size:12px;margin:7.5px 0}@media (max-width:900px){.boxes
+.box{-ms-flex-preferred-size:45%;flex-basis:45%}}@media (max-width:500px){.boxes
+.box{-ms-flex-preferred-size:100%;flex-basis:100%}}
+
+.fixed-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+}
+
+amp-img.contain img {
+  object-fit: contain;
+}
+
+.footnotes {
+  overflow-wrap: break-word;
+}
+
+    </style>
+
+  <script data-ad-client="ca-pub-2665873967488848" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script async custom-element="amp-auto-ads"
+          src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+  </script>
+</head>
+
+<body>
+
+
+<main>
+  <div class="toc" id="toc-auto">
+    <h2 class="toc-title">目录</h2>
+    <div class="toc-content" id="toc-content-auto"></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Vue实践</h1><div class="post-meta">
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-14">2020-02-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3697 字&nbsp;
+            <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/amp/posts/2020/02/14/vue%E5%AE%9E%E8%B7%B5/" class="leancloud_visitors" data-flag-title="Vue实践">
+                <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+            </span>&nbsp;</span>
+        </div>
+    </div><div class="details toc" id="toc-static" kept="">
+        <div class="details-summary toc-title">
+            <span>目录</span>
+            <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#vue实践和操作日志">Vue实践和操作日志</a>
+          <ul>
+            <li><a href="#computed和watch的区别">computed和watch的区别</a></li>
+            <li><a href="#v-bind和v-model的区别">v-bind和v-model的区别</a></li>
+            <li><a href="#props用法详解">props用法详解</a></li>
+            <li><a href="#vuex的使用">Vuex的使用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    </div><div class="content" id="content">
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        <p>Vue实践</p>
+<h3 id="vue实践和操作日志">Vue实践和操作日志</h3>
+<h4 id="computed和watch的区别">computed和watch的区别</h4>
+<ul>
+<li>computed</li>
+</ul>
+<blockquote>
+<p>computed看上去是方法,实际上是计算属性，根据所依
+赖的数据动态显示新的计算结果。计算结果会被缓存，
+computed的值在getter执行后会缓存，只有它依赖的属性
+值改变后，下一次获取computed的值才会重新调用对应的getter来计算</p>
+</blockquote>
+<ul>
+<li>watch</li>
+</ul>
+<blockquote>
+<p>watch更像是一个data的数据监听回调，当依赖的data数据发生变化，将执行watch回调，
+在方法中传入newVal和oldVal，可以提供输入值无效，
+提供中间值特殊场景。Vue实例将会在实例化时调用$watch,
+遍历watch对象的每一个属性。如果你需要在某个数据变化时
+做一些事情，便使用watch</p>
+</blockquote>
+<ul>
+<li>总结：</li>
+</ul>
+<ol>
+<li>如果一个数据依赖于其他数据，那么把这个数据设计为computed</li>
+<li>如果你需要在某个数据变化时做一些事情，使用watch来观察这个数据变化</li>
+</ol>
+<h4 id="v-bind和v-model的区别">v-bind和v-model的区别</h4>
+<ol>
+<li>v-bind用来绑定数据和属性以及表达式，缩写为:</li>
+<li>v-model使用在表单中，实现双向数据绑定，在表单元素外使用不起作用</li>
+</ol>
+<p><em><strong>联系</strong></em>
+v-model 就是 v-bind 加上 v-on 的变形体</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;input type=&#34;text&#34; v-model=&#34;message&#34;&gt;
+等价于：
+&lt;input type=&#34;text&#34; v-bind:value=&#34;message&#34;  v-on:input=&#34;message=$event.target.value&#34;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="props用法详解">props用法详解</h4>
+<blockquote>
+<p>使用props[单向数据流]来传递数据的[父组件的数据传递给后代组件]</p>
+</blockquote>
+<ul>
+<li>用法详解</li>
+</ul>
+<ol>
+<li>props验证？</li>
+</ol>
+<h4 id="vuex的使用">Vuex的使用</h4>
+<blockquote>
+<p>用于对复杂应用进行状态管理用的（官方说法是它是一种状态管理模式），
+作为多个组件之间共享数据的状态机通用管理机制，类似于java中的观察者模式,
+在vuex中，state其实就是状态对象,mutations就是对状态对象操作的方法</p>
+</blockquote>
+<ul>
+<li>vuex中的计算属性getters</li>
+<li>vuex中的action</li>
+</ul>
+<blockquote>
+<p>mutation是同步修改状态，action可以用于异步修改状态</p>
+</blockquote>
+<ul>
+<li>commit与dispatch提交的区别</li>
+<li>module模块组&ndash;大项目专用</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    import Vue from &#39;vue&#39;;
+    import Vuex from &#39;vuex&#39;;
+    
+    Vue.use(Vuex);
+    
+    new Vuex.Store({
+        state: {     //放置state的值
+            count: 0,
+            str:&#34;abcd234&#34;
+        },
+        getters: {   //放置getters方法
+            strLen: state =&gt; state.str.length
+        },
+        // mutations只能是同步操作
+        mutations: {   //放置mutations方法
+           increment(state, payload) {
+              //在这里改变state中的数据
+              state.count = payload.number;
+           }
+        },
+        // actions可以是异步操作
+        actions: {      //放置actions方法
+            actionName({ commit }) {
+                //dosomething
+                commit(&#39;mutationName&#39;)
+            },
+            getSong ({commit}, id) {
+                api.getMusicUrlResource(id).then(res =&gt; {
+                    let url = res.data.data[0].url;
+                })
+                .catch((error) =&gt; {  // 错误处理
+                    console.log(error);
+                });
+            }
+        }
+    });
+    
+    new Vue({
+      el: &#39;#app&#39;,
+      store,
+      ...
+    });
+
+    console.log(Vuex)
+    {
+    
+    ​ Store: function Store(){},
+    
+    ​ mapActions: function(){}, // 对应Actions的结果集
+    
+    ​ mapGetters: function(){}, // 对应Getters的结果集
+    
+    ​ mapMutations: function(){}, // 对应Mutations的结果集
+    
+    ​ mapState: function(){}, // 对应State的结果集
+    
+    ​ install: function install(){},
+    
+    ​ installed: true
+    
+    } 
+</code></pre></td></tr></table>
+</div>
+</div><p>先说两句
+上一讲 「Vuex 到底是个什么鬼」，已经完美诠释了 Vuex 的牛逼技能之所在（纯属自嗨）。如果把 Vuex 比喻成农药里面的刘备，那就相当于你现在已经知道了刘备他是一个会打枪的力量型英雄，而且他打的枪还是双排量的，认识到这一点后，那么接下来就是要了解他到底是如何打枪的，是左手打，还是右手打，还是双手一起端着枪打？</p>
+<p>同样，我们已经知道了 Vuex 就如同一个全局的管理员一样，帮着我们统一管理着项目的共享数据，那它到底是通过什么样的方式去管理的呢？我们应该如何与这个管理员进行沟通和交流，才能有效的访问和操作这些共享数据呢？</p>
+<p>再说一句
+Vuex 的内脏由五部分组成：State、Getter、Mutation、Action 和 Module。关于这五个部分，我会分为多个章节来进行详细阐述，这一讲就先和大家一起彻底搞定 State 和 Getter。</p>
+<p>当然，在实际应用中，这五个部分并不是必须的，你需要用到什么就添加什么。但是一般再怎么简单的 Vuex，也至少会由 State 和 Mutation 构成，否则你就该考虑 Vuex 是否有存在的必要了。</p>
+<p>最后，温馨提示，文档示例代码使用了 ES2015 的语法，如果你还没了解过的话，先戳此了解了解。</p>
+<p>单一状态树
+Vuex 使用的是「单一状态树」，根据官方的描述，可能有点懵圈，不过没关系，这里我们一起来详细了解下到底什么是「单一状态树」。抛开单一状态，我们先来看一下这里的树是什么意思。
+组织架构
+如上图是一个公司的组织架构，它的这种层级其实就属于一种树形的结构，总经理就是树的主干，其他各部门或者职业，都属于树的分支。</p>
+<p>一般情况下，一个公司只会有这么一个树形架构，如果有两个平等的总经理，那么公司在管理上很可能就会出现矛盾，下面的人到底听谁的呢，是吧！</p>
+<p>好，现在咱们再来看下官方所叙述的「单一状态树」：</p>
+<p>1、用一个对象（主干）就包含了全部的（分支）应用层级状态。
+2、每个应用（公司）将仅仅包含一个 store 实例对象（主干）。</p>
+<p>单一状态树让我们能够直接地定位任一特定的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。</p>
+<p>State
+我们再回过头来看一下之前那个简单的 Store 示例代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  }
+})
+</code></pre></td></tr></table>
+</div>
+</div><p>那么我们如何在 Vue 组件中展示状态呢？由于 Vuex 的状态存储是响应式的，从 store 实例中读取状态最简单的方法就是在计算属性中返回某个状态，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// 创建一个 Counter 组件
+const Counter = {
+  data() { return {} },
+  template: `&lt;div&gt;{{ count }}&lt;/div&gt;`,
+  computed: {
+    count () {
+      return store.state.count
+    }
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>每当 store.state.count 变化的时候, 都会重新求取计算属性，并刷新界面。</p>
+<p>需要注意的是，如果你把 store.state.count 放在 data 中， store.state.count 的变化是不会主动触发界面刷新的，当然，也不能直接这样：<div>{{ store.state.count }}</div> ，因为在模板中是无法直接访问到 store 对象的，所以这样写无疑会报错。</p>
+<p>这种模式依赖于全局的管理员 store，如果模块多了，意味着每个模块或者页面只要用到了这个 state 里面的数据，都得把 store 引入进来，这样的操作确实有点难受。当然，官方肯定是不允许有这样令人抓狂的操作出现的：</p>
+<p>Vuex 通过 store 选项，提供了一种机制将状态从根组件 “注入” 到每一个子组件中（需调用 Vue.use(Vuex)）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">const app = new Vue({
+  el: &#39;#app&#39;,
+  // 把 store 对象提供给 “store” 选项，
+  // 这可以把 store 的实例注入所有的子组件
+  store,
+  // 子组件
+  components: { Counter },
+  template: `
+    &lt;div class=&#34;app&#34;&gt;
+      &lt;counter&gt;&lt;/counter&gt;
+    &lt;/div&gt;
+  `
+})
+</code></pre></td></tr></table>
+</div>
+</div><p>通过在根实例中注册 store 选项，该 store 实例会注入到根组件下的所有子组件中，且子组件能通过 this.$store 访问到。让我们更新下 Counter 的实现：</p>
+<p>const Counter = {
+template: <code>&lt;div&gt;{{ count }}&lt;/div&gt;</code>,
+computed: {
+count () {
+return this.$store.state.count
+}
+}
+}
+Vuex 的状态固然好用，但是也不要滥用：</p>
+<p>使用 Vuex 并不意味着你需要将所有的状态放入 Vuex。虽然将所有的状态放到 Vuex 会使状态变化更显式和易调试，但也会使代码变得冗长和不直观。如果有些状态严格属于单个组件，最好还是作为组件的局部状态。你应该根据你的应用开发需要进行权衡和确定。</p>
+<p>Getter
+有时候，我们会发现 State 中的数据，并不是我们直接想要的，而是需要经过相应的处理后，才能满足我们的需求。</p>
+<p>比如在一个组件中，我们需要把 state 中的日期 date 转换成星期几来展示：</p>
+<p>computed: {
+weekDate () {
+return moment(this.$store.state.date).format(&lsquo;dddd&rsquo;); 
+}
+}
+注意：这里的 moment 是一个第三方日期处理类库，使用之前需要导入。</p>
+<p>如果只有一个组件需要这样做还好，但如果在很多组件中，都需要这么转换的话，那就得在每一个组件中都需要把这个函数复制过去。而且，一旦产品经理心情不好，不想用星期几来显示，想直接用 2018-10-30 11:12:23 这种方式来显示日期，那你就得在所有用到它的组件中去更改日期格式化的方法，岂不难受至极。就算你把它单独抽取出来作为一个公共的函数，各种导入也麻烦，最重要的是不好统一管理。</p>
+<p>所以，这个时候，Vuex 又引入了一个牛逼的玩意儿，Getter。我们可以把它当成 store 中的计算属性（computed）。</p>
+<p>就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。</p>
+<p>我们看看这两个例子，着重注意下里面的注释：</p>
+<p>const store = new Vuex.Store({
+state: {
+date: new Date()
+},
+getters: {
+// Getter 接受 state 作为其第一个参数
+weekDate: state =&gt; {
+return moment(state.date).format(&lsquo;dddd&rsquo;); 
+}
+}
+})
+getters: {
+// Getter 还也可以接收 getters 作为第二个参数
+dateLength: (state, getters) =&gt; {
+return getters.weekDate.length;
+}
+}
+不但如此，Getter 还会将 store.getters 对象暴露出去，你可以以属性的形式访问这些值：</p>
+<p>console.log(store.getters.weekDate)
+我们可以很容易地在任何组件中使用它：</p>
+<p>computed: {
+weekDate () {
+return this.$store.getters.weekDate
+}
+}
+现在需求又变了，每个模块要显示的 weekDate 的格式不一样，有的显示全部日期，有的需要显示星期几，怎么办？</p>
+<p>好办，那就给 Getter 传参呗，但是怎么传呢？</p>
+<p>因为 Getter 在通过属性访问时是作为 Vue 的响应式系统的一部分缓存其中的，所以是不能直接 store.getters.weekDate(&lsquo;MM Do YY&rsquo;)，因为 weekDate 并不是一个函数，它仅仅只是一个属性而已。</p>
+<p>那么既然属性不能传参，怎么办呢？那我们就想办法把这个属性变成一个函数不就行了。</p>
+<p>getters: {
+// 返回一个函数，就可以传参了
+weekDate: (state) =&gt; (fm) =&gt; {
+return moment(state.date).format(fm ? fm : &lsquo;dddd&rsquo;); 
+}
+}
+使用如下：</p>
+<p>store.getters.weekDate(&lsquo;MM Do YY&rsquo;)
+写在最后
+可能看过官方文档的童鞋会好奇，为什么没有讲解那些辅助函数，比如 mapState、mapGetters。别担心，后面会有专门的一个章节来进行讲解，因为我发现这些辅助函数（包括后面的 mapMutations 和 mapActions）都是为了解决同一个问题而生，只是形式不同罢了，所以还不如拆出来一起讲，或许效果会更好。</p>
+<p>对于官方我个人觉得写得比较通俗易懂的地方，就直接引用了进来。如果有疑问或者对于我的理解有疑问的地方，欢迎留言。</p>
+<p>当然，这种技术型的文章在不同阶段的人看来，肯定会有不一样的体会。我知道，肯定会有不足的地方，我也会继续慢慢的完善。如果文章对大家有帮助的话，欢迎点赞和转载，谢谢！</p>
+<p><span style="border-bottom:1px dashed gray;">参考：  </span></p>
+<ul>
+<li><a href="https://www.jianshu.com/p/946df1834963" target="_blank" rel="noopener noreffer">https://www.jianshu.com/p/946df1834963</a></li>
+<li><a href="https://juejin.im/post/5e4608c5e51d4527235b5570?utm_source=gold_browser_extension" target="_blank" rel="noopener noreffer">vuex速览</a></li>
+<li><a href="https://juejin.im/post/5e47fe7a51882549036938b9?utm_source=gold_browser_extension" target="_blank" rel="noopener noreffer">五个实例帮你快速入门Vue</a></li>
+<li><a href="https://juejin.im/post/5e3e0d206fb9a07c81760531?utm_source=gold_browser_extension" target="_blank" rel="noopener noreffer">极简模板</a></li>
+<li><a href="https://juejin.im/post/5e54b8825188254975581b5d?utm_source=gold_browser_extension" target="_blank" rel="noopener noreffer">vue实践规范</a></li>
+<li><a href="https://juejin.im/post/5e531139e51d452715155b62?utm_source=gold_browser_extension" target="_blank" rel="noopener noreffer">vue通信</a></li>
+<li><a href="https://juejin.im/post/5e531139e51d452715155b62?utm_source=gold_browser_extension" target="_blank" rel="noopener noreffer">vue控制父组件的slot</a></li>
+<li><a href="https://mp.weixin.qq.com/s/CWA5doIFe41UEOedvR1fxQ" target="_blank" rel="noopener noreffer">vue面试题</a></li>
+</ul>
+    </div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-02-14</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/amp/posts/2020/02/14/vue%E5%AE%9E%E8%B7%B5/" data-title="Vue实践" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/amp/posts/2020/02/14/vue%E5%AE%9E%E8%B7%B5/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/amp/posts/2020/02/14/vue%E5%AE%9E%E8%B7%B5/" data-title="Vue实践" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/amp/posts/2020/02/14/vue%E5%AE%9E%E8%B7%B5/" data-title="Vue实践"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/amp/posts/2020/02/14/vue%E5%AE%9E%E8%B7%B5/" data-title="Vue实践" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://localhost:1313/amp/posts/2020/02/14/vue%E5%AE%9E%E8%B7%B5/" data-title="Vue实践" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/amp/posts/2020/02/14/vue%E5%AE%9E%E8%B7%B5/" data-title="Vue实践" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/amp/posts/2020/02/14/vue%E5%AE%9E%E8%B7%B5/" data-title="Vue实践"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/amp/posts/2019/10/27/apijson-exercise/" class="prev" rel="prev" title="APIJSON实践"><i class="fas fa-angle-left fa-fw"></i>APIJSON实践</a>
+            <a href="/amp/posts/2020/02/16/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90-%E5%AE%9E%E8%B7%B5/" class="next" rel="next" title="持续集成-实践">持续集成-实践<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article>
+<div class="adsblock">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-73+ed+2i-1n-4w"
+        data-ad-client="ca-pub-2665873967488848" data-ad-slot="2692397084"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+</main>
+
+<amp-analytics type="googleanalytics">
+    <script type="application/json">
+        {
+            "vars": {
+                "account": ""
+            },
+            "triggers": {"trackEvent":{"on":"click","request":"event","selector":"body","vars":{"eventAction":"click","eventCategory":"body-click"}},"trackPageview":{"on":"visible","request":"pageview"}}
+        }
+    </script>
+</amp-analytics>
+
+<amp-auto-ads type="adsense"
+              data-ad-client="ca-pub-2665873967488848">
+</amp-auto-ads>
+</body>
+
+</html>

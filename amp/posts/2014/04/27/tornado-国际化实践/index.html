@@ -401,14 +401,14 @@ tornado中使用i18n,需要下面两个工具(pygettext,msgfmt)和两个相关�
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">msgfmt messages.po    
-<span class="c1">#建立目录locale/cn/LC_MESSAGES/</span>        
+<span class="c1">#建立目录locale/cn/LC_MESSAGES/        </span>
 mv messages.po locale/cn/LC_MESSAGES
 </code></pre></td></tr></table>
 </div>
 </div><p>cn目录是所对应的语言，LC_MESSAGES是gettext.py文件里要求的
 mo文件必须和所定义的域同名
 gettext.py中有
-modfile=os.path.join(localedir,lang,&lsquo;LC_MESSAGES&rsquo;,'%s.mo&rsquo; %domain)</p>
+modfile=os.path.join(localedir,lang,&lsquo;LC_MESSAGES&rsquo;,'%s.mo' %domain)</p>
 <p>测试：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

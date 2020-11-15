@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+
+
+
+
+<html amp lang="zh-CN" class="no-js">
+<head><script src="/livereload.js?port=1313&amp;mindelay=10&amp;v=2" data-no-instant defer></script>
+  <title>java 开发常用错误集锦</title>
+  <meta charset="utf-8">
+
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script><script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+
+
+
+  <link rel="canonical" href="http://localhost:1313/posts/2018/07/02/java-summary-2018-1/">
+
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="144x144">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <meta name="theme-color" content="#000000" />
+
+  
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "桑河一榆",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/",
+          "name": "amp"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/",
+          "name": "posts"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2018\/",
+          "name": "2018"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2018\/07\/",
+          "name": "07"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2018\/07\/02\/",
+          "name": "02"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  7 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2018\/07\/02\/java-summary-2018-1\/",
+          "name": "java-summary-2018-1"
+        }
+    }]
+}
+</script>
+
+
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        /**
+* stylesheet.html
+* ---------------
+* This is the stylesheet that gets injected as a fallback if no layouts/partials/stylesheet.html file is available
+* in your project file.
+*
+* For further details, please have a look at:
+* https://gohugo-amp.gohugohq.com/install/
+*
+**/
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px
+dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em
+0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em
+40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html
+input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html
+input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px
+solid silver;margin:0 2px;padding:.35em .625em
+.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}td,th{padding:0}*{box-sizing:border-box}button,input,select,textarea{font:13px/1.4
+Helvetica,arial,freesans,clean,sans-serif}a{color:#4183c4;text-decoration:none}a:active,a:focus,a:hover{text-decoration:underline}.rule,hr{height:0;margin:15px
+0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid
+#ddd}.rule:after,.rule:before,hr:after,hr:before{display:table;content:""}.rule:after,hr:after{clear:both}fieldset{padding:0;margin:0;border:0}label{font-size:13px;font-weight:700}#adv_code_search
+.search-page-label,input[type=email],input[type=number],input[type=password],input[type=tel],input[type=text],input[type=url],textarea{min-height:34px;padding:7px
+8px;font-size:13px;color:#333;vertical-align:middle;background-color:#fff;background-repeat:no-repeat;background-position:100%;border:1px
+solid #ccc;border-radius:3px;outline:none;box-shadow:inset 0 1px 2px rgba(0,0,0,.075)}#adv_code_search
+.focus.search-page-label,#adv_code_search .search-page-label:focus,.focused
+.drag-and-drop,input[type=email].focus,input[type=email]:focus,input[type=number].focus,input[type=number]:focus,input[type=password].focus,input[type=password]:focus,input[type=tel].focus,input[type=tel]:focus,input[type=text].focus,input[type=text]:focus,input[type=url].focus,input[type=url]:focus,textarea.focus,textarea:focus{border-color:#51a7e8;box-shadow:inset
+0 1px 2px rgba(0,0,0,.075),0 0 5px
+rgba(81,167,232,.5)}.input-contrast,input.input-contrast{background-color:#fafafa}.input-contrast:focus,input.input-contrast:focus{background-color:#fff}:-moz-placeholder,::-webkit-input-placeholder{color:#aaa}::-webkit-validation-bubble-message{font-size:12px;color:#fff;background:#9c2400;border:0;border-radius:3px;-webkit-box-shadow:1px
+1px 1px
+rgba(0,0,0,.1)}input::-webkit-validation-bubble-icon{display:none}::-webkit-validation-bubble-arrow{background-color:#9c2400;border:1px
+solid #9c2400;-webkit-box-shadow:1px 1px 1px
+rgba(0,0,0,.1)}.absent{color:#c00}.anchor{position:absolute;top:0;bottom:0;left:0;display:block;padding-right:6px;padding-left:30px;margin-left:-30px}.anchor:focus{outline:none}h1,h2,h3,h4,h5,h6{position:relative;margin-top:1em;margin-bottom:16px;font-weight:700;line-height:1.4}h1
+.octicon-link,h2 .octicon-link,h3 .octicon-link,h4 .octicon-link,h5 .octicon-link,h6
+.octicon-link{display:none;color:#000;vertical-align:middle}h1:hover .anchor,h2:hover .anchor,h3:hover .anchor,h4:hover
+.anchor,h5:hover .anchor,h6:hover
+.anchor{height:1em;padding-left:8px;margin-left:-30px;line-height:1;text-decoration:none}h1:hover .anchor
+.octicon-link,h2:hover .anchor .octicon-link,h3:hover .anchor .octicon-link,h4:hover .anchor .octicon-link,h5:hover
+.anchor .octicon-link,h6:hover .anchor .octicon-link{display:inline-block}h1 code,h1 tt,h2 code,h2 tt,h3 code,h3 tt,h4
+code,h4 tt,h5 code,h5 tt,h6 code,h6
+tt{font-size:inherit}h1{font-size:2.25em;line-height:1.2}h1,h2{padding-bottom:.3em;border-bottom:1px solid
+#eee}h2{font-size:1.75em;line-height:1.225}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5,h6{font-size:1em}h6{color:#777}blockquote,dl,ol,p,pre,table,ul{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px
+0;background-color:#e7e7e7;border:0 none}ol,ul{padding-left:2em}ol.no-list,ul.no-list{padding:0;list-style-type:none}ol
+ol,ol ul,ul ol,ul ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl,dl dt{padding:0}dl
+dt{margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0
+16px;margin-bottom:16px}blockquote{padding:0 15px;color:#777;border-left:4px solid
+#ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}table
+th{font-weight:700}table td,table th{padding:6px 13px;border:1px solid #ddd}table
+tr{background-color:#fff;border-top:1px solid #ccc}table
+tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;box-sizing:border-box}span.frame,span.frame>span{display:block;overflow:hidden}span.frame>span{float:left;width:auto;padding:7px;margin:13px
+0 0;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0
+0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px
+auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0
+auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px
+0 0;overflow:hidden;text-align:right}span.align-right span
+img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left
+span{margin:13px 0
+0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px
+auto
+0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:"\00a0"}code
+br,tt br{display:none}del
+code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight
+pre,pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.highlight
+pre{margin-bottom:0;word-break:normal}pre,pre code,pre tt{word-wrap:normal}pre code,pre
+tt{display:inline;max-width:none;padding:0;margin:0;overflow:initial;line-height:inherit;background-color:transparent;border:0}pre
+code:after,pre code:before,pre tt:after,pre
+tt:before{content:normal}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav
+ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{text-decoration:none}ins,mark{background-color:#ff9;color:#000}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px
+dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px
+solid #ccc;margin:1em
+0;padding:0}input,select{vertical-align:middle}body{background-color:#fff;color:#123;font-size:14px;font-family:Helvetica
+Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif}main{max-width:1180px;padding:30px;margin:0 auto}@media
+(min-width:900px){main h1+p{font-size:2em}}h1{font-weight:300;font-size:2em;line-height:1.4em;margin:.5em
+0;font-family:Georgia,serif;-webkit-transition:color .4s;transition:color
+.4s}h2{font-size:2em}h2,h3{font-weight:300;margin:30px
+0}h3{font-size:1.8em}h4{font-size:1.6em}h4,h5{font-weight:300}h5{font-size:1.2em}h6{font-weight:300;font-size:1em}p{line-height:1.4em;font-size:1.2em;margin:15px
+0}blockquote{border-left:5px solid
+#ff1d55;background-color:#ffe9ee;padding:1em;margin-bottom:1em}.lightbox{background-color:rgba(3,121,196,.4);min-height:100vh;min-width:100vw;padding:30px}code{font:12px
+Consolas,Liberation Mono,Menlo,Courier,monospace}p>code{color:#ff1d55}pre
+code{display:block;background-color:#f7f7f7;padding:15px;overflow:auto;color:#123;line-height:1.4em}a{color:#ff1d55;text-decoration:none;-webkit-transition:color
+.4s,background .4s;transition:color .4s,background .4s}a:hover{color:#e9003a}ol,ul{margin:7.5px;padding:7.5px 15px}ol
+li,ul li{margin:7.5px 15px}.doc-parameters{list-style-type:none;padding:0}.doc-parameters
+li{display:block;margin:0;margin-bottom:15px}.doc-parameters .example,.doc-parameters blockquote{border-left:5px solid
+#0379c4;background-color:#96d5fd;color:#123;line-height:1em;font-size:1em;padding:1em;margin:0}.doc-parameters
+.example{background-color:#c8e9fe}.doc-parameters
+.parameter{display:block;padding:1em;background-color:#0379c4;color:#fff;margin:0}.doc-parameters .parameter
+strong{display:inline-block;padding:0
+.5em;border-radius:.25em;line-height:2em;background-color:#025a92}hr{height:.25em;padding:0;margin:24px
+0;background-color:#f7f7f7;border:0}.teaser{display:-webkit-box;display:-ms-flexbox;display:flex;text-align:left;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.teaser
+aside{-ms-flex-preferred-size:60%;flex-basis:60%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:30px}@media
+(max-width:700px){.teaser aside{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content{-ms-flex-preferred-size:40%;flex-basis:40%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;color:dimgray;font-size:12px}@media
+(max-width:700px){.teaser .content{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content.content-full{-ms-flex-preferred-size:100%;flex-basis:100%}.teaser .content
+h3{font-size:14px;text-transform:uppercase;font-weight:600;color:#123}.main-index{text-align:center}.main-index
+amp-img{margin:15px auto;width:50%}@media (min-width:900px){.main-index
+p{font-size:2em}}.breadcrumbs{padding:1em;background-color:#f7f7f7}.breadcrumbs
+ul{display:block;margin:0;padding:0}.breadcrumbs ul li{display:inline-block;margin:0 .5em}.breadcrumbs ul
+li:before{content:' / ';position:relative;margin-left:-.5em;color:dimgray}.breadcrumbs ul li
+a{color:dimgray}.breadcrumbs ul li:last-child
+a{color:#ff1d55}header{background-color:#000000;color:#fff;padding:30px;position:relative}header
+.brand{display:inline-block;position:absolute;left:30px;top:20px;line-height:15px;text-transform:uppercase;padding:7.5px;font-size:1.4em}header
+.brand:hover{background-color:#ff1d55;color:#fff}header
+a{color:#fff;text-decoration:none;border-radius:7.5px;padding:7.5px}header
+a:hover{text-decoration:none;background-color:#fff;color:#ff1d55}header nav
+ul{padding:0;margin:0;display:block;text-align:right}header nav ul li{padding:0;margin:0
+7.5px;display:inline-block}header nav ul li.hamburger{display:none}header nav ul li.hamburger
+button{position:absolute;right:30px;top:20px;border:0;background-color:#fff;color:#ff1d55;font-weight:700;border-radius:50%;width:30px;height:30px;overflow:hidden;text-align:center;padding:0;margin:0}@media
+(max-width:900px){header nav ul li{display:none}header nav ul
+li.hamburger{display:inline-block}}.sidebarNavigation{width:210px;max-width:95%}.sidebarNavigation
+ul{padding:0;margin:0}.sidebarNavigation ul li{display:block}.sidebarNavigation ul li
+a{display:block;line-height:1.4em;padding:7.5px}footer{margin:60px
+auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;max-width:1180px;padding:30px;font-size:12px}footer
+a:hover{text-decoration:none}footer strong{text-transform:uppercase;margin-bottom:15px;display:block}footer strong
+a{color:#1d1d1d}footer ul{display:block;padding:0;margin:0}footer ul li{display:block;line-height:1.4em;padding:7.5px
+0;margin:0}footer ul li a{color:dimgray}footer
+.quarter-section{margin-bottom:30px;-ms-flex-preferred-size:25%;flex-basis:25%}@media (max-width:900px){footer
+.quarter-section{-ms-flex-preferred-size:33%;flex-basis:33%}}@media (max-width:700px){footer
+.quarter-section{-ms-flex-preferred-size:50%;flex-basis:50%}}@media (max-width:500px){footer
+.quarter-section{-ms-flex-preferred-size:100%;flex-basis:100%}}.boxes{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:12px}.boxes
+.box{-ms-flex-preferred-size:30%;flex-basis:30%;background-color:#f7f7f7;padding:30px;margin:7.5px
+0;text-align:left;font-size:12px}.boxes .box h3{font-size:12px;line-height:1em;padding:0;margin:0}.boxes .box
+a{padding:0;color:#ff1d55}.boxes .box p{color:dimgray;font-size:12px;margin:7.5px 0}@media (max-width:900px){.boxes
+.box{-ms-flex-preferred-size:45%;flex-basis:45%}}@media (max-width:500px){.boxes
+.box{-ms-flex-preferred-size:100%;flex-basis:100%}}
+
+.fixed-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+}
+
+amp-img.contain img {
+  object-fit: contain;
+}
+
+.footnotes {
+  overflow-wrap: break-word;
+}
+
+    </style>
+
+  <script data-ad-client="ca-pub-2665873967488848" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script async custom-element="amp-auto-ads"
+          src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+  </script>
+</head>
+
+<body>
+
+
+<main>
+  <div class="toc" id="toc-auto">
+    <h2 class="toc-title">目录</h2>
+    <div class="toc-content" id="toc-content-auto"></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">java 开发常用错误集锦</h1><div class="post-meta">
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2018-07-02">2018-07-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 11052 字&nbsp;
+            <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 23 分钟&nbsp;<span id="/amp/posts/2018/07/02/java-summary-2018-1/" class="leancloud_visitors" data-flag-title="java 开发常用错误集锦">
+                <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+            </span>&nbsp;</span>
+        </div>
+    </div><div class="details toc" id="toc-static" kept="">
+        <div class="details-summary toc-title">
+            <span>目录</span>
+            <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+    </div><div class="content" id="content">
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        <p>java 开发常用错误集锦</p>
+<ul>
+<li>org.apache.catalina.deply.WebXml addServer错误: <br>
+Maven工程中用到的tomcat的catalina.jar，该包与tomcat下的包冲突导致报错。<br>
+解决方案：
+修改tomcat的conf/context.xml文件，修改内容如下：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml">        <span class="nt">&lt;Context&gt;</span>
+            ...
+            <span class="nt">&lt;Loader</span> <span class="na">delegate=</span><span class="s">&#34;true&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Context&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>delegate配置的意义如下：
+True，表示tomcat将遵循JVM的delegate机制，即一个WebAppClassLoader在加载类文件时，会先递交给SharedClassLoader加载，SharedClassLoader无法加载成功，会继续想自己的父类
+委托，一直到BootstrapClassLoader，如果都没有加载成功，则最后由WebAppClassLoader自己进行加载。<br>
+False，表示将不遵循这个delegate机制，即WebAppClassLoader在加载类文件时，会优先自己尝试加载，如果加载失败，才会沿着继承链，依次委托父类加载。</p>
+<ul>
+<li>无法编译生成class文件： <br>
+查看JDK版本 
+查看IDEA指定输出路径</li>
+</ul>
+<p>一、什么是JavaWeb?
+JavaWeb是用Java技术来解决相关web互联网领域的技术总称。
+需要在特定的web服务器上运行，分为web服务器和web客户端两部分
+跨平台，能够在多个平台下部署和运行
+二、静态网页和动态网页
+静态网页：网页中的内容是固定的，不会更新。
+所用技术为html、css；
+动态网页：网页中的内容通过程序动态显示的，自动更新。
+所用技术为html、css、数据库、至少一门高级语言（Java、C#，PHP），JavaScript，XML等，主流的动态网页脚本技术（jsp/Asp.net/php）
+三、Tomcat服务器目录介绍</p>
+<p>WEB-INF是Java的Web应用的安全目录。所谓安全就是客户端无法访问，只有服务端可以访问的目录。
+web.xml文件是项目的部署文件
+classes文件夹，用于放置*.class文件
+lib文件夹，用于存放需要的jar包
+如图：</p>
+<p>四、修改Tomcat服务器默认端口
+在Tomcat的安装目录下，找到conf&ndash;&gt;server.xml文件</p>
+<p>找到Connector标签</p>
+<p>修改port属性的值即可，端口修改完成后要记得保存，并且重启Tomcat服务器。
+二、JSP基础学习
+一、JSP简介
+JSP全名为Java Server Pages，其根本是一个简化的Servlet设计，他实现了再Java当中使用HTML标签。JSP是一种动态网页技术标准也是JavaEE的标准。JSP与Servlet一样，是在服务器端执行的。</p>
+<p>JSP实际上就是Servlet。JSP这门技术的最大的特点在于：写jsp就像在写html，但它相比html而言，html只能为用户提供静态数据，而Jsp技术允许在页面中嵌套java代码，为用户提供动态数据。</p>
+<p>二、JSP的作用
+Servlet：服务器端的小应用程序。适合编写Java逻辑代码，如果编写网页内容&mdash;&mdash;-&gt;费时费力，太苦</p>
+<p>缺点：不适合设置HTML响应体，需要大量的
+response.getWriter().print(&quot;&quot;);
+优点：动态资源，可以编程。
+HTML：静态内容</p>
+<p>缺点：HTML是静态页面，不能包含动态信息；
+优点：不用为输出html标签而发愁。
+jsp（java server pages）：适合编写输出动态内容，但不适合编写Java逻辑</p>
+<p>优点：在原有HTML的基础上添加java脚本，构成jsp页面。
+三、JSP和Servlet的分工
+JSP</p>
+<p>作为请求发起页面，例如显示表单、超链接。
+作为请求结束页面，例如显示数据。
+Servlet</p>
+<p>作为请求中处理数据的环节
+四、JSP的组成</p>
+<p>jsp=html+java脚本+jsp标签（指令）</p>
+<p>jsp中无需创建即可使用的对象一共有9个，称为九大内置对象。</p>
+<p>3种java脚本：</p>
+<p>&lt;%……%&gt; java代码片段（常用），用于定义0-N条java语句，方法内写什么就可以在这里写什么，不能声明方法和类；
+&lt;%=……%&gt; java表达式，用于输出（常用），用于输出一条表达式（或变量）的结束，print()括号中参数可以放什么，这里就能放什么；
+&lt;%!……%&gt; 声明，用来创建类的成员变量和成员方法（基本不用），class A{ } 类体中可以放什么，这里就可以放什么。
+五、JSP的执行流程及原理</p>
+<p>jsp其实是一种特殊的Servlet</p>
+<p>当jsp页面第一次被访问时，服务器会把jsp编译成java文件（这个java其实是一个Servlet类）；
+然后再把java编译成.class；
+然后创建该类对象；
+最后调用它的service()方法；
+第二次请求同一jsp时，直接调用service()方法。
+在Tomcat的work目录下可以找到jsp对应的.java源代码。
+1、IE浏览器在访问JSP页面时，Web服务器是如何调用并执行一个jsp页面的？（Servlet）</p>
+<p>第一次：转译(翻译) &ndash;&gt; 编译 &ndash;&gt; 执行
+第二次：执行
+2、Web服务器在执行jsp页面时，是如何把Jsp页面中的html排版标签发送到客户端的？</p>
+<p>out.print(&quot;&lt;&hellip;&hellip;&gt;&quot;); 或者 out.write(&quot;&lt;&hellip;&hellip;&gt;&quot;);
+3、Jsp页面中的java代码服务器是如何执行的？</p>
+<p>服务器 &ndash;&gt; .java文件 &ndash;&gt; .class文件 &ndash;&gt; 结果out回客户端
+4、Web服务器在调用jsp时，会给jsp提供一些什么java对象(内置对象)？</p>
+<p>HttpSession、ServletConfig、ServletContent、request、response、out等等。
+六、JSP的基本语法
+Servlet：控制器。重点编写java代码逻辑。（获取表单数据、处理业务逻辑、分发转向）</p>
+<p>JSP：代码显示模板。重点在于显示数据。（为什么显示数据不直接用.html文件呢？因为.jsp文件中可以插入java代码显示回显消息，简言之，jsp功能更强大）</p>
+<p>JSP的模版元素：简言之就是网页的静态内容</p>
+<p>例如：html标签和普通文本。
+JSP的脚本:     </p>
+<p>&lt;%……%&gt; java代码片段（常用），用于定义0-N条java语句，方法内写什么就可以在这里写什么，不能声明方法和类；
+&lt;%=……%&gt; java表达式，用于输出（常用），用于输出一条表达式（或变量）的结束，print()括号中参数可以放什么，这里就能放什么；
+&lt;%= 2 + 3 %&gt; 等价于out.print(2 + 3);
+&lt;%!……%&gt; 声明，用来创建类的成员变量和成员方法（基本不用），class A{ } 类体中可以放什么，这里就可以放什么。</p>
+<p>注释:</p>
+<p>JSP注释：&lt;%&ndash; 被注释的内容 &ndash;%&gt;
+特点：安全，省流量
+网页注释：
+特点：不安全，费流量</p>
+<p>七、JSP的三个指令
+JSP指令（directive）是为JSP引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎如何处理JSP页面中的其余部分。</p>
+<p>在JSP 2.0规范中共定义了三个指令：</p>
+<p>page指令(页面级别)
+include指令(导入其它页面的信息)
+taglib指令(标签指令)
+例如：</p>
+<p>1、page
+作用：</p>
+<p>page指令用于定义JSP页面的各种属性，无论page指令出现在JSP页面中的什么地方，它作用的都是整个JSP页面。
+为了保持程序的可读性和遵循良好的编程习惯，page指令最好是放在整个JSP页面的起始位置。
+属性：</p>
+<p>import和java代码中的import是一样的
+&lt;%@ page import=&ldquo;java.util.Date, java.util.List&rdquo; %&gt;</p>
+<p>或者：</p>
+<p>&lt;%@ page import=&ldquo;java.util.Date&rdquo; %&gt;</p>
+<p>&lt;%@ page import=&ldquo;java.util.List&rdquo; %&gt;</p>
+<p>JSP会自动导入(默认导入)以下的包：
+import java.lang.*;</p>
+<p>import javax.servlet.*;</p>
+<p>import javax.servlet.http.*;</p>
+<p>import javax.servlet.jsp.*;</p>
+<p>session: 表示是否会自动创建session对象。其默认值是true。       
+buffer: JSP中有javax.servlet.jsp.JspWriter输出字符流。设置输出数据的缓存大小，默认大小是8kb。建议最好不要改大小。      
+errorPage: 如果页面中有错误，则跳转到指定的资源。（即不让页面弹出404/500等错误）          errorPage=&quot;/uri&quot;
+如果写&quot;/&ldquo;则代表当前应用的目录下，绝对路径。</p>
+<p>如果不写&rdquo;/&ldquo;则代表相对路径。</p>
+<p>isErrorPage: 表示是否创建throwable对象。其默认值是false。作用：输出页面错误信息：by zero      
+contextType: contentType=&ldquo;text/html; charset=UTF-8&rdquo; 告诉浏览器使用什么编码来解析文本。等同于 response.setContextType(&ldquo;text/html; charset=utf-8&rdquo;);      
+pageEncoding: 告诉JSP引擎(服务器)要转译(翻译)的文件使用的编码。
+例如：&lt;%@ page pageEncoding=&ldquo;gbk&rdquo; %&gt;
+isELIgnored: 是否支持EL表达式。 默认是false，表示支持EL表达式。
+例如：${1+1} 等价于out.print(1+1);
+2、include
+include指令用于引入其它JSP页面，如果使用include指令引入了其它JSP页面，那么JSP引擎将把这两个JSP翻译成一个servlet。所以include指令引入通常也称之为静态引入。</p>
+<p>静态包含：把其它资源包含到当前页面中。
+&lt;%@ include file=&quot;/include/header.jsp&rdquo; %&gt;
+动态包含：
+&lt;jsp:include page=&quot;/include/header.jsp&quot;&gt;&lt;/jsp:include&gt;
+两者的区别：转译(翻译)的时间段不同</p>
+<p>前者：在翻译时就把两个文件合并
+后者：不会合并文件，当代码执行到include时，才包含另一个文件的内容。        
+使用原则：能用静的就不用动的。原因之一是：可以省略一些代码的书写。</p>
+<p>3、taglib
+JSP API允许用户自定义标签，一个自定义标签库就是自定义标签的集合。</p>
+<p>Taglib指令引入一个自定义标签集合的定义，包括库路径、自定义标签。</p>
+<p>Taglib指令的语法：</p>
+<p>&lt;%@ taglib uri=&ldquo;uri&rdquo; prefix=&ldquo;prefixOfTag&rdquo; %&gt;
+复制代码
+uri属性确定标签库的位置，prefix属性指定标签库的前缀。</p>
+<p>等价的XML语法：</p>
+<p>&lt;jsp:directive.taglib uri=&ldquo;uri&rdquo; prefix=&ldquo;prefixOfTag&rdquo; /&gt;
+复制代码
+作用：在JSP页面中导入JSTL标签库。替换jsp中的java代码片段。</p>
+<p>&lt;%@ taglib uri=&ldquo;java.sun.com/jsp/jstl/co…&rdquo; prefix=&ldquo;c&rdquo; %&gt;
+prefix：前缀(相当于重新给uri起个名字)</p>
+<p>示例：</p>
+<p>&lt;%</p>
+<p>  if (5 &gt; 3) {</p>
+<p>  out.print(5);</p>
+<p>  }</p>
+<p>%&gt;</p>
+<p>&lt;%&ndash; 上下二种方式是等价的 &ndash;%&gt;</p>
+<p>&lt;c:if test=&quot;${5&gt;3}&quot;&gt;</p>
+<p>  aaa</p>
+<p>&lt;/c:if&gt;
+复制代码
+下面的这种方式很好用！后面慢慢体会。</p>
+<p>八、JSP的动作
+使用标签的形式来表示一段java代码。</p>
+<p>JSP行为标签使用XML语法结构来控制servlet引擎。它能够动态插入一个文件，重用JavaBean组件，引导用户去另一个页面，为Java插件产生相关的HTML等等。</p>
+<p>行为标签只有一种语法格式，它严格遵守XML标准：</p>
+<p>&lt;jsp:action_name attribute=&ldquo;value&rdquo; /&gt;
+复制代码
+行为标签基本上是一些预先就定义好的函数，下表罗列出了一些可用的JSP行为标签：</p>
+<p>九、JSP的九个内置对象
+指在JSP的&lt;%=%&gt; 和&lt;% %&gt;中可以直接使用的对象，服务器给我们创建好的对象，直接拿过来用就行了。</p>
+<p>例如：</p>
+<p>&lt;%=request.getParameter(&ldquo;name&rdquo;) %&gt;</p>
+<p>&lt;%</p>
+<p>   Student stu = new Student();</p>
+<p>   stu.setName(&ldquo;tom&rdquo;);</p>
+<p>  out.print(stu.getName());</p>
+<p>   // request.getRequestDispatcher(&quot;/7.jsp&quot;).forward(request, response);</p>
+<p>%&gt;
+复制代码</p>
+<p>十、JSP客户端请求
+1、HttpServletRequest类
+request对象是javax.servlet.http.HttpServletRequest类的实例。每当客户端请求一个页面时，JSP引擎就会产生一个新的对象来代表这个请求。</p>
+<p>request对象提供了一系列方法来获取HTTP信息头，包括表单数据，cookies，HTTP方法等等。</p>
+<p>接下来将会介绍一些在JSP编程中常用的获取HTTP信息头的方法。详细内容请见下表：</p>
+<p>2、HTTP信息头示例
+在这个例子中，我们会使用HttpServletRequest类的getHeaderNames()方法来读取HTTP信息头。这个方法以枚举的形式返回当前HTTP请求的头信息。</p>
+<p>获取Enumeration对象后，用标准的方式来遍历Enumeration对象，用hasMoreElements()方法来确定什么时候停止，用nextElement()方法来获得每个参数的名字</p>
+<p>&lt;%@ page language=&ldquo;java&rdquo; contentType=&ldquo;text/html; charset=UTF-8&rdquo;
+pageEncoding=&ldquo;UTF-8&rdquo;%&gt;
+&lt;%@ page import=&ldquo;java.io.<em>,java.util.</em>&rdquo; %&gt;</p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<h2>HTTP 头部请求实例</h2>
+<table width="100%" border="1" align="center">
+<tr bgcolor="#949494">
+<th>Header Name</th><th>Header Value(s)</th>
+</tr>
+<%
+   Enumeration headerNames = request.getHeaderNames();
+   while(headerNames.hasMoreElements()) {
+      String paramName = (String)headerNames.nextElement();
+      out.print("<tr><td>" + paramName + "</td>\n");
+      String paramValue = request.getHeader(paramName);
+      out.println("<td> " + paramValue + "</td></tr>\n");
+   }
+%>
+</table>
+</body>
+</html>
+复制代码
+<p>十一、JSP服务器响应
+1、HttpServletResponse类
+response 对象是 javax.servlet.http.HttpServletResponse 类的一个实例。就像服务器会创建request对象一样，它也会创建一个客户端响应。</p>
+<p>response对象定义了处理创建HTTP信息头的接口。通过使用这个对象，开发者们可以添加新的cookie或时间戳，还有HTTP状态码等等。</p>
+<p>下表列出了用来设置HTTP响应头的方法，这些方法由HttpServletResponse 类提供：</p>
+<p>2、HTTP响应头程序示例
+接下来的例子使用setIntHeader()方法和setRefreshHeader()方法来模拟一个数字时钟：</p>
+<p>&lt;%@ page language=&ldquo;java&rdquo; contentType=&ldquo;text/html; charset=UTF-8&rdquo;
+pageEncoding=&ldquo;UTF-8&rdquo;%&gt;
+&lt;%@ page import=&ldquo;java.io.<em>,java.util.</em>&rdquo; %&gt;</p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<h2>自动刷新实例</h2>
+<%
+   // 设置每隔5秒自动刷新
+   response.setIntHeader("Refresh", 5);
+   // 获取当前时间
+   Calendar calendar = new GregorianCalendar();
+   String am_pm;
+   int hour = calendar.get(Calendar.HOUR);
+   int minute = calendar.get(Calendar.MINUTE);
+   int second = calendar.get(Calendar.SECOND);
+   if(calendar.get(Calendar.AM_PM) == 0)
+      am_pm = "AM";
+   else
+      am_pm = "PM";
+   String CT = hour+":"+ minute +":"+ second +" "+ am_pm;
+   out.println("当前时间: " + CT + "\n");
+%>
+</body>
+</html>
+复制代码
+<p>十二、JSP表单处理
+我们在浏览网页的时候，经常需要向服务器提交信息，并让后台程序处理。浏览器中使用 GET 和 POST 方法向服务器提交数据。</p>
+<p>1、GET 方法
+GET方法将请求的编码信息添加在网址后面，网址与编码信息通过&quot;?&ldquo;号分隔。如下所示：</p>
+<p><a href="http://www.runoob.com/hello?key1=">www.runoob.com/hello?key1=</a>… GET方法是浏览器默认传递参数的方法，一些敏感信息，如密码等建议不使用GET方法。</p>
+<p>用get时，传输数据的大小有限制 （注意不是参数的个数有限制），最大为1024字节。</p>
+<p>2、POST 方法
+一些敏感信息，如密码等我们可以通过POST方法传递，POST提交数据是隐式的。</p>
+<p>POST提交数据是不可见的，GET是通过在url里面传递的（可以看一下你浏览器的地址栏）。</p>
+<p>JSP使用getParameter()来获得传递的参数，getInputStream()方法用来处理客户端的二进制数据流的请求。</p>
+<p>3、JSP 读取表单数据
+getParameter(): 使用 request.getParameter() 方法来获取表单参数的值。
+getParameterValues(): 获得如checkbox类（名字相同，但值有多个）的数据。 接收数组变量 ，如checkbox类型
+getParameterNames():该方法可以取得所有变量的名称，该方法返回一个 Enumeration。
+getInputStream():调用此方法来读取来自客户端的二进制数据流。
+&lt;%@ page contentType=&ldquo;text/html;charset=UTF-8&rdquo; language=&ldquo;java&rdquo; pageEncoding=&ldquo;UTF-8&rdquo; %&gt;</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表单信息</title>
+</head>
+<body>
+<form action="Demo1.jsp" method="post">
+    <input type="text" name="name"/><br>
+    <input type="text" name="url"/><br>
+    <input type="checkbox" name="mao" checked="checked"/>猫<br>
+    <input type="checkbox" name="gou"/>狗<br>
+    <input type="checkbox" name="ji" checked="checked"/>鸡<br>
+    <input type="checkbox" name="ya"/>鸭<br>
+<pre><code>&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+</code></pre>
+</form>
+</body>
+</html>
+复制代码
+<%@ page import="java.util.Enumeration" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSP</title>
+</head>
+<body>
+<pre><code>&lt;h1&gt;读取参数信息&lt;/h1&gt;
+&lt;table align=&quot;center&quot; border=&quot;1&quot; width=&quot;100%&quot;&gt;
+    &lt;tr bgcolor=&quot;#f0f8ff&quot;&gt;
+        &lt;th&gt;参数名&lt;/th&gt;
+        &lt;th&gt;对应值&lt;/th&gt;
+    &lt;/tr&gt;
+
+        &lt;%
+            Enumeration&lt;String&gt; parameterNames = request.getParameterNames();
+            request.setCharacterEncoding(&quot;utf-8&quot;);
+            while (parameterNames.hasMoreElements()){
+                String name = parameterNames.nextElement();
+                out.println(&quot;&lt;tr&gt;&lt;td&gt;&quot;+name+&quot;&lt;/td&gt;\n&quot;);
+                String url = request.getParameter(name);
+                out.println(&quot;&lt;td&gt;&quot;+url+&quot;&lt;/td&gt;&lt;/tr&gt;\n&quot;);
+            }
+        %&gt;
+
+&lt;/table&gt;
+&lt;%
+
+%&gt;
+</code></pre>
+</body>
+</html>
+复制代码
+<p>十三、四大域对象：实际开发如何用？
+PageContext：pageConext</p>
+<p>存放的数据仅在当前页面有效。开发时使用较少。当前页面存放数据用表单标签中的 ，且该存值方式用户看不到。
+ServletRequest: request</p>
+<p>存放的数据在一次请求（转发:可以传数据）内有效。使用非常多。
+HttpSession: session</p>
+<p>存放的数据在一次会话(多次请求)中有效。使用的比较多。例如：存放用户的登录信息、购物车功能。
+ServletContext: application</p>
+<p>存放的数据在整个应用范围内都有效。因为范围太大，应尽量少用。用于统计在线人数。
+十四、会话跟踪
+1、 会话概述
+什么是会话？如同打电话。
+会话可简单理解为：用户开一个浏览器，点击多个超链接，访问服务器多个web资源，然后关闭浏览器，整个过程称之为一个会话。
+会话过程要解决的问题是什么？保持各个客户端自己的数据。
+每个用户在使用浏览器与服务器进行会话的过程中，不可避免各自会产生一些数据，程序要想办法为每个用户保存这些数据。
+例如：用户点击超链接通过一个servlet购买了一个商品，程序应该想办法保存用户购买的商品，以便于用户点结帐servlet时，结帐servlet可以得到用户购买的商品为用户结帐。</p>
+<p>思考：用户购买的商品保存在request或servletContext中行不行？答：不行。</p>
+<p>保存会话数据的两种技术：</p>
+<p>Cookie：是客户端技术，程序把每个用户的数据以cookie的形式写给用户各自的浏览器。
+当用户使用浏览器再去访问服务器中的web资源时，就会带着各自的数据去。这样，web资源处理的就是用户各自的数据了。
+HttpSession：Session是服务器端技术，利用这个技术，服务器在运行时可以为每一个用户的浏览器创建一个其独享的HttpSession对象，
+由于session为用户浏览器独享，所以用户在访问服务器的web资源时，可以把各自的数据放在各自的session中，当用户再去访问服务器中的其它web资源时，其它web资源再从用户各自的session中取出数据为用户服务。
+2、http协议的无状态性
+无状态是指，当浏览器发送请求给服务器时，服务器响应客户端请求。但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它就是刚才那个浏览器。简单来说，就是服务器不会去记得你，所以就是无状态协议。</p>
+<p>3、JSP Cookie 处理
+Cookie是存储在客户机的文本文件，它们保存了大量轨迹信息。在servlet技术基础上，JSP显然能够提供对HTTP cookie的支持。</p>
+<p>通常有三个步骤来识别回头客：</p>
+<p>服务器脚本发送一系列cookie至浏览器。比如名字，年龄，ID号码等等。
+浏览器在本地机中存储这些信息，以备不时之需。
+当下一次浏览器发送任何请求至服务器时，它会同时将这些cookie信息发送给服务器，然后服务器使用这些信息来识别用户或者干些其它事情。
+JSP Cookie 处理需要对中文进行编码与解码，方法如下：</p>
+<p>String   str   =   java.net.URLEncoder.encode(&ldquo;中文&rdquo;，&ldquo;UTF-8&rdquo;);            //编码
+String   str   =   java.net.URLDecoder.decode(&ldquo;编码后的字符串&rdquo;,&ldquo;UTF-8&rdquo;);   // 解码
+复制代码
+4、Servlet Cookie 方法</p>
+<p>5、使用JSP设置Cookie
+使用JSP设置cookie包含三个步骤：</p>
+<p>1、创建一个Cookie对象： 调用Cookie的构造函数，使用一个cookie名称和值做参数，它们都是字符串。
+Cookie cookie = new Cookie(&ldquo;key&rdquo;,&ldquo;value&rdquo;);
+复制代码
+请务必牢记，名称和值中都不能包含空格或者如下的字符：</p>
+<p>[ ] ( ) = , &quot; / ? @ : ;
+复制代码
+2、设置有效期：调用setMaxAge()函数表明cookie在多长时间（以秒为单位）内有效。下面的操作将有效期设为了24小时。
+cookie.setMaxAge(60<em>60</em>24);
+复制代码
+3、将cookie发送至HTTP响应头中：调用response.addCookie()函数来向HTTP响应头中添加cookie。
+response.addCookie(cookie);
+复制代码
+6、实例说明
+&lt;%@ page contentType=&ldquo;text/html;charset=UTF-8&rdquo; language=&ldquo;java&rdquo; %&gt;</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>表单提交</title>
+</head>
+<body>
+<form action="CookieDemo.jsp" method=GET>
+    站点名: <input type="text" name="name">
+    <br />
+    网址: <input type="text" name="url" />
+    <input type="submit" value="提交" />
+</form>
+</body>
+</html>
+复制代码
+<%@ page import="java.net.URLEncoder" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%
+    // 编码，解决中文乱码
+    String str = URLEncoder.encode(request.getParameter("name"),"utf-8");
+    // 设置 name 和 url cookie
+    Cookie name = new Cookie("name", str);
+    Cookie url = new Cookie("url", request.getParameter("url"));
+<pre><code>// 设置cookie过期时间为24小时。
+name.setMaxAge(60*60*24);
+url.setMaxAge(60*60*24);
+
+// 在响应头部添加cookie
+response.addCookie( name );
+response.addCookie( url );
+</code></pre>
+<p>%&gt;</p>
+<html>
+<head>
+    <title>设置 Cookie</title>
+</head>
+<body>
+<h1>设置 Cookie</h1>
+<ul>
+    <li><p><b>网站名:</b>
+        <%= request.getParameter("name")%>
+    </p></li>
+    <li><p><b>网址:</b>
+        <%= request.getParameter("url")%>
+    </p></li>
+</ul>
+</body>
+</html>
+复制代码
+<p>7、使用 JSP 读取 Cookie
+想要读取cookie，您就需要调用request.getCookies()方法来获得一个javax.servlet.http.Cookie对象的数组，然后遍历这个数组，使用getName()方法和getValue()方法来获取每一个cookie的名称和值。</p>
+<p>&lt;%@ page contentType=&ldquo;text/html;charset=UTF-8&rdquo; language=&ldquo;java&rdquo; %&gt;
+&lt;%@ page import=&ldquo;java.net.*&rdquo; %&gt;</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>获取 Cookie</title>
+</head>
+<body>
+<%
+    Cookie cookie = null;
+    Cookie[] cookies = null;
+    // 获取cookies的数据,是一个数组
+    cookies = request.getCookies();
+    if( cookies != null ){
+        out.println("<h2> 查找 Cookie 名与值</h2>");
+        for (int i = 0; i < cookies.length; i++){
+            cookie = cookies[i];
+<pre><code>        out.print(&quot;参数名 : &quot; + cookie.getName());
+        out.print(&quot;&lt;br&gt;&quot;);
+        out.print(&quot;参数值: &quot; + URLDecoder.decode(cookie.getValue(), &quot;utf-8&quot;) +&quot; &lt;br&gt;&quot;);
+        out.print(&quot;------------------------------------&lt;br&gt;&quot;);
+    }
+}else{
+    out.println(&quot;&lt;h2&gt;没有发现 Cookie&lt;/h2&gt;&quot;);
+}
+</code></pre>
+<p>%&gt;</p>
+</body>
+</html>
+复制代码
+<p>8、使用JSP删除Cookie
+删除cookie非常简单。如果您想要删除一个cookie，按照下面给的步骤来做就行了：</p>
+<p>获取一个已经存在的cookie然后存储在Cookie对象中。
+将cookie的有效期设置为0。
+将这个cookie重新添加进响应头中。
+9、实例演示
+下面的程序删除一个名为&quot;name&quot;的cookie，当您第二次运行CookieDemo2.jsp时，name 将会为 null。</p>
+<p>&lt;%@ page contentType=&ldquo;text/html;charset=UTF-8&rdquo; language=&ldquo;java&rdquo; %&gt;
+&lt;%@ page import=&ldquo;java.net.*&rdquo; %&gt;</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>获取 Cookie</title>
+</head>
+<body>
+<%
+    Cookie cookie = null;
+    Cookie[] cookies = null;
+    // 获取当前域名下的cookies，是一个数组
+    cookies = request.getCookies();
+    if( cookies != null ){
+        out.println("<h2> 查找 Cookie 名与值</h2>");
+        for (int i = 0; i < cookies.length; i++){
+            cookie = cookies[i];
+            if((cookie.getName( )).compareTo("name") == 0 ){
+                cookie.setMaxAge(0);
+                response.addCookie(cookie);
+                out.print("删除 Cookie: " +
+                        cookie.getName( ) + "<br/>");
+            }
+            out.print("参数名 : " + cookie.getName());
+            out.print("<br>");
+            out.print("参数值: " + URLDecoder.decode(cookie.getValue(), "utf-8") +" <br>");
+            out.print("------------------------------------<br>");
+        }
+    }else{
+        out.println("<h2>没有发现 Cookie</h2>");
+    }
+%>
+</body>
+</html>
+复制代码
+<p>10、图解分析</p>
+<p>11、Session
+HttpSession概述：
+HttpSession是有JavaWeb提供的，用来会话跟踪的类，session是服务器对象，保存在服务器端；</p>
+<p>HttpSession是Servlet三大域对象之一（request、session、application），所以它也有setAttribute()、getAttribute()、removeAttribute()方法；</p>
+<p>HttpSession底层依赖Cookie，或是URL重写。</p>
+<p>HttpSession的作用
+会话范围：会话范围是某个用户从首次访问服务器开始，到该用户关闭浏览器结束； 会话：一个用户对服务器的多次连贯性请求，所谓连贯性请求，就是该用户多次请求中间没有关闭浏览器。</p>
+<p>服务器会为每个客户端创建一个session对象，session就好比客户在服务器端的账户，它们被服务器保存到一个Map中，这个Map被称为session缓存。</p>
+<p>Servlet中得到session对象：HttpSession session = request.getSession();</p>
+<p>JSP中得到session对象：session是jsp内置对象之下，不用创建就可以直接使用。</p>
+<p>12、session域相关方法
+void setAttribute(String name,Object val);</p>
+<p>Object getAttribute(String name);</p>
+<p>void removeAttribute(String name);
+复制代码
+13、session保存用户登录信息
+案例相关页面和Servlet：</p>
+<p>login.jsp：登录页面</p>
+<p>LoginSuccess.jsp：只有登录成功才能访问的页面</p>
+<p>LoginServlet：校验用户是否登录成功</p>
+<p>各页面和Servlet内容：</p>
+<p>login.jsp：提供登录表单，提交表单请求LoginServlet</p>
+<p>LoginServlet：获取请求参数，校验用户是否登录成功</p>
+<p>失败：保存错误信息到request域，转发到login.jsp，在login.jsp中显示request域中的错误信息；</p>
+<p>成功：保存用户信息到session域中，重定向到LoginSuccess.jsp页面，显示session域中的用户信息。</p>
+<p>LoginSuccess.jsp：从session域获取用户信息，如果不存在，显示“您还没有登录”，存在则显示用户信息；</p>
+<p>只要用户没有关闭浏览器，session就一直存在，那么保存在session中的用户信息也就一起存在，那么用户访问LoginSuccess.jsp就会通过</p>
+<p>login.jsp</p>
+<p>&lt;%@ page contentType=&ldquo;text/html;charset=UTF-8&rdquo; language=&ldquo;java&rdquo; %&gt;</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录页面</title>
+</head>
+<body>
+<%
+    //获取cookie的值
+    String name = "";
+    String pwd = "";
+    Cookie[] cs = request.getCookies();
+    if(cs!=null){
+        for(Cookie c : cs){
+            if("username".equals(c.getName())){
+                name = c.getValue();
+            }
+            if("pwd".equals(c.getName())){
+                pwd = c.getValue();
+            }
+        }
+    }
+%>
+<%
+    //获取request信息
+    String message="";
+    String mess = (String)request.getAttribute("message");
+    if(mess!=null){
+        message = mess;
+    }
+%>
+<h1>用户登录</h1>
+<span color="red"><%=message %></span>
+<form action="/LoginServlet" method="post">
+    <p>
+        账号：<input type="text" name="username" value="<%=name %>" />
+    </p>
+    <p>
+        密码：<input type="password" name="pwd" value="<%=pwd %>" />
+    </p>
+    <p>
+        <input type="submit" value="登录">
+    </p>
+</form>
+</body>
+</html>
+复制代码
+LoginServlet.java
+<p>package com.demo.servlet;</p>
+<p>import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+import java.io.IOException;
+@WebServlet(&quot;/LoginServlet&rdquo;)
+public class LoginServlet extends HttpServlet {</p>
+<pre><code>@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    doPost(req,resp);
+}
+
+public void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    //设置请求的字符编码
+    request.setCharacterEncoding(&quot;utf-8&quot;);
+    //接收客户端请求
+    String username = request.getParameter(&quot;username&quot;);
+    String pwd = request.getParameter(&quot;pwd&quot;);
+    //判断是否登录成功
+    if(&quot;admin&quot;.equals(username) &amp;&amp; &quot;1234&quot;.equals(pwd)){
+        //登录成功，把信息保存到cookie中
+        Cookie c1 = new Cookie(&quot;username&quot;,username);
+        Cookie c2 = new Cookie(&quot;pwd&quot;,pwd);
+        c1.setMaxAge(60*60*24);
+        c2.setMaxAge(60*60*24);
+        response.addCookie(c1);
+        response.addCookie(c2);
+        //登录成功，保存用户名到session中，并重定向到LoginSuccess.jsp
+        HttpSession session = request.getSession();
+        session.setAttribute(&quot;username&quot;, username);
+        response.sendRedirect(&quot;/LoginSuccess.jsp&quot;);
+    }else{
+        //转发给客户端“登录失败”
+        request.setAttribute(&quot;message&quot;, &quot;用户信息错误，请重新登录&quot;);
+        request.getRequestDispatcher(&quot;/login.jsp&quot;).forward(request, response);
+    }
+
+}
+</code></pre>
+<p>}
+复制代码
+LoginSuccess.jsp</p>
+<p>&lt;%@ page contentType=&ldquo;text/html;charset=UTF-8&rdquo; language=&ldquo;java&rdquo; %&gt;</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录成功</title>
+</head>
+<body>
+<p>&lt;%
+//获取session信息
+String name = (String)session.getAttribute(&ldquo;username&rdquo;);
+if(name==null){
+//session不存在，转发到登录页面，并提示信息
+request.setAttribute(&ldquo;message&rdquo;, &ldquo;您还没有登录，不能访问页面&rdquo;);
+request.getRequestDispatcher(&quot;/login.jsp&quot;).forward(request, response);
+//重定向到login.jsp，不会显示request提示的信息
+//response.sendRedirect(&quot;/login/login.jsp&quot;);
+return;
+}
+%&gt;</p>
+<h1>登录成功</h1>
+你好<%=name %>，欢迎登录！
+</body>
+</html>
+复制代码
+<p>14、隐藏表单域
+一个网络服务器可以发送一个隐藏的HTML表单域和一个唯一的session ID，就像下面这样：</p>
+<input type="hidden" name="sessionid" value="12345">
+复制代码
+这个条目意味着，当表单被提交时，指定的名称和值将会自动包含在GET或POST数据中。每当浏览器发送一个请求，session_id的值就可以用来保存不同浏览器的轨迹。
+<p>这种方式可能是一种有效的方式，但点击标签中的超链接时不会产生表单提交事件，因此隐藏表单域也不支持通用会话跟踪。</p>
+<p>15、重写URL
+您可以在每个URL后面添加一些额外的数据来区分会话，服务器能够根据这些数据来关联session标识符。</p>
+<p>举例来说，w3cschool.cc/file.htm;se… session标识符为sessionid=12345，服务器可以用这个数据来识别客户端。</p>
+<p>相比而言，重写URL是更好的方式来，就算浏览器不支持cookies也能工作，但缺点是您必须为每个URL动态指定session ID，就算这是个简单的HTML页面。</p>
+<p>session依赖Cookie，目的是让客户端发出请求时归还sessionID，这样才能找到对应的session；
+如果客户端禁用了Cookie，那么就无法得到sessionID，那么session也就无用了；
+也可以使用URL重写来替代Cookie
+让网站的所有超链接、表单中都添加一个特殊的请求参数，即sessionID；
+这样服务器可以通过获取请求参数得到sessionID，从而找到session对象；
+response.encodeURL(String url)该方法会对url进行智能的重写，当请求中没有归还session这个Cookie，那么该方法会重写URL，否则不重写，当然url必须是指向本站的url。
+16、session对象
+除了以上几种方法外，JSP利用servlet提供的HttpSession接口来识别一个用户，存储这个用户的所有访问信息。</p>
+<p>默认情况下，JSP允许会话跟踪，一个新的HttpSession对象将会自动地为新的客户端实例化。禁止会话跟踪需要显式地关掉它，通过将page指令中session属性值设为false来实现，就像下面这样：</p>
+<p>&lt;%@ page session=&ldquo;false&rdquo; %&gt;
+复制代码
+JSP引擎将隐含的session对象暴露给开发者。由于提供了session对象，开发者就可以方便地存储或检索数据。</p>
+<p>下表列出了session对象的一些重要方法：</p>
+<p>17、Session与Cookie的对比</p>
+<p>18、HttpSession原理
+服务器不会马上给你创建session，在第一次获取session时，即reques.getSession()方法执行时，才会创建session。</p>
+<p>获取Cookie中的JSESSIONID：</p>
+<p>如果sessionID不存在，创建session，把session保存起来，把新创建的sessionID保存到Cookie中；
+如果sessionID存在，创建sessionID查找session对象，如果没有查找到，创建session，把session保存起来，把新创建的sessionID保存到Cookie中；
+如果sessionID存在，通过sessionID查找到了session对象，那么就不会再创建session对象了；
+如果创建新的session，浏览器会得到一个包含了sessionID的Cookie，这个Cookie的生命为-1，即只在浏览器内存中存在，如果不关闭浏览器，那么Cookie就会一直存在；
+下次请求时，再执行request.getSession()方法时，因为可以通过Cookie中的sessionID找到session对象，所以与上一次请求使用的是同一个session对象。
+request.getSession(false)：如果Cookie不存在，session也不存在，那么返回NULL，而不会创建session对象；
+request.getSession(true)/request.getSession()：两个方法一样，当session对象不存在时，创建session对象
+String getId() 获取sessionID；
+int getMaxInactiveInterval()获取session最大的不活动时间（秒），默认为30分钟，当session在30分钟内没有使用，那么Tomcat就会在session池中移除；
+void invalidate() 让session失效，调用这个方法会让session失效，当session失效后，客户端再次请求，服务器会给客户端一个新的session；
+boolean isNew() 查看session是否为新的，判断是新创建的，还是从Cookie获取的；</p>
+    </div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2018-07-02</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/amp/posts/2018/07/02/java-summary-2018-1/" data-title="java 开发常用错误集锦" data-via="xxxx" data-hashtags="Java"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/amp/posts/2018/07/02/java-summary-2018-1/" data-hashtag="Java"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/amp/posts/2018/07/02/java-summary-2018-1/" data-title="java 开发常用错误集锦" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/amp/posts/2018/07/02/java-summary-2018-1/" data-title="java 开发常用错误集锦"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/amp/posts/2018/07/02/java-summary-2018-1/" data-title="java 开发常用错误集锦" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://localhost:1313/amp/posts/2018/07/02/java-summary-2018-1/" data-title="java 开发常用错误集锦" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/amp/posts/2018/07/02/java-summary-2018-1/" data-title="java 开发常用错误集锦" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/amp/posts/2018/07/02/java-summary-2018-1/" data-title="java 开发常用错误集锦"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/">Tags</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/amp/posts/2018/06/30/%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88/" class="prev" rel="prev" title="模型融合"><i class="fas fa-angle-left fa-fw"></i>模型融合</a>
+            <a href="/amp/posts/2018/07/04/java-base-run-order/" class="next" rel="next" title="Java 静态块、构造块、构造函数执行顺序">Java 静态块、构造块、构造函数执行顺序<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article>
+<div class="adsblock">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-73+ed+2i-1n-4w"
+        data-ad-client="ca-pub-2665873967488848" data-ad-slot="2692397084"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+</main>
+
+<amp-analytics type="googleanalytics">
+    <script type="application/json">
+        {
+            "vars": {
+                "account": ""
+            },
+            "triggers": {"trackEvent":{"on":"click","request":"event","selector":"body","vars":{"eventAction":"click","eventCategory":"body-click"}},"trackPageview":{"on":"visible","request":"pageview"}}
+        }
+    </script>
+</amp-analytics>
+
+<amp-auto-ads type="adsense"
+              data-ad-client="ca-pub-2665873967488848">
+</amp-auto-ads>
+</body>
+
+</html>

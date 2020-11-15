@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+
+
+
+<html amp lang="zh-CN" class="no-js">
+<head><script src="/livereload.js?port=1313&amp;mindelay=10&amp;v=2" data-no-instant defer></script>
+  <title>微服务</title>
+  <meta charset="utf-8">
+
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script><script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+
+
+
+  <link rel="canonical" href="http://localhost:1313/posts/2020/03/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="144x144">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <meta name="theme-color" content="#000000" />
+
+  
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "桑河一榆",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/",
+          "name": "amp"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/",
+          "name": "posts"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/",
+          "name": "2020"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/03\/",
+          "name": "03"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/03\/26\/",
+          "name": "26"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  7 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/03\/26\/%E5%BE%AE%E6%9C%8D%E5%8A%A1\/",
+          "name": "%E5%BE%AE%E6%9C%8D%E5%8A%A1"
+        }
+    }]
+}
+</script>
+
+
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        /**
+* stylesheet.html
+* ---------------
+* This is the stylesheet that gets injected as a fallback if no layouts/partials/stylesheet.html file is available
+* in your project file.
+*
+* For further details, please have a look at:
+* https://gohugo-amp.gohugohq.com/install/
+*
+**/
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px
+dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em
+0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em
+40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html
+input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html
+input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px
+solid silver;margin:0 2px;padding:.35em .625em
+.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}td,th{padding:0}*{box-sizing:border-box}button,input,select,textarea{font:13px/1.4
+Helvetica,arial,freesans,clean,sans-serif}a{color:#4183c4;text-decoration:none}a:active,a:focus,a:hover{text-decoration:underline}.rule,hr{height:0;margin:15px
+0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid
+#ddd}.rule:after,.rule:before,hr:after,hr:before{display:table;content:""}.rule:after,hr:after{clear:both}fieldset{padding:0;margin:0;border:0}label{font-size:13px;font-weight:700}#adv_code_search
+.search-page-label,input[type=email],input[type=number],input[type=password],input[type=tel],input[type=text],input[type=url],textarea{min-height:34px;padding:7px
+8px;font-size:13px;color:#333;vertical-align:middle;background-color:#fff;background-repeat:no-repeat;background-position:100%;border:1px
+solid #ccc;border-radius:3px;outline:none;box-shadow:inset 0 1px 2px rgba(0,0,0,.075)}#adv_code_search
+.focus.search-page-label,#adv_code_search .search-page-label:focus,.focused
+.drag-and-drop,input[type=email].focus,input[type=email]:focus,input[type=number].focus,input[type=number]:focus,input[type=password].focus,input[type=password]:focus,input[type=tel].focus,input[type=tel]:focus,input[type=text].focus,input[type=text]:focus,input[type=url].focus,input[type=url]:focus,textarea.focus,textarea:focus{border-color:#51a7e8;box-shadow:inset
+0 1px 2px rgba(0,0,0,.075),0 0 5px
+rgba(81,167,232,.5)}.input-contrast,input.input-contrast{background-color:#fafafa}.input-contrast:focus,input.input-contrast:focus{background-color:#fff}:-moz-placeholder,::-webkit-input-placeholder{color:#aaa}::-webkit-validation-bubble-message{font-size:12px;color:#fff;background:#9c2400;border:0;border-radius:3px;-webkit-box-shadow:1px
+1px 1px
+rgba(0,0,0,.1)}input::-webkit-validation-bubble-icon{display:none}::-webkit-validation-bubble-arrow{background-color:#9c2400;border:1px
+solid #9c2400;-webkit-box-shadow:1px 1px 1px
+rgba(0,0,0,.1)}.absent{color:#c00}.anchor{position:absolute;top:0;bottom:0;left:0;display:block;padding-right:6px;padding-left:30px;margin-left:-30px}.anchor:focus{outline:none}h1,h2,h3,h4,h5,h6{position:relative;margin-top:1em;margin-bottom:16px;font-weight:700;line-height:1.4}h1
+.octicon-link,h2 .octicon-link,h3 .octicon-link,h4 .octicon-link,h5 .octicon-link,h6
+.octicon-link{display:none;color:#000;vertical-align:middle}h1:hover .anchor,h2:hover .anchor,h3:hover .anchor,h4:hover
+.anchor,h5:hover .anchor,h6:hover
+.anchor{height:1em;padding-left:8px;margin-left:-30px;line-height:1;text-decoration:none}h1:hover .anchor
+.octicon-link,h2:hover .anchor .octicon-link,h3:hover .anchor .octicon-link,h4:hover .anchor .octicon-link,h5:hover
+.anchor .octicon-link,h6:hover .anchor .octicon-link{display:inline-block}h1 code,h1 tt,h2 code,h2 tt,h3 code,h3 tt,h4
+code,h4 tt,h5 code,h5 tt,h6 code,h6
+tt{font-size:inherit}h1{font-size:2.25em;line-height:1.2}h1,h2{padding-bottom:.3em;border-bottom:1px solid
+#eee}h2{font-size:1.75em;line-height:1.225}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5,h6{font-size:1em}h6{color:#777}blockquote,dl,ol,p,pre,table,ul{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px
+0;background-color:#e7e7e7;border:0 none}ol,ul{padding-left:2em}ol.no-list,ul.no-list{padding:0;list-style-type:none}ol
+ol,ol ul,ul ol,ul ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl,dl dt{padding:0}dl
+dt{margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0
+16px;margin-bottom:16px}blockquote{padding:0 15px;color:#777;border-left:4px solid
+#ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}table
+th{font-weight:700}table td,table th{padding:6px 13px;border:1px solid #ddd}table
+tr{background-color:#fff;border-top:1px solid #ccc}table
+tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;box-sizing:border-box}span.frame,span.frame>span{display:block;overflow:hidden}span.frame>span{float:left;width:auto;padding:7px;margin:13px
+0 0;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0
+0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px
+auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0
+auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px
+0 0;overflow:hidden;text-align:right}span.align-right span
+img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left
+span{margin:13px 0
+0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px
+auto
+0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:"\00a0"}code
+br,tt br{display:none}del
+code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight
+pre,pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.highlight
+pre{margin-bottom:0;word-break:normal}pre,pre code,pre tt{word-wrap:normal}pre code,pre
+tt{display:inline;max-width:none;padding:0;margin:0;overflow:initial;line-height:inherit;background-color:transparent;border:0}pre
+code:after,pre code:before,pre tt:after,pre
+tt:before{content:normal}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav
+ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{text-decoration:none}ins,mark{background-color:#ff9;color:#000}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px
+dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px
+solid #ccc;margin:1em
+0;padding:0}input,select{vertical-align:middle}body{background-color:#fff;color:#123;font-size:14px;font-family:Helvetica
+Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif}main{max-width:1180px;padding:30px;margin:0 auto}@media
+(min-width:900px){main h1+p{font-size:2em}}h1{font-weight:300;font-size:2em;line-height:1.4em;margin:.5em
+0;font-family:Georgia,serif;-webkit-transition:color .4s;transition:color
+.4s}h2{font-size:2em}h2,h3{font-weight:300;margin:30px
+0}h3{font-size:1.8em}h4{font-size:1.6em}h4,h5{font-weight:300}h5{font-size:1.2em}h6{font-weight:300;font-size:1em}p{line-height:1.4em;font-size:1.2em;margin:15px
+0}blockquote{border-left:5px solid
+#ff1d55;background-color:#ffe9ee;padding:1em;margin-bottom:1em}.lightbox{background-color:rgba(3,121,196,.4);min-height:100vh;min-width:100vw;padding:30px}code{font:12px
+Consolas,Liberation Mono,Menlo,Courier,monospace}p>code{color:#ff1d55}pre
+code{display:block;background-color:#f7f7f7;padding:15px;overflow:auto;color:#123;line-height:1.4em}a{color:#ff1d55;text-decoration:none;-webkit-transition:color
+.4s,background .4s;transition:color .4s,background .4s}a:hover{color:#e9003a}ol,ul{margin:7.5px;padding:7.5px 15px}ol
+li,ul li{margin:7.5px 15px}.doc-parameters{list-style-type:none;padding:0}.doc-parameters
+li{display:block;margin:0;margin-bottom:15px}.doc-parameters .example,.doc-parameters blockquote{border-left:5px solid
+#0379c4;background-color:#96d5fd;color:#123;line-height:1em;font-size:1em;padding:1em;margin:0}.doc-parameters
+.example{background-color:#c8e9fe}.doc-parameters
+.parameter{display:block;padding:1em;background-color:#0379c4;color:#fff;margin:0}.doc-parameters .parameter
+strong{display:inline-block;padding:0
+.5em;border-radius:.25em;line-height:2em;background-color:#025a92}hr{height:.25em;padding:0;margin:24px
+0;background-color:#f7f7f7;border:0}.teaser{display:-webkit-box;display:-ms-flexbox;display:flex;text-align:left;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.teaser
+aside{-ms-flex-preferred-size:60%;flex-basis:60%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:30px}@media
+(max-width:700px){.teaser aside{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content{-ms-flex-preferred-size:40%;flex-basis:40%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;color:dimgray;font-size:12px}@media
+(max-width:700px){.teaser .content{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content.content-full{-ms-flex-preferred-size:100%;flex-basis:100%}.teaser .content
+h3{font-size:14px;text-transform:uppercase;font-weight:600;color:#123}.main-index{text-align:center}.main-index
+amp-img{margin:15px auto;width:50%}@media (min-width:900px){.main-index
+p{font-size:2em}}.breadcrumbs{padding:1em;background-color:#f7f7f7}.breadcrumbs
+ul{display:block;margin:0;padding:0}.breadcrumbs ul li{display:inline-block;margin:0 .5em}.breadcrumbs ul
+li:before{content:' / ';position:relative;margin-left:-.5em;color:dimgray}.breadcrumbs ul li
+a{color:dimgray}.breadcrumbs ul li:last-child
+a{color:#ff1d55}header{background-color:#000000;color:#fff;padding:30px;position:relative}header
+.brand{display:inline-block;position:absolute;left:30px;top:20px;line-height:15px;text-transform:uppercase;padding:7.5px;font-size:1.4em}header
+.brand:hover{background-color:#ff1d55;color:#fff}header
+a{color:#fff;text-decoration:none;border-radius:7.5px;padding:7.5px}header
+a:hover{text-decoration:none;background-color:#fff;color:#ff1d55}header nav
+ul{padding:0;margin:0;display:block;text-align:right}header nav ul li{padding:0;margin:0
+7.5px;display:inline-block}header nav ul li.hamburger{display:none}header nav ul li.hamburger
+button{position:absolute;right:30px;top:20px;border:0;background-color:#fff;color:#ff1d55;font-weight:700;border-radius:50%;width:30px;height:30px;overflow:hidden;text-align:center;padding:0;margin:0}@media
+(max-width:900px){header nav ul li{display:none}header nav ul
+li.hamburger{display:inline-block}}.sidebarNavigation{width:210px;max-width:95%}.sidebarNavigation
+ul{padding:0;margin:0}.sidebarNavigation ul li{display:block}.sidebarNavigation ul li
+a{display:block;line-height:1.4em;padding:7.5px}footer{margin:60px
+auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;max-width:1180px;padding:30px;font-size:12px}footer
+a:hover{text-decoration:none}footer strong{text-transform:uppercase;margin-bottom:15px;display:block}footer strong
+a{color:#1d1d1d}footer ul{display:block;padding:0;margin:0}footer ul li{display:block;line-height:1.4em;padding:7.5px
+0;margin:0}footer ul li a{color:dimgray}footer
+.quarter-section{margin-bottom:30px;-ms-flex-preferred-size:25%;flex-basis:25%}@media (max-width:900px){footer
+.quarter-section{-ms-flex-preferred-size:33%;flex-basis:33%}}@media (max-width:700px){footer
+.quarter-section{-ms-flex-preferred-size:50%;flex-basis:50%}}@media (max-width:500px){footer
+.quarter-section{-ms-flex-preferred-size:100%;flex-basis:100%}}.boxes{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:12px}.boxes
+.box{-ms-flex-preferred-size:30%;flex-basis:30%;background-color:#f7f7f7;padding:30px;margin:7.5px
+0;text-align:left;font-size:12px}.boxes .box h3{font-size:12px;line-height:1em;padding:0;margin:0}.boxes .box
+a{padding:0;color:#ff1d55}.boxes .box p{color:dimgray;font-size:12px;margin:7.5px 0}@media (max-width:900px){.boxes
+.box{-ms-flex-preferred-size:45%;flex-basis:45%}}@media (max-width:500px){.boxes
+.box{-ms-flex-preferred-size:100%;flex-basis:100%}}
+
+.fixed-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+}
+
+amp-img.contain img {
+  object-fit: contain;
+}
+
+.footnotes {
+  overflow-wrap: break-word;
+}
+
+    </style>
+
+  <script data-ad-client="ca-pub-2665873967488848" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script async custom-element="amp-auto-ads"
+          src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+  </script>
+</head>
+
+<body>
+
+
+<main>
+  <div class="toc" id="toc-auto">
+    <h2 class="toc-title">目录</h2>
+    <div class="toc-content" id="toc-content-auto"></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">微服务</h1><div class="post-meta">
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/"><i class="far fa-folder fa-fw"></i>Categories</a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-26">2020-03-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 19486 字&nbsp;
+            <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 39 分钟&nbsp;<span id="/amp/posts/2020/03/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="leancloud_visitors" data-flag-title="微服务">
+                <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+            </span>&nbsp;</span>
+        </div>
+    </div><div class="details toc" id="toc-static" kept="">
+        <div class="details-summary toc-title">
+            <span>目录</span>
+            <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+    </div><div class="content" id="content">
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        <p>微服务架构强调的第一个重点就是业务系统需要彻底的组件化和服务化，原有的单个业务系统会拆
+分为多个可以独立开发，设计，运行和运维的小应用。这些小应用之间通过服务完成交互和集成。
+每个小应用从前端web ui，到控制层，逻辑层，数据库访问，数据库都完全是独立的一套。在这里
+我们不用组件而用小应用这个词更加合适，每个小应用除了完成自身本身的业务功能外，重点就是
+还需要消费外部其它应用暴露的服务，同时自身也将自身的能力朝外部发布为服务。</p>
+<p><strong>如果一句话来谈SOA和微服务的区别，即微服务不再强调传统SOA架构里面比较重的ESB企业服务
+总线，同时SOA的思想进入到单个业务系统内部实现真正的组件化。</strong></p>
+<p>把这个核心搞清楚后，再来看下网上找到的对微服务架构的一些定义和阐述：</p>
+<blockquote>
+<p>微服务可以在“自己的程序”中运行，并通过“轻量级设备与HTTP型API进行沟通”。关键在于
+该服务可以在自己的程序中运行。通过这一点我们就可以将服务公开与微服务架构（在现有系统
+中分布一个API）区分开来。在服务公开中，许多服务都可以被内部独立进程所限制。如果其中
+任何一个服务需要增加某种功能，那么就必须缩小进程范围。在微服务架构中，只需要在特定的
+某种服务中增加所需功能，而不影响整体进程。
+微服务不需要像普通服务那样成为一种独立的功能或者独立的资源。定义中称，微服务是需要与
+业务能力相匹配，这种说法完全正确。不幸的是，仍然意味着，如果能力模型粒度的设计是错误
+的，那么，我们就必须付出很多代价。如果你阅读了Fowler的整篇文章，你会发现，其中的指导
+建议是非常实用的。在决定将所有组件组合到一起时，开发人员需要非常确信这些组件都会有所
+改变，并且规模也会发生变化。服务粒度越粗，就越难以符合规定原则。服务粒度越细，就越能
+够灵活地降低变化和负载所带来的影响。然而，利弊之间的权衡过程是非常复杂的，我们要在配
+置和资金模型的基础上考虑到基础设施的成本问题。</p>
+</blockquote>
+<p>首先对于应用本身暴露出来的服务，是和应用一起部署的，即服务本身并不单独部署，服务本身就
+是业务组件已有的接口能力发布和暴露出来的。了解到这点我们就看到一个关键，即我们在进行单
+个应用组件设计的时候，本身在组件内部就会有很大接口的设计和定义，那么这些接口我们可以根
+据和外部其它组件协同的需要将其发布为微服务，而如果不需要对外协同我们完全可以走内部API接
+口访问模式提高效率。
+其次，微服务架构本身来源于互联网的思路，因此组件对外发布的服务强调了采用HTTP Rest API
+的方式来进行。这个也可以看到在互联网开放能力服务平台基本都采用了Http API的方式进行服务
+的发布和管理。从这个角度来说，组件超外部暴露的能力才需要发布为微服务，其本身也是一种封
+装后的粗粒度服务。而不是将组件内部的所有业务规则和逻辑，组件本身的底层数据库CRUD操作
+全部朝外部发布。否则将极大的增加服务的梳理而难以进行整体服务管控和治理。
+**微服务的基本思想在于考虑围绕着业务领域组件来创建应用，这些应用可以独立进行开发、管理和加速。在分散的组件中使用微服务云架构和平台部署、管理和服务功能交付变得更加简单。</p>
+<p>对于互联网谈到微服务架构一定会谈到DevOps即开发测试和部署运维的一体化。当我们的单体应用以及拆分位多个小应用后，虽然整体架构可以松耦合和可扩展，但是如果拆分的组件越多，这些组件之间本身的集成和部署运维就越复杂。即任何一个组件，当他依赖的外部其它应用组件越多的
+时候，整个集成，部署和联调测试的过程就越复杂。这些如果完全靠我们手工去完成一是增加工作
+量，一是增加出错概率。
+原来谈组件化开发谈的最多的是单个组件的持续集成，包括配置环境集成，自动打包部署，自动化
+的冒烟测试等。对于微服务架构下首先仍然是要做好单个组件本身的持续集成，其次在这个基础上
+增加了多个组件的打包部署和组件间的集成。里面的核心思想就是Devops的思路，希望能够实现
+开发设计到部署运维的一体化。
+由于微服务架构里面强调了单个组件本身是可以在独立的进程里面运行，各个组件之间在部署的时
+候就能够做到进程级别的隔离。那么一台服务器我们可能需要初始化几十个甚至更多的进程来进行
+应用组件的部署。为了保持进程的隔离性，我们可以用虚拟机，但是当几十个进程都完全用独立的
+虚拟机就不现实的，而这个问题的解决刚好就是利用PaaS平台里面的轻量Docker容器来做这个事
+情，每个Docker是独立的容器刚好又完全做到进程级别的隔离，资源占用率又最小，这些特点刚好
+满足微服务架构的开发测试和自动化部署。
+前面这些问题思考清楚后就是考虑所有暴露的微服务是否需要一个统一的服务管控和治理平台，按
+照当前微服务架构的整体思路，虽然单个服务的实现和发布仍然是在组件内部完成的，但是这些组
+件暴露的服务本身的调用情况，服务本身的安全，日志和流量控制等仍然需要一个统一的SOA服务
+管理平台来完成。
+由于微服务尽量都是通过HTTP API的方式暴露出去的，因此这种服务管理平台不需要像传统企业内
+部的ESB服务总线这么重。但是最基本的服务注册，服务代理，服务发布，服务简单的路由，安全
+访问和授权，服务调用消息和日志记录这些功能还是需要具备。类似淘宝的Dubbo架构，即可以做
+为微服务架构下的服务管控平台。
+对于这种服务管控平台，核心需要讨论的就是服务每次调用本身的消息传递，输入和输出日志是否
+需要记录，当前就有两种做法，一种是不记录，管理平台只负责服务注册和目录发布，安全授权，
+实际的服务访问仍然是两个组件之间的点对点连接完成，这种方式下整个架构下获取更高的性能，
+同时服务管理平台也不容易成为大并发服务访问下的单点瓶颈；另外一种方式就是完全记录，在这
+种方式下就需要考虑服务管理平台本身的集群化不是，高并发下的性能问题。而个人建议最好的方
+式还是SOA服务管理平台应该提供两种管理能力，同时仅仅对核心的需要Log日志的服务进行日志
+记录，而其它服务只提供服务目录和访问控制即可。</p>
+<p>随着以 Dubbo、Spring Cloud 等框架为代表的分布式服务调用和治理工具的大行其道，以及以 Docker、Kubernetes 等容器技术的日渐成熟，微服务架构（Microservices Architecture）毫无疑问是近年来最热门的一种服务化架构模式。所谓微服务，就是一些具有足够小的粒度、能够相互协作且自治的服务体系。正因为每个微服务都比较简单，仅关注于完成一个业务功能，所以具备技术、业务和组织上的优势 [1]。</p>
+<p>本文由 简悦 SimpRead 转码， 原文地址 <a href="https://www.toutiao.com/i6712191658521264647/?w2atif=1&amp;channel=__all__">https://www.toutiao.com/i6712191658521264647/?w2atif=1&amp;channel=__all__</a></p>
+<p>另一方面，随着 Spring 5 的正式发布，我们引来了响应式编程（Reactive Programming）的全新发展时期。Spring 5 中内嵌了响应式 Web 框架、响应式数据访问、响应式消息通信等多种响应式组件，从而极大地简化了响应式应用程序的开发过程和难度。</p>
+<p>本章作为全书的开篇，将对微服务架构和响应式系统（Reactive System）的核心概念做简要介绍，同时给出两者之间的整合点，即如何构建响应式微服务架构。在本章最后，我们也会给出全书的组织架构以总领全书。</p>
+<p>响应式系统核心概念
+在本节中，我们将带领大家进入响应式系统的世界。为了让大家更好地理解响应式编程和响应式系统的核心概念，我们将先从传统编程方法出发逐步引出响应式编程方法。同时，我们还将通过响应式宣言（Reactive Manifesto）了解响应式系统的基本特性和设计理念。</p>
+<p>从传统编程方法到响应式编程方法
+在电商系统中，订单查询是一个典型的业务场景。用户可以通过多种维度获取自己已下订单的列表信息和各个订单的明细信息。我们就通过订单查询这一特定场景来分析传统编程方法和响应式编程方法之间的区别。</p>
+<p>1．订单查询场景的传统方法
+在典型的三层架构中，图 1-1 展示了基于传统实现方法的订单查询场景时序图。一般用户会使用前端组件所提供的操作入口进行订单查询，然后该操作入口会调用后台系统的服务层，服务层再调用数据访问层，进而访问数据库，数据从数据库中获取之后逐层返回，最后显示在包括前端服务或用户操作界面在内的前端组件上。</p>
+<p>图 1-1 订单查询场景的传统实现方法时序图</p>
+<p>显然，在图 1-1 所展示的整个过程中，前端组件通过主动拉取的方式从数据库中获取数据。如果用户不触发前端操作，那么就无法获取数据库中的数据状态。也就是说，前端组件对数据库中的任何数据变更一无所知。</p>
+<p>2．订单查询场景的响应式方法
+主动拉取数据的方式在某些场景下可以运作得很好，但如果我们希望数据库中的数据一有变化就通知到前端组件，这种方式就不是很合理。这种场景下，我们希望前端组件通过注册机制获取数据变更的事件，图 1-2 展示了这一过程。</p>
+<p>在图 1-2 中，我们并不是直接访问数据库来获取数据，而是订阅了 OrderChangedEvent 事件。当订单数据发生任何变化时，系统就会生成这一事件，然后通过一定的方式传播出来。而订阅了该事件的服务就会捕获该事件，从而通过前端组件响应该事件。事件处理的基本步骤涉及对某个特定事件进行订阅，然后等待事件的发生。如果不需要再对该事件做出响应，我们就可以取消对事件的订阅。</p>
+<p>图 1-2 订单查询场景的响应式实现方法时序图</p>
+<p>图 1-2 体现的是响应式系统中一种变化传递（Propagation Of Change）思想，即当数据变化之后，会像多米诺骨牌一样，导致直接和间接引用它的其他数据均发生相应变化。一般而言，生产者只负责生成并发出事件，然后消费者来监听并负责定义如何处理事件的变化传递方式。</p>
+<p>显然，这些事件连起来会形成一串数据流（Data Stream），如果我们能够及时对数据流的每一个事件做出响应，就会有效提高系统的响应能力。基于数据流是响应式系统的另一个核心特点。</p>
+<p>我们再次回到图 1-1，如果从底层数据库驱动，经过数据访问层到服务层，最后到前端组件的这个服务访问链路全部都采用响应式的编程方式，从而搭建一条能够传递变化的管道，这样一旦数据库中的数据有更新，系统的前端组件上就能相应地发生变化。而且，当这种变化发生时，我们不需要通过各种传统调用方式来传递这种变化，而是由搭建好的数据流自动进行传递。</p>
+<p>3．传统方法与响应式方法的对比
+图 1-1 展示的传统方法和图 1-2 展示的响应式方法具有明显的差异性，我们分别从处理过程、线程管理和伸缩性角度做简要对比。</p>
+<p>（1）处理过程</p>
+<p>传统开发方式下，我们拉取（Pull）数据的变化，这意味着整个过程是一种间歇性、互不相关的处理过程。前端组件不关心数据库中的数据是否有变化。</p>
+<p>在响应式开发方式下，一旦对事件进行注册，处理过程只有在数据变化时才会被触发，类似一种推（Push）的工作方式。</p>
+<p>（2）线程管理</p>
+<p>在传统开发方式下，线程的生命周期比较长。在线程存活的状态下，该线程所使用的资源都会被锁住。当服务器在同时处理多个线程时，就会存在资源的竞争问题。</p>
+<p>在响应式开发方式下，生成事件和消费事件的线程的存活时间都很短，所以资源之间存在较少的竞争关系。</p>
+<p>（3）伸缩性</p>
+<p>传统开发方式下，系统伸缩性涉及数据库和应用服务器的伸缩，一般我们需要专门采用一些服务器架构和资源来应对伸缩性需求。</p>
+<p>在响应式开发方式下，因为线程的生命周期很短，同样的基础设施可以处理更多的用户请求。同时，响应式开发方式同样支持传统开发方式下的各种伸缩性实现机制，并提供了更多的分布式实现选择。图 1-3 展示了事件处理与系统伸缩性之间的关系。</p>
+<p>图 1-3 事件处理与系统伸缩性示意图</p>
+<p>在图 1-3 中，显然 Web 应用程序和事件处理程序可以分别进行伸缩，这为伸缩性实现机制提供更多的选型余地。</p>
+<p>响应式宣言与响应式系统
+如同业界的其他宣言一样，响应式宣言是一组设计原则，符合这些原则的系统可以认为是响应式系统。同时，响应式宣言也是一种架构风格，是一种关于分布式环境下系统设计的思考方式，响应式系统也是具备这一架构风格的系统。</p>
+<p>1．响应式系统特性
+响应式宣言给出了响应式系统所应该具备的特性，包括即时响应性（Responsive）、回弹性（Resilient）、弹性（Elastic）以及消息驱动（Message Driven）。具备这些特性的系统可以称为响应式系统。图 1-4 给出了响应式宣言的图形化描述。</p>
+<p>图 1-4 响应式宣言（来自响应式宣言官网）</p>
+<p>在图 1-4 中，响应式宣言认为，响应式系统的价值在于提供了即时响应性、可维护（Maintainable）和扩展性（E 意味着可以快速地检测到问题并且有效地对其进行处理。即时响应的系统专注于提供快速而一致的响应时间，确立可靠的反馈上限，以提供一致的服务质量。这种一致的行为转而将简化错误处理、建立最终用户的信任，并促使用户与系统做进一步互动。</p>
+<p>（2）回弹性</p>
+<p>回弹性指的是系统在出现失败时依然保持即时响应性。这不仅适用于高可用的、任务关键型系统——任何不具备回弹性的系统都将会在发生失败之后丢失即时响应性。回弹性是通过复制、遏制、隔离以及委托来实现的。失败的扩散被遏制在了每个组件内部，与其他组件相互隔离，从而确保系统某部分的失败不会危及整个系统，并能独立恢复。每个组件的恢复都被委托给了另一个内部或外部组件。此外，在必要时可以通过复制来保证高可用性。因此，组件的客户端不再承担组件失败的处理。</p>
+<p>（3）弹性</p>
+<p>弹性指的是系统在不断变化的工作负载之下依然保持即时响应性。响应式系统可以对输入的速率变化做出反应，比如，通过增加或者减少被分配用于服务这些输入的资源。这意味着设计上并没有竞争点和中央瓶颈，系统得以进行组件的分片或者复制，并在它们之间分布输入。通过提供相关的实时性能指标，响应式系统能支持预测式以及响应式的伸缩算法。这些系统可以在常规的硬件以及软件平台上实现高效的弹性。</p>
+<p>（4）消息驱动</p>
+<p>消息驱动指的是响应式系统依赖异步的消息传递，从而确保松耦合、隔离、位置透明的组件之间有着明确边界。这一边界还提供了将失败作为消息委托出去的手段。使用显式的消息传递，可以通过在系统中塑造并监视消息流队列，并在必要时应用背压，从而实现负载管理、弹性以及流量控制。使用位置透明的消息传递作为通信的手段，使得跨集群或者在单个主机中使用相同的结构成分和语义来管理失败成为了可能。非阻塞的通信使得接收者可以只在活动时才消耗资源，从而减少系统开销。</p>
+<p>2．响应式的维度
+响应式的概念还体现在不同维度上，包含响应事件、响应压力、响应错误和响应用户。</p>
+<p>（1）响应事件</p>
+<p>基于消息驱动机制，响应式系统可以对事件做出快速响应。</p>
+<p>（2）响应压力</p>
+<p>响应式系统可以在不同的系统压力下进行灵活响应。当压力较大时，使用更多的资源；而当压力变小时，则释放不需要的资源。</p>
+<p>（3）响应错误</p>
+<p>响应式系统可以优雅地处理错误，监控组件的可用性，并在必要时冗余组件。</p>
+<p>（4）响应用户</p>
+<p>响应式系统一方面能够积极响应用户请求，但当消费者没有订阅事件时，就不会浪费资源进行不必要的处理。</p>
+<p>剖析微服务架构
+目前，微服务架构已经成为一种主流的软件开发方法论，它把一种特定的软件应用设计方法描述为能够独立部署的服务套件。本节将对微服务设计原理与架构做精简而全面的介绍。</p>
+<p>分布式系统与微服务架构
+微服务架构首先表现为一种分布式系统（Distributed System），而分布式系统是传统单块系统（Monolith System）的一种演进。</p>
+<p>1．单块系统
+在软件技术发展过程的很长一段时间内，软件系统都表现为一种单块系统。时至今日，很多单块系统仍然在一些行业和组织中得到开发和维护。所谓单块系统，简单讲就是把一个系统所涉及的各个组件都打包成一个一体化结构并进行部署和运行。在 Java EE 领域，这种一体化结构很多时候就体现为一个 WAR 包，而部署和运行的环境就是以 Tomcat 为代表的各种应用服务器。</p>
+<p>单块系统有其存在和发展的固有优势。当团队规模并不是太大的时候，一个单块应用可以由一个开发者团队进行独立维护。该团队的成员能够对单块应用进行快速学习、理解和修改，因为其结构非常简单。同时，因为单块系统的表现形式就是一个独立的 WAR 包，想要对它进行集成、部署以及实现无状态集群相对也比较简单，通常只要采用负载均衡机制并运行该单块系统的多个实例，就能达到系统伸缩性要求。</p>
+<p>但在另一方面，随着公司或者组织业务的不断扩张、业务结构的不断变化以及用户量的不断增加，单块系统的优势已无法适应互联网时代的快速发展，面临着越来越多的挑战，例如，如何处理业务复杂度、如何防止代码腐化、如何处理团队协作问题以及如何应对系统伸缩性问题 [1]。针对以上集中式单块系统所普遍存在的问题，基本的解决方案就要依赖于分布式系统的合理构建。</p>
+<p>2．分布式系统
+所谓分布式系统，是指硬件或软件组件分布在不同的网络计算机上，彼此通过一定的通信机制进行交互和协调的系统。我们从这个定义中可以看出分布式系统包含两个区别于单块系统的本质性特征：一个是网络，分布式系统的所有组件都位于网络之中，对互联网应用而言，则位于更为复杂的互联网环境中；另一个是通信和协调，与单块系统不同，位于分布式系统中的各个组件只有通过约定、高效且可靠的通信机制进行相关协作，才能完成某项业务功能。这是我们在设计和实现分布式系统时首先需要考虑的两个方面。</p>
+<p>分布式系统相较于集中式系统而言具备优势的同时，也存在一些我们不得不考虑的特性，包括但不限于网络传输的三态性、系统之间的异构性、数据一致性、服务的可用性等 [1]。以上问题是分布式系统的基本特性，我们无法避免，只能想办法进行利用和管理，这就给我们设计和实现分布式系统提出了挑战。微服务架构本质上也是一种分布式系统，但在遵循通用分布式特性的基础上，微服务架构还表现出一定的特殊性。接下来我们将围绕微服务架构的这些特殊性展开讨论。</p>
+<p>3．微服务架构
+Martin Fowler 指出 [2]，微服务架构具有以下特点。</p>
+<p>（1）服务组件化</p>
+<p>组件（Component）是一种可独立替换和升级的软件单元。在日常开发过程中，我们可能会设计和使用很多组件，这些组件可能服务于系统内部，也可能存在于系统所运行的进程之外。而服务就是一种进程外组件，服务之间利用诸如 RPC（Remote Procedure Call，远程过程调用）的通信机制完成交互。服务组件化的主要目的是服务可以独立部署。如果你的应用程序由一个运行在独立进程中的很多组件组成，那么对任何一个组件的改变都将导致必须重新部署整个应用程序。但是如果你把应用程序拆分成很多服务，显然，通常情况下，你只需要重新部署那个改变的服务。在微服务架构中，每个服务运行在其独立的进程中，服务与服务之间采用轻量级通信机制互相沟通。</p>
+<p>（2）按业务能力组织服务</p>
+<p>当寻找把一个大的应用程序进行拆分的方法时，研发过程通常都会围绕产品团队、UED 团队、APP 前端团队和服务器端团队而展开，这些团队也就是通常所说的职能团队（Function Team）。当使用这种标准对团队进行划分时，任何一个需求变更，无论大小，都将导致跨团队协作，从而增加沟通和协作成本。而微服务架构下的划分方法有所不同，它倾向围绕业务功能的组织来分割服务。这些服务面向具体业务结构，而不是面向某项技术能力。因此，团队是跨职能的（Cross-Functional）的特征团队（Feature Team），包含用户体验、项目管理和技术研发等开发过程中要求的所有技能。每个服务都围绕着业务进行构建，并且能够被独立部署到生产 / 类生产环境。</p>
+<p>（3）去中心化</p>
+<p>服务集中治理的一种好处是在单一平台上进行标准化，但采用微服务的团队更喜欢不同的标准。把集中式系统中的组件拆分成不同的服务，我们在构建这些服务时就会有更多的选择。对具体的某一个服务而言，应该根据业务上下文选择合适的语言和工具进行构建。</p>
+<p>另一方面，微服务架构也崇尚于对数据进行分散管理。当集中式的应用使用单一逻辑数据库进行数据持久化时，通常选择在应用的范围内使用一个数据库。然而，微服务让每个服务管理自己的数据库，无论是相同数据库的不同实例，还是不同的数据库系统。</p>
+<p>（4）基础设施自动化</p>
+<p>许多使用微服务架构产品或者系统的团队拥有丰富的持续集成（Continue Integration）和持续交付（Continuous Delivery）经验。团队使用微服务架构构建软件需要更广泛地依赖基础设施自动化技术。</p>
+<p>在微服务中同样需要考虑服务容错性设计等分布式系统所需要考虑的问题，我们对以上特点进行总结和提炼，认为微服务具备业务独立、进程隔离、团队自主、技术无关轻量级通信和交付独立性等 “微” 特性。</p>
+<p>服务拆分与集成
+本节在微服务架构基本概念的基础上，简要分析服务拆分的策略和手段，同时也给出对拆分之后的服务进行集成的各种实现方法和技术体系。</p>
+<p>1．服务拆分
+在微服务架构中，我们认为服务是业务能力的代表，需要围绕业务进行组织。服务拆分的关键在于正确理解业务，识别单个服务内部的业务领域及其边界，并按边界进行拆分。所以微服务的拆分模式本质上是基于不同的业务进行拆分。业务体现在各种功能代码中，通过确定业务的边界，并使用领域与界限上下文（Boundary Context）、领域事件（Domain Event）等技术手段可以实现拆分。</p>
+<p>数据对微服务架构而言同样可以认为是一种依赖关系，因为任务业务都需要使用某个数据容器作为持久化的机制或者数据处理的媒介，这里的数据容器不仅指关系型数据库，还泛指包括消息队列、搜索引擎索引以及各种 Nosql 在内的数据媒介。微服务架构中存在一种说法，即我们需要将微服务用到的所有资源全部嵌入到该服务中，从而确保微服务的独立性。而数据的拆分则体现在如何将集中式的中心化数据转变为各微服务各自拥有的独立数据，这部分工作同样十分具有挑战性。</p>
+<p>关于业务和数据应该先拆分谁的问题，可以是先数据库后业务代码，也可以是先业务代码后数据库。然而在拆分中遇到的最大挑战可能会是数据层的拆分，因为在数据库中，可能会存在各种跨表连接查询、跨库连接查询以及不同业务模块的代码与数据耦合得非常紧密的场景，这会导致服务的拆分非常困难。因此，在拆分步骤上我们更多地推荐数据库先行。数据模型能否彻底分开，很大程度上决定了微服务的边界功能是否彻底划清。</p>
+<p>服务拆分的方法根据系统自身的特点和运行状态，通常可分为绞杀者与修缮者两种模式。绞杀者模式（Strangler Pattern）[3] 指的是在现有系统外围将新功能用新的方式构建为新的服务的策略，通过将新功能做成微服务方式，而不是直接修改原有系统，逐步实现对老系统替换。采用这种策略，随着时间的推移，新的服务就会逐渐 “绞杀” 老的系统。对于那些规模很大又难以对现有架构进行修改的遗留系统，推荐采用绞杀者模式。而修缮者模式就如修房或修路一样，将老旧待修缮的部分进行隔离，用新的方式对其进行单独修复。修复的同时，需保证与其他部分仍能协同功能。从这种思路出发，修缮者模式更多地表现为一种重构技术，具体实现上可以参考 Martine Fowler 的 BranchByAbstraction 重构方法 [4]。</p>
+<p>2．服务集成
+服务之间势必需要集成，而这种集成关系远比简单的 API 调用要复杂。对于微服务架构而言，我们的思路是尽量采用标准化的数据结构和通信机制并降低系统集成的耦合度。我们把微服务架构中服务之间的集成模式分为以下四大类 [1]，同时还会引入其他一些手段来达到服务与服务之间的有效集成。</p>
+<p>（1）接口集成</p>
+<p>接口集成是服务之间集成的最常见手段，通常基于业务逻辑的需要进行集成。RPC、REST、消息传递和服务总线都可以归为这种集成方式。</p>
+<p>RPC 架构是服务之间进行集成的最基本方式。在 RPC 架构实现思路上，远程服务提供者以某种形式提供服务调用相关信息，远程代理对象通过动态代理拦截机制生成远程服务的本地代理，让远程调用在使用上如同本地调用一样。而网络通信应该与具体协议无关，通过序列化和反序列化方式对网络数据进行有效传输。</p>
+<p>REST（Representational State Transfer，表述性状态转移）从技术上讲也可以认为是 RPC 架构的一种具体表现形式，因为 RPC 架构中最基本的网络通信、序列化 / 反序列化、传输协议和服务调用等组件都能在 REST 中有所体现。但 REST 代表的并不是一种技术，也不是一种标准和规范，而是一种设计风格。要理解 RESTful 架构，最好的方法就是去理解它的全称 Representational State Transfer 这个词组，直译过来就是 “表述性状态转移”，针对的是网络上的各种资源（Resource）。所以 REST 通俗地讲就是：资源在网络中以某种表现形式进行状态转移。</p>
+<p>消息通信（Messaging）机制（或者称为消息传递机制）可以认为是一种系统集成组件，是在分布式系统中完成消息的发送和接收的基础软件，用于消除服务交互过程中的耦合度。关于耦合度的具体表现形式，我们在下一节中还会具体展开，消息通信机制实现系统解耦的做法是在服务与服务之间添加一个中间层，这样紧耦合的单阶段方法调用就转变成松耦合的两阶段过程，可以通过中间层进行消息的存储和处理，这个中间层就是以各种消息中间件为代表的消息通信系统（Messaging System）。</p>
+<p>企业服务总线（Enterprise Service Bus，ESB）本质上也是一种系统集成组件，用于解决分布式环境下的异步协作问题，可以看作是对消息通信系统的扩展和延伸。ESB 提供了一批核心组件，包括路由器、转换器和端点。路由器（Router）在一个位置上维护消息目标地址并基于消息本身或上下文进行路由；转换器（Transformer）用于异构系统之间进行数据适配，数据结构、类型、表现形式、传输方式都是潜在的需要转换的对象；端点（Endpoint）封装了应用系统与服务总线系统的交互。</p>
+<p>（2）数据集成</p>
+<p>数据集成同样可以用于微服务之间的交互，常见的共享数据库（Shared Database）是一个选择，但也可以通过数据复制（Data Replication）的方式实现数据集成。</p>
+<p>在微服务架构中，我们追求数据的独立性。但对于一些遗留系统而言，我们无法重新打造数据体系，数据复制就成为一种折中的集成方法。所谓数据复制，就是在不同的数据容器中保存同一份业务数据。这里的同一份业务数据的概念不在于数据内容的完全一致性，而在于这些数据背后的业务逻辑的一致性。</p>
+<p>（3）客户端集成</p>
+<p>由于微服务是一个能够独立运行的整体，有些微服务会包含一些 UI 界面，这也意味着微服务之间也可以通过 UI 界面进行集成。从某一个微服务的角度讲，调用它的服务就是该服务的客户端。关于客户端与微服务之间的集成可以分为三种方式，即直接集成、使用 FrontEnd 服务器和使用 API 网关。</p>
+<p>直接集成方式比较简单，就是客户端通过微服务提供的访问入口直接对微服务进行集成。这种方式适合于微服务数量不是太多的场景。如果采用直接集成的方式，服务按照业务模块进行边界划分和命名是一项最佳实践。</p>
+<p>FrontEnd 服务器有时候也可以认为是一种 Portal（门户）机制，即把客户端所需要的各种 CSS、Javascript 等公共资源统一放在 FrontEnd 服务器，然后每个微服务包含自身特有的 HTML 等客户端代码片段以及业务逻辑，通过集成 FrontEnd 服务器上的公共资源完成独立服务的运行。</p>
+<p>当微服务数量较多且客户端集成场景比较复杂时，通常就需要单独抽取一层作为客户端访问的统一入口，这一层在微服务架构里称为 API 网关（Gateway）。API 网关的主要作用是对后端的各个微服务进行整合，从而为不同的客户端提供定制化的内容。</p>
+<p>（4）外部集成</p>
+<p>这里把外部集成单独剥离出来的原因在于现实中很多服务之间的集成需求来自于与外部服务的依赖和整合，而在集成方式上也可以综合采用接口集成、数据集成和客户端集成。</p>
+<p>以上集成方式各有其应用场景和特点，现实中的很多系统包含的集成方式并不限于其中一种。关于服务拆分和服务集成的方法论与工程实践不是本书的重点，读者可参看笔者的《微服务设计原理与架构》[1] 一书做进一步了解。在本书中，我们重点介绍的接口集成，并试图通过响应式编程的方式实现基于 RESTful 风格以及消息通信的微服务集成需求。</p>
+<p>微服务架构的核心组件
+微服务架构的实现首先需要提供一系列基础组件，包括事件驱动、集群与负载均衡、服务路由等分布式环境下的通用组件，也包括 API 网关和配置管理等微服务架构所特有的功能组件。同时，基于服务注册中心的服务发布和订阅机制是微服务体系下实现服务治理的基本手段。而关于如何保证服务的可靠性，我们也需要考虑服务容错、服务隔离、服务限流和服务降级等需求和实现方案。最后，我们也需要使用服务监控手段来管理服务质量和运行时状态。</p>
+<p>1．事件驱动
+事件驱动架构（Event-Driven Architecture，EDA）定义了一个设计和实现应用系统的架构风格，在这个架构风格里事件可传输于松散耦合的组件和服务之间。事件处理架构的优势就在于当系统中需要添加另一个业务逻辑来完成整个流程时，只需要对处于该流程中的事件添加一个订阅者即可，不需要对原有系统做大量修改。考虑到在微服务架构中服务数量较多且不可避免地需要对服务进行重构，事件处理在系统扩展性上的优势就尤为明显。而在技术实现上，通过消息通信机制，我们不必花费太大代价就能实现事件驱动架构。响应式编程从一定程度上也是事件驱动架构的一种表现形式。</p>
+<p>2．负载均衡
+集群（Cluster）指的是将几台服务器集中在一起实现同一业务。而负载均衡（Load Balance）就是将请求分摊到位于集群中的多个服务器上进行执行。负载均衡根据服务器地址列表所存放的位置可以分成两大类，一类是服务器端负载均衡，另一类是客户端负载均衡。另一方面，以各种负载均衡算法为基础的分发策略决定了负载均衡的效果。在集群化环境中，当客户端请求到达集群，如何确定由某一台服务器进行请求响应就是服务路由（Routing）问题。从这个角度讲，负载均衡也是一种路由方案，但是负载均衡的出发点是提供服务分发而不是解决路由问题，常见的静态、动态负载均衡算法也无法实现精细化的路由管理。服务路由的管理可以归为几个大类，包括直接路由、间接路由和路由规则 [1]。</p>
+<p>3．API 网关
+API 网关本质上就是一种外观模式（FaçadePattren）的具体实现，它是一种服务器端应用程序并作为系统访问的唯一入口。API 网关封装了系统内部架构，为每个客户端提供一个定制的 API。同时，它可能还具有身份验证、监控、缓存、请求管理、静态响应处理等功能。在微服务架构中，API 网关的核心要点是所有的客户端和消费端都通过统一的网关接入微服务，在网关层处理通用的非业务功能。</p>
+<p>4．配置中心
+在微服务架构中，一般都需要引入配置中心（Configuration Center）的相关工具。采用配置中心也就意味着采用集中式配置管理的设计思想。对于集中式配置中心而言，开发、测试和生产等不同的环境配置信息保存在统一存储媒介中，这是一个维度。而另一个维度就是分布式集群环境，需要确保集群中同一类服务的所有服务器保存同一份配置文件，并且能够同步更新。</p>
+<p>5．服务治理
+在微服务架构中，服务治理（Service Governance）可以说是最关键的一个要素，因为各个微服务需要通过服务治理实现自动化的服务注册（Registration）和发现（Discovery）。服务治理的需求来自服务的数量。如果在服务数量并不是太多的场景下，服务消费者获取服务提供者地址的基本思路是通过配置中心，当服务的消费者需要调用某个服务时，基于配置中心中存储的目标服务的具体地址构建链路完成调用。但当服务数量较多时，为了实现微服务架构中的服务注册和发现，通常都需要构建一个独立的媒介来管理服务的实例，这个媒介一般被称为服务注册中心（Service Registration Center）。</p>
+<p>另一方面，服务提供者和服务消费者都相当于服务注册中心的客户端应用程序。在系统运行时，服务提供者的注册中心客户端程序会向注册中心注册自身提供的服务，而服务消费者的注册中心客户端程序则从注册中心查询当前订阅的服务信息并周期性地刷新服务状态。同时，为了提高服务路由的效率和容错性，服务消费者可以配备缓存机制以加速服务路由。更重要的是，当服务注册中心不可用时，服务消费者可以利用本地缓存路由实现对现有服务的可靠调用。</p>
+<p>6．服务可靠
+在微服务架构中，各个服务独立部署且服务与服务之间存在相互依赖关系。和单块系统相比，微服务架构中出现服务访问失败的原因和场景非常复杂，这就需要我们从服务可靠性的角度出发对服务自身以及服务与服务之间的交互过程进行设计。</p>
+<p>针对服务失败，常见的应对策略包括超时（Timeout）和重试（Retry）机制。超时机制指的是调用服务的操作可以配置为执行超时，如果服务未能在这个时间内响应，将回复一个失败消息。同时，为了降低网络瞬态异常所造成的网络通信问题，可以使用重试机制。这两种方式都会产生同步等待，因此合理限制超时时间和重试次数是一般的做法。</p>
+<p>当服务运行在一个集群中，出现通信链路故障、服务端超时以及业务异常等场景都会导致服务调用失败。容错（Fault Tolerance）机制的基本思想是冗余和重试，即当一个服务器出现问题时不妨试试其他服务器。集群的建立已经满足冗余的条件，而围绕如何进行重试就产生了 Failover、Failback 等几种常见的集群容错策略。</p>
+<p>服务隔离（Isolation）包括一些常见的隔离思路以及特定的隔离实现技术框架。所谓隔离，本质上是对系统或资源进行分割，从而实现当系统发生故障时能限定传播范围和影响范围，即发生故障后只有出问题的服务不可用，保证其他服务仍然可用。常见的隔离措施包括线程隔离、进程隔离、集群隔离、机房隔离和读写隔离等 [5]。</p>
+<p>关于服务可靠性，还有一个重要的概念称为服务熔断（Circuit Breaker）。服务熔断类似现实世界中的 “保险丝”，当某个异常条件被触发时，就直接熔断整个服务，并不是一直等到此服务超时。而服务降级就是当某个服务熔断之后，服务端准备一个本地的回退（Fallback）方法，该方法返回一个默认值。</p>
+<p>7．服务监控
+我们知道在传统的单块系统中，所有的代码都在同一台服务器上，如果服务运行时出现错误和异常，我们只要关注一台服务器就可以快速定位和处理问题。但在微服务架构中，事情显然没有那么简单。微服务架构的本质也是一种分布式架构，微服务架构的特点决定了各个服务部署在分布式环境中。各个微服务独立部署和运行，彼此通过网络交互，而且都是无状态的服务，一个客户端请求可能需要经过很多个微服务的处理和传递才能完成业务逻辑。在这种场景下，我们首先面临的一个核心问题是如何管理服务之间的调用关系；另一方面，如何跟踪业务流的处理顺序和结果也是服务监控的核心问题。通常，我们需要借助于日志聚合和服务跟踪技术来解决这两个核心问题。</p>
+<p>微服务架构技术体系
+本书的定位是讨论响应式微服务架构构建过程中的工程实践。无论是实现响应式微服务架构还是传统的微服务架构，都需要借助于某一种具体的技术体系。</p>
+<p>为了实现微服务架构，首先需要选择一种主流的工具来构建单个微服务。当系统中存在多个微服务时，我们就应该提供服务治理、负载均衡、服务容错、API 网关、配置中心、事件驱动等实现方案以完成服务之间的交互和集成。同时，微服务架构的技术体系也包括如何对微服务进行测试，以及基于日志聚合和服务跟踪的服务监控管理。</p>
+<p>1．微服务核心组件的实现技术
+微服务之间首先需要进行通信。对于服务通信，微服务架构明确要求服务之间通过跨进程的远程调用方式进行通信。关于远程调用，有三种风格的解决方案，即 RPC、REST 和自定义实现。而在服务与服务的交互方式上，也存在两个维度，即按照交互对象的数量分为一对一和一对多，以及按照请求响应的方式分为同步和异步。目前 RPC 框架可供选型的余地很大，如 AlibabaDubbo、Facebook Thrift 以及 Google gRPC 等都是非常主流的实现，而基于 REST 的实现框架则包括 Jersey、Spring MVC 以及本书中将要详细介绍的响应式 Spring WebFlux 等。</p>
+<p>事件驱动架构实现工具的表现形式通常是各种消息中间件，如基于 JMS（Java Message Service，Java 消息服务）规范的 ActiveMQ、基 AMQP（Advanced Message Queuing Protocol，高级消息队列协议）规范的 RabbitMQ、在大数据流式计算领域中应用非常广泛的 Kafka，当然还有像 Alibaba 自研的 RocketMQ。在这些消息中间件中，ActiveMQ 一般不考虑，如果是相对比较轻量级的应用，则可以选择 RabbitMQ，而 Kafka 和 RocketMQ 则适合大型应用的场景。</p>
+<p>负载均衡分为服务器端负载均衡和客户端负载均衡两大类实现方案。在服务器软件中，我们可以选择 Nginx、HA proxy、Apache、LVS 等工具。而类似 Netflix Ribbon 的工具则是一种单独可以使用的负载均衡机制。事实上，所有的分布式服务框架几乎都内置了负载均衡的实现，所以负载均衡本身并不需要做太多的选择。</p>
+<p>API 网关是微服务架构的核心组件之一。Netflix OSS（Open Source Software）中有一个 Zuul 提供了一套过滤器机制，可以很好地支持签名校验、登录校验等前置过滤功能处理，同时它也维护了路由规则和服务实例，以便完成服务路由功能。其他可供参考的 API 网关还有开源的 Spring Cloud Gateway 和 Kong 等。</p>
+<p>配置管理的作用是完成集中式的配置信息管理。目前比较主流的包括 Spring 旗下的 Spring Cloud Config、淘宝的 Diamond 和百度的 Disconf 等。在实现上，Spring Cloud Config 支持将配置信息存放在配置服务本地的内存中，也支持放在远程 Git 仓库中，这点与其他工具在设计上有较大不同。Diamond 和 Disconf 都是基于 Mysql 作为存储媒介，Diamond 采用拉模型，即每隔 15s 拉一次全量数据；而 Disconf 基于 Zookeeper 的推模型，实时推送。在配置数据模型上，Diamond 只支持 Key-Value 结构的数据，采用的是非配置文件模式；而 Disconf 支持传统的配置文件模式，也支持 Key-Value 结构数据。</p>
+<p>关于服务注册和服务发现，比较常见的分布式一致性协议是 Paxos 协议 [6] 和 Raft 协议 [7]。相比 Paxos 协议，Raft 协议易于理解和实现，因此，最新的分布式一致性方案大都选择 Raft 协议。我们知道 Zookeeper 采用的是基于 Paxos 协议改进的 ZAB（Zookeeper Atomic Broadcast，Zookeeper 原子消息广播）协议，而 Raft 协议的实现工具主要是 Consul 和 Etcd。注册中心是任何一个微服务框架所必不可少的组件，很多框架都内建了对服务注册中心的支持。例如，Alibaba 的 Dubbo 框架支持包括 Zookeeper、Redis 等在内的多种注册中心实现，默认采用的是 Zookeeper；新浪的 Motan 支持 Zookeeper，也支持 Consul；Spring Cloud 也同时提供了 Spring Cloud Consul 和 Spring Cloud Zookeeper 两种实现方案；而 Netflix OSS 中使用的是 Eureka。</p>
+<p>服务可靠性相关的功能主要包括服务容错、服务隔离、服务限流和服务降级，其中大多数机制都偏向于实现策略而不是实现工具。我们需要明确的是如何实现服务隔离和服务熔断机制的框架。服务熔断器可选的开源方案包括 NetflixHystrix 和 Resilience4j。</p>
+<p>2．Spring Cloud
+在本书中，我们将采用 Spring Cloud 作为微服务架构的实现框架。组件完备性是我们选择该框架的主要原因。Spring Cloud 是 Spring 家族中新的一员，重点打造面向服务化的功能组件，在功能上服务注册中心、API 网关、服务熔断器、分布式配置中心和服务监控等组件都能在 Spring Cloud 中找到对应的实现。</p>
+<p>另一个选择 Spring Cloud 的原因在于服务之间的交互方式。我们知道微服务架构中推崇基于 HTTP 协议的 RESTful 风格实现服务间通信，而诸如 Dubbo 等框架的服务调用基于长连接的 RPC 实现。采用 RPC 方式会导致服务提供方与调用方接口产生较强依赖，而且服务对技术敏感，无法做到完全通用。Spring Cloud 采用的就是 RESTful 风格，这方面更加符合微服务架构的设计理念。</p>
+<p>Spring Cloud 还具备一个天生的优势，因为它是 Spring 家族中的一员，而 Spring 在开发领域的强大地位给 Spring Cloud 起到了很好的推动作用。同时，Spring Cloud 基于 Spring Boot，而 Spring Boot 目前已经在越来越多的公司得到应用和推广，用来简化 Spring 应用的框架搭建以及开发过程。Spring Cloud 也继承了 Spring Boot 简单配置、快速开发、轻松部署的特点，让原本复杂的开发工作变得相对容易上手。</p>
+<p>在本书后续章节中，我们将看到如何使用 Spring Cloud 实现微服务架构中的各个核心组件。</p>
+<p>构建响应式微服务架构
+使用微服务架构最关键的一个原则就是将系统划分成一个个相互隔离、无依赖的微服务，这些微服务通过定义良好的协议进行通信。本节将讨论构建响应式微服务架构的一些设计原则和理念，并探讨整合响应式编程和微服务架构的方法。</p>
+<p>响应式微服务架构设计原则
+Reactive Microservices Architecture[8] 一书讲述了响应式微服务架构的核心概念以及实施过程中的一些最佳实践。本节将介绍这些核心概念和最佳实践，以便读者能够更好地理解响应式微服务架构。</p>
+<p>1．隔离一切事物
+在微服务架构中，我们经常会提到雪崩效应（Avalanche Effect）这一概念。服务雪崩的产生是一种扩散效应。当系统中存在两个服务 A 和 B，如果 A 服务出现问题，而 B 服务会通过用户不断提交服务请求等手工重试或代码逻辑自动重试等手段进一步加大对 A 服务的访问流量。因为 B 服务使用同步调用，会产生大量的等待线程占用系统资源。一旦线程资源被耗尽，B 服务提供的服务本身也将处于不可用状态，整个过程的演变可参考图 1-5。而这一效果在整个服务访问链路上进行扩散，就形成了雪崩效应。</p>
+<p>雪崩效应的预防需要依赖于架构设计中的一种称为舱壁隔离（Bulkhead Isolation）的架构模式。所谓舱壁隔离，顾名思义就是像舱壁一样对资源或失败单元进行隔离，如果一个船舱破了进水，只损失一个船舱，其他船舱可以不受影响。舱壁隔离模式在微服务架构中的应用就是各种服务隔离思想。</p>
+<p>图 1-5 雪崩效应示意图</p>
+<p>隔离是微服务架构中最重要的特性，也是实现响应式宣言中所提倡的弹性、可伸缩系统的前提。所谓弹性，就是从失败中恢复的能力，依赖于这种舱壁和失败隔离的设计，并且需要打破同步通信机制。由此，微服务一般是在边界之间使用异步消息传输，从而使得正常的业务逻辑避免对捕获错误、错误处理的依赖。</p>
+<p>2．自主行动
+上面所讲的隔离性是自主性的前提。只有当服务之间是完全隔离的，才可能实现完全的自主，包括独立的决策、独立的行动以及与其他服务协调合作来解决问题。</p>
+<p>从实现上讲，服务自主性仅仅需要确保其对外公布协议的正确性即可。自主性不仅能够让我们更好地了解微服务系统以及各个服务的领域模型，也能够在面对冲突和失败状况时，确保快速定位到问题出在具体的哪一个微服务中。</p>
+<p>3．只做一件事，并且尽量做好
+大家都知道面向对象设计中有一条单一职责原则（Single Responsibility Principle，SRP），而在微服务架构中一个很大的问题是如何正确地划分各个服务的大小。多大的粒度才能被称之为 “微” 服务，显然，这个 “微” 是和服务本身的职责有直接关系，我们希望一个服务只做一件事，而且在服务内部要把相关的功能做到尽量好。</p>
+<p>每一个服务都应该只有一个存在的原因，业务和职责不应该糅杂在一起。如果满足这个要求，所有的服务组织在一起从整体上就能够便于扩展、具有弹性、易理解和维护。</p>
+<p>4．拥有自己的私有状态
+在软件设计领域经常会提到状态（State）这个词，而服务之间的状态本质上体现的还是一种数据关系。如果一个数据需要在多个服务之间共享才能完成一项业务功能，那么这项业务功能就被称为有状态。基于这项业务功能所设计和实现的一系列服务之间就形成了一种状态性，这一系列服务就是有状态服务。</p>
+<p>很多服务都会把自己的状态下沉到一个庞大的共享数据库中，这也是一些传统 Web 框架的做法。这种做法就会造成在扩展性、可用性以及数据集成上很难做好把控。而在本质上，一个使用共享数据库的微服务架构本质还是一个单体应用。一个服务既然具有单一职责，那么合理的方式就应该是该服务拥有自己的状态和持久化机制，建模成一个边界上下文。这里就需要充分应用领域驱动设计（Domain Driven Design，DDD）中的相关策略设计和技术设计方面的方法和工程实践。关于领域驱动设计以及背后的 Event Sourcing（事件溯源）和 CQRS（Command Query Responsibility Segreation，命令查询职责分离）等概念，读者可参考《实现领域驱动设计》[9]，这里不做具体展开。</p>
+<p>5．拥抱异步消息传递
+从软件设计上讲存在三种不同层级的耦合度，即技术耦合、空间耦合和时间耦合。技术耦合度表现在服务提供者与服务消费者之间需要使用同一种技术实现方式。如图 1-6a 中服务提供者与服务消费者都使用 RMI（Remote Method Invocation）作为通信的基本技术，而 RMI 是 Java 领域特有的技术，也就意味着其他服务消费者想要使用该服务也只能采用 Java 作为它的基本开发语言；空间耦合度指的是服务提供者与服务消费者都需要使用统一的方法签名才能相互协作，图 1-6b 中的 getUserById(id) 方法名称和参数的定义就是这种耦合的具体体现；而时间耦合度则表现在服务提供者与服务消费者只有同时在线才能完成一个完整的服务调用过程，如果出现图 1-6c 中所示的服务提供者不可用的情况，显然，服务消费者调用该服务就会发生失败。</p>
+<p>图 1-6 耦合度的三种表现形式</p>
+<p>微服务之间通信的最佳机制就是异步消息传递，消息传递能够从技术、空间和时间等多个维度上缓解甚至消除图 1-6 中的三种耦合度。我们在第 5 章中会进一步对该话题展开讨论。</p>
+<p>同时，异步非阻塞执行是对资源的高效操作，能够最小化访问共享资源时的阻塞消耗，从而提升整体系统的性能。</p>
+<p>6．保持移动，但可寻址
+异步消息传递带来了服务的位置透明性。所谓位置透明，指的是在多核或者多结点上的微服务在运行时无须改变结点，即可动态扩展的能力。这也决定了系统的弹性和移动性，要实现这些需要依赖云计算带来的一些特性和按需使用的模型。</p>
+<p>另一方面，可寻址则是指服务的地址需要稳定，从而可以无限地引用此服务，无论服务目前是否可以被定位到。当服务在运行中、已停止、被挂起、升级中、已崩溃等情形下，地址都应该是可用的，任意客户端能够随时发送消息给一个地址。从这个角度讲，地址应该是虚拟的，可以代表一组实例提供的服务。使用虚拟地址能够让服务消费方无须关心服务目前是如何配置操作的，只要知道地址即可。</p>
+<p>整合响应式编程与微服务架构
+构建一个分布式系统是复杂而困难的一项工作，微服务架构基于分布式，同时又需要考虑弹性、可伸缩性、隔离性等一系列问题。作为一个微服务架构，服务与服务之间、服务与外部系统之间的通信都是必需的。当我们对被依赖的服务和外部系统无法把控时，就会有很大的失败风险。因此，即使双方之间的通信协议定义得再好，也不能信赖外部服务或系统，需要做好各种措施以保证自身服务的安全。这里我们就可以充分整合响应式编程和微服务架构来实现这一目标。</p>
+<p>响应式编程和微服务架构的一个整合点在于我们可以采用响应式编程中的背压（Backpressure）机制来实现数据流处理速度的一致性。在背压机制下，接收方根据自己的接受状况调节接受速率，通过反向的响应来控制发送方的发送速率，以防止一个系统中快速生成数据的部分压垮处理数据较慢的部分。目前，越来越多的工具和框架都在开始拥抱响应式流（Reactive Streams）规范，这些技术使用异步背压实时流来桥接系统，从而在总体上提高系统的可靠性、性能以及互操作性。关于背压和响应式流的具体概念和实现方法，将在下一章具体展开讨论。</p>
+<p>在微服务架构的通信模式上，要尽量避免使用同步通信机制，否则就把自身服务的可用性放在了所依赖的第三方服务的控制范围中。上一节中对雪崩效应的产生原因分析已经非常明确地说明了这一点。避免级联失败需要服务足够解耦和隔离，使用异步通信机制是一个最佳的方案。当然，传统的 RESTful 风格的服务调用仍然适用于可控的服务调用上。本书也会分别介绍响应式编程环境下 RESTful 风格和异步通信风格的服务通信模式及实现方法。</p>
+<p>另一方面，整个微服务架构需要的是一种全栈式的响应式环境，即响应式微服务开发方式的有效性取决于在整个请求链路中采用了全栈的响应式编程模型。如果某一个环节或步骤不是响应式的，就会出现同步阻塞，从而导致背压机制无法生效。常见的同步阻塞产生的环节除了服务与服务之间的同步通信，还有基于关系型数据库的数据访问，因为传统的关系型数据库都是采用非响应式的数据访问机制。本书也会详细介绍如何使用响应式的数据访问组件实现全栈的响应式编程模型。</p>
+<p>本文节选自电子工业出版社《Spring 响应式微服务：Spring Boot 2+Spring 5+Spring Cloud 实战》第一章，由电子工业出版社博文视点授权。本书主要包含构建响应式微服务架构过程中所应具备的技术体系和工程实践。围绕响应式编程和微服务 架构的整合，讨论如何使用 Reactor 响应式编程框架、如何构建响应式 RESTful 服务、如何构建响应式数据访问组件、如何构建响应式消息通信组件、如何构建响应式微服务架构，以及如何测试响应式微服务 架构等核心主题，并基于这些核心主题给出具体的案例分析。</p>
+<hr>
+<p>参考
+<a href="https://www.zhihu.com/question/37808426" target="_blank" rel="noopener noreffer">SOA和微服务架构的区别</a><br>
+<a href="https://juejin.im/post/5e79c2e3f265da573f359ad6?utm_source=gold_browser_extension" target="_blank" rel="noopener noreffer">Serverless</a><br>
+servicemesh 与apigateway：http://dockone.io/article/10111</p>
+    </div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-03-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/amp/posts/2020/03/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-title="微服务" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/amp/posts/2020/03/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/amp/posts/2020/03/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-title="微服务" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/amp/posts/2020/03/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-title="微服务"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/amp/posts/2020/03/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-title="微服务" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://localhost:1313/amp/posts/2020/03/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-title="微服务" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/amp/posts/2020/03/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-title="微服务" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/amp/posts/2020/03/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-title="微服务"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/amp/posts/2020/03/24/%E8%AE%BE%E8%AE%A1/" class="prev" rel="prev" title="设计"><i class="fas fa-angle-left fa-fw"></i>设计</a>
+            <a href="/amp/posts/2020/03/26/okr/" class="next" rel="next" title="OKR">OKR<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article>
+<div class="adsblock">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-73+ed+2i-1n-4w"
+        data-ad-client="ca-pub-2665873967488848" data-ad-slot="2692397084"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+</main>
+
+<amp-analytics type="googleanalytics">
+    <script type="application/json">
+        {
+            "vars": {
+                "account": ""
+            },
+            "triggers": {"trackEvent":{"on":"click","request":"event","selector":"body","vars":{"eventAction":"click","eventCategory":"body-click"}},"trackPageview":{"on":"visible","request":"pageview"}}
+        }
+    </script>
+</amp-analytics>
+
+<amp-auto-ads type="adsense"
+              data-ad-client="ca-pub-2665873967488848">
+</amp-auto-ads>
+</body>
+
+</html>

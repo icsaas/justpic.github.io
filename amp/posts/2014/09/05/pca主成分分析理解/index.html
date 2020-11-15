@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+
+
+
+<html amp lang="zh-CN" class="no-js">
+<head><script src="/livereload.js?port=1313&amp;mindelay=10&amp;v=2" data-no-instant defer></script>
+  <title>pca主成分分析理解</title>
+  <meta charset="utf-8">
+
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script><script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+
+
+
+  <link rel="canonical" href="http://localhost:1313/posts/2014/09/05/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3/">
+
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="144x144">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <meta name="theme-color" content="#000000" />
+
+  
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "桑河一榆",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/",
+          "name": "amp"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/",
+          "name": "posts"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2014\/",
+          "name": "2014"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2014\/09\/",
+          "name": "09"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2014\/09\/05\/",
+          "name": "05"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  7 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2014\/09\/05\/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3\/",
+          "name": "pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3"
+        }
+    }]
+}
+</script>
+
+
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        /**
+* stylesheet.html
+* ---------------
+* This is the stylesheet that gets injected as a fallback if no layouts/partials/stylesheet.html file is available
+* in your project file.
+*
+* For further details, please have a look at:
+* https://gohugo-amp.gohugohq.com/install/
+*
+**/
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px
+dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em
+0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em
+40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html
+input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html
+input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px
+solid silver;margin:0 2px;padding:.35em .625em
+.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}td,th{padding:0}*{box-sizing:border-box}button,input,select,textarea{font:13px/1.4
+Helvetica,arial,freesans,clean,sans-serif}a{color:#4183c4;text-decoration:none}a:active,a:focus,a:hover{text-decoration:underline}.rule,hr{height:0;margin:15px
+0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid
+#ddd}.rule:after,.rule:before,hr:after,hr:before{display:table;content:""}.rule:after,hr:after{clear:both}fieldset{padding:0;margin:0;border:0}label{font-size:13px;font-weight:700}#adv_code_search
+.search-page-label,input[type=email],input[type=number],input[type=password],input[type=tel],input[type=text],input[type=url],textarea{min-height:34px;padding:7px
+8px;font-size:13px;color:#333;vertical-align:middle;background-color:#fff;background-repeat:no-repeat;background-position:100%;border:1px
+solid #ccc;border-radius:3px;outline:none;box-shadow:inset 0 1px 2px rgba(0,0,0,.075)}#adv_code_search
+.focus.search-page-label,#adv_code_search .search-page-label:focus,.focused
+.drag-and-drop,input[type=email].focus,input[type=email]:focus,input[type=number].focus,input[type=number]:focus,input[type=password].focus,input[type=password]:focus,input[type=tel].focus,input[type=tel]:focus,input[type=text].focus,input[type=text]:focus,input[type=url].focus,input[type=url]:focus,textarea.focus,textarea:focus{border-color:#51a7e8;box-shadow:inset
+0 1px 2px rgba(0,0,0,.075),0 0 5px
+rgba(81,167,232,.5)}.input-contrast,input.input-contrast{background-color:#fafafa}.input-contrast:focus,input.input-contrast:focus{background-color:#fff}:-moz-placeholder,::-webkit-input-placeholder{color:#aaa}::-webkit-validation-bubble-message{font-size:12px;color:#fff;background:#9c2400;border:0;border-radius:3px;-webkit-box-shadow:1px
+1px 1px
+rgba(0,0,0,.1)}input::-webkit-validation-bubble-icon{display:none}::-webkit-validation-bubble-arrow{background-color:#9c2400;border:1px
+solid #9c2400;-webkit-box-shadow:1px 1px 1px
+rgba(0,0,0,.1)}.absent{color:#c00}.anchor{position:absolute;top:0;bottom:0;left:0;display:block;padding-right:6px;padding-left:30px;margin-left:-30px}.anchor:focus{outline:none}h1,h2,h3,h4,h5,h6{position:relative;margin-top:1em;margin-bottom:16px;font-weight:700;line-height:1.4}h1
+.octicon-link,h2 .octicon-link,h3 .octicon-link,h4 .octicon-link,h5 .octicon-link,h6
+.octicon-link{display:none;color:#000;vertical-align:middle}h1:hover .anchor,h2:hover .anchor,h3:hover .anchor,h4:hover
+.anchor,h5:hover .anchor,h6:hover
+.anchor{height:1em;padding-left:8px;margin-left:-30px;line-height:1;text-decoration:none}h1:hover .anchor
+.octicon-link,h2:hover .anchor .octicon-link,h3:hover .anchor .octicon-link,h4:hover .anchor .octicon-link,h5:hover
+.anchor .octicon-link,h6:hover .anchor .octicon-link{display:inline-block}h1 code,h1 tt,h2 code,h2 tt,h3 code,h3 tt,h4
+code,h4 tt,h5 code,h5 tt,h6 code,h6
+tt{font-size:inherit}h1{font-size:2.25em;line-height:1.2}h1,h2{padding-bottom:.3em;border-bottom:1px solid
+#eee}h2{font-size:1.75em;line-height:1.225}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5,h6{font-size:1em}h6{color:#777}blockquote,dl,ol,p,pre,table,ul{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px
+0;background-color:#e7e7e7;border:0 none}ol,ul{padding-left:2em}ol.no-list,ul.no-list{padding:0;list-style-type:none}ol
+ol,ol ul,ul ol,ul ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl,dl dt{padding:0}dl
+dt{margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0
+16px;margin-bottom:16px}blockquote{padding:0 15px;color:#777;border-left:4px solid
+#ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}table
+th{font-weight:700}table td,table th{padding:6px 13px;border:1px solid #ddd}table
+tr{background-color:#fff;border-top:1px solid #ccc}table
+tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;box-sizing:border-box}span.frame,span.frame>span{display:block;overflow:hidden}span.frame>span{float:left;width:auto;padding:7px;margin:13px
+0 0;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0
+0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px
+auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0
+auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px
+0 0;overflow:hidden;text-align:right}span.align-right span
+img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left
+span{margin:13px 0
+0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px
+auto
+0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:"\00a0"}code
+br,tt br{display:none}del
+code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight
+pre,pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.highlight
+pre{margin-bottom:0;word-break:normal}pre,pre code,pre tt{word-wrap:normal}pre code,pre
+tt{display:inline;max-width:none;padding:0;margin:0;overflow:initial;line-height:inherit;background-color:transparent;border:0}pre
+code:after,pre code:before,pre tt:after,pre
+tt:before{content:normal}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav
+ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{text-decoration:none}ins,mark{background-color:#ff9;color:#000}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px
+dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px
+solid #ccc;margin:1em
+0;padding:0}input,select{vertical-align:middle}body{background-color:#fff;color:#123;font-size:14px;font-family:Helvetica
+Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif}main{max-width:1180px;padding:30px;margin:0 auto}@media
+(min-width:900px){main h1+p{font-size:2em}}h1{font-weight:300;font-size:2em;line-height:1.4em;margin:.5em
+0;font-family:Georgia,serif;-webkit-transition:color .4s;transition:color
+.4s}h2{font-size:2em}h2,h3{font-weight:300;margin:30px
+0}h3{font-size:1.8em}h4{font-size:1.6em}h4,h5{font-weight:300}h5{font-size:1.2em}h6{font-weight:300;font-size:1em}p{line-height:1.4em;font-size:1.2em;margin:15px
+0}blockquote{border-left:5px solid
+#ff1d55;background-color:#ffe9ee;padding:1em;margin-bottom:1em}.lightbox{background-color:rgba(3,121,196,.4);min-height:100vh;min-width:100vw;padding:30px}code{font:12px
+Consolas,Liberation Mono,Menlo,Courier,monospace}p>code{color:#ff1d55}pre
+code{display:block;background-color:#f7f7f7;padding:15px;overflow:auto;color:#123;line-height:1.4em}a{color:#ff1d55;text-decoration:none;-webkit-transition:color
+.4s,background .4s;transition:color .4s,background .4s}a:hover{color:#e9003a}ol,ul{margin:7.5px;padding:7.5px 15px}ol
+li,ul li{margin:7.5px 15px}.doc-parameters{list-style-type:none;padding:0}.doc-parameters
+li{display:block;margin:0;margin-bottom:15px}.doc-parameters .example,.doc-parameters blockquote{border-left:5px solid
+#0379c4;background-color:#96d5fd;color:#123;line-height:1em;font-size:1em;padding:1em;margin:0}.doc-parameters
+.example{background-color:#c8e9fe}.doc-parameters
+.parameter{display:block;padding:1em;background-color:#0379c4;color:#fff;margin:0}.doc-parameters .parameter
+strong{display:inline-block;padding:0
+.5em;border-radius:.25em;line-height:2em;background-color:#025a92}hr{height:.25em;padding:0;margin:24px
+0;background-color:#f7f7f7;border:0}.teaser{display:-webkit-box;display:-ms-flexbox;display:flex;text-align:left;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.teaser
+aside{-ms-flex-preferred-size:60%;flex-basis:60%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:30px}@media
+(max-width:700px){.teaser aside{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content{-ms-flex-preferred-size:40%;flex-basis:40%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;color:dimgray;font-size:12px}@media
+(max-width:700px){.teaser .content{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content.content-full{-ms-flex-preferred-size:100%;flex-basis:100%}.teaser .content
+h3{font-size:14px;text-transform:uppercase;font-weight:600;color:#123}.main-index{text-align:center}.main-index
+amp-img{margin:15px auto;width:50%}@media (min-width:900px){.main-index
+p{font-size:2em}}.breadcrumbs{padding:1em;background-color:#f7f7f7}.breadcrumbs
+ul{display:block;margin:0;padding:0}.breadcrumbs ul li{display:inline-block;margin:0 .5em}.breadcrumbs ul
+li:before{content:' / ';position:relative;margin-left:-.5em;color:dimgray}.breadcrumbs ul li
+a{color:dimgray}.breadcrumbs ul li:last-child
+a{color:#ff1d55}header{background-color:#000000;color:#fff;padding:30px;position:relative}header
+.brand{display:inline-block;position:absolute;left:30px;top:20px;line-height:15px;text-transform:uppercase;padding:7.5px;font-size:1.4em}header
+.brand:hover{background-color:#ff1d55;color:#fff}header
+a{color:#fff;text-decoration:none;border-radius:7.5px;padding:7.5px}header
+a:hover{text-decoration:none;background-color:#fff;color:#ff1d55}header nav
+ul{padding:0;margin:0;display:block;text-align:right}header nav ul li{padding:0;margin:0
+7.5px;display:inline-block}header nav ul li.hamburger{display:none}header nav ul li.hamburger
+button{position:absolute;right:30px;top:20px;border:0;background-color:#fff;color:#ff1d55;font-weight:700;border-radius:50%;width:30px;height:30px;overflow:hidden;text-align:center;padding:0;margin:0}@media
+(max-width:900px){header nav ul li{display:none}header nav ul
+li.hamburger{display:inline-block}}.sidebarNavigation{width:210px;max-width:95%}.sidebarNavigation
+ul{padding:0;margin:0}.sidebarNavigation ul li{display:block}.sidebarNavigation ul li
+a{display:block;line-height:1.4em;padding:7.5px}footer{margin:60px
+auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;max-width:1180px;padding:30px;font-size:12px}footer
+a:hover{text-decoration:none}footer strong{text-transform:uppercase;margin-bottom:15px;display:block}footer strong
+a{color:#1d1d1d}footer ul{display:block;padding:0;margin:0}footer ul li{display:block;line-height:1.4em;padding:7.5px
+0;margin:0}footer ul li a{color:dimgray}footer
+.quarter-section{margin-bottom:30px;-ms-flex-preferred-size:25%;flex-basis:25%}@media (max-width:900px){footer
+.quarter-section{-ms-flex-preferred-size:33%;flex-basis:33%}}@media (max-width:700px){footer
+.quarter-section{-ms-flex-preferred-size:50%;flex-basis:50%}}@media (max-width:500px){footer
+.quarter-section{-ms-flex-preferred-size:100%;flex-basis:100%}}.boxes{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:12px}.boxes
+.box{-ms-flex-preferred-size:30%;flex-basis:30%;background-color:#f7f7f7;padding:30px;margin:7.5px
+0;text-align:left;font-size:12px}.boxes .box h3{font-size:12px;line-height:1em;padding:0;margin:0}.boxes .box
+a{padding:0;color:#ff1d55}.boxes .box p{color:dimgray;font-size:12px;margin:7.5px 0}@media (max-width:900px){.boxes
+.box{-ms-flex-preferred-size:45%;flex-basis:45%}}@media (max-width:500px){.boxes
+.box{-ms-flex-preferred-size:100%;flex-basis:100%}}
+
+.fixed-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+}
+
+amp-img.contain img {
+  object-fit: contain;
+}
+
+.footnotes {
+  overflow-wrap: break-word;
+}
+
+    </style>
+
+  <script data-ad-client="ca-pub-2665873967488848" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script async custom-element="amp-auto-ads"
+          src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+  </script>
+</head>
+
+<body>
+
+
+<main>
+  <div class="toc" id="toc-auto">
+    <h2 class="toc-title">目录</h2>
+    <div class="toc-content" id="toc-content-auto"></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">pca主成分分析理解</h1><div class="post-meta">
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-09-05">2014-09-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2951 字&nbsp;
+            <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/amp/posts/2014/09/05/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3/" class="leancloud_visitors" data-flag-title="pca主成分分析理解">
+                <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+            </span>&nbsp;</span>
+        </div>
+    </div><div class="details toc" id="toc-static" kept="">
+        <div class="details-summary toc-title">
+            <span>目录</span>
+            <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#pca简介">PCA简介</a>
+          <ul>
+            <li><a href="#k-l变换与pca">K-L变换与PCA</a></li>
+            <li><a href="#pca的主要思想">PCA的主要思想：</a></li>
+            <li><a href="#pca的模型中存在假设条件">PCA的模型中存在假设条件：</a></li>
+            <li><a href="#pca的可视化理解">PCA的可视化理解</a></li>
+            <li><a href="#pca的求解方法">PCA的求解方法：</a></li>
+            <li><a href="#svd与lsi">svd与LSI</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    </div><div class="content" id="content">
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        <p>pca主成分分析理解</p>
+<h3 id="pca简介">PCA简介</h3>
+<blockquote>
+<p>PCA是Principal Component Analysis(主成分分析)的缩写，此方法的目标是找到数据中最主要的元素和结构，去除噪音和冗余，将原有的复杂数据降维，揭露出隐藏在复杂数据背后的简单结构。从线性代数角度来看，PCA目标是找到一组正交基去重新描述得到的数据空间，这个维度就是主元,将原数据投影到该数据空间上，就可以达到降维的目的。</p>
+</blockquote>
+<h4 id="k-l变换与pca">K-L变换与PCA</h4>
+<p>K-L变换是Karhunen-Loeve变换的简称，是一种特殊的正交变换。它是建立在统计特性基础上的一种变换，也称做霍特林(Hotelling)变换。
+K-L变换的优点是去相关性，是均方误差意义下的最佳变换。
+设随机向量 \(X \in R^{n} \)(n阶列向量),它的均值向量为 \(m_x \),则协方差矩阵可以表示为：<br>
+$$Cov(x)= E{(X-m_x) \times (X-m_x)^{T}}$$
+\(Cov(x)\)是一个n*n阶的实对称矩阵。
+K-L变换定义了一个正交变换\(A \in R^{n \times n}\),将\(X \in R^{n}\)的向量映射到用\(Y \in R^{n}\)代表的向量，并且使Y向量中的各分量间不相关：<br>
+$$Y=A \times (X-m_x) $$
+PCA算法的理论依据是K-L变换，通过寻找线性变换W，实现对高维数据的降维。<br>
+混乱的数据中通常包含三种成分：噪音、旋转和冗余。在区分噪音的时候，可以使用信噪比或者方差来衡量，方差大的是主要信号或者主要分量；方差较小的则认为是噪音或者次要分量；对于旋转，则对基向量进行旋转，使得信噪比或者方差较大的基向量就是主元方向；在判断各个观测变量之间是否冗余时，可以借助协方差矩阵来进行衡量和判断。</p>
+<h4 id="pca的主要思想">PCA的主要思想：</h4>
+<p>1.最小化冗余量，对应于协方差矩阵的非对角线元素要尽量小；<br>
+2.最大化信号，对应于要使协方差矩阵的对角线上的元素尽可能的大。对角线上的元素值越大，也就是对应于越重要的主元。该思想实现方法就是对协方差矩阵进行对角化。</p>
+<h4 id="pca的模型中存在假设条件">PCA的模型中存在假设条件：</h4>
+<p>1.PCA的内部模型是线性的，kernel-PCA就是使用非线性的权值对PCA扩展；<br>
+2.针对的样本的概率分布模型只限于指数概率分布模型。从而扩展出ICP（独立主元分析）。<br>
+3.数据本身具有较高的信躁比。<br>
+4.假设主元向量之间是正交的。</p>
+<h4 id="pca的可视化理解">PCA的可视化理解</h4>
+<h4 id="pca的求解方法">PCA的求解方法：</h4>
+<p>SVD(奇异值分解)方法
+K-L变换适用于方阵，但现实中，得到的大部分矩阵不是方阵，奇异值分解方法可以获得一个变换描述矩阵的重要特征。奇异值分解的形式：
+$$A=U\Sigma V^{T}$$
+其中A是一个\(N\times M\)的矩阵，得到的\(U\)是一个\(N\times N\)的方阵(里面的向量是正交的，U里面的向量称为左奇异向量),\(\Sigma\)是一个\(N\times M\)的矩阵(除了对角线的元素都是0,对角线上的元素成为奇异值),\(V^{T}\)(V的转置)是一个\(M\times M\)的矩阵，里面的向量也是正交的，\(V^{T}\)里面的向量称为右奇异向量)。<br>
+奇异值是怎么和特征值对应起来的。<br>
+$$(A^{T}A)v_i=\lambda v_i$$
+这里得到的v，就是上面的右奇异向量。此处我们还可以得到左奇异值\(\sigma_i\)和左奇异向量\(\mu_i\)<br>
+$$\sigma_i=\sqrt{\lambda_i}$$
+$$\mu_i=\frac{1}{\sigma_i}Av_i$$<br>
+这里的\(A^{T}A\)与后面的协方差矩阵的形式统一了以来，求解出来的\(V^{T}\)与后面的\(S^{T}S\)是同构的。<br>
+$$(AA^{T})\mu_i=(AA^{T})\frac{1}{\sigma_i}Av_i=\frac{1}{\sigma_i}AA^{T}Av_i=\frac{1}{\sigma_i}A(\lambda_i v_i)=A(\frac{1}{\sigma_i}v_i)=Au_i$$<br>
+得到左奇异向量或者右奇异向量后，按照特征值递减顺序组成特征向量矩阵。<br>
+则左奇异向量矩阵为\(U_{n\times r}\),右奇异向量矩阵为\(V_{r\times m}^{T}\) ,r的大小取决于\(A^{T}A\)所求得的特征矩阵\(\Sigma\).
+如何把\(A_{n*m}\)变成\(A_{n*r}\)：<br>
+$$A^{N\times M} V^{M\times r}=A^{N\times r}$$
+如何把\(A_{n*m}\)变成\(A_{r*m}\)：<br>
+$$U_{r\times T}^{T} A^{N\times M}=A^{r\times M}$$</p>
+<p>弄清楚了SVD与PCA的关系后，PCA是SVD的再次包装，就知道怎么求解PCA了。
+另外一种等价的方法
+求协方差矩阵的特征向量矩阵<br>
+协方差矩阵的计算可以通过下面的公式计算:</p>
+<pre><code>$$Cov(S)=\frac{S^{T}S}{N-1}$$  
+</code></pre>
+<p>其中\(S \in R^{n\times d}\) 是中心化后的矩阵，
+协方差矩阵的计算方式(matlab代码实现)：<br>
+随机产生一个10*3维的整数矩阵作为样本集，10为样本的个数，3为样本的维数。</p>
+<pre><code>MySample=fix(rand(10,3)*50)
+</code></pre>
+<p>协方差是计算不同维度间的协方差，样本矩阵的每行是一个样本，每列为一个维度，所以我们要按列计算均值。</p>
+<pre><code>dim1=MySample(:,1);
+dim2=MySample(:,2);
+dim3=MySample(:,3);
+</code></pre>
+<p>计算dim1与dim2,dim1与dim3,dim2与dim3的协方差：</p>
+<pre><code>sum((dim1-mean(dim1)).*(dim2-mean(dim2)))/(size(MySample,1)-1);
+sum((dim1-mean(dim1)).*(dim3-mean(dim3)))/(size(MySample,1)-1);
+sum((dim2-mean(dim2)).*(dim3-mean(dim3)))/(size(MySample,1)-1);
+</code></pre>
+<p>协方差矩阵的对角线上就是各个维度上的方差</p>
+<pre><code>std(dim1)^2;
+std(dim2)^2;
+std(dim3)^2;
+</code></pre>
+<p>协方差矩阵也可以这样计算，先让样本矩阵中心化，即每一维度减去该维度的均值，使每一维度上的均值为0,然后直接用新得到的样本矩阵乘上它的转置，然后除以(N-1)。该方法可以由前面的公式推导出来。
+matlab代码实现如下：</p>
+<pre><code>X=MySample=repmat(mean(MySample),10,1);  %  中心化样本矩阵，使各维度均值为0
+C=X'*X/(size(X,1)-1);
+</code></pre>
+<p>为什么在PCA中，协方差矩阵的特征向量就是主元，等价于原矩阵的奇异值分解,主元并非降维后的样本矩阵，而是投影矩阵，原矩阵可通过投影矩阵投影达到降维的目的。<br>
+假设协方差特征矩阵为\(P_1\)(正交化后的特征矩阵为\(P\)),PCA降维后的样本矩阵为\(S_1\),
+根据PCA的目的，\(S_1\)中的各个维度间的协方差基本为零，也就是说，\(S_1\)的协方差矩阵
+为\(\mit\Lambda_1\),满足如下等式：</p>
+<pre><code>$$\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1$$
+</code></pre>
+<p>又因为</p>
+<pre><code>$$P^{T}CP=\mit\Lambda \Rightarrow P_1^{T}CP_1=\mit\Lambda_1$$
+</code></pre>
+<p>带入可得：
+$$\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1 = P_1^{T}CP_1=P_1^{T}(\frac{S_1^{T}S_1}{N-1})P_1=\frac{(SP_1)^{T}(SP_1)}{N-1} \Rightarrow S_1=SP_1 ,S_1\in R^{N\times p}$$
+由于样本矩阵 \(S^{N \times d}\) 的每一行是一个样本，特征向量矩阵\(P_1^{d \times p}\)的每一列是一个特征向量。右乘\(P_1\)相当于每个样本乘以\(P_1\)的特征向量为基进行线性变换，得到的新样本矩阵\(S_1 \in R^{N\times p}\)中的每个样本的维数变为了p，完成了降维操作。
+实际上，\(P_1\)的特征向量就是低维空间新的坐标系，称之为&quot;主成分&quot;,\(S_1\)的协方差矩阵\(\mit\Lambda_1\)为近对角矩阵，说明不同维度间已经基本独立，噪声和冗余的数据已经不见了。<br>
+但使用svd解决PCA问题,可以同时得到两个方向上的PCA。实际上在SVD中，左奇异向量需要右乘元矩阵，可以对原矩阵做列变换，可以把原矩阵的每列作为一个特征，每一行代表一个样本，进行特征维度缩减，维度由m变为r，右奇异向量\(V^{T}\)需要左乘原矩阵A，相当于对A的行向量做变换，A的每一行可看成一个特征，进行维度缩减，维度又原来的n变为r。</p>
+<p>观察PCA后的样本协方差矩阵和原始矩阵的协方差矩阵可以发现各个维度上的方差有所变化，但对角线之和没有变，能量重新得到了分配，这就是降噪的功劳。
+将原矩阵与投影矩阵相称可得到降维后的矩阵。</p>
+<h4 id="svd与lsi">svd与LSI</h4>
+<p>PCA与LDA是特征抽取的两种主要经典方法
+LDA(线性评判分析)
+信号表示：特征抽取后的特征要能够精确地表示样本信息，使得信息丢失很小，对应的方法是PCA
+信号分类：特征抽取后的特征，要使得分类后的准确率很高，不能比原来特征进行分类的准确率低。对于线性来说，对应的方法是LDA
+PCA不具有鉴别特性
+LDA与PCA的目标不一样，导致他们的方法也不一样。PCA得到的投影空间是协方差矩阵的特征向量，而LDA则是通过求得一个变换W，使得变换之后的新均值之差最大，方差最大，变换W就是特征的投影方向。<br>
+PCA做分类时一般使用主向量作为特征进行分类，而不是降维后的矩阵来做分类。</p>
+<hr>
+<p><strong>参考</strong></p>
+<ul>
+<li><a href="http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html" target="_blank" rel="noopener noreffer">奇异值分解及其应用</a></li>
+<li><a href="http://wenku.baidu.com/view/14ca1548e518964bcf847c28.html?re=view" target="_blank" rel="noopener noreffer">百度文库</a></li>
+<li><a href="http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html" target="_blank" rel="noopener noreffer">PCA与SVD</a></li>
+<li><a href="http://blog.sina.com.cn/blog_6163bdeb0102eds7.html" target="_blank" rel="noopener noreffer">Kernel PCA的推导</a></li>
+</ul>
+    </div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2014-09-05</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/amp/posts/2014/09/05/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3/" data-title="pca主成分分析理解" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/amp/posts/2014/09/05/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/amp/posts/2014/09/05/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3/" data-title="pca主成分分析理解" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/amp/posts/2014/09/05/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3/" data-title="pca主成分分析理解"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/amp/posts/2014/09/05/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3/" data-title="pca主成分分析理解" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://localhost:1313/amp/posts/2014/09/05/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3/" data-title="pca主成分分析理解" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/amp/posts/2014/09/05/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3/" data-title="pca主成分分析理解" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/amp/posts/2014/09/05/pca%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3/" data-title="pca主成分分析理解"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/amp/posts/2014/08/22/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/" class="prev" rel="prev" title="模式识别"><i class="fas fa-angle-left fa-fw"></i>模式识别</a>
+            <a href="/amp/posts/2014/09/06/ubuntu-14.04-%E5%AE%89%E8%A3%85-haskell/" class="next" rel="next" title="ubuntu 14.04 安装 haskell">ubuntu 14.04 安装 haskell<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article>
+<div class="adsblock">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-73+ed+2i-1n-4w"
+        data-ad-client="ca-pub-2665873967488848" data-ad-slot="2692397084"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+</main>
+
+<amp-analytics type="googleanalytics">
+    <script type="application/json">
+        {
+            "vars": {
+                "account": ""
+            },
+            "triggers": {"trackEvent":{"on":"click","request":"event","selector":"body","vars":{"eventAction":"click","eventCategory":"body-click"}},"trackPageview":{"on":"visible","request":"pageview"}}
+        }
+    </script>
+</amp-analytics>
+
+<amp-auto-ads type="adsense"
+              data-ad-client="ca-pub-2665873967488848">
+</amp-auto-ads>
+</body>
+
+</html>

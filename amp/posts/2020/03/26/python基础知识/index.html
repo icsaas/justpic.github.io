@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+
+
+
+
+<html amp lang="zh-CN" class="no-js">
+<head><script src="/livereload.js?port=1313&amp;mindelay=10&amp;v=2" data-no-instant defer></script>
+  <title>Python基础知识</title>
+  <meta charset="utf-8">
+
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script><script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+
+
+
+  <link rel="canonical" href="http://localhost:1313/posts/2020/03/26/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="144x144">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <meta name="theme-color" content="#000000" />
+
+  
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "桑河一榆",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/",
+          "name": "amp"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/",
+          "name": "posts"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/",
+          "name": "2020"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/03\/",
+          "name": "03"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/03\/26\/",
+          "name": "26"
+        }
+    },{
+        "@type": "ListItem",
+        "position":  7 ,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/amp\/posts\/2020\/03\/26\/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86\/",
+          "name": "python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"
+        }
+    }]
+}
+</script>
+
+
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        /**
+* stylesheet.html
+* ---------------
+* This is the stylesheet that gets injected as a fallback if no layouts/partials/stylesheet.html file is available
+* in your project file.
+*
+* For further details, please have a look at:
+* https://gohugo-amp.gohugohq.com/install/
+*
+**/
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px
+dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em
+0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em
+40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html
+input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html
+input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px
+solid silver;margin:0 2px;padding:.35em .625em
+.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}td,th{padding:0}*{box-sizing:border-box}button,input,select,textarea{font:13px/1.4
+Helvetica,arial,freesans,clean,sans-serif}a{color:#4183c4;text-decoration:none}a:active,a:focus,a:hover{text-decoration:underline}.rule,hr{height:0;margin:15px
+0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid
+#ddd}.rule:after,.rule:before,hr:after,hr:before{display:table;content:""}.rule:after,hr:after{clear:both}fieldset{padding:0;margin:0;border:0}label{font-size:13px;font-weight:700}#adv_code_search
+.search-page-label,input[type=email],input[type=number],input[type=password],input[type=tel],input[type=text],input[type=url],textarea{min-height:34px;padding:7px
+8px;font-size:13px;color:#333;vertical-align:middle;background-color:#fff;background-repeat:no-repeat;background-position:100%;border:1px
+solid #ccc;border-radius:3px;outline:none;box-shadow:inset 0 1px 2px rgba(0,0,0,.075)}#adv_code_search
+.focus.search-page-label,#adv_code_search .search-page-label:focus,.focused
+.drag-and-drop,input[type=email].focus,input[type=email]:focus,input[type=number].focus,input[type=number]:focus,input[type=password].focus,input[type=password]:focus,input[type=tel].focus,input[type=tel]:focus,input[type=text].focus,input[type=text]:focus,input[type=url].focus,input[type=url]:focus,textarea.focus,textarea:focus{border-color:#51a7e8;box-shadow:inset
+0 1px 2px rgba(0,0,0,.075),0 0 5px
+rgba(81,167,232,.5)}.input-contrast,input.input-contrast{background-color:#fafafa}.input-contrast:focus,input.input-contrast:focus{background-color:#fff}:-moz-placeholder,::-webkit-input-placeholder{color:#aaa}::-webkit-validation-bubble-message{font-size:12px;color:#fff;background:#9c2400;border:0;border-radius:3px;-webkit-box-shadow:1px
+1px 1px
+rgba(0,0,0,.1)}input::-webkit-validation-bubble-icon{display:none}::-webkit-validation-bubble-arrow{background-color:#9c2400;border:1px
+solid #9c2400;-webkit-box-shadow:1px 1px 1px
+rgba(0,0,0,.1)}.absent{color:#c00}.anchor{position:absolute;top:0;bottom:0;left:0;display:block;padding-right:6px;padding-left:30px;margin-left:-30px}.anchor:focus{outline:none}h1,h2,h3,h4,h5,h6{position:relative;margin-top:1em;margin-bottom:16px;font-weight:700;line-height:1.4}h1
+.octicon-link,h2 .octicon-link,h3 .octicon-link,h4 .octicon-link,h5 .octicon-link,h6
+.octicon-link{display:none;color:#000;vertical-align:middle}h1:hover .anchor,h2:hover .anchor,h3:hover .anchor,h4:hover
+.anchor,h5:hover .anchor,h6:hover
+.anchor{height:1em;padding-left:8px;margin-left:-30px;line-height:1;text-decoration:none}h1:hover .anchor
+.octicon-link,h2:hover .anchor .octicon-link,h3:hover .anchor .octicon-link,h4:hover .anchor .octicon-link,h5:hover
+.anchor .octicon-link,h6:hover .anchor .octicon-link{display:inline-block}h1 code,h1 tt,h2 code,h2 tt,h3 code,h3 tt,h4
+code,h4 tt,h5 code,h5 tt,h6 code,h6
+tt{font-size:inherit}h1{font-size:2.25em;line-height:1.2}h1,h2{padding-bottom:.3em;border-bottom:1px solid
+#eee}h2{font-size:1.75em;line-height:1.225}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5,h6{font-size:1em}h6{color:#777}blockquote,dl,ol,p,pre,table,ul{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px
+0;background-color:#e7e7e7;border:0 none}ol,ul{padding-left:2em}ol.no-list,ul.no-list{padding:0;list-style-type:none}ol
+ol,ol ul,ul ol,ul ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl,dl dt{padding:0}dl
+dt{margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0
+16px;margin-bottom:16px}blockquote{padding:0 15px;color:#777;border-left:4px solid
+#ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}table
+th{font-weight:700}table td,table th{padding:6px 13px;border:1px solid #ddd}table
+tr{background-color:#fff;border-top:1px solid #ccc}table
+tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;box-sizing:border-box}span.frame,span.frame>span{display:block;overflow:hidden}span.frame>span{float:left;width:auto;padding:7px;margin:13px
+0 0;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0
+0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px
+auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0
+auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px
+0 0;overflow:hidden;text-align:right}span.align-right span
+img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left
+span{margin:13px 0
+0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px
+auto
+0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:"\00a0"}code
+br,tt br{display:none}del
+code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight
+pre,pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.highlight
+pre{margin-bottom:0;word-break:normal}pre,pre code,pre tt{word-wrap:normal}pre code,pre
+tt{display:inline;max-width:none;padding:0;margin:0;overflow:initial;line-height:inherit;background-color:transparent;border:0}pre
+code:after,pre code:before,pre tt:after,pre
+tt:before{content:normal}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav
+ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{text-decoration:none}ins,mark{background-color:#ff9;color:#000}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px
+dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px
+solid #ccc;margin:1em
+0;padding:0}input,select{vertical-align:middle}body{background-color:#fff;color:#123;font-size:14px;font-family:Helvetica
+Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif}main{max-width:1180px;padding:30px;margin:0 auto}@media
+(min-width:900px){main h1+p{font-size:2em}}h1{font-weight:300;font-size:2em;line-height:1.4em;margin:.5em
+0;font-family:Georgia,serif;-webkit-transition:color .4s;transition:color
+.4s}h2{font-size:2em}h2,h3{font-weight:300;margin:30px
+0}h3{font-size:1.8em}h4{font-size:1.6em}h4,h5{font-weight:300}h5{font-size:1.2em}h6{font-weight:300;font-size:1em}p{line-height:1.4em;font-size:1.2em;margin:15px
+0}blockquote{border-left:5px solid
+#ff1d55;background-color:#ffe9ee;padding:1em;margin-bottom:1em}.lightbox{background-color:rgba(3,121,196,.4);min-height:100vh;min-width:100vw;padding:30px}code{font:12px
+Consolas,Liberation Mono,Menlo,Courier,monospace}p>code{color:#ff1d55}pre
+code{display:block;background-color:#f7f7f7;padding:15px;overflow:auto;color:#123;line-height:1.4em}a{color:#ff1d55;text-decoration:none;-webkit-transition:color
+.4s,background .4s;transition:color .4s,background .4s}a:hover{color:#e9003a}ol,ul{margin:7.5px;padding:7.5px 15px}ol
+li,ul li{margin:7.5px 15px}.doc-parameters{list-style-type:none;padding:0}.doc-parameters
+li{display:block;margin:0;margin-bottom:15px}.doc-parameters .example,.doc-parameters blockquote{border-left:5px solid
+#0379c4;background-color:#96d5fd;color:#123;line-height:1em;font-size:1em;padding:1em;margin:0}.doc-parameters
+.example{background-color:#c8e9fe}.doc-parameters
+.parameter{display:block;padding:1em;background-color:#0379c4;color:#fff;margin:0}.doc-parameters .parameter
+strong{display:inline-block;padding:0
+.5em;border-radius:.25em;line-height:2em;background-color:#025a92}hr{height:.25em;padding:0;margin:24px
+0;background-color:#f7f7f7;border:0}.teaser{display:-webkit-box;display:-ms-flexbox;display:flex;text-align:left;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.teaser
+aside{-ms-flex-preferred-size:60%;flex-basis:60%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:30px}@media
+(max-width:700px){.teaser aside{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content{-ms-flex-preferred-size:40%;flex-basis:40%;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;color:dimgray;font-size:12px}@media
+(max-width:700px){.teaser .content{-ms-flex-preferred-size:100%;flex-basis:100%}}.teaser
+.content.content-full{-ms-flex-preferred-size:100%;flex-basis:100%}.teaser .content
+h3{font-size:14px;text-transform:uppercase;font-weight:600;color:#123}.main-index{text-align:center}.main-index
+amp-img{margin:15px auto;width:50%}@media (min-width:900px){.main-index
+p{font-size:2em}}.breadcrumbs{padding:1em;background-color:#f7f7f7}.breadcrumbs
+ul{display:block;margin:0;padding:0}.breadcrumbs ul li{display:inline-block;margin:0 .5em}.breadcrumbs ul
+li:before{content:' / ';position:relative;margin-left:-.5em;color:dimgray}.breadcrumbs ul li
+a{color:dimgray}.breadcrumbs ul li:last-child
+a{color:#ff1d55}header{background-color:#000000;color:#fff;padding:30px;position:relative}header
+.brand{display:inline-block;position:absolute;left:30px;top:20px;line-height:15px;text-transform:uppercase;padding:7.5px;font-size:1.4em}header
+.brand:hover{background-color:#ff1d55;color:#fff}header
+a{color:#fff;text-decoration:none;border-radius:7.5px;padding:7.5px}header
+a:hover{text-decoration:none;background-color:#fff;color:#ff1d55}header nav
+ul{padding:0;margin:0;display:block;text-align:right}header nav ul li{padding:0;margin:0
+7.5px;display:inline-block}header nav ul li.hamburger{display:none}header nav ul li.hamburger
+button{position:absolute;right:30px;top:20px;border:0;background-color:#fff;color:#ff1d55;font-weight:700;border-radius:50%;width:30px;height:30px;overflow:hidden;text-align:center;padding:0;margin:0}@media
+(max-width:900px){header nav ul li{display:none}header nav ul
+li.hamburger{display:inline-block}}.sidebarNavigation{width:210px;max-width:95%}.sidebarNavigation
+ul{padding:0;margin:0}.sidebarNavigation ul li{display:block}.sidebarNavigation ul li
+a{display:block;line-height:1.4em;padding:7.5px}footer{margin:60px
+auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;max-width:1180px;padding:30px;font-size:12px}footer
+a:hover{text-decoration:none}footer strong{text-transform:uppercase;margin-bottom:15px;display:block}footer strong
+a{color:#1d1d1d}footer ul{display:block;padding:0;margin:0}footer ul li{display:block;line-height:1.4em;padding:7.5px
+0;margin:0}footer ul li a{color:dimgray}footer
+.quarter-section{margin-bottom:30px;-ms-flex-preferred-size:25%;flex-basis:25%}@media (max-width:900px){footer
+.quarter-section{-ms-flex-preferred-size:33%;flex-basis:33%}}@media (max-width:700px){footer
+.quarter-section{-ms-flex-preferred-size:50%;flex-basis:50%}}@media (max-width:500px){footer
+.quarter-section{-ms-flex-preferred-size:100%;flex-basis:100%}}.boxes{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:12px}.boxes
+.box{-ms-flex-preferred-size:30%;flex-basis:30%;background-color:#f7f7f7;padding:30px;margin:7.5px
+0;text-align:left;font-size:12px}.boxes .box h3{font-size:12px;line-height:1em;padding:0;margin:0}.boxes .box
+a{padding:0;color:#ff1d55}.boxes .box p{color:dimgray;font-size:12px;margin:7.5px 0}@media (max-width:900px){.boxes
+.box{-ms-flex-preferred-size:45%;flex-basis:45%}}@media (max-width:500px){.boxes
+.box{-ms-flex-preferred-size:100%;flex-basis:100%}}
+
+.fixed-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+}
+
+amp-img.contain img {
+  object-fit: contain;
+}
+
+.footnotes {
+  overflow-wrap: break-word;
+}
+
+    </style>
+
+  <script data-ad-client="ca-pub-2665873967488848" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script async custom-element="amp-auto-ads"
+          src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+  </script>
+</head>
+
+<body>
+
+
+<main>
+  <div class="toc" id="toc-auto">
+    <h2 class="toc-title">目录</h2>
+    <div class="toc-content" id="toc-content-auto"></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Python基础知识</h1><div class="post-meta">
+        <div class="post-meta-line"><span class="post-author"><a href="" rel=""></a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/"><i class="far fa-folder fa-fw"></i>Categories</a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-26">2020-03-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 15104 字&nbsp;
+            <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 31 分钟&nbsp;<span id="/amp/posts/2020/03/26/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="leancloud_visitors" data-flag-title="Python基础知识">
+                <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+            </span>&nbsp;</span>
+        </div>
+    </div><div class="details toc" id="toc-static" kept="">
+        <div class="details-summary toc-title">
+            <span>目录</span>
+            <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#printlist3">print(list1)
+print(list2)
+print(list3)</a></li>
+  </ul>
+</nav></div>
+    </div><div class="content" id="content">
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        <p>1.数据结构&ndash;可变类型和不可变类型
+对<strong>可变类型</strong>进行修改, 其 内存地址不变,但是其内部的内容发生改变</p>
+<p>主要是: 字典 \ 列表
+对<strong>不可变类型</strong>进行修改, 其 内存地址变化,即引用发生改变,等同赋值操作</p>
+<p>主要是: 数字 字符 元组
+2.赋值|浅拷贝|深拷贝
+一、赋值&ndash;&ldquo;旧瓶装旧酒&rdquo;
+在python中,对象的赋值就是简单的对象引用, 这点和C++等语言不同.如:</p>
+<p>In[2]: a = [1, 2, &lsquo;hello&rsquo;, [&lsquo;python&rsquo;, &lsquo;C++']]
+In[3]: b = a
+In[4]: a is b
+Out[4]: True
+In[5]: b is a
+Out[5]: True
+In[6]: id(a)
+Out[6]: 139705399858952
+In[7]: id(b)
+Out[7]: 139705399858952</p>
+<h1 id="总结">总结:</h1>
+<p>1.通过 is 判断它们的内存地址相同;
+2.通过 id() 来查看两者的内存地址也相同.</p>
+<p>In [1]: a = 3                                  <br>
+In [2]: b = 3                                  <br>
+In [3]: a is b                                     Out[3]: True
+In [4]: id(a)                                     Out[4]: 10919488
+In [5]: id(b)                                     Out[5]: 10919488</p>
+<h1 id="通过这个例子很容易说明">通过这个例子,很容易说明:</h1>
+<ol>
+<li>python 中 不可变类型 在内存中只有一份, 不论如何嵌套,其id()值相同.
+​ 在上述情况下,a和b是一样的,它们指向同一片内存地址,b不过是a的别名,是引用.</li>
+</ol>
+<p>​ 赋值操作(包括对象作为参数、返回值)不会开辟新的内存空间,只是复制了对象的引用. 也就是说 除了 b 这个名字之外, 没有其它的内存开销. 修改了 a 或 b , 另外一个 b 或 a 同样跟着受影响.</p>
+<p>​ python的赋值操作还有一个通俗的理解: 先在内存中创建等号右边的对象, 然后把等号左边的变量作为标签贴在右边对象上,是为引用.</p>
+<p>​ 赋值操作注意: 还要注意作用域,在不同作用域可以创建同样的 &ldquo;值&rdquo;; 但是这个&quot;值&quot;的内存空间是不同的.</p>
+<p>二、浅拷贝(shallow copy)&ndash;&ldquo;新瓶装旧酒&rdquo;
+​ 浅拷贝会创建新对象, 其对象非原来对象的引用, 而是原来对象内第一层对象的引用.</p>
+<p><u>通俗理解:拷贝了引用,并没有拷贝内容;产生了新对象,但是里面的内容还是同一份</u>
+​ 浅拷贝 三种形式: 切片操作 工厂函数 copy模块中的copy函数. 比如上述列表a;</p>
+<p>切片操作: c = a[:]
+工程函数: c = list(a)
+copy函数: c = copy.copy(a)
+In[8]: c = a[:]
+In[9]: c is a
+Out[9]: False
+In[10]: id(a)
+Out[10]: 139705399858952
+In[11]: id(c)
+Out[11]: 139705390811656
+In[12]: [id(x) for x in a]
+Out[12]: [10919424, 10919456, 139705494889056, 139705399859272]
+In[13]: [id(x) for x in c]
+Out[13]: [10919424, 10919456, 139705494889056, 139705399859272]</p>
+<h1 id="总结-1">总结:</h1>
+<ol>
+<li>b 不在(is)是 a ,也不指向(id())同一个内存空间;</li>
+<li>但是 [id(x) for x in a] 和 [id(x) for x in c] 结果相同. 说明: a 和 c 内部的元素对象指向的是同一片内存地址.</li>
+</ol>
+<p>In[14]: id(a[3][0])
+Out[14]: 139705495480280
+In[15]: id(c[3][0])
+Out[15]: 139705495480280
+In[16]: a[3][0]
+Out[16]: &lsquo;python&rsquo;
+In[17]: a[3].append(&lsquo;java&rsquo;)
+In[18]: b
+Out[18]: [1, 2, &lsquo;hello&rsquo;, [&lsquo;python&rsquo;, &lsquo;C++&rsquo;, &lsquo;java&rsquo;]]</p>
+<h1 id="总结-2">总结:</h1>
+<ol>
+<li>关于浅copy的理解,个人以为用内层和外层来区分更容易理解.通俗来说,浅拷贝就是只修改了最外层的引用, 使得元素最外层的地址变化,但是对原来元素的内层地址和引用均未做修改.</li>
+<li>把这里最外层列表中的每一个元素(包括列表元素)都看作一个&rsquo;坑&rsquo;, 每个&rsquo;坑&rsquo;再指向一个具体的 对象. 这就是&rsquo;引用'.</li>
+</ol>
+<p>In[19]: a[1] = 10
+In[20]: a
+Out[20]: [1, 10, &lsquo;hello&rsquo;, [&lsquo;python&rsquo;, &lsquo;C++&rsquo;, &lsquo;java&rsquo;]]
+In[21]: c
+Out[21]: [1, 2, &lsquo;hello&rsquo;, [&lsquo;python&rsquo;, &lsquo;C++&rsquo;, &lsquo;java&rsquo;]]
+In[22]: b
+Out[22]: [1, 10, &lsquo;hello&rsquo;, [&lsquo;python&rsquo;, &lsquo;C++&rsquo;, &lsquo;java&rsquo;]]</p>
+<h1 id="事实上这里就比较绕-思路还是要从-是否修改引用-来思考">事实上,这里就比较绕; 思路还是要从 是否修改引用 来思考.</h1>
+<ol>
+<li>python中一直都是先在内存中有对象,然后再对对象有引用.</li>
+<li>[17]修改的是 嵌套列表内部的元素,并未对最里层列表本身的 内存地址 产生影响, 所以 a 和 c 指向的内层列表仍然是同一个对象,所以其中一个修改,两者同时发生改变.</li>
+<li>[19]修改的是 不可变类型, 相当于 指向了新的引用;所以 a 和 c 不同.
+三、深拷贝(deep copy)&ndash;&ldquo;新瓶装新酒&rdquo;
+​ 深拷贝 只有一种形式 , copy模块中的 deepcopy() 函数</li>
+</ol>
+<p>​ 深拷贝拷贝了对象的所有元素,包括多层嵌套的元素. 因此,它的时间和空间开销要高.</p>
+<p>​ 深拷贝拷贝出来的对象根本就是一个全新的对象,不再于原来的对象有任何的关联.</p>
+<p>​ 深拷贝类似没有 出口的递归拷贝</p>
+<p>四、拷贝注意点
+​ 对于非容器类型, 如数字 , 字符 , 以及其它的&quot;原子&quot;类型, 没有拷贝一说, 产生的都是原对象的引用.</p>
+<p>​ 如果元组变量值包含原子类型对象, 即使采用了深拷贝,也只能得到浅拷贝.</p>
+<p>(上面这句话, 没有理解&hellip;)</p>
+<p>五、最直观的还是补充高级中学习的图.
+&mdash;待补&quot;坑&quot;&mdash;
+deepcopy() 通过引用计数</p>
+<p>3.python基本数据结构
+3.1 字典
+3.1.1 按照字典的v值进行排序
+sorted(d.items(), key=lambda x:x[1] )</p>
+<p>items 取出的是 类字典的键值对 对象
+keys 取出的是 类列表对象
+注意排序后的返回值是一个list，而原字典中的kv对被转换为了list中的元组。</p>
+<h1 id="案例">案例</h1>
+<p>alist = [{&lsquo;name&rsquo;:&lsquo;a&rsquo;,&lsquo;age&rsquo;:20}, {&lsquo;name&rsquo;:&lsquo;b&rsquo;,&lsquo;age&rsquo;:30}, {&lsquo;name&rsquo;:&lsquo;c&rsquo;,&lsquo;age&rsquo;:25}]
+def sort_by_age(alist):
+return sorted(alist, key=lambda x:x[&lsquo;age&rsquo;], reverse=True)
+补充1: sorted()函数:</p>
+<p>sorted(iterable,key,reverse)，sorted一共有iterable,key,reverse这三个参数。</p>
+<p>iterable表示可以迭代的对象，例如可以是dict.items()、dict.keys()等
+key是一个函数，用来选取参与比较的元素
+reverse则是用来指定排序是倒序还是顺序，reverse=true则是倒序，reverse=false时则是顺序，默认是reverse=false。
+补充2: lanbda函数 [链接:lanbda函数](#8.1 匿名函数 lambda)</p>
+<p>3.1.2 字典和json的区别
+​ 字典是一种数据结构, json是一种数据的表现形式, 字典的key值只能是能hash的就行, json的值必须是字符串.</p>
+<p>参考CSDN博文: json和python中字典的区别和联系</p>
+<p>3.2 列表
+3.2.1 列表的常见操作
+1)增加</p>
+<p>li.insert(index, 数据): 在制定的位置插入数据(指定位置前有空元素会自动补位)
+这个说法不严谨,其实如果用 负索引插入 到初始位置之间有空位也会自动补位
+li.apend(数据): 在列表的末尾追加数据(最常用的方法)
+li.extend(Iterable): 将可迭代对象中的元素追加到列表
+extend和 += 的区别
+2)取值和修改</p>
+<p>取值: 列表名[index] : 根据下标来取值
+修改: 列表名[index] = 数据 : 修改指定索引的数据
+3)删除</p>
+<p>del 列表名[index] : 删除指定索引的数据
+del 列表名: 删除指定列表, 和 clear() 区别
+列表名.remove(数据): 删除第一个出现的数据
+列表名.pop() : 删除末尾数据,返回值: 返回被删除的元素
+列表名.pop(index) : 删除指定索引的数据,返回值: 返回被删除的元素
+列表名.clear() : 清空整个列表的元素
+4)排序</p>
+<p>列表名.sort() : 升序(小到大)
+列表名.sort(reverse=True) : 降序(大到小)
+列表名.reverse() : 逆序, 反转
+5)统计相关</p>
+<p>len(列表名) : 计算列表长度
+列表名.count(数据) : 数据在列表中出现的次数
+列表名.index(数据): 数据在列表中首次出现时的索引, 没有查到会报错.
+数据 in 列表
+6)循环遍历</p>
+<p>while循环
+for循环
+7)切片</p>
+<p>正向切片,反向切片
+注意&quot;左闭右开&quot;
+3.2.2 列表的注意事项
+索引超出会报错:IndexError
+但是切片超出不会报错,返回 空[]
+插入超出也不会报错, 自动从两端往中间补位
+3.2.3 列表生成式 | 元组生成器 | 字典推导式 | 三元运算符 | 逻辑操作符</p>
+<h1 id="平时注意积累写法和场景有时候灵活运用可以大大简化代码">平时注意积累写法和场景,有时候灵活运用可以大大简化代码</h1>
+<p>3.2.2 列表思考题:
+1.实现list去重的思路</p>
+<ol>
+<li>集合</li>
+<li>遍历
+2.代码题
+def extendList(val, list=[]):
+list.append(val)
+return list</li>
+</ol>
+<p>list1 = extendList(10)
+list2 = extendList(123, [])
+list3 = extendList(&lsquo;a&rsquo;)</p>
+<h2 id="printlist3">print(list1)
+print(list2)
+print(list3)</h2>
+<p>结果:
+[10, &lsquo;a&rsquo;]
+[123]
+[10, &lsquo;a&rsquo;]
+解释:
+许多人会错误的认为 list1 应该等于 [10] 以及 list3 应该等于 [&ldquo;a&rdquo;]。认为 list 的参数会在 extendList 每次被调用的时候会被设置成它的默认值 []。 尽管如此，实际发生的事情是，新的默认列表仅仅只在函数被定义时创建一次。随后当 extendList 没有被指定的列表参数调用的时候，其使用的是同一个列表。这就是为什么当函数被定义的时候，表达式是用默认参数被计算，而不是它被调用的时候。 因此，list1 和 list3 是操作的相同的列表。而 ````list2是操作的它创建的独立的列表（通过传递它自己的空列表作为list``` 参数的值）。 extendList 函数的定义可以做如下修改，但，当没有新的 list 参数被指定的时候，会总是开始一个新列表，这更加可能是一直期望的行为。 def extendList(val, list=None): if list is None: list = [] list.append(val) return list 使用这个改进的实现，输出将是： list1 = [10] list2 = [123] list3 = [&ldquo;a&rdquo;]
+参考链接:http://www.maiziedu.com/article/8260/ 
+解释2:
+很多人都会误认为list1=[10],list3=[&lsquo;a&rsquo;],因为他们以为每次extendList被调用时，列表参数的默认值都将被设置为[].但实际上的情况是，新的默认列表只在函数被定义的那一刻创建一次。当extendList被没有指定特定参数list调用时，这组list的值随后将被使用。这是因为带有默认参数的表达式在函数被定义的时候被计算，不是在调用的时候被计算。
+因此list1和list3是在同一个默认列表上进行操作（计算）的。而list2是在一个分离的列表上进行操作（计算）的。（通过传递一个自有的空列表作为列表参数的数值）。
+​ 新的默认列表只有在函数被定义的那一刻创建一次. 当func 被没有指定list 的情况下调用时,这组list的值随后将被使用. 这是因为带有默认参数的表达式在函数被定义的时候被计算,不是在调用的时候被计算.</p>
+<p>​ 拓展资料: 深度拓展,来自sf网站</p>
+<p>3.3 元组
+单个元素的元组 (1, )
+3.4 字符串
+3.4.1 反转字符串</p>
+<p>字符串:str.[::-1]</p>
+<p>3.5 数字(int)
+小数 保留指定位数的小数 round(float, 要保留的位数)
+3.6 集合
+支持 union(联合), intersection(交), difference(差), sysmmetric_difference(对称差集)等数学运算.</p>
+<p>去重 set()
+交集: a&amp;b 共有的部分
+并集: a|b 总共的部分
+差集: a-b 或 b-a 另一个集合中没有的部分 (前者有后者没有,即在第一个集合中,不在第二个集合中)
+对称差集: a^b (在a, b中, 但是不会同时出现在二者中&hellip;)
+3.7 布尔类型
+4.文件读写操作&ndash;大文件读写|生成器读取
+5.python 常见标准库
+5.1 random库 &ndash; 生成随机数
+random.random() 0-1之间随机浮点数</p>
+<p>random.uniform(a, b) [a, b]之间浮点数</p>
+<p>random.randint(a, b) [a, b]之间的整数</p>
+<p>random.randrange(a, b, step) [a, b) 中 以 step 为基数 随机取数</p>
+<p>random.choice(sequence) 从特定序列中随机取一个 元素</p>
+<p>补充: 打乱一个排序的列表</p>
+<p>random.shuffle(alist)
+5.2 datetime库 &ndash; 日期操作
+5.3 time库
+6.日志功能
+7. python性能提升 | 内存管理与垃圾回收机制 | 作用域 | 命名空间 | PEP8规范
+7.1 性能提升:
+1.多进程,充分利用机器的多核性能;
+2.对性能影响较大的部分代码,可以使用C或C++编写
+3.对于IO阻塞造成的性能影响,可以使用IO多路复用来解决
+链接: IO多路复用机制
+4.尽量使用Python的内建函数
+5.尽量使用局部变量
+7.2 内存管理与垃圾回收机制
+7.2.1 python 的内存管理机制及调优手段
+内存管理机制: 引用计数, 垃圾回收, 内存池</p>
+<p>1.引用计数
+2.标记清除
+1.引用计数
+2.标记清除
+3.分代回收
+3.内存池
+调优手段:</p>
+<p>1.手动垃圾回收 <strong>del</strong>
+2.调高垃圾回收阈值
+3.避免循环引用(手动解循环引用和弱引用)
+7.2.2 内存泄漏是什么? 如何避免?
+指由于疏忽或者错误造成程序未能释放已经不再使用的内存情况.(失去对内存的控制,造成内存浪费)
+<strong>del</strong>()方法的对象间的循环引用是导致内存泄漏的主凶;
+解决方法也是: 不使用的时候,正确 del object 删除
+辅助python模块:
+gc 查看不能回收对象的详细信息;
+sys.getrefcount(obj) 来获取对象的引用计数,并根据返回值是否为0 来判断是否内存泄漏.
+7.3 作用域
+​ python中,一个变量的作用域总是由在代码中被赋值的地方所决定.当python遇到一个变量的时候,会按照下列的顺序进行搜索:</p>
+<p>本地作用域(Local) &mdash;&gt; 当前作用域被嵌入的本地作用域(Enclosing locals) &mdash;&gt; 全局\模块作用域(Global) &mdash;&gt; 内置作用域(Built-in)</p>
+<p>参考链接: Python基本语法_变量作用域LEGB
+个人理解:
+Local就是内层函数的空间;
+Enclosing locals 就是 外层函数的空间(闭包)
+Global 就是 模块 全局
+Built-in 就是 python解释器自带的内置函数和属性空间.
+7.4 命名空间
+​ 在python中所有的名字都存在一个空间中, 它们在该空间中存在和被操作&mdash;-这就是命名空间</p>
+<p>​ 它就像是一个盒子,每一个变量名字都对应装着一个对象.当查询变量的时候,会从该盒子里面寻找相应的对象.</p>
+<p>7.5 PEP8规范
+链接: PEP8的python风格格式规范（中文版）</p>
+<p>8.关于编码问题
+9.序列化与反序列化
+二 python高级
+1.Liunx | 虚拟环境 |
+2.网络通信
+大牛文章必看:</p>
+<p>IP地址的分配原理</p>
+<p>TCP的三次握手与四次挥手（详解+动图）</p>
+<p>为什么建立连接是三次握手，关闭连接确是四次挥手呢？</p>
+<p>建立连接的时候， 服务器在LISTEN状态下，收到建立连接请求的SYN报文后，把ACK和SYN放在一个报文里发送给客户端。 
+而关闭连接时，服务器收到对方的FIN报文时，仅仅表示对方不再发送数据了但是还能接收数据，而自己也未必全部数据都发送给对方了，所以己方可以立即关闭，也可以发送一些数据给对方后，再发送FIN报文给对方来表示同意现在关闭连接，因此，己方ACK和FIN一般都会分开发送，从而导致多了一次。
+1.三大法器|递归
+迭代器
+生成器
+装饰器</p>
+<h1 id="面向切面编程----切面需求的场景">面向切面编程 &ndash; 切面需求的场景</h1>
+<p>Aspect Oriented Programming(AOP)，面向切面编程，是一个比较热门的话题。AOP主要实现的目的是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。</p>
+<h1 id="需求场景案例">需求场景案例:</h1>
+<ul>
+<li>插入日志</li>
+<li>性能测试</li>
+<li>事务处理</li>
+<li>缓存</li>
+<li>权限的校验
+递归
+1.数据库基础
+关系型数据库核心元素
+数据行(记录)
+数据列(字段)
+数据表(数据行的集合)
+数据库(数据表的集合)
+关系型数据库的主要产品：
+oracle：在以前的大型项目中使用,银行,电信等项目
+mysql：web时代使用最广泛的关系型数据库
+ms sql server：在微软的项目中使用
+sqlite：轻量级数据库，主要应用在移动平台
+RDBMS
+Relational Database Management System
+数据库的命令:</li>
+</ul>
+<p>主从配置优势:
+实现读写分离
+可以实现集群(灵活扩展)
+相互之间可以 实现 &lsquo;备份&rsquo;
+2.Mysql数据库
+2.1 原理 优势 应用场景
+适合用于关系特别复杂的数据查询场景的 应用场景.
+2.2 开启,创建库,创建表
+分为服务端和客户端
+命令</p>
+<h1 id="安装-服务端--客户端">安装 服务端 , 客户端</h1>
+<h1 id="启动-关闭-重启">启动 关闭 重启</h1>
+<h1 id="创建数据库创建数据表创建字段-创建记录">创建数据库,创建数据表,创建字段, 创建记录</h1>
+<h1 id="查看创建过程">查看创建过程,</h1>
+<p>insert into 
+update set &hellip; where&hellip;
+select * from &hellip;
+delete from &hellip; where &hellip;</p>
+<h1 id="回复和备份">回复和备份:</h1>
+<p>mysqldump -uroot -p db_name &gt; db_copy_name.sql;   # 使用: mysqldump
+mysql -uroot -p db_refleshed_name &lt; db_copy_name.sql;  # 使用: mysql
+2.3 增删改查
+2.4 容灾备份和恢复
+3.Redis数据库
+3.1 原理 优势 应用场景
+持久化存储
+内存型数据库
+缓存,速度快,自动过期
+是不是完全贴合 &lsquo;session&rsquo;?
+以及做高并发的场景.
+redis性能最受影响的就是 联网的时候
+3.2 创建库,创建表
+redis-server  # 启动服务器
+redis-cli  # 启动客户端
+ping
+select 1
+keys *
+type 键
+flushdb  清空当前db数据库
+flushall 清空数据库
+3.3 增删改查
+Redis原生指令参考 <a href="http://redisdoc.com/index.html">http://redisdoc.com/index.html</a>
+中文网站的命令文档
+Redis python客户端 方法参考 <a href="http://redis-py.readthedocs.io/en/latest/#indices-and-tables">http://redis-py.readthedocs.io/en/latest/#indices-and-tables</a>
+3.4 容灾备份和恢复
+4.Mangodb数据库
+4.1 原理 优势 应用场景
+4.2 创建库,创建表
+4.3 增删改查
+4.4 容灾备份和恢复
+5.ORM | 数据库原理 | 数据库调优 | 数据库迁移
+5.1ORM
+5.1.1 概念
+ORM 全拼Object-Relation Mapping.
+中文意为 对象-关系映射.
+主要实现模型对象到关系数据库数据的映射.
+比如：把数据库表中每条记录映射为一个模型对象
+5.1.2 ORM图解
+img</p>
+<p>5.1.3 优点 :
+只需要面向对象编程, 不需要面向数据库编写代码.
+不用编写各种数据库的sql语句.
+对数据库的操作都转化成对类属性和方法的操作.
+实现了数据模型与数据库的解耦, 屏蔽了不同数据库操作上的差异.
+不在关注用的是mysql、oracle&hellip;等.
+通过简单的配置就可以轻松更换数据库, 而不需要修改代码.
+5.1.2 缺点 :
+相比较直接使用SQL语句操作数据库,有性能损失.
+根据对象的操作转换成SQL语句,根据查询的结果转化成对象, 在映射过程中有性能损失.
+数据库迁移
+5.虚拟环境
+5.1 在ubuntu中安装虚拟环境管理工具(配置环境变量)</p>
+<p>sudo pip install virtualenv
+sudo pip install virtualenvwrapper</p>
+<h1 id="安装完虚拟环境后如果提示找不到-mkvirtualenv-命令须配置环境变量">安装完虚拟环境后，如果提示找不到 mkvirtualenv 命令，须配置环境变量：</h1>
+<h1 id="1创建目录用来存放虚拟环境">1、创建目录用来存放虚拟环境</h1>
+<p>mkdir $HOME/.virtualenvs</p>
+<h1 id="2打开bashrc文件并添加如下">2、打开~/.bashrc文件，并添加如下：</h1>
+<p>export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh</p>
+<h1 id="3运行">3、运行</h1>
+<p>source ~/.bashrc
+5.2 创建项目虚拟环境(python解释器)</p>
+<h1 id="默认是python2">默认是python2</h1>
+<p>mkvirtualenv 项目虚拟环境名称</p>
+<h1 id="如果安装python3解释器的-项目虚拟环境">如果安装python3解释器的 项目虚拟环境</h1>
+<p>mkvirtualenv -p python3 项目虚拟环境名称
+小提示:</p>
+<p>创建虚拟环境需要联网
+创建成功后, 会自动工作在这个虚拟环境上
+工作在虚拟环境上, 提示符最前面会出现 “虚拟环境名称”
+虚拟环境安装python包的时候, 不要加 sudo , 否则达不到隔离.
+5.3使用(查看) | 退出 | 删除虚拟环境</p>
+<h1 id="使用查看workon不是worken-该命令可以在任意目录下输入">使用查看(workon不是worken; 该命令可以在任意目录下输入)</h1>
+<p>workon 两次tab键  (然后选择一个需要使用的虚拟环境)
+workon 项目虚拟环境名</p>
+<h1 id="退出">退出</h1>
+<p>deactivate   （敲除deac后可以自动补全）</p>
+<h1 id="删除">删除</h1>
+<p>先退出：deactivate
+再删除：rmvirtualenv 项目虚拟环境名
+5.4 如何在虚拟环境中安装工具包</p>
+<p>提示 : 工具包安装的位置 :</p>
+<p>python2版本下：​ ~/.virtualenvs/项目虚拟环境名/lib/python2.7/site-packages/ python3版本下：​ ~/.virtualenvs/项目虚拟环境名/lib/python3.5/site-packages</p>
+<h1 id="pip">pip</h1>
+<p>pip install  # 安装依赖包   虚拟环境中不需要权限(千万注意,如果使用sudo则安装在全局)
+pip uninstall  # 卸载依赖包
+pip list  # 查看已安装的依赖包
+pip freeze  # 冻结当前环境的依赖包
+5.5 虚拟环境是独立的,你可以看成是一块儿独立的环境,该环境中存在硬链接的python解释器; 然后 workon该环境后切换 项目的目录 来运行各个项目.</p>
+<p>5.6 pycharm 配置虚拟环境</p>
+<p>pycharm 配置虚拟环境</p>
+<p>5.7 辨析(虚拟环境, python包, 以及依赖环境)</p>
+<p>遇到的问题: 想在虚拟环境中安装 opencv , 但是opencv 有很多底层依赖
+解决: 安装还是要通过 sudo apt-get &hellip; 来安装.
+6.git和GitHub
+6.1 使用GIt管理源代码
+注: 1.本地提交:add(添加到暂存区)-&gt;commit(提交到工作区)-&gt;push(提交到远程仓库)</p>
+<p>6.1.1 本地提交</p>
+<h1 id="1初始化git">1.初始化git</h1>
+<p>cd [项目目录]
+git init</p>
+<h1 id="2配置当前项目git提交信息可省略此步如不配置则使用全局配置">2.配置当前项目git提交信息(可省略此步，如不配置则使用全局配置)</h1>
+<p>git config user.name xxx
+git config user.email <a href="mailto:XX@xxx.com">XX@xxx.com</a></p>
+<h1 id="3添加忽略文件">3.添加忽略文件</h1>
+<p>touch .gitignore  (注意不要写成 .ignore)</p>
+<h1 id="31-在忽略文件中设置忽略文件内容后续可以根据需要继续添加">3.1 在忽略文件中,设置忽略文件内容(后续可以根据需要继续添加)</h1>
+<p>.idea
+*.py[cod]</p>
+<h1 id="4添加所有文件到暂存区">4.添加所有文件到暂存区</h1>
+<p>git add .</p>
+<h1 id="5提交本地仓库并填写注释">5.提交本地仓库并填写注释</h1>
+<p>git commit -m&quot;第一次提交&quot;</p>
+<h1 id="6让pycharm管理当前项目">6.让pycharm管理当前项目</h1>
+<p>File -&gt; setting -&gt; Version Control -&gt; &hellip;
+pycharm管理当前项目</p>
+<p>6.1.2 远程提交
+在github或者码云等平台创建项目,创建完成后将已有项目上传到码云</p>
+<p>上传项目到github</p>
+<p>方式1：使用命令行的形式将项目上传到码云</p>
+<p>cd 项目根目录
+git remote add origin 仓库地址
+git push -u origin master
+方式2：使用Pycharm将项目上传到码云</p>
+<p>拷贝地址: 从remote拷贝 https或者ssh地址
+添加远程地址到pycharm
+VCS -&gt; Git -&gt; Remotes
+输入远程地址
+orign
+URL
+输入github或者码云等账号和密码,点击ok
+选择菜单中的 VCS -&gt; Git -&gt; Push
+Push 成功后Pycharm 弹出提示 Push successful
+git的一些其它指令</p>
+<h1 id="回滚到上一个版本">回滚到上一个版本</h1>
+<p>git reset &ndash;hard HEAD~1</p>
+<h1 id="查看所有提交版本记录">查看所有提交版本记录</h1>
+<p>git reflog</p>
+<h1 id="回到指定版本">回到指定版本</h1>
+<p>git reset &ndash;hard 提交id</p>
+<h1 id="查看本地-暂存区工作区的状态">查看本地 暂存区|工作区的状态</h1>
+<p>git status
+其它:</p>
+<p>难在: 冲突的处理, 一般谁冲突谁解决;
+最好的习惯是在remote创建项目然后 pull 到本地.
+6.1.3 关于实际开发中分支切换等问题&ndash;来自[公众号]整理</p>
+<p>从远程仓储clone: git clone <a href="mailto:git@github.com">git@github.com</a>:GalphaXie/Review_Python.git 或 git clone <a href="https://github.com/GalphaXie/Review_Python.git">https://github.com/GalphaXie/Review_Python.git</a></p>
+<p>下载后的项目默认是在 master分支, 一定要进行分支切换 git checkout develop</p>
+<p>这个时候需要添加 A功能, 那么应该从master分支再创建一个分支 : git branch feature-A,并切换到该分支: git checkout feature-A</p>
+<p>可以合并命令为: git checkout -b feature-A develop
+提交到暂存区: git add feature-A (类似本地的文件的 Ctrl + s 的操作)</p>
+<p>提交到工作区: git commit -m &lsquo;add feature-A&rsquo;</p>
+<p>进行分支合并,但是这之前一定要做的一步是: git pull origin develop 取回远程库的更新,来防止冲突(因为很多人在develop上面提交代码)</p>
+<p>然后再切换到自己的分支: git checkout feature-A, 然后 用 rebase命令 合并新的更新到自己目前的工作分支.</p>
+<p>最后: git merge &ndash;no-ff feature-A</p>
+<p>最最后: git push origin develop</p>
+<ol start="7">
+<li>Linux 命令 | vim 命令
+Linux命令大全</li>
+</ol>
+<p>编辑器之神：VIM 常用命令整理</p>
+<p>8.函数
+8.1 匿名函数 lambda
+语法: lambda [arg1 [,arg2,&hellip;..argn]]:expression 即: 关键字 参数 : 语句</p>
+<p>所谓匿名，意即不再使用 def 语句这样标准的形式定义一个函数。</p>
+<p>lambda 只是一个表达式，函数体比 def 简单很多。
+lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。
+lambda 函数拥有自己的命名空间，且不能访问自己参数列表之外或全局命名空间里的参数。
+虽然lambda函数看起来只能写一行，却不等同于C或C++的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。
+参考链接: 菜鸟教程 Python3 函数</p>
+<p>9.面向对象
+10.进程 线程 协程
+10.1概念辨析
+异步</p>
+<p>同步</p>
+<p>阻塞</p>
+<p>非阻塞</p>
+<p>并行</p>
+<p>并发</p>
+<p>I/O密集型</p>
+<p>CPU密集型</p>
+<p>三 Python web 框架要点
+1.web开发基本概念:
+1.1web框架的定义 ：
+协助开发者快速进行web程序开发的一套功能代码块。
+1.2框架的优势： 避免重复造轮子
+降低开发难度， 提高开发效率
+稳定性和可扩展性强
+通俗理解：成熟的web框架对数据流，安全性等进行了很好的通用支持，使得开发者可以更好的专注于 业务逻辑的实现。
+1.3web开发各部分的构成
+web应用处理流程</p>
+<p>web开发(开发框架) 是基于 应用层(HTTP) 开发.
+前端通过 实现 HTTP请求 来和后端通信
+后端程序又分为 服务器程序 + 框架程序
+服务器
+处理的是 HTTP请求报文
+框架程序
+接收并解析HTTP请求，获取具体的请求信息
+处理本次HTTP请求，即完成本次请求的业务逻辑处理
+构造并返回处理结果——HTTP响应
+==WSIG== 协议 (待完善)
+WSGI 协议 规定: 框架处理请求和响应对象, 中间还要提供中间件处理.
+2.web框架学习方法
+1.如何搭建工程程序
+工程的组建
+如何创建应用实例, 如 flask=Flask()
+单个脚本 还是 拆分成多个目录?
+工程的配置
+配置文件、配置类、==?(flask还有一种)== 等配置方式的选择
+路由定义
+Flask是以装饰器的形式实现;
+Django是以项目urls文件和应用urls文件共同实现
+视图函数定义
+函数视图、类视图
+是否需要必传参数(如django中的request是必传参数)
+固定写法
+2.如何获取请求数据（操作request对象）
+身份认证, 权限校验, 限流校验
+请求头参数的获取
+请求路径参数的获取
+请求体的获取(包括Form表单数据)的获取
+3.如何构造响应数据（构造response对象）
+响应头
+响应体
+状态码
+4.如何使用中间层
+请求钩子
+中间件
+5.框架提供的其他功能组件的使用
+数据库
+模板
+admin
+三 Flask基础
+1.web基础
+1.3跨站请求伪造(CSRF : Cross-site request forgery)
+1.CSRF原理分析:</p>
+<ul>
+<li>1.1 HTTP是无状态协议,所以需要会话保持手段, 比如用 cookies;</li>
+<li>1.2 CSRF的场景是: 正常网站A,  黑客网站B, 客户端(浏览器).</li>
+<li>1.3: 跨站请求伪造: 存在两个网站A(trusted)和网站B(hacked),用户C.用户C登陆交易网站A,正常登陆之后,网站A返回响应并在响应中添加cookie,在未退出网站A登陆的情况下又登陆了黑客网站B.网站B以诱导用户C点击的方式发送了向网站A交易请求url,这个请求会带着用户C浏览器刚才生成的cookie,去进行在网站A上的转出交易.给用户造成损失.<br>
+09 CSRF原理分析​ 跨站请求伪造: 存在两个网站A(trusted)和网站B(hacked),用户C.用户C登陆交易网站A,正常登陆之后,网站A返回响应并在响应中添加cookie,​ 在未退出网站A登陆的情况下又登陆了黑客网站B.网站B以诱导用户C点击的方式发送了向网站A交易请求url,这个请求会带着用户C浏览器刚才生成的cookie,​ 去进行在网站A上的转出交易.给用户造成损失.</li>
+</ul>
+<p>10 解决CSRF攻击​ 1. 在原生form表单提交的时候,设置变量代码块{{ csrf_token() }}来接收每次服务器返回的不同随机值,并且把这个标签设置为隐藏:type=&ldquo;hidden&quot;​ 2. 在返回响应的时候设置 cookies 中的部分内容为相同随机出来的 csrf_token.​ 3. 在每次提交的时候,服务端从cokies中取出request.cookies.get(&ldquo;csrf_token&rdquo;),并从表单中 request.form.get(&ldquo;csrf_token&rdquo;)取出,进行校验.​ 设置方式:​ bytes.decode(base64.b64encode(os.urandom(48)))</p>
+<p>进行CSRF之后:
+1. 网站B提交的表单没法获取到用户C的csrf_token,只能获取csrf_token标签的结构和自己的csrf_token;
+可以利用用户C浏览器中的csrf_token,但是也没法获取到用户C的cookies(浏览器的同源策略)</p>
+<p>Flask 自带CSRFProtect 只需要在前端Form表单中设置   {{ form.csrf_token() }} 即可</p>
+<p>还有一个要注意的点: flask默认是存到 session 中的.所以,这个和在session中要设置   secret_key 而不是在 cookie中设置 对应上了.
+1.4 ORM的简单介绍
+1.5 扩展
+WSGI 工具箱采用 Werkzeug（路由模块），模板引擎则使用 Jinja2。</p>
+<p>7行代码实现 Flask 简单的应用.</p>
+<p>视图常用逻辑</p>
+<p>1.返回json数据;
+2.重定向;
+3.自定义状态码;
+(url)转换器 基类: BaseConverter</p>
+<p>to_url 方法
+to_python方法
+异常捕获</p>
+<p>主动抛出: HTTP异常 abort(500)方法
+捕获错误: @errorhandler(code_or_exception) 装饰器
+请求钩子 &ndash; (Django中 中间件)</p>
+<p>before_first_request</p>
+<p>在处理第一个请求前执行
+before_request</p>
+<p>在每次请求前执行
+after_request</p>
+<p>在请求完成后, 响应返回之前执行.可以对响应进一步处理.
+前提: 没有抛出错误
+teardown_request</p>
+<p>Flask框架</p>
+<p>Flask框架</p>
+<p>Flask有两大核心：Werkzeug和Jinja2</p>
+<p>Werkzeug是一个遵循WSGI协议的python函数库
+Rule类
+用来构造不同的URL模式的对象，路由URL规则
+Map类
+存储所有的URL规则和一些配置参数
+BaseConverter的子类
+负责定义匹配规则
+MapAdapter类
+负责协调Rule做具体的匹配的工作
+获取请求参数</p>
+<p>request 就是flask中代表当前请求的 request 对象，其中一个请求上下文变量(理解成全局变量，在视图函数中直接使用可以取到当前本次请求)
+常用属性: data, form, args, cookies, headers, method, url, files&hellip;
+状态保持</p>
+<p>Cookie
+Cookie基于域名安全，不同域名的Cookie是不能互相访问的
+Session
+上下文</p>
+<p>请求上下文:
+request
+session
+应用上下文:
+current_app
+g
+g 作为 flask 程序全局的一个临时变量, 每次请求都会刷新.
+两者区别:
+请求上下文：保存了客户端和服务器交互的数据
+应用上下文：flask 应用程序运行过程中，保存的一些配置信息，比如程序名、数据库连接、应用信息等
+1.6 蓝图
+1.解决的问题: 在 项目中模块增多的时候, 需要&rsquo;解耦', 而直接解耦的话会存在 &lsquo;循环导入&rsquo; 的问题,这个时候就有了 蓝图. 蓝图就是 &lsquo;缩小版&rsquo;的 flask_app, 可以有自己的独立的模板,模块等.
+2.相当于 &lsquo;中间人 和 小弟 &lsquo;; 可以类比Django中的 app包.
+3.注意: 在蓝图注册路由的时候,并未把蓝图后的url添加到map中,是在 蓝图的 注册 后添加的.
+四 Flask项目
+Python中三大框架各自的应用场景?
+2.Tornado 的核心是什么?</p>
+<p>​ Tornado的核心是 ioloop 和 iostream 两个模块, 前者提供了一个高效的 I/O 事件循环, 后者则封装了 一个无阻塞的socket.</p>
+<p>​ 通过向 ioloop中添加 网络 I/O 事件, 利用 无阻塞的 socket, 再搭配 相应的 回调函数, 达到 高效异步执行.</p>
+<p>性能分析工具
+timeit &ndash; ipython
+cProfile
+七 爬虫基础及项目
+八 项目分析方法&amp;开发&amp;设计模式
+0.业务逻辑与接口设计
+分析要实现的业务逻辑，明确在这个业务中需要涉及到几个相关子业务，将每个子业务当做一个接口来设计。
+分析接口的功能任务，明确接口的访问方式与返回数据：
+接口的请求方式，如GET 、POST 、PUT等
+接口的URL路径定义(rest风格)
+需要前端传递的数据及数据格式（如路径参数、查询字符串、请求体表单、JSON等）
+返回给前端的数据及数据格式
+在前后端分离的应用模式中，我们作为后端开发人员设计后端接口时，可以不用考虑返回给前端数据后，前端如何处理，这是前端开发人员的工作，我们只需明确我们要保存的或者要返回的是什么数据即可。</p>
+<p>明确上述每一点后，即可开始编写接口。</p>
+<ol>
+<li>架构设计
+分析可能用到的技术点
+前后端是否分离
+前端使用哪些框架
+后端使用哪些框架
+选择什么数据库
+如何实现缓存
+是否搭建分布式服务
+如何管理源代码</li>
+<li>数据库设计
+数据库表的设计至关重要
+根据项目需求，设计合适的数据库表
+数据库表在前期如果设计不合理，后期随需求增加会变得难以维护</li>
+<li>集成测试
+在测试阶段要留意测试反馈平台的bug报告
+1.收集所有的 小技术 ,并且去 归纳和对比(比如 异步任务耗时任务在不同项目中的解决方案), 以及去扩展 当下主流 的互联网公司的产品中应可能用到该技术的地方.</li>
+</ol>
+<p>2.简历项目: 教务系统(信息化) | 内控系统(包括内控评价系统) | 经济运营系统 | OA系统(找彭福州咨询, 夏天咨询&hellip;)</p>
+<p>3.权限管理和认证怎么做???很具体的去阐述</p>
+<p>4.脚本的撰写 和 os sys 等库的常见操作&hellip;大文件的读写&hellip;</p>
+<p>定时任务&hellip;</p>
+<p>(运维的shell脚本&hellip; 晦涩,易忘&hellip;)</p>
+<p>5.DRF 中的Request和Response与Django中的HttpRequest、HttpResponse有什么区别。</p>
+<p>REST framework 传入视图的request对象不再是Django默认的HttpRequest对象，而是REST framework提供的扩展了HttpRequest类的Request类的对象。
+REST framework 提供了Parser解析器，在接收到请求后会自动根据Content-Type指明的请求数据类型（如JSON、表单等）将请求数据进行parse解析，解析为类字典对象保存到Request对象中。
+Request对象的数据是自动根据前端发送数据的格式进行解析之后的结果
+DRF中的Response用来构造响应对象，它可以根据请求头中的Accept（接收数据类型声明）来自动转换响应数据到对应格式， 如果前端请求中未进行Accept声明，则会采用默认方式处理响应数据。
+6.聚合接口</p>
+<p>新闻怎么获取&hellip;
+7.django问题: 处理高并发</p>
+<p>8.页面静态化 &ndash; 解决高并发</p>
+<p>==注: 上面的是我期待按照自己的思路整理的python语法 | web | 数据库 等知识.但是现在时间不允许,我只能先复习.重新按照老师笔记的思路去复习.==</p>
+<p>二 python高级
+1.Liunux介绍、命令
+1.1操作系统
+1.2操作系统发展史
+1.3文件和目录
+1.4Ubuntu图形界面入门
+1.5Linux命令的基本使用
+1.6Linux 终端命令格式
+1.7Linux基本命令(一)
+1.8Linux基本命令(二)
+2.Linux安装软件、python开发环境
+3.网络
+3.1网络通信概述</p>
+<p>3.2</p>
+<p>4.多任务
+协程的切换只是单纯的操作CPU的上下文，所以一秒钟切换个上百万次系统都抗的住。</p>
+<h1 id="有耗时操作时需要">有耗时操作时需要</h1>
+<p>monkey.patch_all()  # 将程序中用到的耗时操作的代码，换为gevent中自己实现的模块
+简单总结
+进程是资源分配的单位
+线程是操作系统调度的单位
+进程切换需要的资源很最大，效率很低
+线程切换需要的资源一般，效率一般（当然了在不考虑GIL的情况下）
+协程切换任务资源很小，效率高
+多进程、多线程根据cpu核数不一样可能是并行的，但是协程是在一个线程中 所以是并发
+问题:
+1.进程,线程,协程定义是啥?各自有什么特点?彼此之间有啥区别?应用场景分别是什么?</p>
+<h1 id="协程的demo">协程的demo</h1>
+<p>from gevent import monkey
+import gevent
+import urllib.request</p>
+<h1 id="有耗时操作时需要-1">有耗时操作时需要</h1>
+<p>monkey.patch_all()</p>
+<p>def my_downLoad(url):
+pass</p>
+<p>gevent.joinall([
+gevent.spawn(my_downLoad, param),
+gevent.spawn(my_downLoad, param),
+gevent.spawn(my_downLoad, param),
+])
+2.什么是可迭代对象?什么是迭代器?什么是生成器?yield的作用?</p>
+<p>3.锁?互斥锁?死锁?GIL锁?</p>
+<p>Python中的多线程是假的多线程?  # 因为 GIL
+为什么这么说，我们先明确一个概念，全局解释器锁（GIL）global interpreter lock
+Python代码的执行由Python虚拟机（解释器）来控制,同时只有一个线程在执行
+对Python虚拟机的访问由全局解释器锁（GIL）来控制，正是这个锁能保证同时只有一个线程在运行。
+在多线程环境中，Python虚拟机按照以下方式执行。</p>
+<ul>
+<li>1.设置GIL。</li>
+<li>2.切换到一个线程去执行。</li>
+<li>3.运行。</li>
+<li>4.把线程设置为睡眠状态。</li>
+<li>5.解锁GIL。</li>
+<li>6.再次重复以上步骤。
+比方我有一个4核的CPU，那么这样一来，在单位时间内每个核只能跑一个线程，然后时间片轮转切换。但是Python不一样，它不管你有几个核，单位时间多个核只能跑一个线程，然后时间片轮转。执行一段时间后让出，多线程在Python中只能交替执，100核只能用到1个核例如，下面的代码4核cpu只会用一个核，大概占用25%的cpu使用率。
+GIL和互斥锁也什么关系?</li>
+</ul>
+<p>没有任何关系.
+GIL 保证同一时刻只有一个进程(线程)在执行;
+互斥锁 保证某一个任务必须全部做完才释放资源. &ndash; 类似原子性
+4.队列,进程池</p>
+<p>5.epoll &ndash; 单进程单线程</p>
+<p>epoll是在  kernel 和 应用程序 空间中共享的 特殊内存空间; Nginx服务器就是基于epoll, Linux 是基于 epoll.
+优势:
+- 1. 共享内存&ndash;由 操作系统和应用程序共享
+- 2. 事件通知 代替 轮询.
+小总结
+I/O 多路复用的特点：</p>
+<p>​ 通过一种机制使一个进程能同时等待多个文件描述符，而这些文件描述符（套接字描述符）其中的任意一个进入读就绪状态，epoll()函数就可以返回。 所以, IO多路复用，本质上不会有并发的功能，因为任何时候还是只有一个进程或线程进行工作，它之所以能提高效率是因为select\epoll 把进来的socket放到他们的 &lsquo;监视&rsquo; 列表里面，当任何socket有可读可写数据立马处理，那如果select\epoll 手里同时检测着很多socket， 一有动静马上返回给进程处理，总比一个一个socket过来,阻塞等待,处理高效率。</p>
+<p>如果想了解下epoll在Linux中的实现过程可以参考：【Linux学习】epoll详解</p>
+<p>5.正则表达式
+注意：(?P<name>)和(?P=name)中的字母p大写
+\num ???
+re.split(r&rsquo;&rsquo;, html) 作用: 根据匹配进行切割.</p>
+<p>6.HTTP协议、web服务器
+HTTP是在网络上传输HTML的协议，用于浏览器和服务器的通信。
+响应代码：200表示成功，3xx表示重定向，4xx表示客户端发送的请求有错误，5xx表示服务器端处理时发生了错误；</p>
+<p>响应类型：由Content-Type指定；不要误认为是由url决定</p>
+<p>splitlines 返回一个包含每行数据的列表(默认不包括换行符,可以通过参数设置,让其包括)菜鸟教程链接</p>
+<p>enumerate 依次返回一个可迭代对象的 index 和 value</p>
+<p>sys.argv[1] 提取 通过命令行 输入 python3 demo.py params&hellip;时, 其参数</p>
+<p>sys.path 查看python解释器在 导包过程中的 搜索搜索模块时的先后顺序</p>
+<p>sys.path.append('/home/itcast/xxx&rsquo;)
+sys.path.insert(0, &lsquo;/home/itcast/xxx&rsquo;)  # 可以确保先搜索这个路径
+isdigit() 方法检测字符串是否只由数字组成。语法: str.isdigit()</p>
+<p>7.高级语法
+_x: 单前置下划线,私有化属性或方法，from somemodule import *禁止导入,类对象和子类可以访问(# 注意: 必须是类对象而不是 实例对象)
+__xx：双前置下划线,避免与子类中的属性命名冲突，无法在外部直接访问(名字重整所以访问不到)
+# 可以通过  _类名__xx 访问
+<strong>call</strong> 方法, 类中该方法可以通过 **实例化对象()**来调用.</p>
+<p><strong>str</strong> 方法, 可以通过 print(实例对象)</p>
+<p>global 关键字, 用于 在函数内部修改 (不可变类型的)全局变量 时使用.</p>
+<p>封装的好处
+从统一的&rsquo;模板&rsquo;处获取的 方法(功能)和属性变量(数据) 有了自己的独立空间, 使得彼此不受影响.
+继承的好处
+一个方法或者属性, 在父类中有了之后就可以直接在子类中使用,这样只需要定义一次即可,大大提高了代码重用率,提升开发效率.
+多态的好处
+调用不同子类的 同一方法 会返回不同的结果.
+super()
+单继承 &ndash; 没区别
+多继承 &ndash; 通过内置__mro__的方法, (Cpython 解释器默认调用的是 C3 算法, 在新式类中实现的是广度优先, 保证 每一个父类有自己的调用顺序且只被调用一次.)
+类方法、实例方法、静态方法
+相同点：对于所有的方法而言，均属于类，所以 在内存中也只保存一份
+不同点：方法调用者不同、调用方法时自动传入的参数不同。
+@property
+Python的property属性的功能是：property属性内部进行一系列的逻辑计算，最终将计算结果返回。
+两种实现方式:
+装饰器 即：在方法上应用装饰器</p>
+<p>旧式类: 只有一种 方法变属性</p>
+<p>新式类: 通过 取值(方法变属性) , 修改(赋值), 删除方法或属性 三类操作, 来对应 调用类方法中的@property方法, @方法名.setter方法, @方法名.deleter方法.</p>
+<p>class Goods:
+&ldquo;&ldquo;&ldquo;python3中默认继承object类
+以python2、3执行此程序的结果不同，因为只有在python3中才有@xxx.setter  @xxx.deleter
+&quot;&rdquo;&rdquo;
+@property
+def price(self):
+print('@property')</p>
+<pre><code>@price.setter
+def price(self, value):
+    print('@price.setter', value)
+
+@price.deleter
+def price(self):
+    print('@price.deleter')
+</code></pre>
+<p>obj = Goods()
+obj.price          # 自动执行 @property 修饰的 price 方法，并获取方法的返回值
+obj.price = 123    # 自动执行 @price.setter 修饰的 price 方法，并将  123 赋值给方法的参数
+del obj.price      # 自动执行 @price.deleter 修饰的 price 方法
+类属性 即：在类中定义值为property对象的类属性</p>
+<p>property方法中有个四个参数</p>
+<p>第一个参数是方法名，调用 对象.属性 时自动触发执行方法
+第二个参数是方法名，调用 对象.属性 ＝ XXX 时自动触发执行方法
+第三个参数是方法名，调用 del 对象.属性 时自动触发执行方法
+第四个参数是字符串，调用 对象.属性.doc ，此参数是该属性的描述信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">set_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span> 
+       <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">del_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="n">BAR</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_bar</span><span class="p">,</span> <span class="n">set_bar</span><span class="p">,</span> <span class="n">del_bar</span><span class="p">,</span> <span class="s2">&#34;description...&#34;</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+
+<span class="n">obj</span><span class="o">.</span><span class="n">BAR</span>  <span class="c1"># 自动调用第一个参数中定义的方法：get_bar</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">BAR</span> <span class="o">=</span> <span class="s2">&#34;alex&#34;</span>  <span class="c1"># 自动调用第二个参数中定义的方法：set_bar方法，并将“alex”当作参数传入</span>
+<span class="n">desc</span> <span class="o">=</span> <span class="n">Foo</span><span class="o">.</span><span class="n">BAR</span><span class="o">.</span><span class="vm">__doc__</span>  <span class="c1"># 自动获取第四个参数中设置的值：description...</span>
+<span class="k">print</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">obj</span><span class="o">.</span><span class="n">BAR</span>  <span class="c1"># 自动调用第三个参数中定义的方</span>
+<span class="err">法：</span><span class="n">del_bar方法</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>上下文管理器
+任何实现了 enter() 和 exit() 方法的对象都可称之为上下文管理器</p>
+<p>实现方式:</p>
+<p>with方法</p>
+<p>@contextmanager 更进一步简化了上下文管理器的实现方式。通过 yield 将函数分割成两部分，yield 之前的语句在 enter 方法中执行，yield 之后的语句在 exit 方法中执行。紧跟在 yield 后面的值是函数的返回值。</p>
+<p>from contextlib import contextmanager</p>
+<p>@contextmanager
+def my_open(path, mode):
+f = open(path, mode)
+yield f
+f.close()
+数据库
+接口调试: postman</p>
+    </div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-03-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/amp/posts/2020/03/26/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-title="Python基础知识" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/amp/posts/2020/03/26/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/amp/posts/2020/03/26/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-title="Python基础知识" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/amp/posts/2020/03/26/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-title="Python基础知识"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/amp/posts/2020/03/26/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-title="Python基础知识" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://localhost:1313/amp/posts/2020/03/26/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-title="Python基础知识" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/amp/posts/2020/03/26/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-title="Python基础知识" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/amp/posts/2020/03/26/python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-title="Python基础知识"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/amp/posts/2020/03/26/okr/" class="prev" rel="prev" title="OKR"><i class="fas fa-angle-left fa-fw"></i>OKR</a>
+            <a href="/amp/posts/2020/03/27/%E8%AF%86%E5%88%AB/" class="next" rel="next" title="识别">识别<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article>
+<div class="adsblock">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-73+ed+2i-1n-4w"
+        data-ad-client="ca-pub-2665873967488848" data-ad-slot="2692397084"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+</main>
+
+<amp-analytics type="googleanalytics">
+    <script type="application/json">
+        {
+            "vars": {
+                "account": ""
+            },
+            "triggers": {"trackEvent":{"on":"click","request":"event","selector":"body","vars":{"eventAction":"click","eventCategory":"body-click"}},"trackPageview":{"on":"visible","request":"pageview"}}
+        }
+    </script>
+</amp-analytics>
+
+<amp-auto-ads type="adsense"
+              data-ad-client="ca-pub-2665873967488848">
+</amp-auto-ads>
+</body>
+
+</html>
