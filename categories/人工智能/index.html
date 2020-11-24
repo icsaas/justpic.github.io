@@ -74,7 +74,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="桑河一榆" />
 
-  <meta name="generator" content="Hugo 0.78.1" />
+  <meta name="generator" content="Hugo 0.78.2" />
 
   
   <base href="https://justpic.org/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">
@@ -342,28 +342,17 @@ MathJax.Hub.Config({
         s.parentNode.insertBefore(hm, s);
     })();
 </script>
-<div class="app-refresh" id="app-refresh">
-    <div class="app-refresh-wrap" onclick="location.reload()">
-        <label>已更新最新版本</label>
-        <span>点击刷新</span>
-    </div>
-</div>
+
 <script>
     if ('serviceWorker' in navigator) {
         if (navigator.serviceWorker.controller) {
             navigator.serviceWorker.addEventListener('controllerchange', function() {
-                showNotification();
             });
         }
 
         window.addEventListener('load', function() {
             navigator.serviceWorker.register('/sw.js');
         });
-    }
-
-    function showNotification() {
-        document.querySelector('meta[name=theme-color]').content = '#000';
-        document.getElementById('app-refresh').className += ' app-refresh-show';
     }
 </script>
 
